@@ -18,10 +18,12 @@ use App\Http\Controllers\Api\ReportController;
 |
 */
 
+Route::get('GetTopView', [ReportController::class, 'GetTopView']);
+
 Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', UserController::class);
-    Route::get('GetTopView', [ReportController::class, 'GetTopView']);
+    // Route::get('GetTopView', [ReportController::class, 'GetTopView']);
 });
