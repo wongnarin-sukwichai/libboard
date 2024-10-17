@@ -773,7 +773,7 @@
                                                         class="flex items-center mt-4"
                                                     >
                                                         <div
-                                                            class="w-2 h-2 bg-teal-600 rounded-full mr-3"
+                                                            class="w-2 h-2 bg-orange-400 rounded-full mr-3"
                                                         ></div>
                                                         <span class="truncate"
                                                             >นิสิตระดับปริญญาโท</span
@@ -787,7 +787,7 @@
                                                         class="flex items-center mt-4"
                                                     >
                                                         <div
-                                                            class="w-2 h-2 bg-teal-600 rounded-full mr-3"
+                                                            class="w-2 h-2 bg-red-600 rounded-full mr-3"
                                                         ></div>
                                                         <span class="truncate"
                                                             >นิสิตระดับปริญญาเอก</span
@@ -801,7 +801,7 @@
                                                         class="flex items-center mt-4"
                                                     >
                                                         <div
-                                                            class="w-2 h-2 bg-orange-400 rounded-full mr-3"
+                                                            class="w-2 h-2 bg-gray-500 rounded-full mr-3"
                                                         ></div>
                                                         <span class="truncate"
                                                             >บุคลากรสายวิชาการ</span
@@ -815,7 +815,7 @@
                                                         class="flex items-center mt-4"
                                                     >
                                                         <div
-                                                            class="w-2 h-2 bg-yellow-400 rounded-full mr-3"
+                                                            class="w-2 h-2 bg-lime-500 rounded-full mr-3"
                                                         ></div>
                                                         <span class="truncate"
                                                             >บุคลากรสายสนับสนุน</span
@@ -1676,11 +1676,11 @@ export default {
             let myBookTwo = new Chart(ctx, {
                 type: "bar",
                 data: {
-                    labels: ["01", "02", "03", "04", "05", "06", "07"],
+                    labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"],
                     datasets: [
                         {
                             label: "สถิติการยืม รายเดือน / 2567",
-                            data: [11401, 10765, 10400, 2623, 700, 1916, 1980],
+                            data: [11401, 10765, 10400, 2623, 700, 1916, 13491, 13097, 12106, 6474],
                             backgroundColor: [
                                 "rgba(255, 99, 132, 0.2)",
                                 "rgba(255, 159, 64, 0.6)",
@@ -1689,6 +1689,9 @@ export default {
                                 "rgba(54, 162, 235, 0.6)",
                                 "rgba(153, 102, 255, 0.6)",
                                 "rgba(201, 203, 207, 0.6)",
+                                "rgba(255, 99, 132, 0.2)",
+                                "rgba(255, 159, 64, 0.6)",
+                                "rgba(255, 205, 86, 0.6)",
                             ],
                             borderColor: [
                                 "rgb(255, 99, 132)",
@@ -1698,6 +1701,9 @@ export default {
                                 "rgb(54, 162, 235)",
                                 "rgb(153, 102, 255)",
                                 "rgb(201, 203, 207)",
+                                "rgb(255, 99, 132)",
+                                "rgb(255, 159, 64)",
+                                "rgb(255, 205, 86)",
                             ],
                             borderWidth: 2,
                             borderColor: "#fff",
