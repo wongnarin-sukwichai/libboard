@@ -729,7 +729,7 @@
                                                         <div
                                                             class="text-xl font-medium"
                                                         >
-                                                            63,044
+                                                            25,663
                                                         </div>
                                                         <div
                                                             class="text-slate-500 mt-0.5"
