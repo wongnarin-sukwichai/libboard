@@ -1,8 +1,9 @@
 <template>
     <body class="py-5 md:py-0">
         <!-- BEGIN: Mobile Menu -->
-        <div class="mobile-menu md:hidden"
-        :class="modalMenu === true ? 'mobile-menu--active' : ''"
+        <div
+            class="mobile-menu md:hidden"
+            :class="modalMenu === true ? 'mobile-menu--active' : ''"
         >
             <div class="mobile-menu-bar">
                 <router-link to="/" class="flex mr-auto">
@@ -39,7 +40,7 @@
                                     class="menu__sub-icon transform rotate-180"
                                 ></i>
                             </div>
-                        </a>                  
+                        </a>
                     </li>
                     <!-- <li>
                         <a href="javascript:;" class="menu">
@@ -55,7 +56,7 @@
                             </div>
                         </a>                  
                     </li> -->
-                                     
+
                     <li class="menu__devider my-6"></li>
                     <!-- <li>
                         <a href="javascript:;" class="menu">
@@ -385,7 +386,7 @@
                                             </div>
                                         </div>
                                         <div class="text-2xl font-medium mt-2">
-                                            200
+                                            340
                                         </div>
                                         <div
                                             class="border-b border-slate-200 flex pb-2 mt-4"
@@ -428,22 +429,22 @@
                                         </div>
                                         <div class="flex mt-1.5">
                                             <div>นักศึกษา</div>
-                                            <div class="ml-auto">118</div>
+                                            <div class="ml-auto">315</div>
                                         </div>
                                         <div class="flex mt-1.5">
                                             <div>อาจารย์</div>
-                                            <div class="ml-auto">32</div>
+                                            <div class="ml-auto">8</div>
                                         </div>
                                         <div class="flex mt-1.5">
                                             <div>บุคลากร</div>
-                                            <div class="ml-auto">4</div>
+                                            <div class="ml-auto">1</div>
                                         </div>
                                         <div
                                             class="flex mt-3 text-gray-400 text-xs font-light"
                                         >
                                             <div># ข้อมูล ณ วันที่</div>
                                             <div class="ml-auto">
-                                                10 มิถุนายน 2567
+                                                17 ตุลาคม 2567
                                             </div>
                                         </div>
                                         <button
@@ -504,7 +505,7 @@
                                                     >จำนวน</span
                                                 >
                                                 <span class="text-md px-2"
-                                                    >197</span
+                                                    >206</span
                                                 >
                                                 <span
                                                     class="text-sm text-gray-400"
@@ -513,8 +514,7 @@
                                             </div>
 
                                             <div class="mt-4 text-slate-500">
-                                                # ข้อมูล ณ วันที่ 10 มิถุนายน
-                                                2567
+                                                # ข้อมูล ณ วันที่ 17 ตุลาคม 2567
                                             </div>
                                         </div>
                                         <div
@@ -527,7 +527,7 @@
                                                 class="mt-1.5 flex items-center"
                                             >
                                                 <div class="text-base">
-                                                    421
+                                                    5
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -537,7 +537,49 @@
                                                     class="text-danger flex text-xs font-medium tooltip cursor-pointer ml-2"
                                                     title="2% Lower than last month"
                                                 >
-                                                    ปริญญาตรี
+                                                    นักเรียนโรงเรียนสาธิต
+                                                    <i
+                                                        data-lucide="chevron-down"
+                                                        class="w-4 h-4 ml-0.5"
+                                                    ></i>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="mt-1.5 flex items-center"
+                                            >
+                                                <div class="text-base">
+                                                    190
+                                                    <span
+                                                        class="text-xs text-gray-400"
+                                                        >รายการ :
+                                                    </span>
+                                                </div>
+                                                <div
+                                                    class="text-danger flex text-xs font-medium tooltip cursor-pointer ml-2"
+                                                    title="2% Lower than last month"
+                                                >
+                                                    นิสิตระดับปริญญาตรี
+                                                    <i
+                                                        data-lucide="chevron-down"
+                                                        class="w-4 h-4 ml-0.5"
+                                                    ></i>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="mt-1.5 flex items-center"
+                                            >
+                                                <div class="text-base">
+                                                    3
+                                                    <span
+                                                        class="text-xs text-gray-400"
+                                                        >รายการ :
+                                                    </span>
+                                                </div>
+                                                <div
+                                                    class="text-danger flex text-xs font-medium tooltip cursor-pointer ml-2"
+                                                    title="2% Lower than last month"
+                                                >
+                                                    นิสิตระดับปริญญาโท
                                                     <i
                                                         data-lucide="chevron-down"
                                                         class="w-4 h-4 ml-0.5"
@@ -558,7 +600,7 @@
                                                     class="text-danger flex text-xs font-medium tooltip cursor-pointer ml-2"
                                                     title="2% Lower than last month"
                                                 >
-                                                    ปริญญาเอก
+                                                    นิสิตระดับปริญญาเอก
                                                     <i
                                                         data-lucide="chevron-down"
                                                         class="w-4 h-4 ml-0.5"
@@ -590,7 +632,7 @@
                                                 class="mt-1.5 flex items-center"
                                             >
                                                 <div class="text-base">
-                                                    3
+                                                    4
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -706,11 +748,11 @@
                                                             class="w-2 h-2 bg-sky-500 rounded-full mr-3"
                                                         ></div>
                                                         <span class="truncate"
-                                                            >นักเรียน</span
+                                                            >นักเรียนโรงเรียนสาธิต</span
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >22%</span
+                                                            >117</span
                                                         >
                                                     </div>
                                                     <div
@@ -720,11 +762,39 @@
                                                             class="w-2 h-2 bg-teal-600 rounded-full mr-3"
                                                         ></div>
                                                         <span class="truncate"
-                                                            >นักศึกษา</span
+                                                            >นิสิตระดับปริญญาตรี</span
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >63%</span
+                                                            >20,516</span
+                                                        >
+                                                    </div>
+                                                    <div
+                                                        class="flex items-center mt-4"
+                                                    >
+                                                        <div
+                                                            class="w-2 h-2 bg-teal-600 rounded-full mr-3"
+                                                        ></div>
+                                                        <span class="truncate"
+                                                            >นิสิตระดับปริญญาโท</span
+                                                        >
+                                                        <span
+                                                            class="font-medium ml-auto"
+                                                            >500</span
+                                                        >
+                                                    </div>
+                                                    <div
+                                                        class="flex items-center mt-4"
+                                                    >
+                                                        <div
+                                                            class="w-2 h-2 bg-teal-600 rounded-full mr-3"
+                                                        ></div>
+                                                        <span class="truncate"
+                                                            >นิสิตระดับปริญญาเอก</span
+                                                        >
+                                                        <span
+                                                            class="font-medium ml-auto"
+                                                            >222</span
                                                         >
                                                     </div>
                                                     <div
@@ -734,11 +804,11 @@
                                                             class="w-2 h-2 bg-orange-400 rounded-full mr-3"
                                                         ></div>
                                                         <span class="truncate"
-                                                            >อาจารย์</span
+                                                            >บุคลากรสายวิชาการ</span
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >10%</span
+                                                            >2,010</span
                                                         >
                                                     </div>
                                                     <div
@@ -748,11 +818,11 @@
                                                             class="w-2 h-2 bg-yellow-400 rounded-full mr-3"
                                                         ></div>
                                                         <span class="truncate"
-                                                            >บุคลากร</span
+                                                            >บุคลากรสายสนับสนุน</span
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >5%</span
+                                                            >2,298</span
                                                         >
                                                     </div>
                                                 </div>
@@ -1291,7 +1361,7 @@ export default {
         showMenu() {
             this.modalMenu = true;
         },
-        closeMenu() {   
+        closeMenu() {
             this.modalMenu = false;
         },
         darkMode() {
@@ -1342,12 +1412,15 @@ export default {
                     datasets: [
                         {
                             label: "Data",
-                            data: [22, 63, 10, 5],
+                            data: [117, 20516, 500, 222, 2010, 2298],
                             backgroundColor: [
                                 "#0ea5e9",
                                 "#0d9488",
                                 "#fb923c",
                                 "#facc15",
+                                "#64748b",
+                                "#a3e635"
+
                             ],
                             hoverBackgroundColor: ["#9BD0F5", "#9BD0F5"],
                             borderWidth: 5,
@@ -1445,7 +1518,7 @@ export default {
                     datasets: [
                         {
                             label: "ประเภทคำร้อง",
-                            data: [18, 14, 27],
+                            data: [2, 0, 0],
                             backgroundColor: [
                                 "rgba(255, 205, 86, 0.6)",
                                 "rgba(75, 192, 192, 0.6)",
@@ -1481,7 +1554,7 @@ export default {
                     datasets: [
                         {
                             label: "",
-                            data: [16, 6, 2],
+                            data: [2, 0, 0],
                             backgroundColor: [
                                 "rgba(255, 99, 132, 0.6)",
                                 "rgba(255, 159, 64, 0.6)",
@@ -1523,7 +1596,7 @@ export default {
                     datasets: [
                         {
                             label: "",
-                            data: [16, 32],
+                            data: [426, 452],
                             backgroundColor: [
                                 "rgba(255, 99, 132, 0.6)",
                                 "rgba(255, 159, 64, 0.6)",
@@ -1559,16 +1632,16 @@ export default {
                 type: "bar",
                 data: {
                     labels: [
-                        "สาธิต",
-                        "วิทยาการสารสนเทศ",
-                        "ศึกษาศาสตร์",
-                        "วิศวกรรมศาสตร์",
-                        "การเมืองการปกครอง",
+                        "การบัญชีและการจัดการ",
+                        "วิทยาลัยการเมืองการปกครอง",
+                        "วิทยาศาสตร์",
+                        "การท่องเที่ยวและการโรงแรม",
+                        "ศิลปกรรมศาสตร์และวัฒนธรรมศาสตร์",
                     ],
                     datasets: [
                         {
                             label: "คณะ/หน่วยงานเข้าใช้บริการสูงสุด 5 อันดับแรก",
-                            data: [60, 30, 27, 12, 5],
+                            data: [180, 174, 149, 53, 42],
                             backgroundColor: [
                                 "rgba(255, 99, 132, 0.6)",
                                 "rgba(255, 159, 64, 0.6)",
