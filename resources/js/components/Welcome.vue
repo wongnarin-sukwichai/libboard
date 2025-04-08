@@ -31,10 +31,7 @@
                     <li>
                         <a href="/" class="menu menu--active">
                             <div class="menu__icon">
-                                <box-icon
-                                    name="home"
-                                    color="white"
-                                ></box-icon>
+                                <box-icon name="home" color="white"></box-icon>
                             </div>
                             <div class="menu__title">
                                 Dashboard
@@ -62,7 +59,11 @@
 
                     <li class="menu__devider my-6"></li>
                     <li>
-                        <a href="https://lookerstudio.google.com/reporting/2a02ed26-a199-42b1-bc6c-ce8b1dd6874e" target="_blank" class="menu">
+                        <a
+                            href="https://lookerstudio.google.com/reporting/2a02ed26-a199-42b1-bc6c-ce8b1dd6874e"
+                            target="_blank"
+                            class="menu"
+                        >
                             <div class="menu__icon">
                                 <box-icon
                                     type="logo"
@@ -78,7 +79,7 @@
                                     class="menu__sub-icon"
                                 ></i>
                             </div>
-                        </a>                
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -263,7 +264,11 @@
                     </ul> -->
                     </li>
                     <li>
-                        <a href="https://lookerstudio.google.com/reporting/2a02ed26-a199-42b1-bc6c-ce8b1dd6874e" target="_blank" class="side-menu">
+                        <a
+                            href="https://lookerstudio.google.com/reporting/2a02ed26-a199-42b1-bc6c-ce8b1dd6874e"
+                            target="_blank"
+                            class="side-menu"
+                        >
                             <div class="side-menu__icon">
                                 <box-icon
                                     type="logo"
@@ -506,9 +511,9 @@
                                     </select>
                                 </div>
                                 <div class="flex justify-center">
-                                    <div class="h-auto w-full">
+                                    <div class="h-auto w-full ">
                                         <canvas
-                                            class=""
+                                            class="hover:cursor-pointer"
                                             ref="reportBookOne"
                                         ></canvas>
                                     </div>
@@ -540,8 +545,7 @@
                                             </div>
 
                                             <div class="mt-4 text-slate-500">
-                                                # ข้อมูลเดือน เมษายน
-                                                2568
+                                                # ข้อมูลเดือน เมษายน 2568
                                             </div>
                                         </div>
                                         <div
@@ -560,7 +564,7 @@
                                                     </span>
                                                 </div>
                                                 <div
-                                                    class="text-danger flex text-xs font-medium tooltip cursor-pointer ml-2"
+                                                    class="text-amber-400 flex text-xs font-medium tooltip cursor-pointer ml-2"
                                                     title="2% Lower than last month"
                                                 >
                                                     นักเรียนโรงเรียนสาธิต
@@ -573,7 +577,7 @@
                                             <div
                                                 class="mt-1.5 flex items-center"
                                             >
-                                                <div class="text-base">
+                                                <div class="text-base text-amber-400">
                                                     22
                                                     <span
                                                         class="text-xs text-gray-400"
@@ -581,7 +585,7 @@
                                                     </span>
                                                 </div>
                                                 <div
-                                                    class="text-danger flex text-xs font-medium tooltip cursor-pointer ml-2"
+                                                    class="text-amber-400 flex text-xs font-medium tooltip cursor-pointer ml-2"
                                                     title="2% Lower than last month"
                                                 >
                                                     นิสิตระดับปริญญาตรี
@@ -601,7 +605,7 @@
                                                     </span>
                                                 </div>
                                                 <div
-                                                    class="text-danger flex text-xs font-medium tooltip cursor-pointer ml-2"
+                                                    class="text-amber-400 flex text-xs font-medium tooltip cursor-pointer ml-2"
                                                     title="2% Lower than last month"
                                                 >
                                                     นิสิตระดับปริญญาโท
@@ -621,7 +625,7 @@
                                                     >
                                                 </div>
                                                 <div
-                                                    class="text-danger flex text-xs font-medium tooltip cursor-pointer ml-2"
+                                                    class="text-amber-400 flex text-xs font-medium tooltip cursor-pointer ml-2"
                                                     title="2% Lower than last month"
                                                 >
                                                     นิสิตระดับปริญญาเอก
@@ -634,7 +638,7 @@
                                             <div
                                                 class="mt-1.5 flex items-center"
                                             >
-                                                <div class="text-base">
+                                                <div class="text-base text-amber-400">
                                                     660
                                                     <span
                                                         class="text-xs text-gray-400"
@@ -642,7 +646,7 @@
                                                     </span>
                                                 </div>
                                                 <div
-                                                    class="text-danger flex text-xs font-medium tooltip cursor-pointer ml-2"
+                                                    class="text-amber-400 flex text-xs font-medium tooltip cursor-pointer ml-2"
                                                     title="2% Lower than last month"
                                                 >
                                                     บุคลากรสายวิชาการ
@@ -655,7 +659,7 @@
                                             <div
                                                 class="mt-1.5 flex items-center"
                                             >
-                                                <div class="text-base">
+                                                <div class="text-base text-amber-400">
                                                     7
                                                     <span
                                                         class="text-xs text-gray-400"
@@ -663,7 +667,7 @@
                                                     </span>
                                                 </div>
                                                 <div
-                                                    class="text-danger flex text-xs font-medium tooltip cursor-pointer ml-2"
+                                                    class="text-amber-400 flex text-xs font-medium tooltip cursor-pointer ml-2"
                                                     title="2% Lower than last month"
                                                 >
                                                     บุคลากรสายสนับสนุน
@@ -960,102 +964,49 @@
                                     <h2
                                         class="text-lg font-medium truncate mr-5"
                                     >
-                                        สืบค้นมากสุด (OPAC)
+                                        จองห้องออนไลน์ (Study Room)
                                     </h2>
                                 </div>
-                                <div
-                                    class="intro-y overflow-auto lg:overflow-visible mt-8 sm:mt-0"
-                                >
-                                    <table class="table table-report sm:mt-2">
-                                        <thead
-                                            class="bg-white opacity-80 rounded-full shadow-md"
-                                        >
-                                            <tr>
-                                                <th class="whitespace-nowrap">
-                                                    IMAGES
-                                                </th>
-                                                <th class="whitespace-nowrap">
-                                                    TITLE
-                                                </th>
-                                                <th
-                                                    class="text-center whitespace-nowrap"
-                                                >
-                                                    LANGUAGE
-                                                </th>
-                                                <th
-                                                    class="text-center whitespace-nowrap"
-                                                >
-                                                    STATUS
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr
-                                                class="px-4 py-4 zoom-in"
-                                                v-for="(
-                                                    opac, index
-                                                ) in opacList.slice(0, 5)"
-                                                :key="index"
-                                                @click="link(opac.BIBID)"
+
+                                <div class="mt-5 intro-x">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="box zoom-in">
+                                            <div
+                                                class="tiny-slider"
+                                                id="important-notes"
                                             >
-                                                <!-- <td class="w-40">
-                                                    <div class="flex">
-                                                        <div
-                                                            class="w-10 h-10 image-fit zoom-in"
-                                                        >
-                                                            <img
-                                                                alt="Midone - HTML Admin Template"
-                                                                class="tooltip"
-                                                                title="Uploaded at 7 June 2020"
-                                                                :src="
-                                                                    getImage(
-                                                                        opac.BIBID
-                                                                    )
-                                                                "
-                                                            />
+                                                <div class="p-2">
+                                                    <div
+                                                        class="flex justify-center overflow-auto"
+                                                    >
+                                                        <div class="h-[360px]">
+                                                            <canvas
+                                                                class=""
+                                                                ref="reportStdOne"
+                                                            ></canvas>
                                                         </div>
                                                     </div>
-                                                </td> -->
-                                                <td class="w-40 text-center">
-                                                    <box-icon
-                                                        name="book"
-                                                        color="#f59e0b"
-                                                    ></box-icon>
-                                                </td>
-                                                <td class="">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="box zoom-in">
+                                            <div class="p-2">
+                                                <div
+                                                    class="flex justify-center overflow-auto"
+                                                >
                                                     <div
-                                                        class="font-medium whitespace-nowrap"
+                                                        class="h-[360px] w-full"
                                                     >
-                                                        {{
-                                                            opac.TITLE.substring(
-                                                                0,
-                                                                80
-                                                            )
-                                                        }}
+                                                        <canvas
+                                                            class="mt-16"
+                                                            ref="reportStdTwo"
+                                                        ></canvas>
                                                     </div>
-                                                    <div
-                                                        class="text-slate-500 text-xs whitespace-nowrap mt-0.5"
-                                                    >
-                                                        {{ opac.BIBID }}
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    {{ opac.LANG }}
-                                                </td>
-                                                <td class="w-40">
-                                                    <div
-                                                        class="flex items-center justify-center text-success"
-                                                    >
-                                                        <i
-                                                            data-lucide="check-square"
-                                                            class="w-4 h-4 mr-2"
-                                                        ></i>
-                                                        Active
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- END: Weekly Top Products -->
@@ -1245,7 +1196,12 @@
                                             >
                                                 <div class="flex items-center">
                                                     <div class="font-medium">
-                                                        อยากขออนุญาตสอบถามเกี่ยวกับการจ่ายค่าปรับหนัวสือค่ะ พอดีชำระค่าปรับหนังสือที่ห้องสมุดไปแล้ว แต่ว่าใน REG ยังขึ้นว่า lock หนี้จากห้องสมุดอยู่ กลัวว่าจะมีปัญหาในการลงทะเบียนเรียนในเทอมต่อไป จึงอยากสอบถามว่าระบบจะอัพเดทอีกทีตอนไหนคะ
+                                                        อยากขออนุญาตสอบถามเกี่ยวกับการจ่ายค่าปรับหนัวสือค่ะ
+                                                        พอดีชำระค่าปรับหนังสือที่ห้องสมุดไปแล้ว
+                                                        แต่ว่าใน REG ยังขึ้นว่า
+                                                        lock หนี้จากห้องสมุดอยู่
+                                                        กลัวว่าจะมีปัญหาในการลงทะเบียนเรียนในเทอมต่อไป
+                                                        จึงอยากสอบถามว่าระบบจะอัพเดทอีกทีตอนไหนคะ
                                                     </div>
                                                     <div
                                                         class="text-xs text-slate-500 ml-auto"
@@ -1255,9 +1211,7 @@
                                                 </div>
                                                 <div
                                                     class="text-slate-500 mt-1"
-                                                >
-                                                    
-                                                </div>
+                                                ></div>
                                             </div>
                                         </div>
                                         <div
@@ -1281,7 +1235,9 @@
                                             >
                                                 <div class="flex items-center">
                                                     <div class="font-medium">
-                                                        อยากให้ห้อง Pavilion มีระบบการจองห้องให้ชัดเจน เพราะมีหลายคนไม่รู้ว่าต้องจองบางคนเข้าไปนั่งเลย
+                                                        อยากให้ห้อง Pavilion
+                                                        มีระบบการจองห้องให้ชัดเจน
+                                                        เพราะมีหลายคนไม่รู้ว่าต้องจองบางคนเข้าไปนั่งเลย
                                                     </div>
                                                     <div
                                                         class="text-xs text-slate-500 ml-auto"
@@ -1290,9 +1246,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="text-slate-500">
-                                                    <div class="mt-1">
-                                                        
-                                                    </div>
+                                                    <div class="mt-1"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1370,43 +1324,110 @@
                                         <h2
                                             class="text-lg font-medium truncate mr-auto"
                                         >
-                                            จองห้องออนไลน์ (Study Room)
+                                            สืบค้นมากสุด (OPAC)
                                         </h2>
                                     </div>
-                                    <div class="mt-5 intro-x">
-                                        <div class="box zoom-in">
-                                            <div
-                                                class="tiny-slider"
-                                                id="important-notes"
+                                    <div
+                                        class="intro-y overflow-auto mt-8 sm:mt-0"
+                                    >
+                                        <table
+                                            class="table table-report sm:mt-2"
+                                        >
+                                            <thead
+                                                class="bg-white opacity-80 rounded-full shadow-md"
                                             >
-                                                <div class="p-2">
-                                                    <div
-                                                        class="flex justify-center"
+                                                <tr>
+                                                    <th
+                                                        class="whitespace-nowrap"
                                                     >
-                                                        <div class="h-[180px]">
-                                                            <canvas
-                                                                class=""
-                                                                ref="reportStdOne"
-                                                            ></canvas>
+                                                        IMAGES
+                                                    </th>
+                                                    <th
+                                                        class="whitespace-nowrap"
+                                                    >
+                                                        TITLE
+                                                    </th>
+                                                    <!-- <th
+                                                        class="text-center whitespace-nowrap"
+                                                    >
+                                                        LANGUAGE
+                                                    </th>
+                                                    <th
+                                                        class="text-center whitespace-nowrap"
+                                                    >
+                                                        STATUS
+                                                    </th> -->
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr
+                                                    class="px-4 py-4 zoom-in"
+                                                    v-for="(
+                                                        opac, index
+                                                    ) in opacList.slice(0, 5)"
+                                                    :key="index"
+                                                    @click="link(opac.BIBID)"
+                                                >
+                                                    <!-- <td class="w-40">
+                                                    <div class="flex">
+                                                        <div
+                                                            class="w-10 h-10 image-fit zoom-in"
+                                                        >
+                                                            <img
+                                                                alt="Midone - HTML Admin Template"
+                                                                class="tooltip"
+                                                                title="Uploaded at 7 June 2020"
+                                                                :src="
+                                                                    getImage(
+                                                                        opac.BIBID
+                                                                    )
+                                                                "
+                                                            />
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="p-2">
-                                                <div
-                                                    class="flex justify-center"
-                                                >
-                                                    <div
-                                                        class="h-[208px] w-full"
+                                                </td> -->
+                                                    <td
+                                                        class="w-40 text-center"
                                                     >
-                                                        <canvas
-                                                            class=""
-                                                            ref="reportStdTwo"
-                                                        ></canvas>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                        <box-icon
+                                                            name="book"
+                                                            color="#f59e0b"
+                                                        ></box-icon>
+                                                    </td>
+                                                    <td class="">
+                                                        <div
+                                                            class="font-medium whitespace-nowrap"
+                                                        >
+                                                            {{
+                                                                opac.TITLE.substring(
+                                                                    0,
+                                                                    80
+                                                                )
+                                                            }}
+                                                        </div>
+                                                        <div
+                                                            class="text-slate-500 text-xs whitespace-nowrap mt-0.5"
+                                                        >
+                                                            {{ opac.BIBID }}
+                                                        </div>
+                                                    </td>
+                                                    <!-- <td class="text-center">
+                                                        {{ opac.LANG }}
+                                                    </td>
+                                                    <td class="w-40">
+                                                        <div
+                                                            class="flex items-center justify-center text-success"
+                                                        >
+                                                            <i
+                                                                data-lucide="check-square"
+                                                                class="w-4 h-4 mr-2"
+                                                            ></i>
+                                                            Active
+                                                        </div>
+                                                    </td> -->
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                                 <!-- END: Important Notes -->
@@ -1445,8 +1466,10 @@
         >
             <!-- Content ของ modal -->
             <div class="bg-white p-6 rounded-lg lg:w-1/3 h-3/4 overflow-y-auto">
-                <p class="text-lg text-amber-400">** สถิติเข้าเยี่ยมชมมากที่สุด 10 อันดับแรก **</p>
-                <hr class="border-dashed">
+                <p class="text-lg text-amber-400">
+                    ** สถิติเข้าเยี่ยมชมมากที่สุด 10 อันดับแรก **
+                </p>
+                <hr class="border-dashed" />
                 <div class="mt-5">
                     <div class="intro-y">
                         <div
@@ -1561,7 +1584,9 @@
                                 />
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium">EBSCO Discovery Service (EDS) Plus Full Text</div>
+                                <div class="font-medium">
+                                    EBSCO Discovery Service (EDS) Plus Full Text
+                                </div>
                                 <div
                                     class="text-slate-500 text-xs mt-0.5"
                                 ></div>
@@ -1586,10 +1611,12 @@
                                 />
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium">American Chemical Society Journal</div>
-                                <div
-                                    class="text-slate-500 text-xs mt-0.5"
-                                >(ACS)</div>
+                                <div class="font-medium">
+                                    American Chemical Society Journal
+                                </div>
+                                <div class="text-slate-500 text-xs mt-0.5">
+                                    (ACS)
+                                </div>
                             </div>
                             <div
                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
@@ -1611,7 +1638,9 @@
                                 />
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium">Engineering Source</div>
+                                <div class="font-medium">
+                                    Engineering Source
+                                </div>
                                 <div
                                     class="text-slate-500 text-xs mt-0.5"
                                 ></div>
@@ -1636,7 +1665,9 @@
                                 />
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium">SpringerLink – Journal</div>
+                                <div class="font-medium">
+                                    SpringerLink – Journal
+                                </div>
                                 <div
                                     class="text-slate-500 text-xs mt-0.5"
                                 ></div>
@@ -1661,7 +1692,9 @@
                                 />
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium">Emerald Management</div>
+                                <div class="font-medium">
+                                    Emerald Management
+                                </div>
                                 <div
                                     class="text-slate-500 text-xs mt-0.5"
                                 ></div>
@@ -1686,10 +1719,12 @@
                                 />
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium">Sustainable Development Goals Online</div>
-                                <div
-                                    class="text-slate-500 text-xs mt-0.5"
-                                >(SDGO)</div>
+                                <div class="font-medium">
+                                    Sustainable Development Goals Online
+                                </div>
+                                <div class="text-slate-500 text-xs mt-0.5">
+                                    (SDGO)
+                                </div>
                             </div>
                             <div
                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
@@ -1699,7 +1734,7 @@
                         </div>
                     </div>
                 </div>
-                <hr class="border-dashed">
+                <hr class="border-dashed" />
                 <div class="mt-2 flex justify-end">
                     <button
                         class="bg-red-500 text-white px-4 py-2 rounded"
@@ -1746,7 +1781,8 @@ export default {
             pictu7: "https://library.msu.ac.th/wp-content/uploads/2022/02/engineering-source-300x180.jpg",
             pictu8: "https://library.msu.ac.th/wp-content/uploads/2022/02/SpringerLink-–-Journal-300x180.jpg",
             pictu9: "https://library.msu.ac.th/wp-content/uploads/2022/02/emerald_insght-300x180.jpg",
-            pictu10: "https://library.msu.ac.th/wp-content/uploads/2024/11/sdgo.jpg",
+            pictu10:
+                "https://library.msu.ac.th/wp-content/uploads/2024/11/sdgo.jpg",
             isDarkMode: false,
             showWelcome: true,
             opacList: "",
@@ -1827,10 +1863,20 @@ export default {
                     ],
                 },
                 options: {
+                    responsive: true,
+                    animation: {
+                        duration: 2000,
+                        easing: "easeOutBounce",
+                    },
                     maintainAspectRatio: false,
                     plugins: {
                         legend: {
                             display: false,
+                        },
+                        tooltip: {
+                            backgroundColor: "#333",
+                            titleColor: "#fff",
+                            bodyColor: "#fff",
                         },
                     },
                     cutout: "80%",
@@ -1855,10 +1901,20 @@ export default {
                     ],
                 },
                 options: {
+                    responsive: true,
+                    animation: {
+                        duration: 2000,
+                        easing: "easeOutBounce",
+                    },
                     maintainAspectRatio: false,
                     plugins: {
                         legend: {
                             display: false,
+                        },
+                        tooltip: {
+                            backgroundColor: "#333",
+                            titleColor: "#fff",
+                            bodyColor: "#fff",
                         },
                     },
                     cutout: "80%",
@@ -1951,8 +2007,8 @@ export default {
                             label: "ประเภทคำร้อง",
                             data: [2, 1, 0],
                             backgroundColor: [
-                                "rgba(255, 205, 86, 0.6)",
-                                "rgba(75, 192, 192, 0.6)",
+                                "#ffcd56",
+                                "#4bc0c0",
                                 "rgba(54, 162, 235, 0.6)",
                             ],
                             borderColor: [
@@ -1962,10 +2018,27 @@ export default {
                             ],
                             borderWidth: 3,
                             borderColor: "#fff",
+                            borderRadius: 10,
+                            borderSkipped: false,
                         },
                     ],
                 },
                 options: {
+                    responsive: true,
+                    animation: {
+                        duration: 2000,
+                        easing: "easeOutBounce",
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                        },
+                        tooltip: {
+                            backgroundColor: "#333",
+                            titleColor: "#fff",
+                            bodyColor: "#fff",
+                        },
+                    },
                     scales: {
                         y: {
                             beginAtZero: true,
@@ -1984,10 +2057,10 @@ export default {
                     labels: ["นักศึกษา", "อาจารย์", "บุคลากร"],
                     datasets: [
                         {
-                            label: "",
+                            label: "ประเภทผู้ใช้บริการ",
                             data: [3, 0, 0],
                             backgroundColor: [
-                                "rgba(255, 99, 132, 0.6)",
+                                "#ff6384",
                                 "rgba(255, 159, 64, 0.6)",
                                 "rgba(255, 205, 86, 0.6)",
                             ],
@@ -1998,19 +2071,30 @@ export default {
                             ],
                             borderWidth: 3,
                             borderColor: "#fff",
+                            borderRadius: 10,
+                            borderSkipped: false,
                         },
                     ],
                 },
                 options: {
                     responsive: true,
+                    animation: {
+                        duration: 2000,
+                        easing: "easeOutBounce",
+                    },
                     plugins: {
                         legend: {
-                            position: "top",
-                        },
-                        title: {
                             display: true,
-                            text: "ประเภทผู้ใช้บริการ",
-                            font: { weight: "normal" },
+                        },
+                        tooltip: {
+                            backgroundColor: "#333",
+                            titleColor: "#fff",
+                            bodyColor: "#fff",
+                        },
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
                         },
                     },
                 },
@@ -2021,26 +2105,30 @@ export default {
 
             const ctx = this.$refs.reportStdOne;
             let myStdOne = new Chart(ctx, {
-                type: "pie",
+                type: "doughnut",
                 data: {
                     labels: ["AREC", "DLP", "MSU SPACE"],
                     datasets: [
                         {
                             label: "",
                             data: [13992, 21682, 2421],
-                            backgroundColor: ["#0ea5e9", "#fb923c", "#facc15"],
-                            borderColor: [
-                                "rgb(54, 162, 235)",
-                                "rgb(255, 159, 64)",
-                                "rgb(255, 205, 86)",
-                            ],
+                            backgroundColor: ["#ff6384", "#36a2eb", "#ffcd56"],
+                            borderColor: ["#ff6384", "#36a2eb", "#ffcd56"],
                             borderWidth: 3,
                             borderColor: "#fff",
+                            borderWidth: 2,
+                            hoverOffset: 15,
                         },
                     ],
                 },
                 options: {
                     responsive: true,
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true,
+                        duration: 2000,
+                        easing: "easeOutBack",
+                    },
                     plugins: {
                         legend: {
                             position: "top",
@@ -2049,6 +2137,11 @@ export default {
                             display: true,
                             text: "สถานที่",
                             font: { weight: "normal" },
+                        },
+                        tooltip: {
+                            backgroundColor: "#333",
+                            titleColor: "#fff",
+                            bodyColor: "#fff",
                         },
                     },
                 },
@@ -2072,11 +2165,11 @@ export default {
                             label: "คณะ/หน่วยงานเข้าใช้บริการสูงสุด 5 อันดับแรก",
                             data: [7370, 6338, 3586, 3041, 2712],
                             backgroundColor: [
-                                "rgba(255, 99, 132, 0.6)",
-                                "rgba(255, 159, 64, 0.6)",
-                                "rgba(255, 205, 86, 0.6)",
-                                "rgba(75, 192, 192, 0.6)",
-                                "rgba(54, 162, 235, 0.6)",
+                                "#ff6384",
+                                "#36a2eb",
+                                "#ffcd56",
+                                "#4bc0c0",
+                                "#9966ff",
                             ],
                             borderColor: [
                                 "rgb(255, 99, 132)",
@@ -2087,10 +2180,27 @@ export default {
                             ],
                             borderWidth: 3,
                             borderColor: "#fff",
+                            borderRadius: 10,
+                            borderSkipped: false,
                         },
                     ],
                 },
                 options: {
+                    responsive: true,
+                    animation: {
+                        duration: 2000,
+                        easing: "easeOutBounce",
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                        },
+                        tooltip: {
+                            backgroundColor: "#333",
+                            titleColor: "#fff",
+                            bodyColor: "#fff",
+                        },
+                    },
                     scales: {
                         y: {
                             beginAtZero: true,
@@ -2116,22 +2226,28 @@ export default {
                         "08",
                         "09",
                         "10",
+                        "11",
+                        "12",
                     ],
                     datasets: [
                         {
                             label: "สถิติการยืม รายเดือน / 2568",
-                            data: [9732, 10484, 10853, 689, 0, 0, 0, 0, 0, 0],
+                            data: [
+                                9732, 10484, 10853, 689, 0, 0, 0, 0, 0, 0, 0, 0,
+                            ],
                             backgroundColor: [
-                                "rgba(255, 99, 132, 0.2)",
-                                "rgba(255, 159, 64, 0.6)",
-                                "rgba(255, 205, 86, 0.6)",
-                                "rgba(75, 192, 192, 0.6)",
-                                "rgba(54, 162, 235, 0.6)",
-                                "rgba(153, 102, 255, 0.6)",
-                                "rgba(201, 203, 207, 0.6)",
-                                "rgba(255, 99, 132, 0.2)",
-                                "rgba(255, 159, 64, 0.6)",
-                                "rgba(255, 205, 86, 0.6)",
+                                "#ff6384",
+                                "#36a2eb",
+                                "#ffcd56",
+                                "#4bc0c0",
+                                "#9966ff",
+                                "#ff9f40",
+                                "#ff6384",
+                                "#36a2eb",
+                                "#ffcd56",
+                                "#4bc0c0",
+                                "#9966ff",
+                                "#ff9f40",
                             ],
                             borderColor: [
                                 "rgb(255, 99, 132)",
@@ -2144,13 +2260,32 @@ export default {
                                 "rgb(255, 99, 132)",
                                 "rgb(255, 159, 64)",
                                 "rgb(255, 205, 86)",
+                                "rgb(255, 99, 132)",
+                                "rgb(255, 159, 64)",
                             ],
                             borderWidth: 2,
                             borderColor: "#fff",
+                            borderRadius: 10,
+                            borderSkipped: false,
                         },
                     ],
                 },
                 options: {
+                    responsive: true,
+                    animation: {
+                        duration: 2000,
+                        easing: "easeOutBounce",
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                        },
+                        tooltip: {
+                            backgroundColor: "#333",
+                            titleColor: "#fff",
+                            bodyColor: "#fff",
+                        },
+                    },
                     scales: {
                         y: {
                             beginAtZero: true,
