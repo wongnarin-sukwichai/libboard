@@ -29,9 +29,12 @@
                 </div>
                 <ul class="scrollable__content py-2">
                     <li>
-                        <a href="javascript:;.html" class="menu menu--active">
+                        <a href="/" class="menu menu--active">
                             <div class="menu__icon">
-                                <i data-lucide="home"></i>
+                                <box-icon
+                                    name="home"
+                                    color="white"
+                                ></box-icon>
                             </div>
                             <div class="menu__title">
                                 Dashboard
@@ -58,20 +61,25 @@
                     </li> -->
 
                     <li class="menu__devider my-6"></li>
-                    <!-- <li>
-                        <a href="javascript:;" class="menu">
+                    <li>
+                        <a href="https://lookerstudio.google.com/reporting/2a02ed26-a199-42b1-bc6c-ce8b1dd6874e" target="_blank" class="menu">
                             <div class="menu__icon">
-                                <i data-lucide="edit"></i>
+                                <box-icon
+                                    type="logo"
+                                    name="google"
+                                    color="white"
+                                >
+                                </box-icon>
                             </div>
                             <div class="menu__title">
-                                Crud
+                                Looker Studio
                                 <i
                                     data-lucide="chevron-down"
                                     class="menu__sub-icon"
                                 ></i>
                             </div>
                         </a>                
-                    </li> -->
+                    </li>
                 </ul>
             </div>
         </div>
@@ -254,6 +262,24 @@
                         </li>
                     </ul> -->
                     </li>
+                    <li>
+                        <a href="https://lookerstudio.google.com/reporting/2a02ed26-a199-42b1-bc6c-ce8b1dd6874e" target="_blank" class="side-menu">
+                            <div class="side-menu__icon">
+                                <box-icon
+                                    type="logo"
+                                    name="google"
+                                    color="#64748b"
+                                >
+                                </box-icon>
+                            </div>
+                            <div class="side-menu__title">
+                                Dashboard
+                                <div class="side-menu__sub-icon">
+                                    <i data-lucide="chevron-down"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
                     <!-- <li class="side-nav__devider my-6"></li>
                 <li>
                     <div
@@ -386,19 +412,19 @@
                                             </div>
                                         </div>
                                         <div class="text-2xl font-medium mt-2">
-                                            340
+                                            968
                                         </div>
                                         <div
                                             class="border-b border-slate-200 flex pb-2 mt-4"
                                         >
                                             <div class="text-slate-500 text-xs">
-                                                Page views per second
+                                                <!-- Page views per second -->
                                             </div>
                                             <div
                                                 class="text-success flex text-xs font-medium tooltip cursor-pointer ml-auto"
                                                 title="49% Lower than last month"
                                             >
-                                                49%
+                                                <!-- 49% -->
                                                 <i
                                                     data-lucide="chevron-up"
                                                     class="w-4 h-4 ml-0.5"
@@ -425,26 +451,26 @@
                                         </div>
                                         <div class="flex">
                                             <div>นักเรียน</div>
-                                            <div class="ml-auto">46</div>
+                                            <div class="ml-auto">40</div>
                                         </div>
                                         <div class="flex mt-1.5">
                                             <div>นักศึกษา</div>
-                                            <div class="ml-auto">315</div>
+                                            <div class="ml-auto">838</div>
                                         </div>
                                         <div class="flex mt-1.5">
                                             <div>อาจารย์</div>
-                                            <div class="ml-auto">8</div>
+                                            <div class="ml-auto">88</div>
                                         </div>
                                         <div class="flex mt-1.5">
                                             <div>บุคลากร</div>
-                                            <div class="ml-auto">1</div>
+                                            <div class="ml-auto">2</div>
                                         </div>
                                         <div
                                             class="flex mt-3 text-gray-400 text-xs font-light"
                                         >
-                                            <div># ข้อมูล ณ วันที่</div>
+                                            <div># ข้อมูลเดือน</div>
                                             <div class="ml-auto">
-                                                17 ตุลาคม 2567
+                                                เมษายน 2568
                                             </div>
                                         </div>
                                         <button
@@ -505,7 +531,7 @@
                                                     >จำนวน</span
                                                 >
                                                 <span class="text-md px-2"
-                                                    >206</span
+                                                    >689</span
                                                 >
                                                 <span
                                                     class="text-sm text-gray-400"
@@ -514,7 +540,8 @@
                                             </div>
 
                                             <div class="mt-4 text-slate-500">
-                                                # ข้อมูล ณ วันที่ 17 ตุลาคม 2567
+                                                # ข้อมูลเดือน เมษายน
+                                                2568
                                             </div>
                                         </div>
                                         <div
@@ -527,7 +554,6 @@
                                                 class="mt-1.5 flex items-center"
                                             >
                                                 <div class="text-base">
-                                                    5
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -548,7 +574,7 @@
                                                 class="mt-1.5 flex items-center"
                                             >
                                                 <div class="text-base">
-                                                    190
+                                                    22
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -569,7 +595,6 @@
                                                 class="mt-1.5 flex items-center"
                                             >
                                                 <div class="text-base">
-                                                    3
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -590,7 +615,6 @@
                                                 class="mt-1.5 flex items-center"
                                             >
                                                 <div class="text-base">
-                                                    2
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :</span
@@ -611,7 +635,7 @@
                                                 class="mt-1.5 flex items-center"
                                             >
                                                 <div class="text-base">
-                                                    2
+                                                    660
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -632,7 +656,7 @@
                                                 class="mt-1.5 flex items-center"
                                             >
                                                 <div class="text-base">
-                                                    4
+                                                    7
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -681,13 +705,17 @@
                                                 role="presentation"
                                             >
                                                 <button
-                                                    class="nav-link w-full py-1.5 px-2 active"
+                                                    class="nav-link w-full py-1.5 px-2"
+                                                    :class="
+                                                        showMemberOne === true
+                                                            ? 'active'
+                                                            : ''
+                                                    "
                                                     data-tw-toggle="pill"
                                                     data-tw-target="#active-users"
                                                     type="button"
                                                     role="tab"
-                                                    aria-controls="active-users"
-                                                    aria-selected="true"
+                                                    @click="memberShow()"
                                                 >
                                                     ประเภทผู้ใช้
                                                 </button>
@@ -699,17 +727,25 @@
                                             >
                                                 <button
                                                     class="nav-link w-full py-1.5 px-2"
+                                                    :class="
+                                                        showMemberTwo === true
+                                                            ? 'active'
+                                                            : ''
+                                                    "
                                                     data-tw-toggle="pill"
-                                                    data-tw-target="#inactive-users"
+                                                    data-tw-target="#active-users"
                                                     type="button"
-                                                    role="tab"
-                                                    aria-selected="false"
+                                                    @click="memberShow()"
                                                 >
                                                     กลุ่มผู้ใช้
                                                 </button>
                                             </li>
                                         </ul>
-                                        <div class="tab-content mt-6">
+
+                                        <div
+                                            v-show="showMemberOne"
+                                            class="tab-content mt-6"
+                                        >
                                             <div
                                                 class="tab-pane active"
                                                 id="active-users"
@@ -729,7 +765,7 @@
                                                         <div
                                                             class="text-xl font-medium"
                                                         >
-                                                            25,663
+                                                            77,660
                                                         </div>
                                                         <div
                                                             class="text-slate-500 mt-0.5"
@@ -752,7 +788,7 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >117</span
+                                                            >2,102</span
                                                         >
                                                     </div>
                                                     <div
@@ -766,7 +802,7 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >20,516</span
+                                                            >67,090</span
                                                         >
                                                     </div>
                                                     <div
@@ -780,21 +816,21 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >500</span
+                                                            >2,503</span
                                                         >
                                                     </div>
                                                     <div
                                                         class="flex items-center mt-4"
                                                     >
                                                         <div
-                                                            class="w-2 h-2 bg-red-600 rounded-full mr-3"
+                                                            class="w-2 h-2 bg-amber-400 rounded-full mr-3"
                                                         ></div>
                                                         <span class="truncate"
                                                             >นิสิตระดับปริญญาเอก</span
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >222</span
+                                                            >1,528</span
                                                         >
                                                     </div>
                                                     <div
@@ -808,7 +844,7 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >2,010</span
+                                                            >2,022</span
                                                         >
                                                     </div>
                                                     <div
@@ -822,7 +858,89 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >2,298</span
+                                                            >2,318</span
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Two -->
+                                        <div
+                                            v-show="showMemberTwo"
+                                            class="tab-content mt-6"
+                                        >
+                                            <div
+                                                class="tab-pane active"
+                                                id="active-users"
+                                                role="tabpanel"
+                                                aria-labelledby="active-users-tab"
+                                            >
+                                                <div class="relative">
+                                                    <div class="h-[208px]">
+                                                        <canvas
+                                                            class="mt-3"
+                                                            ref="reportUserTwo"
+                                                        ></canvas>
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-col justify-center items-center absolute w-full h-full top-0 left-0"
+                                                    >
+                                                        <div
+                                                            class="text-xl font-medium"
+                                                        >
+                                                            77,660
+                                                        </div>
+                                                        <div
+                                                            class="text-slate-500 mt-0.5"
+                                                        >
+                                                            คน
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="w-52 sm:w-auto mx-auto mt-5"
+                                                >
+                                                    <div
+                                                        class="flex items-center"
+                                                    >
+                                                        <div
+                                                            class="w-2 h-2 bg-sky-500 rounded-full mr-3"
+                                                        ></div>
+                                                        <span class="truncate"
+                                                            >นักศึกษา</span
+                                                        >
+                                                        <span
+                                                            class="font-medium ml-auto"
+                                                            >73,312</span
+                                                        >
+                                                    </div>
+                                                    <div
+                                                        class="flex items-center mt-4"
+                                                    >
+                                                        <div
+                                                            class="w-2 h-2 bg-teal-600 rounded-full mr-3"
+                                                        ></div>
+                                                        <span class="truncate"
+                                                            >บุคลากร</span
+                                                        >
+                                                        <span
+                                                            class="font-medium ml-auto"
+                                                            >4,340</span
+                                                        >
+                                                    </div>
+                                                    <div
+                                                        class="flex items-center mt-4"
+                                                    >
+                                                        <div
+                                                            class="w-2 h-2 bg-orange-400 rounded-full mr-3"
+                                                        ></div>
+                                                        <span class="truncate"
+                                                            >บุคลากรภายนอก</span
+                                                        >
+                                                        <span
+                                                            class="font-medium ml-auto"
+                                                            >8</span
                                                         >
                                                     </div>
                                                 </div>
@@ -880,7 +998,7 @@
                                                 :key="index"
                                                 @click="link(opac.BIBID)"
                                             >
-                                                <td class="w-40">
+                                                <!-- <td class="w-40">
                                                     <div class="flex">
                                                         <div
                                                             class="w-10 h-10 image-fit zoom-in"
@@ -897,6 +1015,12 @@
                                                             />
                                                         </div>
                                                     </div>
+                                                </td> -->
+                                                <td class="w-40 text-center">
+                                                    <box-icon
+                                                        name="book"
+                                                        color="#f59e0b"
+                                                    ></box-icon>
                                                 </td>
                                                 <td class="">
                                                     <div
@@ -948,9 +1072,7 @@
                                         class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto form-select box"
                                     >
                                         <!-- <option value="daily">รายวัน</option> -->
-                                        <option value="monthly">
-                                            รายเดือน
-                                        </option>
+                                        <option value="monthly">ทั้งหมด</option>
                                         <!-- <option value="yearly">รายปี</option> -->
                                     </select>
                                 </div>
@@ -969,18 +1091,16 @@
                                             </div>
                                             <div class="ml-4 mr-auto">
                                                 <div class="font-medium">
-                                                    EBSCO Discovery Service
+                                                    Lexicomp
                                                 </div>
                                                 <div
                                                     class="text-slate-500 text-xs mt-0.5"
-                                                >
-                                                    (EDS) Plus Full Text
-                                                </div>
+                                                ></div>
                                             </div>
                                             <div
                                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
                                             >
-                                                48
+                                                748
                                             </div>
                                         </div>
                                     </div>
@@ -998,18 +1118,16 @@
                                             </div>
                                             <div class="ml-4 mr-auto">
                                                 <div class="font-medium">
-                                                    IEEE Electronic Library
+                                                    ScienceDirect
                                                 </div>
                                                 <div
                                                     class="text-slate-500 text-xs mt-0.5"
-                                                >
-                                                    (IEL)
-                                                </div>
+                                                ></div>
                                             </div>
                                             <div
                                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
                                             >
-                                                36
+                                                377
                                             </div>
                                         </div>
                                     </div>
@@ -1027,18 +1145,16 @@
                                             </div>
                                             <div class="ml-4 mr-auto">
                                                 <div class="font-medium">
-                                                    SpringerLink
+                                                    Scopus
                                                 </div>
                                                 <div
                                                     class="text-slate-500 text-xs mt-0.5"
-                                                >
-                                                    Journal
-                                                </div>
+                                                ></div>
                                             </div>
                                             <div
                                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
                                             >
-                                                12
+                                                301
                                             </div>
                                         </div>
                                     </div>
@@ -1056,7 +1172,7 @@
                                             </div>
                                             <div class="ml-4 mr-auto">
                                                 <div class="font-medium">
-                                                    ScienceDirect
+                                                    Access Medicine
                                                 </div>
                                                 <div
                                                     class="text-slate-500 text-xs mt-0.5"
@@ -1065,13 +1181,13 @@
                                             <div
                                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
                                             >
-                                                5
+                                                214
                                             </div>
                                         </div>
                                     </div>
                                     <div
                                         class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-slate-400 hover:border-emerald-600 dark:border-darkmode-300 text-slate-500 cursor-pointer"
-                                        @click="showDBOnline"
+                                        @click="modalShow()"
                                     >
                                         <p
                                             class="hover:scale-105 hover:text-emerald-700"
@@ -1129,18 +1245,18 @@
                                             >
                                                 <div class="flex items-center">
                                                     <div class="font-medium">
-                                                        กระดาษทิชชู่หมดค่ะ
+                                                        อยากขออนุญาตสอบถามเกี่ยวกับการจ่ายค่าปรับหนัวสือค่ะ พอดีชำระค่าปรับหนังสือที่ห้องสมุดไปแล้ว แต่ว่าใน REG ยังขึ้นว่า lock หนี้จากห้องสมุดอยู่ กลัวว่าจะมีปัญหาในการลงทะเบียนเรียนในเทอมต่อไป จึงอยากสอบถามว่าระบบจะอัพเดทอีกทีตอนไหนคะ
                                                     </div>
                                                     <div
                                                         class="text-xs text-slate-500 ml-auto"
                                                     >
-                                                        07:00 PM
+                                                        21:00 PM
                                                     </div>
                                                 </div>
                                                 <div
                                                     class="text-slate-500 mt-1"
                                                 >
-                                                    orathai.k@msu.ac.th
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -1165,18 +1281,17 @@
                                             >
                                                 <div class="flex items-center">
                                                     <div class="font-medium">
-                                                        ห้องน้ำชั้น 4
-                                                        น้ำไม่ไหลครับ
+                                                        อยากให้ห้อง Pavilion มีระบบการจองห้องให้ชัดเจน เพราะมีหลายคนไม่รู้ว่าต้องจองบางคนเข้าไปนั่งเลย
                                                     </div>
                                                     <div
                                                         class="text-xs text-slate-500 ml-auto"
                                                     >
-                                                        12:00 PM
+                                                        13:38 PM
                                                     </div>
                                                 </div>
                                                 <div class="text-slate-500">
                                                     <div class="mt-1">
-                                                        wongnarin.s@msu.ac.th
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -1321,6 +1436,281 @@
         <div></div>
         <!-- END: Dark Mode Switcher-->
     </body>
+
+    <!-- Modal Show -->
+    <transition name="fade" mode="out-in">
+        <div
+            class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
+            v-if="isModalShow"
+        >
+            <!-- Content ของ modal -->
+            <div class="bg-white p-6 rounded-lg lg:w-1/3 h-3/4 overflow-y-auto">
+                <p class="text-lg text-amber-400">** สถิติเข้าเยี่ยมชมมากที่สุด 10 อันดับแรก **</p>
+                <hr class="border-dashed">
+                <div class="mt-5">
+                    <div class="intro-y">
+                        <div
+                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
+                        >
+                            <div
+                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
+                            >
+                                <img
+                                    alt="Midone - HTML Admin Template"
+                                    :src="pictu1"
+                                />
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">Lexicomp</div>
+                                <div
+                                    class="text-slate-500 text-xs mt-0.5"
+                                ></div>
+                            </div>
+                            <div
+                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
+                            >
+                                748
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intro-y">
+                        <div
+                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
+                        >
+                            <div
+                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
+                            >
+                                <img
+                                    alt="Midone - HTML Admin Template"
+                                    :src="pictu2"
+                                />
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">ScienceDirect</div>
+                                <div
+                                    class="text-slate-500 text-xs mt-0.5"
+                                ></div>
+                            </div>
+                            <div
+                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
+                            >
+                                377
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intro-y">
+                        <div
+                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
+                        >
+                            <div
+                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
+                            >
+                                <img
+                                    alt="Midone - HTML Admin Template"
+                                    :src="pictu3"
+                                />
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">Scopus</div>
+                                <div
+                                    class="text-slate-500 text-xs mt-0.5"
+                                ></div>
+                            </div>
+                            <div
+                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
+                            >
+                                301
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intro-y">
+                        <div
+                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
+                        >
+                            <div
+                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
+                            >
+                                <img
+                                    alt="Midone - HTML Admin Template"
+                                    :src="pictu4"
+                                />
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">Access Medicine</div>
+                                <div
+                                    class="text-slate-500 text-xs mt-0.5"
+                                ></div>
+                            </div>
+                            <div
+                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
+                            >
+                                214
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intro-y">
+                        <div
+                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
+                        >
+                            <div
+                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
+                            >
+                                <img
+                                    alt="Midone - HTML Admin Template"
+                                    :src="pictu5"
+                                />
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">EBSCO Discovery Service (EDS) Plus Full Text</div>
+                                <div
+                                    class="text-slate-500 text-xs mt-0.5"
+                                ></div>
+                            </div>
+                            <div
+                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
+                            >
+                                122
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intro-y">
+                        <div
+                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
+                        >
+                            <div
+                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
+                            >
+                                <img
+                                    alt="Midone - HTML Admin Template"
+                                    :src="pictu6"
+                                />
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">American Chemical Society Journal</div>
+                                <div
+                                    class="text-slate-500 text-xs mt-0.5"
+                                >(ACS)</div>
+                            </div>
+                            <div
+                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
+                            >
+                                104
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intro-y">
+                        <div
+                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
+                        >
+                            <div
+                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
+                            >
+                                <img
+                                    alt="Midone - HTML Admin Template"
+                                    :src="pictu7"
+                                />
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">Engineering Source</div>
+                                <div
+                                    class="text-slate-500 text-xs mt-0.5"
+                                ></div>
+                            </div>
+                            <div
+                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
+                            >
+                                95
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intro-y">
+                        <div
+                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
+                        >
+                            <div
+                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
+                            >
+                                <img
+                                    alt="Midone - HTML Admin Template"
+                                    :src="pictu8"
+                                />
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">SpringerLink – Journal</div>
+                                <div
+                                    class="text-slate-500 text-xs mt-0.5"
+                                ></div>
+                            </div>
+                            <div
+                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
+                            >
+                                83
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intro-y">
+                        <div
+                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
+                        >
+                            <div
+                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
+                            >
+                                <img
+                                    alt="Midone - HTML Admin Template"
+                                    :src="pictu9"
+                                />
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">Emerald Management</div>
+                                <div
+                                    class="text-slate-500 text-xs mt-0.5"
+                                ></div>
+                            </div>
+                            <div
+                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
+                            >
+                                80
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intro-y">
+                        <div
+                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
+                        >
+                            <div
+                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
+                            >
+                                <img
+                                    alt="Midone - HTML Admin Template"
+                                    :src="pictu10"
+                                />
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">Sustainable Development Goals Online</div>
+                                <div
+                                    class="text-slate-500 text-xs mt-0.5"
+                                >(SDGO)</div>
+                            </div>
+                            <div
+                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
+                            >
+                                68
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border-dashed">
+                <div class="mt-2 flex justify-end">
+                    <button
+                        class="bg-red-500 text-white px-4 py-2 rounded"
+                        @click="modalShow()"
+                    >
+                        close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -1331,7 +1721,8 @@ import Chart from "chart.js/auto";
 export default {
     mounted() {
         this.reportOpac();
-        this.reportDonutChart();
+        this.reportMember();
+        this.reportMemberTwo();
         this.reportBarChart();
         this.reportVocBar();
         this.reportVocDonut();
@@ -1346,15 +1737,23 @@ export default {
             pic2: "/img/02.jpg",
             pic3: "/img/03.jpg",
             pic4: "/img/04.jpg",
-            pictu1: "/img/001.jpg",
-            pictu2: "/img/002.jpg",
-            pictu3: "/img/003.jpg",
-            pictu4: "/img/004.jpg",
+            pictu1: "https://library.msu.ac.th/wp-content/uploads/2022/02/lexicomp-300x180.jpg",
+            pictu2: "https://library.msu.ac.th/wp-content/uploads/2022/02/ScienceDirect-300x180.jpg",
+            pictu3: "https://library.msu.ac.th/wp-content/uploads/2024/11/scopus-2.png",
+            pictu4: "https://library.msu.ac.th/wp-content/uploads/2024/05/acc.png",
+            pictu5: "https://library.msu.ac.th/wp-content/uploads/2022/02/ebsco-300x180.jpg",
+            pictu6: "https://library.msu.ac.th/wp-content/uploads/2022/02/acs-1-300x180.jpg",
+            pictu7: "https://library.msu.ac.th/wp-content/uploads/2022/02/engineering-source-300x180.jpg",
+            pictu8: "https://library.msu.ac.th/wp-content/uploads/2022/02/SpringerLink-–-Journal-300x180.jpg",
+            pictu9: "https://library.msu.ac.th/wp-content/uploads/2022/02/emerald_insght-300x180.jpg",
+            pictu10: "https://library.msu.ac.th/wp-content/uploads/2024/11/sdgo.jpg",
             isDarkMode: false,
             showWelcome: true,
-            showDBOnline: false,
             opacList: "",
             modalMenu: false,
+            showMemberOne: true,
+            showMemberTwo: false,
+            isModalShow: false,
         };
     },
     methods: {
@@ -1403,7 +1802,7 @@ export default {
                 "_blank"
             );
         },
-        reportDonutChart() {
+        reportMember() {
             const ctx = this.$refs.reportUserOne;
             let myUserOne = new Chart(ctx, {
                 type: "doughnut",
@@ -1412,15 +1811,14 @@ export default {
                     datasets: [
                         {
                             label: "Data",
-                            data: [117, 20516, 500, 222, 2010, 2298],
+                            data: [2102, 67090, 2503, 1528, 2022, 2318],
                             backgroundColor: [
                                 "#0ea5e9",
                                 "#0d9488",
                                 "#fb923c",
                                 "#facc15",
                                 "#64748b",
-                                "#a3e635"
-
+                                "#a3e635",
                             ],
                             hoverBackgroundColor: ["#9BD0F5", "#9BD0F5"],
                             borderWidth: 5,
@@ -1439,9 +1837,42 @@ export default {
                 },
             });
         },
+        reportMemberTwo() {
+            const ctx = this.$refs.reportUserTwo;
+            let myUserTwo = new Chart(ctx, {
+                type: "doughnut",
+                data: {
+                    labels: "",
+                    datasets: [
+                        {
+                            label: "Data",
+                            data: [73312, 4340, 8],
+                            backgroundColor: ["#0ea5e9", "#0d9488", "#fb923c"],
+                            hoverBackgroundColor: ["#9BD0F5", "#9BD0F5"],
+                            borderWidth: 5,
+                            borderColor: "#fff",
+                        },
+                    ],
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                    },
+                    cutout: "80%",
+                },
+            });
+        },
         getImage(id) {
+            //  const config = {                                    //ใส่ทุกครั้งที่รับ File เข้ามา
+            //     headers: {
+            //         'token': 'RqG9I+wk/cB9TiCgCbSOGFq7exTxD6fLMoVeCNtLNrj8XTJdVnNMov9mAgLOEqTBKikM6id3P7ELFjt3gqyCjA=='
+            //     }
+            // }
             // axios
-            //     .get("https://libapp.msu.ac.th/v1/api/GetBookCover/" + id)
+            //     .get("https://libapp.msu.ac.th/v1/api/GetBookCover/" + id, config)
             //     .then((response) => {
             //         console.log(response)
             //         return response;
@@ -1518,7 +1949,7 @@ export default {
                     datasets: [
                         {
                             label: "ประเภทคำร้อง",
-                            data: [2, 0, 0],
+                            data: [2, 1, 0],
                             backgroundColor: [
                                 "rgba(255, 205, 86, 0.6)",
                                 "rgba(75, 192, 192, 0.6)",
@@ -1554,7 +1985,7 @@ export default {
                     datasets: [
                         {
                             label: "",
-                            data: [2, 0, 0],
+                            data: [3, 0, 0],
                             backgroundColor: [
                                 "rgba(255, 99, 132, 0.6)",
                                 "rgba(255, 159, 64, 0.6)",
@@ -1592,18 +2023,16 @@ export default {
             let myStdOne = new Chart(ctx, {
                 type: "pie",
                 data: {
-                    labels: ["AREC", "DLP"],
+                    labels: ["AREC", "DLP", "MSU SPACE"],
                     datasets: [
                         {
                             label: "",
-                            data: [426, 452],
-                            backgroundColor: [
-                                "rgba(255, 99, 132, 0.6)",
-                                "rgba(255, 159, 64, 0.6)",
-                            ],
+                            data: [13992, 21682, 2421],
+                            backgroundColor: ["#0ea5e9", "#fb923c", "#facc15"],
                             borderColor: [
-                                "rgb(255, 99, 132)",
+                                "rgb(54, 162, 235)",
                                 "rgb(255, 159, 64)",
+                                "rgb(255, 205, 86)",
                             ],
                             borderWidth: 3,
                             borderColor: "#fff",
@@ -1633,15 +2062,15 @@ export default {
                 data: {
                     labels: [
                         "การบัญชีและการจัดการ",
-                        "วิทยาลัยการเมืองการปกครอง",
+                        "มนุษยศาสตร์และสังคมศาสตร์",
                         "วิทยาศาสตร์",
-                        "การท่องเที่ยวและการโรงแรม",
-                        "ศิลปกรรมศาสตร์และวัฒนธรรมศาสตร์",
+                        "วิทยาการสารสนเทศ",
+                        "สาธารณสุขศาสตร์",
                     ],
                     datasets: [
                         {
                             label: "คณะ/หน่วยงานเข้าใช้บริการสูงสุด 5 อันดับแรก",
-                            data: [180, 174, 149, 53, 42],
+                            data: [7370, 6338, 3586, 3041, 2712],
                             backgroundColor: [
                                 "rgba(255, 99, 132, 0.6)",
                                 "rgba(255, 159, 64, 0.6)",
@@ -1676,11 +2105,22 @@ export default {
             let myBookTwo = new Chart(ctx, {
                 type: "bar",
                 data: {
-                    labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"],
+                    labels: [
+                        "01",
+                        "02",
+                        "03",
+                        "04",
+                        "05",
+                        "06",
+                        "07",
+                        "08",
+                        "09",
+                        "10",
+                    ],
                     datasets: [
                         {
-                            label: "สถิติการยืม รายเดือน / 2567",
-                            data: [11401, 10765, 10400, 2623, 700, 1916, 13491, 13097, 12106, 6474],
+                            label: "สถิติการยืม รายเดือน / 2568",
+                            data: [9732, 10484, 10853, 689, 0, 0, 0, 0, 0, 0],
                             backgroundColor: [
                                 "rgba(255, 99, 132, 0.2)",
                                 "rgba(255, 159, 64, 0.6)",
@@ -1718,6 +2158,13 @@ export default {
                     },
                 },
             });
+        },
+        memberShow() {
+            this.showMemberOne = !this.showMemberOne;
+            this.showMemberTwo = !this.showMemberTwo;
+        },
+        modalShow() {
+            this.isModalShow = !this.isModalShow;
         },
     },
 };
