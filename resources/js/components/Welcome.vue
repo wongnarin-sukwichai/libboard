@@ -311,6 +311,11 @@
 
             <!-- BEGIN: Content -->
             <div class="content">
+                <!-- Video Backgound -->
+                <video autoplay muted loop playsinline class="background-video">
+                    <source :src="video" type="video/mp4" class="opacity-50" />
+                </video>
+
                 <div class="grid grid-cols-12 gap-6">
                     <div class="col-span-12 2xl:col-span-9">
                         <div class="grid grid-cols-12 gap-6">
@@ -361,11 +366,11 @@
                                     <select
                                         class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto form-select box"
                                     >
-                                        <option value="daily">รายวัน</option>
+                                        <!-- <option value="daily">รายวัน</option> -->
                                         <option value="monthly">
                                             รายเดือน
                                         </option>
-                                        <option value="yearly">รายปี</option>
+                                        <!-- <option value="yearly">รายปี</option> -->
                                     </select>
                                 </div>
                                 <div class="report-box-2 intro-y mt-5">
@@ -417,7 +422,7 @@
                                             </div>
                                         </div>
                                         <div class="text-2xl font-medium mt-2">
-                                            968
+                                            {{ incomeDetail.income }}
                                         </div>
                                         <div
                                             class="border-b border-slate-200 flex pb-2 mt-4"
@@ -443,7 +448,7 @@
                                                 <div class="h-[79px]">
                                                     <canvas
                                                         id="report-bar-chart"
-                                                        ref="reportBar"
+                                                        ref="reportIncome"
                                                     ></canvas>
                                                 </div>
                                             </div>
@@ -456,32 +461,42 @@
                                         </div>
                                         <div class="flex">
                                             <div>นักเรียน</div>
-                                            <div class="ml-auto">40</div>
+                                            <div class="ml-auto">
+                                                {{ incomeDetail.student }}
+                                            </div>
                                         </div>
                                         <div class="flex mt-1.5">
                                             <div>นักศึกษา</div>
-                                            <div class="ml-auto">838</div>
+                                            <div class="ml-auto">
+                                                {{ incomeDetail.nisit }}
+                                            </div>
                                         </div>
                                         <div class="flex mt-1.5">
                                             <div>อาจารย์</div>
-                                            <div class="ml-auto">88</div>
+                                            <div class="ml-auto">
+                                                {{ incomeDetail.teacher }}
+                                            </div>
                                         </div>
                                         <div class="flex mt-1.5">
                                             <div>บุคลากร</div>
-                                            <div class="ml-auto">2</div>
+                                            <div class="ml-auto">
+                                                {{ incomeDetail.staff }}
+                                            </div>
                                         </div>
                                         <div
                                             class="flex mt-3 text-gray-400 text-xs font-light"
                                         >
                                             <div># ข้อมูลเดือน</div>
                                             <div class="ml-auto">
-                                                เมษายน 2568
+                                                {{
+                                                    moment().format("MMMM YYYY")
+                                                }}
                                             </div>
                                         </div>
                                         <button
                                             class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4"
                                         >
-                                            Real-Time Report
+                                            Request AI Analysis
                                         </button>
                                     </div>
                                 </div>
@@ -503,15 +518,15 @@
                                     <select
                                         class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto form-select box"
                                     >
-                                        <option value="daily">รายวัน</option>
+                                        <!-- <option value="daily">รายวัน</option> -->
                                         <option value="monthly">
                                             รายเดือน
                                         </option>
-                                        <option value="yearly">รายปี</option>
+                                        <!-- <option value="yearly">รายปี</option> -->
                                     </select>
                                 </div>
                                 <div class="flex justify-center">
-                                    <div class="h-auto w-full ">
+                                    <div class="h-auto w-full">
                                         <canvas
                                             class="hover:cursor-pointer"
                                             ref="reportBookOne"
@@ -535,18 +550,29 @@
                                                     class="text-sm text-gray-400 pl-2"
                                                     >จำนวน</span
                                                 >
-                                                <span class="text-md px-2"
-                                                    >689</span
-                                                >
+                                                <span class="text-md px-2">{{
+                                                    bookDetail.borrow
+                                                }}</span>
                                                 <span
                                                     class="text-sm text-gray-400"
                                                     >รายการยืม</span
                                                 >
                                             </div>
 
-                                            <div class="mt-4 text-slate-500">
-                                                # ข้อมูลเดือน เมษายน 2568
+                                            <div
+                                                class="mt-4 text-slate-500 text-xs"
+                                            >
+                                                # ข้อมูลเดือน
+                                                {{
+                                                    moment().format("MMMM YYYY")
+                                                }}
                                             </div>
+
+                                            <button
+                                                class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4"
+                                            >
+                                                Request AI Analysis
+                                            </button>
                                         </div>
                                         <div
                                             class="px-8 py-4 flex flex-col justify-center flex-1 border-t sm:border-t-0 sm:border-l border-slate-200 dark:border-darkmode-300 border-dashed"
@@ -557,6 +583,7 @@
                                             <div
                                                 class="mt-1.5 flex items-center"
                                             >
+                                                {{ bookDetail.satit }}
                                                 <div class="text-base">
                                                     <span
                                                         class="text-xs text-gray-400"
@@ -577,8 +604,10 @@
                                             <div
                                                 class="mt-1.5 flex items-center"
                                             >
-                                                <div class="text-base text-amber-400">
-                                                    22
+                                                <div
+                                                    class="text-base text-amber-400"
+                                                >
+                                                    {{ bookDetail.bachelor }}
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -598,6 +627,7 @@
                                             <div
                                                 class="mt-1.5 flex items-center"
                                             >
+                                                {{ bookDetail.graduate }}
                                                 <div class="text-base">
                                                     <span
                                                         class="text-xs text-gray-400"
@@ -618,6 +648,7 @@
                                             <div
                                                 class="mt-1.5 flex items-center"
                                             >
+                                                {{ bookDetail.master }}
                                                 <div class="text-base">
                                                     <span
                                                         class="text-xs text-gray-400"
@@ -638,8 +669,10 @@
                                             <div
                                                 class="mt-1.5 flex items-center"
                                             >
-                                                <div class="text-base text-amber-400">
-                                                    660
+                                                <div
+                                                    class="text-base text-amber-400"
+                                                >
+                                                    {{ bookDetail.academic }}
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -659,8 +692,10 @@
                                             <div
                                                 class="mt-1.5 flex items-center"
                                             >
-                                                <div class="text-base text-amber-400">
-                                                    7
+                                                <div
+                                                    class="text-base text-amber-400"
+                                                >
+                                                    {{ bookDetail.support }}
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -986,6 +1021,16 @@
                                                             ></canvas>
                                                         </div>
                                                     </div>
+                                                    <div
+                                                        class="text-slate-500 text-xs"
+                                                    >
+                                                        # ข้อมูลเดือน
+                                                        {{
+                                                            moment().format(
+                                                                "MMMM YYYY"
+                                                            )
+                                                        }}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1003,6 +1048,16 @@
                                                             ref="reportStdTwo"
                                                         ></canvas>
                                                     </div>
+                                                </div>
+                                                <div
+                                                    class="text-slate-500 text-xs"
+                                                >
+                                                    # ข้อมูลเดือน
+                                                    {{
+                                                        moment().format(
+                                                            "MMMM YYYY"
+                                                        )
+                                                    }}
                                                 </div>
                                             </div>
                                         </div>
@@ -1166,11 +1221,11 @@
                                         >
                                             รับฟังเสียงผู้ใช้ (VOC)
                                         </h2>
-                                        <a
+                                        <!-- <a
                                             href=""
                                             class="ml-auto text-primary truncate"
                                             >Show More</a
-                                        >
+                                        > -->
                                     </div>
                                     <div
                                         class="mt-5 relative before:block before:absolute before:w-px before:h-[85%] before:bg-slate-200 before:dark:bg-darkmode-400 before:ml-5 before:mt-5"
@@ -1184,9 +1239,10 @@
                                                 <div
                                                     class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden"
                                                 >
+                                                    <!-- color="#075985" -->
                                                     <box-icon
                                                         name="user-voice"
-                                                        color="#075985"
+                                                        color="white"
                                                         size="md"
                                                     ></box-icon>
                                                 </div>
@@ -1225,7 +1281,7 @@
                                                 >
                                                     <box-icon
                                                         name="user-voice"
-                                                        color="#075985"
+                                                        color="white"
                                                         size="md"
                                                     ></box-icon>
                                                 </div>
@@ -1261,7 +1317,7 @@
                                                 >
                                                     <box-icon
                                                         name="bar-chart"
-                                                        color="#075985"
+                                                        color="white"
                                                         size="md"
                                                     ></box-icon>
                                                 </div>
@@ -1292,7 +1348,7 @@
                                                 >
                                                     <box-icon
                                                         name="bar-chart"
-                                                        color="#075985"
+                                                        color="white"
                                                         size="md"
                                                     ></box-icon>
                                                 </div>
@@ -1334,7 +1390,7 @@
                                             class="table table-report sm:mt-2"
                                         >
                                             <thead
-                                                class="bg-white opacity-80 rounded-full shadow-md"
+                                                class="bg-gray-500 opacity-80 rounded-full shadow-md"
                                             >
                                                 <tr>
                                                     <th
@@ -1752,18 +1808,21 @@
 import axios from "axios";
 import "boxicons";
 import Chart from "chart.js/auto";
+import moment from "moment"; //format date thai
+import "moment/dist/locale/th";
+moment.locale("th");
 
 export default {
     mounted() {
-        this.reportOpac();
+        this.reportIncome();
+        this.reportBook();
         this.reportMember();
         this.reportMemberTwo();
-        this.reportBarChart();
         this.reportVocBar();
         this.reportVocDonut();
         this.reportStdDonut();
         this.reportStdBar();
-        this.reportBookBar();
+        this.reportOpac();
     },
     data() {
         return {
@@ -1772,24 +1831,29 @@ export default {
             pic2: "/img/02.jpg",
             pic3: "/img/03.jpg",
             pic4: "/img/04.jpg",
-            pictu1: "https://library.msu.ac.th/wp-content/uploads/2022/02/lexicomp-300x180.jpg",
-            pictu2: "https://library.msu.ac.th/wp-content/uploads/2022/02/ScienceDirect-300x180.jpg",
-            pictu3: "https://library.msu.ac.th/wp-content/uploads/2024/11/scopus-2.png",
-            pictu4: "https://library.msu.ac.th/wp-content/uploads/2024/05/acc.png",
-            pictu5: "https://library.msu.ac.th/wp-content/uploads/2022/02/ebsco-300x180.jpg",
-            pictu6: "https://library.msu.ac.th/wp-content/uploads/2022/02/acs-1-300x180.jpg",
-            pictu7: "https://library.msu.ac.th/wp-content/uploads/2022/02/engineering-source-300x180.jpg",
-            pictu8: "https://library.msu.ac.th/wp-content/uploads/2022/02/SpringerLink-–-Journal-300x180.jpg",
-            pictu9: "https://library.msu.ac.th/wp-content/uploads/2022/02/emerald_insght-300x180.jpg",
-            pictu10:
-                "https://library.msu.ac.th/wp-content/uploads/2024/11/sdgo.jpg",
-            isDarkMode: false,
+            //pictu1: "https://library.msu.ac.th/wp-content/uploads/2022/02/lexicomp-300x180.jpg",
+            // pictu2: "https://library.msu.ac.th/wp-content/uploads/2022/02/ScienceDirect-300x180.jpg",
+            // pictu3: "https://library.msu.ac.th/wp-content/uploads/2024/11/scopus-2.png",
+            // pictu4: "https://library.msu.ac.th/wp-content/uploads/2024/05/acc.png",
+            // pictu5: "https://library.msu.ac.th/wp-content/uploads/2022/02/ebsco-300x180.jpg",
+            // pictu6: "https://library.msu.ac.th/wp-content/uploads/2022/02/acs-1-300x180.jpg",
+            // pictu7: "https://library.msu.ac.th/wp-content/uploads/2022/02/engineering-source-300x180.jpg",
+            // pictu8: "https://library.msu.ac.th/wp-content/uploads/2022/02/SpringerLink-–-Journal-300x180.jpg",
+            // pictu9: "https://library.msu.ac.th/wp-content/uploads/2022/02/emerald_insght-300x180.jpg",
+            // pictu10: "https://library.msu.ac.th/wp-content/uploads/2024/11/sdgo.jpg",
+            isDarkMode: true,
             showWelcome: true,
             opacList: "",
             modalMenu: false,
             showMemberOne: true,
             showMemberTwo: false,
             isModalShow: false,
+            video: "/img/bg/01.mp4",
+            bookDetail: "",
+            memberDetail: "",
+            memberDetailTwo: "",
+            incomeDetail: "",
+            moment: moment,
         };
     },
     methods: {
@@ -1811,115 +1875,11 @@ export default {
         welcome() {
             this.showWelcome = false;
         },
-        reportOpac() {
-            // const config = {                                    //ใส่ทุกครั้งที่รับ File เข้ามา
-            //     headers: {
-            //         'token': 'RqG9I+wk/cB9TiCgCbSOGFq7exTxD6fLMoVeCNtLNrj8XTJdVnNMov9mAgLOEqTBKikM6id3P7ELFjt3gqyCjA=='
-            //     }
-            // }
-            // axios
-            //     .get("https://libapp.msu.ac.th/v1/api/GetTopView", config)
-            //     .then((response) => {
-            //         console.log(response)
-            //     })
-            //     .catch((err) => {
-            //         console.log(err);
-            //     });
-            axios
-                .get("/api/GetTopView")
-                .then((response) => {
-                    this.opacList = response.data;
-                })
-                .catch((err) => {});
-        },
         link(id) {
             window.open(
                 "https://opac.msu.ac.th/results?Ntk=KEYWORD&Ntt=" + id,
                 "_blank"
             );
-        },
-        reportMember() {
-            const ctx = this.$refs.reportUserOne;
-            let myUserOne = new Chart(ctx, {
-                type: "doughnut",
-                data: {
-                    labels: "",
-                    datasets: [
-                        {
-                            label: "Data",
-                            data: [2102, 67090, 2503, 1528, 2022, 2318],
-                            backgroundColor: [
-                                "#0ea5e9",
-                                "#0d9488",
-                                "#fb923c",
-                                "#facc15",
-                                "#64748b",
-                                "#a3e635",
-                            ],
-                            hoverBackgroundColor: ["#9BD0F5", "#9BD0F5"],
-                            borderWidth: 5,
-                            borderColor: "#fff",
-                        },
-                    ],
-                },
-                options: {
-                    responsive: true,
-                    animation: {
-                        duration: 2000,
-                        easing: "easeOutBounce",
-                    },
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false,
-                        },
-                        tooltip: {
-                            backgroundColor: "#333",
-                            titleColor: "#fff",
-                            bodyColor: "#fff",
-                        },
-                    },
-                    cutout: "80%",
-                },
-            });
-        },
-        reportMemberTwo() {
-            const ctx = this.$refs.reportUserTwo;
-            let myUserTwo = new Chart(ctx, {
-                type: "doughnut",
-                data: {
-                    labels: "",
-                    datasets: [
-                        {
-                            label: "Data",
-                            data: [73312, 4340, 8],
-                            backgroundColor: ["#0ea5e9", "#0d9488", "#fb923c"],
-                            hoverBackgroundColor: ["#9BD0F5", "#9BD0F5"],
-                            borderWidth: 5,
-                            borderColor: "#fff",
-                        },
-                    ],
-                },
-                options: {
-                    responsive: true,
-                    animation: {
-                        duration: 2000,
-                        easing: "easeOutBounce",
-                    },
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false,
-                        },
-                        tooltip: {
-                            backgroundColor: "#333",
-                            titleColor: "#fff",
-                            bodyColor: "#fff",
-                        },
-                    },
-                    cutout: "80%",
-                },
-            });
         },
         getImage(id) {
             //  const config = {                                    //ใส่ทุกครั้งที่รับ File เข้ามา
@@ -1934,66 +1894,349 @@ export default {
             //         return response;
             //     });
         },
-        reportBarChart() {
-            // Fake visitor data
-            let reportBarChartData = new Array(40).fill(0).map((data, key) => {
-                if (key % 3 == 0 || key % 5 == 0) {
-                    return Math.ceil(Math.random() * (0 - 20) + 20);
-                } else {
-                    return Math.ceil(Math.random() * (0 - 7) + 7);
-                }
-            });
+        reportIncome() {
+            fetch(
+                "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLiI5DgZzU7QqVrcm0uQB_2E34skz7GCIMBubEddg4-IaJ8XgfTlrwyPucLYaK60rJWJ9ytgG_dJtJlgV_PJS0SjQLe8W32yMO_j51khEa9RdVrUCOeG4-G3oC2RpwCWpKiU45MfGwnhFFjKiQ-rUfcqpu1LOpy3CFEmLRoAMP1AjXKTcXdcIeTpq11V6OPMpSqjaTmJ3Z6JK6ZdCW9_645Ug9PtoTSSjC97thLZPdKDo84cwMLcBdpACPd8pcazkan6GTCs6Iugq41AwPfbCZhq53yHkA&lib=MScLvDAZvp9hXKkQ7BwnIsLN54MR286vU"
+            )
+                .then((response) => response.json())
+                .then((dataIncome) => {
+                    const firstRow = dataIncome[0];
 
-            const ctx = this.$refs.reportBar;
-            let myBarChart = new Chart(ctx, {
-                type: "bar",
-                data: {
-                    labels: reportBarChartData,
-                    datasets: [
-                        {
-                            label: "",
-                            barThickness: 6,
-                            data: reportBarChartData,
-                            backgroundColor: "#0d9488",
-                        },
-                    ],
-                },
-                options: {
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false,
-                        },
-                    },
-                    scales: {
-                        x: {
-                            ticks: {
-                                display: false,
-                            },
-                            grid: {
-                                display: false,
-                            },
-                        },
-                        y: {
-                            ticks: {
-                                display: false,
-                            },
-                            grid: {
-                                display: false,
-                                drawBorder: false,
-                            },
-                        },
-                    },
-                },
-            });
-            setInterval(() => {
-                // Swap visitor data
-                let newData = reportBarChartData[0];
-                reportBarChartData.shift();
-                reportBarChartData.push(newData);
+                    this.incomeDetail = {
+                        income: firstRow.income || "",
+                        student: firstRow.student || "",
+                        nisit: firstRow.nisit || "",
+                        teacher: firstRow.teacher || "",
+                        staff: firstRow.staff || "",
+                    };
 
-                myBarChart.update();
-            }, 1000);
+                    // Fake visitor data
+                    let reportBarChartData = new Array(40)
+                        .fill(0)
+                        .map((data, key) => {
+                            if (key % 3 == 0 || key % 5 == 0) {
+                                return Math.ceil(Math.random() * (0 - 20) + 20);
+                            } else {
+                                return Math.ceil(Math.random() * (0 - 7) + 7);
+                            }
+                        });
+
+                    const ctx = this.$refs.reportIncome;
+
+                    // เก็บ chart instance ในตัวแปร
+                    const myBarChart = new Chart(ctx, {
+                        type: "bar",
+                        data: {
+                            labels: reportBarChartData,
+                            datasets: [
+                                {
+                                    label: "",
+                                    barThickness: 6,
+                                    data: reportBarChartData,
+                                    backgroundColor: "#0d9488",
+                                },
+                            ],
+                        },
+                        options: {
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false,
+                                },
+                            },
+                            scales: {
+                                x: {
+                                    ticks: {
+                                        display: false,
+                                    },
+                                    grid: {
+                                        display: false,
+                                    },
+                                },
+                                y: {
+                                    ticks: {
+                                        display: false,
+                                    },
+                                    grid: {
+                                        display: false,
+                                        drawBorder: false,
+                                    },
+                                },
+                            },
+                        },
+                    });
+
+                    setInterval(() => {
+                        // Swap visitor data
+                        let newData = reportBarChartData[0];
+                        reportBarChartData.shift();
+                        reportBarChartData.push(newData);
+
+                        myBarChart.data.datasets[0].data = reportBarChartData;
+                        myBarChart.update();
+                    }, 1000);
+                });
+        },
+        reportBook() {
+            fetch(
+                "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjgOX_J4Swg5lJXWe8mBO1Pe6jYHfB_qqDg3uOILSoyI6wOl2DS4GrQvL0N_E6udVzo7tNt2GJYamauj7sAo0MYd0hhwK_NZ-70aRrBS56v_kwTs4W-K0dQd7NNgHrQIr1GzvBqRL8POSaEpj1DBPMKS1R9Pnzan2XR81NZZ8eMv_geucbYWIBgipNklTQ0dmq5lR980EtIPzOxufTgJcTEBmjtgrsGos_6PxiIw2JJP-X2uzdB9wFzcBtaCqwI9oXpl-QTCsQd5opuO1vWUfODj4JT8rcMXcBA-i8V&lib=MfFKpDvkbxsVrVICzLEcZofhElnTbI1Nb"
+            ) // แก้เป็น URL ของคุณ
+                .then((response) => response.json())
+                .then((data) => {
+                    // สมมติ data เป็น array ของ object (แบบ JSON ที่คุณส่งมา)
+                    const firstRow = data[0];
+
+                    // ดึงเฉพาะค่าเดือน 01-12
+                    const monthData = [
+                        firstRow.jan || 0,
+                        firstRow.feb || 0,
+                        firstRow.mar || 0,
+                        firstRow.apr || 0,
+                        firstRow.may || 0,
+                        firstRow.june || 0,
+                        firstRow.jul || 0,
+                        firstRow.aug || 0,
+                        firstRow.sep || 0,
+                        firstRow.oct || 0,
+                        firstRow.nov || 0,
+                        firstRow.dec || 0,
+                    ];
+
+                    // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
+                    this.bookDetail = {
+                        borrow: firstRow.borrow || "",
+                        satit: firstRow.satit || "",
+                        bachelor: firstRow.bachelor || "",
+                        graduate: firstRow.graduate || "",
+                        master: firstRow.master || "",
+                        academic: firstRow.academic || "",
+                        support: firstRow.support || "",
+                    };
+
+                    // สร้างกราฟ Chart.js
+                    Chart.defaults.font.family = "Anuphan";
+                    const ctx = this.$refs.reportBookOne;
+
+                    new Chart(ctx, {
+                        type: "bar",
+                        data: {
+                            labels: [
+                                "01",
+                                "02",
+                                "03",
+                                "04",
+                                "05",
+                                "06",
+                                "07",
+                                "08",
+                                "09",
+                                "10",
+                                "11",
+                                "12",
+                            ],
+                            datasets: [
+                                {
+                                    label: "สถิติการยืม รายเดือน / 2568",
+                                    data: monthData, // ใช้ข้อมูลจาก API
+                                    backgroundColor: [
+                                        "#ff6384",
+                                        "#36a2eb",
+                                        "#ffcd56",
+                                        "#4bc0c0",
+                                        "#9966ff",
+                                        "#ff9f40",
+                                        "#ff6384",
+                                        "#36a2eb",
+                                        "#ffcd56",
+                                        "#4bc0c0",
+                                        "#9966ff",
+                                        "#ff9f40",
+                                    ],
+                                    borderWidth: 2,
+                                    borderColor: "#fff",
+                                    borderRadius: 10,
+                                    borderSkipped: false,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            animation: {
+                                duration: 2000,
+                                easing: "easeOutBounce",
+                            },
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    labels: {
+                                        color: "white",
+                                    },
+                                },
+                                tooltip: {
+                                    backgroundColor: "#333",
+                                    titleColor: "#fff",
+                                    bodyColor: "#fff",
+                                },
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        color: "white",
+                                    },
+                                },
+                                x: {
+                                    ticks: {
+                                        color: "white",
+                                    },
+                                },
+                            },
+                        },
+                    });
+                });
+        },
+        reportMember() {
+            fetch(
+                "https://script.google.com/macros/s/AKfycbyXblLBN3PAiSDXQ3kWLbOsmZLSLUXmvHnrCzUMc8UnxBSuhZvD7s-4d6de9paHLZr1jQ/exec"
+            ) // แก้เป็น URL ของคุณ
+                .then((response) => response.json())
+                .then((data) => {
+                    // สมมติ data เป็น array ของ object (แบบ JSON ที่คุณส่งมา)
+                    const firstRow = data[0];
+
+                    // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
+                    const memberData = [
+                        firstRow.satit || 0,
+                        firstRow.bachelor || 0,
+                        firstRow.graduate || 0,
+                        firstRow.master || 0,
+                        firstRow.academic || 0,
+                        firstRow.support || 0,
+                    ];
+
+                    this.memberDetail = {
+                        satit: firstRow.satit || "",
+                        bachelor: firstRow.bachelor || "",
+                        graduate: firstRow.graduate || "",
+                        gmaster: firstRow.master || "",
+                        academic: firstRow.academic || "",
+                        support: firstRow.support || "",
+                    };
+
+                    const ctx = this.$refs.reportUserOne;
+                    new Chart(ctx, {
+                        type: "doughnut",
+                        data: {
+                            labels: "",
+                            datasets: [
+                                {
+                                    label: "Data",
+                                    data: memberData,
+                                    backgroundColor: [
+                                        "#0ea5e9",
+                                        "#0d9488",
+                                        "#fb923c",
+                                        "#facc15",
+                                        "#64748b",
+                                        "#a3e635",
+                                    ],
+                                    hoverBackgroundColor: [
+                                        "#9BD0F5",
+                                        "#9BD0F5",
+                                    ],
+                                    borderWidth: 5,
+                                    borderColor: "#fff",
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            animation: {
+                                duration: 2000,
+                                easing: "easeOutBounce",
+                            },
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false,
+                                },
+                                tooltip: {
+                                    backgroundColor: "#333",
+                                    titleColor: "#fff",
+                                    bodyColor: "#fff",
+                                },
+                            },
+                            cutout: "80%",
+                        },
+                    });
+                });
+        },
+        reportMemberTwo() {
+            fetch(
+                "https://script.google.com/macros/s/AKfycbyXblLBN3PAiSDXQ3kWLbOsmZLSLUXmvHnrCzUMc8UnxBSuhZvD7s-4d6de9paHLZr1jQ/exec"
+            ) // แก้เป็น URL ของคุณ
+                .then((response) => response.json())
+                .then((data) => {
+                    // สมมติ data เป็น array ของ object (แบบ JSON ที่คุณส่งมา)
+                    const firstRow = data[0];
+
+                    // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
+                    const memberDataTwo = [
+                        firstRow.student || 0,
+                        firstRow.staff || 0,
+                        firstRow.patron || 0,
+                    ];
+
+                    this.memberDetailTwo = {
+                        student: firstRow.student || "",
+                        staff: firstRow.staff || "",
+                        patron: firstRow.patron || "",
+                    };
+
+                    const ctx = this.$refs.reportUserTwo;
+                    new Chart(ctx, {
+                        type: "doughnut",
+                        data: {
+                            labels: "",
+                            datasets: [
+                                {
+                                    label: "Data",
+                                    data: memberDataTwo,
+                                    backgroundColor: [
+                                        "#0ea5e9",
+                                        "#0d9488",
+                                        "#fb923c",
+                                    ],
+                                    hoverBackgroundColor: [
+                                        "#9BD0F5",
+                                        "#9BD0F5",
+                                    ],
+                                    borderWidth: 5,
+                                    borderColor: "#fff",
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            animation: {
+                                duration: 2000,
+                                easing: "easeOutBounce",
+                            },
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false,
+                                },
+                                tooltip: {
+                                    backgroundColor: "#333",
+                                    titleColor: "#fff",
+                                    bodyColor: "#fff",
+                                },
+                            },
+                            cutout: "80%",
+                        },
+                    });
+                });
         },
         reportVocBar() {
             Chart.defaults.font.family = "Anuphan";
@@ -2032,6 +2275,9 @@ export default {
                     plugins: {
                         legend: {
                             display: true,
+                            labels: {
+                                color: "white", // <- ใส่ตรงนี้!
+                            },
                         },
                         tooltip: {
                             backgroundColor: "#333",
@@ -2042,6 +2288,14 @@ export default {
                     scales: {
                         y: {
                             beginAtZero: true,
+                            ticks: {
+                                color: "white", // <- ใส่ตรงนี้!
+                            },
+                        },
+                        x: {
+                            ticks: {
+                                color: "white", // <- ใส่ตรงนี้!
+                            },
                         },
                     },
                 },
@@ -2085,6 +2339,9 @@ export default {
                     plugins: {
                         legend: {
                             display: true,
+                            labels: {
+                                color: "white", // <- ใส่ตรงนี้!
+                            },
                         },
                         tooltip: {
                             backgroundColor: "#333",
@@ -2095,6 +2352,14 @@ export default {
                     scales: {
                         y: {
                             beginAtZero: true,
+                            ticks: {
+                                color: "white", // <- ใส่ตรงนี้!
+                            },
+                        },
+                        x: {
+                            ticks: {
+                                color: "white", // <- ใส่ตรงนี้!
+                            },
                         },
                     },
                 },
@@ -2132,11 +2397,15 @@ export default {
                     plugins: {
                         legend: {
                             position: "top",
+                            labels: {
+                                color: "white", // <- ใส่ตรงนี้!
+                            },
                         },
                         title: {
                             display: true,
                             text: "สถานที่",
                             font: { weight: "normal" },
+                            color: "white",
                         },
                         tooltip: {
                             backgroundColor: "#333",
@@ -2194,6 +2463,9 @@ export default {
                     plugins: {
                         legend: {
                             display: true,
+                            labels: {
+                                color: "white", // <- ใส่ตรงนี้!
+                            },
                         },
                         tooltip: {
                             backgroundColor: "#333",
@@ -2204,95 +2476,39 @@ export default {
                     scales: {
                         y: {
                             beginAtZero: true,
+                            ticks: {
+                                color: "white", // <- ใส่ตรงนี้!
+                            },
+                        },
+                        x: {
+                            ticks: {
+                                color: "white", // <- ใส่ตรงนี้!
+                            },
                         },
                     },
                 },
             });
         },
-        reportBookBar() {
-            Chart.defaults.font.family = "Anuphan";
-            const ctx = this.$refs.reportBookOne;
-            let myBookTwo = new Chart(ctx, {
-                type: "bar",
-                data: {
-                    labels: [
-                        "01",
-                        "02",
-                        "03",
-                        "04",
-                        "05",
-                        "06",
-                        "07",
-                        "08",
-                        "09",
-                        "10",
-                        "11",
-                        "12",
-                    ],
-                    datasets: [
-                        {
-                            label: "สถิติการยืม รายเดือน / 2568",
-                            data: [
-                                9732, 10484, 10853, 689, 0, 0, 0, 0, 0, 0, 0, 0,
-                            ],
-                            backgroundColor: [
-                                "#ff6384",
-                                "#36a2eb",
-                                "#ffcd56",
-                                "#4bc0c0",
-                                "#9966ff",
-                                "#ff9f40",
-                                "#ff6384",
-                                "#36a2eb",
-                                "#ffcd56",
-                                "#4bc0c0",
-                                "#9966ff",
-                                "#ff9f40",
-                            ],
-                            borderColor: [
-                                "rgb(255, 99, 132)",
-                                "rgb(255, 159, 64)",
-                                "rgb(255, 205, 86)",
-                                "rgb(75, 192, 192)",
-                                "rgb(54, 162, 235)",
-                                "rgb(153, 102, 255)",
-                                "rgb(201, 203, 207)",
-                                "rgb(255, 99, 132)",
-                                "rgb(255, 159, 64)",
-                                "rgb(255, 205, 86)",
-                                "rgb(255, 99, 132)",
-                                "rgb(255, 159, 64)",
-                            ],
-                            borderWidth: 2,
-                            borderColor: "#fff",
-                            borderRadius: 10,
-                            borderSkipped: false,
-                        },
-                    ],
-                },
-                options: {
-                    responsive: true,
-                    animation: {
-                        duration: 2000,
-                        easing: "easeOutBounce",
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                        },
-                        tooltip: {
-                            backgroundColor: "#333",
-                            titleColor: "#fff",
-                            bodyColor: "#fff",
-                        },
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                        },
-                    },
-                },
-            });
+        reportOpac() {
+            // const config = {                                    //ใส่ทุกครั้งที่รับ File เข้ามา
+            //     headers: {
+            //         'token': 'RqG9I+wk/cB9TiCgCbSOGFq7exTxD6fLMoVeCNtLNrj8XTJdVnNMov9mAgLOEqTBKikM6id3P7ELFjt3gqyCjA=='
+            //     }
+            // }
+            // axios
+            //     .get("https://libapp.msu.ac.th/v1/api/GetTopView", config)
+            //     .then((response) => {
+            //         console.log(response)
+            //     })
+            //     .catch((err) => {
+            //         console.log(err);
+            //     });
+            axios
+                .get("/api/GetTopView")
+                .then((response) => {
+                    this.opacList = response.data;
+                })
+                .catch((err) => {});
         },
         memberShow() {
             this.showMemberOne = !this.showMemberOne;
@@ -2304,3 +2520,25 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.6; /* เพิ่มความโปร่งใสถ้าต้องการ */
+}
+
+.grid {
+    position: relative;
+    z-index: 10;
+    color: white;
+}
+</style>
