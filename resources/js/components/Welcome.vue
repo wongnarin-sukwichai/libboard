@@ -804,7 +804,9 @@
                                                         <div
                                                             class="text-xl font-medium"
                                                         >
-                                                            77,660
+                                                            {{
+                                                                memberDetail.all
+                                                            }}
                                                         </div>
                                                         <div
                                                             class="text-slate-500 mt-0.5"
@@ -827,7 +829,9 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >2,102</span
+                                                            >{{
+                                                                memberDetail.satit
+                                                            }}</span
                                                         >
                                                     </div>
                                                     <div
@@ -841,7 +845,9 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >67,090</span
+                                                            >{{
+                                                                memberDetail.bachelor
+                                                            }}</span
                                                         >
                                                     </div>
                                                     <div
@@ -855,7 +861,9 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >2,503</span
+                                                            >{{
+                                                                memberDetail.graduate
+                                                            }}</span
                                                         >
                                                     </div>
                                                     <div
@@ -869,7 +877,9 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >1,528</span
+                                                            >{{
+                                                                memberDetail.master
+                                                            }}</span
                                                         >
                                                     </div>
                                                     <div
@@ -883,7 +893,9 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >2,022</span
+                                                            >{{
+                                                                memberDetail.academic
+                                                            }}</span
                                                         >
                                                     </div>
                                                     <div
@@ -897,7 +909,9 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >2,318</span
+                                                            >{{
+                                                                memberDetail.support
+                                                            }}</span
                                                         >
                                                     </div>
                                                 </div>
@@ -928,7 +942,9 @@
                                                         <div
                                                             class="text-xl font-medium"
                                                         >
-                                                            77,660
+                                                            {{
+                                                                memberDetailTwo.all
+                                                            }}
                                                         </div>
                                                         <div
                                                             class="text-slate-500 mt-0.5"
@@ -951,7 +967,9 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >73,312</span
+                                                            >{{
+                                                                memberDetailTwo.nisit
+                                                            }}</span
                                                         >
                                                     </div>
                                                     <div
@@ -965,7 +983,9 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >4,340</span
+                                                            >{{
+                                                                memberDetailTwo.staff
+                                                            }}</span
                                                         >
                                                     </div>
                                                     <div
@@ -979,7 +999,9 @@
                                                         >
                                                         <span
                                                             class="font-medium ml-auto"
-                                                            >8</span
+                                                            >{{
+                                                                memberDetailTwo.patron
+                                                            }}</span
                                                         >
                                                     </div>
                                                 </div>
@@ -1078,12 +1100,18 @@
                                         class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto form-select box"
                                     >
                                         <!-- <option value="daily">รายวัน</option> -->
-                                        <option value="monthly">ทั้งหมด</option>
+                                        <option value="monthly">
+                                            รายเดือน
+                                        </option>
                                         <!-- <option value="yearly">รายปี</option> -->
                                     </select>
                                 </div>
                                 <div class="mt-5">
-                                    <div class="intro-y">
+                                    <div
+                                        v-for="(db, index) in dbOnline"
+                                        :key="index"
+                                        class="intro-y"
+                                    >
                                         <div
                                             class="box px-4 py-4 mb-3 flex items-center zoom-in"
                                         >
@@ -1092,12 +1120,12 @@
                                             >
                                                 <img
                                                     alt="Midone - HTML Admin Template"
-                                                    :src="pictu1"
+                                                    :src="db.pic"
                                                 />
                                             </div>
                                             <div class="ml-4 mr-auto">
                                                 <div class="font-medium">
-                                                    Lexicomp
+                                                    {{ db.name }}
                                                 </div>
                                                 <div
                                                     class="text-slate-500 text-xs mt-0.5"
@@ -1106,91 +1134,10 @@
                                             <div
                                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
                                             >
-                                                748
+                                                {{ db.count }}
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="intro-y">
-                                        <div
-                                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                                        >
-                                            <div
-                                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                                            >
-                                                <img
-                                                    alt="Midone - HTML Admin Template"
-                                                    :src="pictu2"
-                                                />
-                                            </div>
-                                            <div class="ml-4 mr-auto">
-                                                <div class="font-medium">
-                                                    ScienceDirect
-                                                </div>
-                                                <div
-                                                    class="text-slate-500 text-xs mt-0.5"
-                                                ></div>
-                                            </div>
-                                            <div
-                                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                                            >
-                                                377
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="intro-y">
-                                        <div
-                                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                                        >
-                                            <div
-                                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                                            >
-                                                <img
-                                                    alt="Midone - HTML Admin Template"
-                                                    :src="pictu3"
-                                                />
-                                            </div>
-                                            <div class="ml-4 mr-auto">
-                                                <div class="font-medium">
-                                                    Scopus
-                                                </div>
-                                                <div
-                                                    class="text-slate-500 text-xs mt-0.5"
-                                                ></div>
-                                            </div>
-                                            <div
-                                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                                            >
-                                                301
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="intro-y">
-                                        <div
-                                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                                        >
-                                            <div
-                                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                                            >
-                                                <img
-                                                    alt="Midone - HTML Admin Template"
-                                                    :src="pictu4"
-                                                />
-                                            </div>
-                                            <div class="ml-4 mr-auto">
-                                                <div class="font-medium">
-                                                    Access Medicine
-                                                </div>
-                                                <div
-                                                    class="text-slate-500 text-xs mt-0.5"
-                                                ></div>
-                                            </div>
-                                            <div
-                                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                                            >
-                                                214
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </div>                                
                                     <div
                                         class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-slate-400 hover:border-emerald-600 dark:border-darkmode-300 text-slate-500 cursor-pointer"
                                         @click="modalShow()"
@@ -1249,60 +1196,32 @@
                                             </div>
                                             <div
                                                 class="box px-5 py-3 ml-4 flex-1 zoom-in"
+                                                v-for="
+                                                    (vocText, index) in vocText
+                                                "
+                                                :key="index"
                                             >
                                                 <div class="flex items-center">
-                                                    <div class="font-medium">
-                                                        อยากขออนุญาตสอบถามเกี่ยวกับการจ่ายค่าปรับหนัวสือค่ะ
-                                                        พอดีชำระค่าปรับหนังสือที่ห้องสมุดไปแล้ว
-                                                        แต่ว่าใน REG ยังขึ้นว่า
-                                                        lock หนี้จากห้องสมุดอยู่
-                                                        กลัวว่าจะมีปัญหาในการลงทะเบียนเรียนในเทอมต่อไป
-                                                        จึงอยากสอบถามว่าระบบจะอัพเดทอีกทีตอนไหนคะ
+                                                    <div
+                                                        class="font-medium text-balance break-all"
+                                                    >
+                                                        {{ voc.detail }}
                                                     </div>
                                                     <div
                                                         class="text-xs text-slate-500 ml-auto"
                                                     >
-                                                        21:00 PM
+                                                        {{ voc.detail.name }}
+                                                        ***
                                                     </div>
                                                 </div>
                                                 <div
-                                                    class="text-slate-500 mt-1"
-                                                ></div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="intro-x relative flex items-center mb-3"
-                                        >
-                                            <div
-                                                class="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5"
-                                            >
-                                                <div
-                                                    class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden"
+                                                    class="text-slate-500 mt-1 text-xs"
                                                 >
-                                                    <box-icon
-                                                        name="user-voice"
-                                                        color="white"
-                                                        size="md"
-                                                    ></box-icon>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="box px-5 py-3 ml-4 flex-1 zoom-in"
-                                            >
-                                                <div class="flex items-center">
-                                                    <div class="font-medium">
-                                                        อยากให้ห้อง Pavilion
-                                                        มีระบบการจองห้องให้ชัดเจน
-                                                        เพราะมีหลายคนไม่รู้ว่าต้องจองบางคนเข้าไปนั่งเลย
-                                                    </div>
-                                                    <div
-                                                        class="text-xs text-slate-500 ml-auto"
-                                                    >
-                                                        13:38 PM
-                                                    </div>
-                                                </div>
-                                                <div class="text-slate-500">
-                                                    <div class="mt-1"></div>
+                                                    {{
+                                                        moment(
+                                                            voc.created_at
+                                                        ).format("L")
+                                                    }}
                                                 </div>
                                             </div>
                                         </div>
@@ -1403,16 +1322,6 @@
                                                     >
                                                         TITLE
                                                     </th>
-                                                    <!-- <th
-                                                        class="text-center whitespace-nowrap"
-                                                    >
-                                                        LANGUAGE
-                                                    </th>
-                                                    <th
-                                                        class="text-center whitespace-nowrap"
-                                                    >
-                                                        STATUS
-                                                    </th> -->
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -1424,24 +1333,6 @@
                                                     :key="index"
                                                     @click="link(opac.BIBID)"
                                                 >
-                                                    <!-- <td class="w-40">
-                                                    <div class="flex">
-                                                        <div
-                                                            class="w-10 h-10 image-fit zoom-in"
-                                                        >
-                                                            <img
-                                                                alt="Midone - HTML Admin Template"
-                                                                class="tooltip"
-                                                                title="Uploaded at 7 June 2020"
-                                                                :src="
-                                                                    getImage(
-                                                                        opac.BIBID
-                                                                    )
-                                                                "
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </td> -->
                                                     <td
                                                         class="w-40 text-center"
                                                     >
@@ -1467,20 +1358,6 @@
                                                             {{ opac.BIBID }}
                                                         </div>
                                                     </td>
-                                                    <!-- <td class="text-center">
-                                                        {{ opac.LANG }}
-                                                    </td>
-                                                    <td class="w-40">
-                                                        <div
-                                                            class="flex items-center justify-center text-success"
-                                                        >
-                                                            <i
-                                                                data-lucide="check-square"
-                                                                class="w-4 h-4 mr-2"
-                                                            ></i>
-                                                            Active
-                                                        </div>
-                                                    </td> -->
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -1527,7 +1404,11 @@
                 </p>
                 <hr class="border-dashed" />
                 <div class="mt-5">
-                    <div class="intro-y">
+                    <div
+                        v-for="(db, index) in dbOnlineTwo"
+                        :key="index"
+                        class="intro-y"
+                    >
                         <div
                             class="box px-4 py-4 mb-3 flex items-center zoom-in"
                         >
@@ -1536,11 +1417,11 @@
                             >
                                 <img
                                     alt="Midone - HTML Admin Template"
-                                    :src="pictu1"
+                                    :src="db.pic"
                                 />
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium">Lexicomp</div>
+                                <div class="font-medium">{{ db.name }}</div>
                                 <div
                                     class="text-slate-500 text-xs mt-0.5"
                                 ></div>
@@ -1548,244 +1429,7 @@
                             <div
                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
                             >
-                                748
-                            </div>
-                        </div>
-                    </div>
-                    <div class="intro-y">
-                        <div
-                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                        >
-                            <div
-                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                            >
-                                <img
-                                    alt="Midone - HTML Admin Template"
-                                    :src="pictu2"
-                                />
-                            </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium">ScienceDirect</div>
-                                <div
-                                    class="text-slate-500 text-xs mt-0.5"
-                                ></div>
-                            </div>
-                            <div
-                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                            >
-                                377
-                            </div>
-                        </div>
-                    </div>
-                    <div class="intro-y">
-                        <div
-                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                        >
-                            <div
-                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                            >
-                                <img
-                                    alt="Midone - HTML Admin Template"
-                                    :src="pictu3"
-                                />
-                            </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium">Scopus</div>
-                                <div
-                                    class="text-slate-500 text-xs mt-0.5"
-                                ></div>
-                            </div>
-                            <div
-                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                            >
-                                301
-                            </div>
-                        </div>
-                    </div>
-                    <div class="intro-y">
-                        <div
-                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                        >
-                            <div
-                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                            >
-                                <img
-                                    alt="Midone - HTML Admin Template"
-                                    :src="pictu4"
-                                />
-                            </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium">Access Medicine</div>
-                                <div
-                                    class="text-slate-500 text-xs mt-0.5"
-                                ></div>
-                            </div>
-                            <div
-                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                            >
-                                214
-                            </div>
-                        </div>
-                    </div>
-                    <div class="intro-y">
-                        <div
-                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                        >
-                            <div
-                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                            >
-                                <img
-                                    alt="Midone - HTML Admin Template"
-                                    :src="pictu5"
-                                />
-                            </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium">
-                                    EBSCO Discovery Service (EDS) Plus Full Text
-                                </div>
-                                <div
-                                    class="text-slate-500 text-xs mt-0.5"
-                                ></div>
-                            </div>
-                            <div
-                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                            >
-                                122
-                            </div>
-                        </div>
-                    </div>
-                    <div class="intro-y">
-                        <div
-                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                        >
-                            <div
-                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                            >
-                                <img
-                                    alt="Midone - HTML Admin Template"
-                                    :src="pictu6"
-                                />
-                            </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium">
-                                    American Chemical Society Journal
-                                </div>
-                                <div class="text-slate-500 text-xs mt-0.5">
-                                    (ACS)
-                                </div>
-                            </div>
-                            <div
-                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                            >
-                                104
-                            </div>
-                        </div>
-                    </div>
-                    <div class="intro-y">
-                        <div
-                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                        >
-                            <div
-                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                            >
-                                <img
-                                    alt="Midone - HTML Admin Template"
-                                    :src="pictu7"
-                                />
-                            </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium">
-                                    Engineering Source
-                                </div>
-                                <div
-                                    class="text-slate-500 text-xs mt-0.5"
-                                ></div>
-                            </div>
-                            <div
-                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                            >
-                                95
-                            </div>
-                        </div>
-                    </div>
-                    <div class="intro-y">
-                        <div
-                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                        >
-                            <div
-                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                            >
-                                <img
-                                    alt="Midone - HTML Admin Template"
-                                    :src="pictu8"
-                                />
-                            </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium">
-                                    SpringerLink – Journal
-                                </div>
-                                <div
-                                    class="text-slate-500 text-xs mt-0.5"
-                                ></div>
-                            </div>
-                            <div
-                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                            >
-                                83
-                            </div>
-                        </div>
-                    </div>
-                    <div class="intro-y">
-                        <div
-                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                        >
-                            <div
-                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                            >
-                                <img
-                                    alt="Midone - HTML Admin Template"
-                                    :src="pictu9"
-                                />
-                            </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium">
-                                    Emerald Management
-                                </div>
-                                <div
-                                    class="text-slate-500 text-xs mt-0.5"
-                                ></div>
-                            </div>
-                            <div
-                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                            >
-                                80
-                            </div>
-                        </div>
-                    </div>
-                    <div class="intro-y">
-                        <div
-                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                        >
-                            <div
-                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                            >
-                                <img
-                                    alt="Midone - HTML Admin Template"
-                                    :src="pictu10"
-                                />
-                            </div>
-                            <div class="ml-4 mr-auto">
-                                <div class="font-medium">
-                                    Sustainable Development Goals Online
-                                </div>
-                                <div class="text-slate-500 text-xs mt-0.5">
-                                    (SDGO)
-                                </div>
-                            </div>
-                            <div
-                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                            >
-                                68
+                                {{ db.count }}
                             </div>
                         </div>
                     </div>
@@ -1818,8 +1462,9 @@ export default {
         this.reportBook();
         this.reportMember();
         this.reportMemberTwo();
+        this.reportVocText();
         this.reportVocBar();
-        this.reportVocDonut();
+        this.reportVocTwo();
         this.reportStdDonut();
         this.reportStdBar();
         this.reportOpac();
@@ -1831,16 +1476,6 @@ export default {
             pic2: "/img/02.jpg",
             pic3: "/img/03.jpg",
             pic4: "/img/04.jpg",
-            //pictu1: "https://library.msu.ac.th/wp-content/uploads/2022/02/lexicomp-300x180.jpg",
-            // pictu2: "https://library.msu.ac.th/wp-content/uploads/2022/02/ScienceDirect-300x180.jpg",
-            // pictu3: "https://library.msu.ac.th/wp-content/uploads/2024/11/scopus-2.png",
-            // pictu4: "https://library.msu.ac.th/wp-content/uploads/2024/05/acc.png",
-            // pictu5: "https://library.msu.ac.th/wp-content/uploads/2022/02/ebsco-300x180.jpg",
-            // pictu6: "https://library.msu.ac.th/wp-content/uploads/2022/02/acs-1-300x180.jpg",
-            // pictu7: "https://library.msu.ac.th/wp-content/uploads/2022/02/engineering-source-300x180.jpg",
-            // pictu8: "https://library.msu.ac.th/wp-content/uploads/2022/02/SpringerLink-–-Journal-300x180.jpg",
-            // pictu9: "https://library.msu.ac.th/wp-content/uploads/2022/02/emerald_insght-300x180.jpg",
-            // pictu10: "https://library.msu.ac.th/wp-content/uploads/2024/11/sdgo.jpg",
             isDarkMode: true,
             showWelcome: true,
             opacList: "",
@@ -1854,6 +1489,9 @@ export default {
             memberDetailTwo: "",
             incomeDetail: "",
             moment: moment,
+            vocText: "",
+            dbOnline: "",
+            dbOnlineTwo: "",
         };
     },
     methods: {
@@ -1884,7 +1522,7 @@ export default {
         getImage(id) {
             //  const config = {                                    //ใส่ทุกครั้งที่รับ File เข้ามา
             //     headers: {
-            //         'token': 'RqG9I+wk/cB9TiCgCbSOGFq7exTxD6fLMoVeCNtLNrj8XTJdVnNMov9mAgLOEqTBKikM6id3P7ELFjt3gqyCjA=='
+            //         'token': ''
             //     }
             // }
             // axios
@@ -2097,7 +1735,7 @@ export default {
         },
         reportMember() {
             fetch(
-                "https://script.google.com/macros/s/AKfycbyXblLBN3PAiSDXQ3kWLbOsmZLSLUXmvHnrCzUMc8UnxBSuhZvD7s-4d6de9paHLZr1jQ/exec"
+                "https://script.google.com/macros/s/AKfycbxqadaYYCf3xkezxEt7ppnd3IjzsYrSsmmLeabaozh168w9XE6-4CmwepXO3omNKYE-/exec"
             ) // แก้เป็น URL ของคุณ
                 .then((response) => response.json())
                 .then((data) => {
@@ -2115,6 +1753,7 @@ export default {
                     ];
 
                     this.memberDetail = {
+                        all: firstRow.all || "",
                         satit: firstRow.satit || "",
                         bachelor: firstRow.bachelor || "",
                         graduate: firstRow.graduate || "",
@@ -2173,7 +1812,7 @@ export default {
         },
         reportMemberTwo() {
             fetch(
-                "https://script.google.com/macros/s/AKfycbyXblLBN3PAiSDXQ3kWLbOsmZLSLUXmvHnrCzUMc8UnxBSuhZvD7s-4d6de9paHLZr1jQ/exec"
+                "https://script.google.com/macros/s/AKfycbw6uXjJZb8xBIk-dHKkoWRppNHqTrXG5ctLVSDJt1Ert6LghRyOmzwm0ubFK8wd42v2/exec"
             ) // แก้เป็น URL ของคุณ
                 .then((response) => response.json())
                 .then((data) => {
@@ -2182,13 +1821,14 @@ export default {
 
                     // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
                     const memberDataTwo = [
-                        firstRow.student || 0,
+                        firstRow.nisit || 0,
                         firstRow.staff || 0,
                         firstRow.patron || 0,
                     ];
 
                     this.memberDetailTwo = {
-                        student: firstRow.student || "",
+                        all: firstRow.all || "",
+                        nisit: firstRow.nisit || "",
                         staff: firstRow.staff || "",
                         patron: firstRow.patron || "",
                     };
@@ -2238,277 +1878,405 @@ export default {
                     });
                 });
         },
-        reportVocBar() {
-            Chart.defaults.font.family = "Anuphan";
-            const ctx = this.$refs.reportVocOne;
-            let myVocOne = new Chart(ctx, {
-                type: "bar",
-                data: {
-                    labels: ["ข้อร้องเรียน", "ข้อเสนอแนะ", "คำชืนชม"],
-                    datasets: [
-                        {
-                            label: "ประเภทคำร้อง",
-                            data: [2, 1, 0],
-                            backgroundColor: [
-                                "#ffcd56",
-                                "#4bc0c0",
-                                "rgba(54, 162, 235, 0.6)",
-                            ],
-                            borderColor: [
-                                "rgb(255, 205, 86)",
-                                "rgb(75, 192, 192)",
-                                "rgb(54, 162, 235)",
-                            ],
-                            borderWidth: 3,
-                            borderColor: "#fff",
-                            borderRadius: 10,
-                            borderSkipped: false,
-                        },
-                    ],
-                },
-                options: {
-                    responsive: true,
-                    animation: {
-                        duration: 2000,
-                        easing: "easeOutBounce",
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            labels: {
-                                color: "white", // <- ใส่ตรงนี้!
-                            },
-                        },
-                        tooltip: {
-                            backgroundColor: "#333",
-                            titleColor: "#fff",
-                            bodyColor: "#fff",
-                        },
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                color: "white", // <- ใส่ตรงนี้!
-                            },
-                        },
-                        x: {
-                            ticks: {
-                                color: "white", // <- ใส่ตรงนี้!
-                            },
-                        },
-                    },
-                },
-            });
-        },
-        reportVocDonut() {
-            Chart.defaults.font.family = "Anuphan";
+        reportVocText() {
+            const token = import.meta.env.LIBVOC_API_TOKEN;
 
-            const ctx = this.$refs.reportVocTwo;
-            let myVocTwo = new Chart(ctx, {
-                type: "bar",
-                data: {
-                    labels: ["นักศึกษา", "อาจารย์", "บุคลากร"],
-                    datasets: [
-                        {
-                            label: "ประเภทผู้ใช้บริการ",
-                            data: [3, 0, 0],
-                            backgroundColor: [
-                                "#ff6384",
-                                "rgba(255, 159, 64, 0.6)",
-                                "rgba(255, 205, 86, 0.6)",
-                            ],
-                            borderColor: [
-                                "rgb(255, 99, 132)",
-                                "rgb(255, 159, 64)",
-                                "rgb(255, 205, 86)",
-                            ],
-                            borderWidth: 3,
-                            borderColor: "#fff",
-                            borderRadius: 10,
-                            borderSkipped: false,
-                        },
-                    ],
+            const config = {
+                headers: {
+                    token: token,
                 },
-                options: {
-                    responsive: true,
-                    animation: {
-                        duration: 2000,
-                        easing: "easeOutBounce",
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            labels: {
-                                color: "white", // <- ใส่ตรงนี้!
-                            },
-                        },
-                        tooltip: {
-                            backgroundColor: "#333",
-                            titleColor: "#fff",
-                            bodyColor: "#fff",
-                        },
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                color: "white", // <- ใส่ตรงนี้!
-                            },
-                        },
-                        x: {
-                            ticks: {
-                                color: "white", // <- ใส่ตรงนี้!
-                            },
-                        },
-                    },
+            };
+
+            axios
+                .get("https://libvoc.msu.ac.th/api/getPost", config)
+                .then((response) => {
+                    this.vocText = response.data;
+                })
+                .catch((error) => {
+                    console.error("Error fetching data:", error);
+                });
+        },
+        reportVocBar() {
+            const token = import.meta.env.LIBVOC_API_TOKEN;
+
+            const config = {
+                headers: {
+                    token: token
                 },
-            });
+            };
+
+            axios
+                .get("https://libvoc.msu.ac.th/api/getConcern", config)
+                .then((response) => {
+                    const dataVoc = response.data;
+
+                    Chart.defaults.font.family = "Anuphan";
+                    const ctx = this.$refs.reportVocOne;
+                    new Chart(ctx, {
+                        type: "bar",
+                        data: {
+                            labels: ["ข้อร้องเรียน", "ข้อเสนอแนะ", "คำชืนชม"],
+                            datasets: [
+                                {
+                                    label: "ประเภทคำร้อง",
+                                    data: dataVoc,
+                                    backgroundColor: [
+                                        "#ffcd56",
+                                        "#4bc0c0",
+                                        "rgba(54, 162, 235, 0.6)",
+                                    ],
+                                    borderWidth: 3,
+                                    borderColor: "#fff",
+                                    borderRadius: 10,
+                                    borderSkipped: false,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            animation: {
+                                duration: 2000,
+                                easing: "easeOutBounce",
+                            },
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    labels: {
+                                        color: "white", // <- ใส่ตรงนี้!
+                                    },
+                                },
+                                tooltip: {
+                                    backgroundColor: "#333",
+                                    titleColor: "#fff",
+                                    bodyColor: "#fff",
+                                },
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        color: "white", // <- ใส่ตรงนี้!
+                                    },
+                                },
+                                x: {
+                                    ticks: {
+                                        color: "white", // <- ใส่ตรงนี้!
+                                    },
+                                },
+                            },
+                        },
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error fetching data:", error);
+                });
+        },
+        reportVocTwo() {
+            const token = import.meta.env.LIBVOC_API_TOKEN;
+
+            const config = {
+                headers: {
+                    token: token
+                },
+            };
+
+            axios
+                .get("https://libvoc.msu.ac.th/api/getType", config)
+                .then((response) => {
+                    const dataVoc = response.data;
+
+                    Chart.defaults.font.family = "Anuphan";
+
+                    const ctx = this.$refs.reportVocTwo;
+                    new Chart(ctx, {
+                        type: "bar",
+                        data: {
+                            labels: ["นักศึกษา", "อาจารย์", "บุคลากร"],
+                            datasets: [
+                                {
+                                    label: "ประเภทผู้ใช้บริการ",
+                                    data: dataVoc,
+                                    backgroundColor: [
+                                        "#ff6384",
+                                        "rgba(255, 159, 64, 0.6)",
+                                        "rgba(255, 205, 86, 0.6)",
+                                    ],
+                                    borderColor: [
+                                        "rgb(255, 99, 132)",
+                                        "rgb(255, 159, 64)",
+                                        "rgb(255, 205, 86)",
+                                    ],
+                                    borderWidth: 3,
+                                    borderColor: "#fff",
+                                    borderRadius: 10,
+                                    borderSkipped: false,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            animation: {
+                                duration: 2000,
+                                easing: "easeOutBounce",
+                            },
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    labels: {
+                                        color: "white", // <- ใส่ตรงนี้!
+                                    },
+                                },
+                                tooltip: {
+                                    backgroundColor: "#333",
+                                    titleColor: "#fff",
+                                    bodyColor: "#fff",
+                                },
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        color: "white", // <- ใส่ตรงนี้!
+                                    },
+                                },
+                                x: {
+                                    ticks: {
+                                        color: "white", // <- ใส่ตรงนี้!
+                                    },
+                                },
+                            },
+                        },
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error fetching data:", error);
+                });
         },
         reportStdDonut() {
-            Chart.defaults.font.family = "Anuphan";
+            const token = import.meta.env.LIBROOM_API_TOKEN;
 
-            const ctx = this.$refs.reportStdOne;
-            let myStdOne = new Chart(ctx, {
-                type: "doughnut",
-                data: {
-                    labels: ["AREC", "DLP", "MSU SPACE"],
-                    datasets: [
-                        {
-                            label: "",
-                            data: [13992, 21682, 2421],
-                            backgroundColor: ["#ff6384", "#36a2eb", "#ffcd56"],
-                            borderColor: ["#ff6384", "#36a2eb", "#ffcd56"],
-                            borderWidth: 3,
-                            borderColor: "#fff",
-                            borderWidth: 2,
-                            hoverOffset: 15,
-                        },
-                    ],
+            const config = {
+                headers: {
+                    token: token
                 },
-                options: {
-                    responsive: true,
-                    animation: {
-                        animateScale: true,
-                        animateRotate: true,
-                        duration: 2000,
-                        easing: "easeOutBack",
-                    },
-                    plugins: {
-                        legend: {
-                            position: "top",
-                            labels: {
-                                color: "white", // <- ใส่ตรงนี้!
+            };
+
+            axios
+                .get("https://libroom.msu.ac.th/api/getService", config)
+                .then((response) => {
+                    const dataStd = response.data;
+
+                    Chart.defaults.font.family = "Anuphan";
+
+                    const ctx = this.$refs.reportStdOne;
+                    new Chart(ctx, {
+                        type: "doughnut",
+                        data: {
+                            labels: ["AREC", "DLP", "MSU SPACE"],
+                            datasets: [
+                                {
+                                    label: "",
+                                    data: dataStd,
+                                    backgroundColor: [
+                                        "#ff6384",
+                                        "#36a2eb",
+                                        "#ffcd56",
+                                    ],
+                                    borderColor: [
+                                        "#ff6384",
+                                        "#36a2eb",
+                                        "#ffcd56",
+                                    ],
+                                    borderWidth: 3,
+                                    borderColor: "#fff",
+                                    borderWidth: 2,
+                                    hoverOffset: 15,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            animation: {
+                                animateScale: true,
+                                animateRotate: true,
+                                duration: 2000,
+                                easing: "easeOutBack",
+                            },
+                            plugins: {
+                                legend: {
+                                    position: "top",
+                                    labels: {
+                                        color: "white", // <- ใส่ตรงนี้!
+                                    },
+                                },
+                                title: {
+                                    display: true,
+                                    text: "สถานที่",
+                                    font: { weight: "normal" },
+                                    color: "white",
+                                },
+                                tooltip: {
+                                    backgroundColor: "#333",
+                                    titleColor: "#fff",
+                                    bodyColor: "#fff",
+                                },
                             },
                         },
-                        title: {
-                            display: true,
-                            text: "สถานที่",
-                            font: { weight: "normal" },
-                            color: "white",
-                        },
-                        tooltip: {
-                            backgroundColor: "#333",
-                            titleColor: "#fff",
-                            bodyColor: "#fff",
-                        },
-                    },
-                },
-            });
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error fetching data:", error);
+                });
         },
         reportStdBar() {
-            Chart.defaults.font.family = "Anuphan";
-            const ctx = this.$refs.reportStdTwo;
-            let myStdTwo = new Chart(ctx, {
-                type: "bar",
-                data: {
-                    labels: [
-                        "การบัญชีและการจัดการ",
-                        "มนุษยศาสตร์และสังคมศาสตร์",
-                        "วิทยาศาสตร์",
-                        "วิทยาการสารสนเทศ",
-                        "สาธารณสุขศาสตร์",
-                    ],
-                    datasets: [
-                        {
-                            label: "คณะ/หน่วยงานเข้าใช้บริการสูงสุด 5 อันดับแรก",
-                            data: [7370, 6338, 3586, 3041, 2712],
-                            backgroundColor: [
-                                "#ff6384",
-                                "#36a2eb",
-                                "#ffcd56",
-                                "#4bc0c0",
-                                "#9966ff",
-                            ],
-                            borderColor: [
-                                "rgb(255, 99, 132)",
-                                "rgb(255, 159, 64)",
-                                "rgb(255, 205, 86)",
-                                "rgb(75, 192, 192)",
-                                "rgb(54, 162, 235)",
-                            ],
-                            borderWidth: 3,
-                            borderColor: "#fff",
-                            borderRadius: 10,
-                            borderSkipped: false,
-                        },
-                    ],
+            const token = import.meta.env.LIBROOM_API_TOKEN;
+
+            const config = {
+                headers: {
+                    token: token,
                 },
-                options: {
-                    responsive: true,
-                    animation: {
-                        duration: 2000,
-                        easing: "easeOutBounce",
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            labels: {
-                                color: "white", // <- ใส่ตรงนี้!
+            };
+
+            axios
+                .get("https://libroom.msu.ac.th/api/getMost", config)
+                .then((response) => {
+                    this.vocText = response.data;
+
+                    Chart.defaults.font.family = "Anuphan";
+                    const ctx = this.$refs.reportStdTwo;
+                    new Chart(ctx, {
+                        type: "bar",
+                        data: {
+                            labels: [
+                                "การบัญชีและการจัดการ",
+                                "มนุษยศาสตร์และสังคมศาสตร์",
+                                "วิทยาศาสตร์",
+                                "วิทยาการสารสนเทศ",
+                                "สาธารณสุขศาสตร์",
+                            ],
+                            datasets: [
+                                {
+                                    label: "คณะที่เป็นสมาชิกสูงสุด 5 อันดับแรก",
+                                    data: [7370, 6338, 3586, 3041, 2712],
+                                    backgroundColor: [
+                                        "#ff6384",
+                                        "#36a2eb",
+                                        "#ffcd56",
+                                        "#4bc0c0",
+                                        "#9966ff",
+                                    ],
+                                    borderColor: [
+                                        "rgb(255, 99, 132)",
+                                        "rgb(255, 159, 64)",
+                                        "rgb(255, 205, 86)",
+                                        "rgb(75, 192, 192)",
+                                        "rgb(54, 162, 235)",
+                                    ],
+                                    borderWidth: 3,
+                                    borderColor: "#fff",
+                                    borderRadius: 10,
+                                    borderSkipped: false,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            animation: {
+                                duration: 2000,
+                                easing: "easeOutBounce",
+                            },
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    labels: {
+                                        color: "white", // <- ใส่ตรงนี้!
+                                    },
+                                },
+                                tooltip: {
+                                    backgroundColor: "#333",
+                                    titleColor: "#fff",
+                                    bodyColor: "#fff",
+                                },
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        color: "white", // <- ใส่ตรงนี้!
+                                    },
+                                },
+                                x: {
+                                    ticks: {
+                                        color: "white", // <- ใส่ตรงนี้!
+                                    },
+                                },
                             },
                         },
-                        tooltip: {
-                            backgroundColor: "#333",
-                            titleColor: "#fff",
-                            bodyColor: "#fff",
-                        },
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                color: "white", // <- ใส่ตรงนี้!
-                            },
-                        },
-                        x: {
-                            ticks: {
-                                color: "white", // <- ใส่ตรงนี้!
-                            },
-                        },
-                    },
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error fetching data:", error);
+                });
+        },
+        reportOnline() {
+            const token = import.meta.env.LIBRARY_API_TOKEN;
+
+            const config = {
+                //ใส่ทุกครั้งที่รับ File เข้ามา
+                headers: {
+                    token: token
                 },
-            });
+            };
+            axios
+                .get("http://202.28.32.28/countdb/api/getMonth", config)
+                .then((response) => {
+                    this.dbOnline = response.data;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
+        reportOnlineTwo() {
+            const token = import.meta.env.LIBRARY_API_TOKEN;
+
+            const config = {
+                //ใส่ทุกครั้งที่รับ File เข้ามา
+                headers: {
+                    token: token,
+                },
+            };
+            axios
+                .get("http://202.28.32.28/countdb/api/getStat", config)
+                .then((response) => {
+                    this.dbOnlineTwo = response.data;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         },
         reportOpac() {
-            // const config = {                                    //ใส่ทุกครั้งที่รับ File เข้ามา
-            //     headers: {
-            //         'token': 'RqG9I+wk/cB9TiCgCbSOGFq7exTxD6fLMoVeCNtLNrj8XTJdVnNMov9mAgLOEqTBKikM6id3P7ELFjt3gqyCjA=='
-            //     }
-            // }
-            // axios
-            //     .get("https://libapp.msu.ac.th/v1/api/GetTopView", config)
-            //     .then((response) => {
-            //         console.log(response)
-            //     })
-            //     .catch((err) => {
-            //         console.log(err);
-            //     });
+            const token = import.meta.env.WALAI_API_TOKEN;
+            
+            const config = {
+                //ใส่ทุกครั้งที่รับ File เข้ามา
+                headers: {
+                    token: token
+                },
+            };
             axios
-                .get("/api/GetTopView")
+                .get("https://libapp.msu.ac.th/v1/api/GetTopView", config)
                 .then((response) => {
                     this.opacList = response.data;
                 })
-                .catch((err) => {});
+                .catch((err) => {
+                    console.log(err);
+                });
+            // axios
+            //     .get("/api/GetTopView")
+            //     .then((response) => {
+            //         this.opacList = response.data;
+            //     })
+            //     .catch((err) => {});
         },
         memberShow() {
             this.showMemberOne = !this.showMemberOne;
