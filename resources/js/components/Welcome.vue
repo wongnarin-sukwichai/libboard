@@ -43,19 +43,19 @@
                         </a>
                     </li>
                     <!-- <li>
-                        <a href="javascript:;" class="menu">
-                            <div class="menu__icon">
-                                <i data-lucide="box"></i>
-                            </div>
-                            <div class="menu__title">
-                                Menu Layout
-                                <i
-                                    data-lucide="chevron-down"
-                                    class="menu__sub-icon"
-                                ></i>
-                            </div>
-                        </a>                  
-                    </li> -->
+                          <a href="javascript:;" class="menu">
+                              <div class="menu__icon">
+                                  <i data-lucide="box"></i>
+                              </div>
+                              <div class="menu__title">
+                                  Menu Layout
+                                  <i
+                                      data-lucide="chevron-down"
+                                      class="menu__sub-icon"
+                                  ></i>
+                              </div>
+                          </a>                  
+                      </li> -->
 
                     <li class="menu__devider my-6"></li>
                     <li>
@@ -135,66 +135,66 @@
                 <!-- END: Search -->
                 <!-- BEGIN: Notifications -->
                 <!-- <div class="intro-x dropdown mr-4 sm:mr-6">
-                <div
-                    class="dropdown-toggle notification notification--bullet"
-                    role="button"
-                    aria-expanded="false"
-                    data-tw-toggle="dropdown"
-                >
-                    <box-icon
-                        name="bell"
-                        color="#cbd5e1"
-                        class="hover:scale-90"
-                        @click="alert()"
-                    ></box-icon>
-                </div>
-            </div> -->
+                  <div
+                      class="dropdown-toggle notification notification--bullet"
+                      role="button"
+                      aria-expanded="false"
+                      data-tw-toggle="dropdown"
+                  >
+                      <box-icon
+                          name="bell"
+                          color="#cbd5e1"
+                          class="hover:scale-90"
+                          @click="alert()"
+                      ></box-icon>
+                  </div>
+              </div> -->
                 <!-- END: Notifications -->
                 <!-- BEGIN: Account Menu -->
                 <!-- <div class="intro-x dropdown w-8 h-8">
-                <div
-                    class="dropdown-toggle w-8 h-8"
-                    role="button"
-                    aria-expanded="false"
-                    data-tw-toggle="dropdown"
-                    @click="showUser()"
-                >
-                    <box-icon
-                        name="user"
-                        color="#cbd5e1"
-                        class="hover:scale-90"
-                    ></box-icon>
-                </div>
-            </div> -->
+                  <div
+                      class="dropdown-toggle w-8 h-8"
+                      role="button"
+                      aria-expanded="false"
+                      data-tw-toggle="dropdown"
+                      @click="showUser()"
+                  >
+                      <box-icon
+                          name="user"
+                          color="#cbd5e1"
+                          class="hover:scale-90"
+                      ></box-icon>
+                  </div>
+              </div> -->
                 <!-- <div
-                class="absolute right-10 z-10 mt-32 w-48 rounded-lg bg-gray-700 py-1 shadow-lg border-2 border-white"
-                role="menu"
-                aria-orientation="vertical"
-                aria-labelledby="user-menu-button"
-                tabindex="-1"
-                v-if="showModal"
-            >
-                <router-link
-                    to=""
-                    class="block px-4 py-2 text-sm text-white hover:text-gray-700 hover:bg-white"
-                    role="menuitem"
-                    tabindex="-1"
-                    id="user-menu-item-0"
-                    >ฐานข้อมูลออนไลน์</router-link
-                >
-                <div
-                    class="block px-4 py-2 text-sm text-white hover:text-gray-700 hover:bg-white"
-                    role="menuitem"
-                    tabindex="-1"
-                    id="user-menu-item-2"
-                    @click="logout()"
-                    >ออกจากระบบ</div>
-            </div> -->
+                  class="absolute right-10 z-10 mt-32 w-48 rounded-lg bg-gray-700 py-1 shadow-lg border-2 border-white"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="user-menu-button"
+                  tabindex="-1"
+                  v-if="showModal"
+              >
+                  <router-link
+                      to=""
+                      class="block px-4 py-2 text-sm text-white hover:text-gray-700 hover:bg-white"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="user-menu-item-0"
+                      >ฐานข้อมูลออนไลน์</router-link
+                  >
+                  <div
+                      class="block px-4 py-2 text-sm text-white hover:text-gray-700 hover:bg-white"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="user-menu-item-2"
+                      @click="logout()"
+                      >ออกจากระบบ</div>
+              </div> -->
                 <!-- END: Account Menu -->
             </div>
         </div>
         <!-- END: Top Bar -->
-        <div class="flex overflow-hidden">
+        <div class="flex overflow-hidden" v-if="isReady">
             <!-- BEGIN: Simple Menu -->
             <nav class="side-nav side-nav--simple">
                 <ul>
@@ -217,51 +217,51 @@
                             </div>
                         </a>
                         <!-- <ul class="side-menu__sub-open">
-                        <li>
-                            <a
-                                href="simple-menu-light-dashboard-overview-1.html"
-                                class="side-menu"
-                            >
-                                <div class="side-menu__icon">
-                                    <i data-lucide="activity"></i>
-                                </div>
-                                <div class="side-menu__title">Overview 1</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="simple-menu-light-dashboard-overview-2.html"
-                                class="side-menu side-menu--active"
-                            >
-                                <div class="side-menu__icon">
-                                    <i data-lucide="activity"></i>
-                                </div>
-                                <div class="side-menu__title">Overview 2</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="simple-menu-light-dashboard-overview-3.html"
-                                class="side-menu"
-                            >
-                                <div class="side-menu__icon">
-                                    <i data-lucide="activity"></i>
-                                </div>
-                                <div class="side-menu__title">Overview 3</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="simple-menu-light-dashboard-overview-4.html"
-                                class="side-menu"
-                            >
-                                <div class="side-menu__icon">
-                                    <i data-lucide="activity"></i>
-                                </div>
-                                <div class="side-menu__title">Overview 4</div>
-                            </a>
-                        </li>
-                    </ul> -->
+                          <li>
+                              <a
+                                  href="simple-menu-light-dashboard-overview-1.html"
+                                  class="side-menu"
+                              >
+                                  <div class="side-menu__icon">
+                                      <i data-lucide="activity"></i>
+                                  </div>
+                                  <div class="side-menu__title">Overview 1</div>
+                              </a>
+                          </li>
+                          <li>
+                              <a
+                                  href="simple-menu-light-dashboard-overview-2.html"
+                                  class="side-menu side-menu--active"
+                              >
+                                  <div class="side-menu__icon">
+                                      <i data-lucide="activity"></i>
+                                  </div>
+                                  <div class="side-menu__title">Overview 2</div>
+                              </a>
+                          </li>
+                          <li>
+                              <a
+                                  href="simple-menu-light-dashboard-overview-3.html"
+                                  class="side-menu"
+                              >
+                                  <div class="side-menu__icon">
+                                      <i data-lucide="activity"></i>
+                                  </div>
+                                  <div class="side-menu__title">Overview 3</div>
+                              </a>
+                          </li>
+                          <li>
+                              <a
+                                  href="simple-menu-light-dashboard-overview-4.html"
+                                  class="side-menu"
+                              >
+                                  <div class="side-menu__icon">
+                                      <i data-lucide="activity"></i>
+                                  </div>
+                                  <div class="side-menu__title">Overview 4</div>
+                              </a>
+                          </li>
+                      </ul> -->
                     </li>
                     <li>
                         <a
@@ -286,25 +286,25 @@
                         </a>
                     </li>
                     <!-- <li class="side-nav__devider my-6"></li>
-                <li>
-                    <div
-                        class="side-menu hover:cursor-pointer"
-                        @click="logout()"
-                    >
-                        <div class="side-menu__icon">
-                            <box-icon
-                                name="log-out-circle"
-                                color="#64748b"
-                            ></box-icon>
-                        </div>
-                        <div class="side-menu__title">
-                            Crud
-                            <div class="side-menu__sub-icon">
-                                <i data-lucide="chevron-down"></i>
-                            </div>
-                        </div>
-                    </div>
-                </li> -->
+                  <li>
+                      <div
+                          class="side-menu hover:cursor-pointer"
+                          @click="logout()"
+                      >
+                          <div class="side-menu__icon">
+                              <box-icon
+                                  name="log-out-circle"
+                                  color="#64748b"
+                              ></box-icon>
+                          </div>
+                          <div class="side-menu__title">
+                              Crud
+                              <div class="side-menu__sub-icon">
+                                  <i data-lucide="chevron-down"></i>
+                              </div>
+                          </div>
+                      </div>
+                  </li> -->
                 </ul>
             </nav>
             <!-- END: Simple Menu -->
@@ -422,7 +422,7 @@
                                             </div>
                                         </div>
                                         <div class="text-2xl font-medium mt-2">
-                                            {{ incomeDetail.income }}
+                                            {{ incomeDetail?.income ?? "" }}
                                         </div>
                                         <div
                                             class="border-b border-slate-200 flex pb-2 mt-4"
@@ -462,25 +462,29 @@
                                         <div class="flex">
                                             <div>นักเรียน</div>
                                             <div class="ml-auto">
-                                                {{ incomeDetail.student }}
+                                                {{
+                                                    incomeDetail?.student ?? ""
+                                                }}
                                             </div>
                                         </div>
                                         <div class="flex mt-1.5">
                                             <div>นักศึกษา</div>
                                             <div class="ml-auto">
-                                                {{ incomeDetail.nisit }}
+                                                {{ incomeDetail?.nisit ?? "" }}
                                             </div>
                                         </div>
                                         <div class="flex mt-1.5">
                                             <div>อาจารย์</div>
                                             <div class="ml-auto">
-                                                {{ incomeDetail.teacher }}
+                                                {{
+                                                    incomeDetail?.teacher ?? ""
+                                                }}
                                             </div>
                                         </div>
                                         <div class="flex mt-1.5">
                                             <div>บุคลากร</div>
                                             <div class="ml-auto">
-                                                {{ incomeDetail.staff }}
+                                                {{ incomeDetail?.staff ?? "" }}
                                             </div>
                                         </div>
                                         <div
@@ -551,7 +555,7 @@
                                                     >จำนวน</span
                                                 >
                                                 <span class="text-md px-2">{{
-                                                    bookDetail.borrow
+                                                    bookDetail?.borrow ?? ""
                                                 }}</span>
                                                 <span
                                                     class="text-sm text-gray-400"
@@ -583,7 +587,7 @@
                                             <div
                                                 class="mt-1.5 flex items-center"
                                             >
-                                                {{ bookDetail.satit }}
+                                                {{ bookDetail?.satit ?? "" }}
                                                 <div class="text-base">
                                                     <span
                                                         class="text-xs text-gray-400"
@@ -607,7 +611,10 @@
                                                 <div
                                                     class="text-base text-amber-400"
                                                 >
-                                                    {{ bookDetail.bachelor }}
+                                                    {{
+                                                        bookDetail?.bachelor ??
+                                                        ""
+                                                    }}
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -627,7 +634,7 @@
                                             <div
                                                 class="mt-1.5 flex items-center"
                                             >
-                                                {{ bookDetail.graduate }}
+                                                {{ bookDetail?.graduate ?? "" }}
                                                 <div class="text-base">
                                                     <span
                                                         class="text-xs text-gray-400"
@@ -648,7 +655,7 @@
                                             <div
                                                 class="mt-1.5 flex items-center"
                                             >
-                                                {{ bookDetail.master }}
+                                                {{ bookDetail?.master ?? "" }}
                                                 <div class="text-base">
                                                     <span
                                                         class="text-xs text-gray-400"
@@ -672,7 +679,10 @@
                                                 <div
                                                     class="text-base text-amber-400"
                                                 >
-                                                    {{ bookDetail.academic }}
+                                                    {{
+                                                        bookDetail?.academic ??
+                                                        ""
+                                                    }}
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -695,7 +705,10 @@
                                                 <div
                                                     class="text-base text-amber-400"
                                                 >
-                                                    {{ bookDetail.support }}
+                                                    {{
+                                                        bookDetail?.support ??
+                                                        ""
+                                                    }}
                                                     <span
                                                         class="text-xs text-gray-400"
                                                         >รายการ :
@@ -729,8 +742,8 @@
                                         ประเภทสมาชิก
                                     </h2>
                                     <!-- <a href="" class="ml-auto text-primary truncate"
-                                    >Show More</a
-                                > -->
+                                      >Show More</a
+                                  > -->
                                 </div>
                                 <div class="report-box-2 intro-y mt-5">
                                     <div class="box p-5">
@@ -805,7 +818,8 @@
                                                             class="text-xl font-medium"
                                                         >
                                                             {{
-                                                                memberDetail.all
+                                                                memberDetail?.all ??
+                                                                ""
                                                             }}
                                                         </div>
                                                         <div
@@ -830,7 +844,8 @@
                                                         <span
                                                             class="font-medium ml-auto"
                                                             >{{
-                                                                memberDetail.satit
+                                                                memberDetail?.satit ??
+                                                                ""
                                                             }}</span
                                                         >
                                                     </div>
@@ -846,7 +861,8 @@
                                                         <span
                                                             class="font-medium ml-auto"
                                                             >{{
-                                                                memberDetail.bachelor
+                                                                memberDetail?.bachelor ??
+                                                                ""
                                                             }}</span
                                                         >
                                                     </div>
@@ -862,7 +878,8 @@
                                                         <span
                                                             class="font-medium ml-auto"
                                                             >{{
-                                                                memberDetail.graduate
+                                                                memberDetail?.graduate ??
+                                                                ""
                                                             }}</span
                                                         >
                                                     </div>
@@ -878,7 +895,8 @@
                                                         <span
                                                             class="font-medium ml-auto"
                                                             >{{
-                                                                memberDetail.master
+                                                                memberDetail?.master ??
+                                                                ""
                                                             }}</span
                                                         >
                                                     </div>
@@ -894,7 +912,8 @@
                                                         <span
                                                             class="font-medium ml-auto"
                                                             >{{
-                                                                memberDetail.academic
+                                                                memberDetail?.academic ??
+                                                                ""
                                                             }}</span
                                                         >
                                                     </div>
@@ -910,7 +929,8 @@
                                                         <span
                                                             class="font-medium ml-auto"
                                                             >{{
-                                                                memberDetail.support
+                                                                memberDetail?.support ??
+                                                                ""
                                                             }}</span
                                                         >
                                                     </div>
@@ -943,7 +963,8 @@
                                                             class="text-xl font-medium"
                                                         >
                                                             {{
-                                                                memberDetailTwo.all
+                                                                memberDetailTwo?.all ??
+                                                                ""
                                                             }}
                                                         </div>
                                                         <div
@@ -968,7 +989,8 @@
                                                         <span
                                                             class="font-medium ml-auto"
                                                             >{{
-                                                                memberDetailTwo.nisit
+                                                                memberDetailTwo?.nisit ??
+                                                                ""
                                                             }}</span
                                                         >
                                                     </div>
@@ -984,7 +1006,8 @@
                                                         <span
                                                             class="font-medium ml-auto"
                                                             >{{
-                                                                memberDetailTwo.staff
+                                                                memberDetailTwo?.staff ??
+                                                                ""
                                                             }}</span
                                                         >
                                                     </div>
@@ -1000,7 +1023,8 @@
                                                         <span
                                                             class="font-medium ml-auto"
                                                             >{{
-                                                                memberDetailTwo.patron
+                                                                memberDetailTwo?.patron ??
+                                                                ""
                                                             }}</span
                                                         >
                                                     </div>
@@ -1036,7 +1060,9 @@
                                                     <div
                                                         class="flex justify-center overflow-auto"
                                                     >
-                                                        <div class="h-[360px]">
+                                                        <div class="h-[360px]"
+                                                        v-if="isReady"
+                                                        >
                                                             <canvas
                                                                 class=""
                                                                 ref="reportStdOne"
@@ -1064,6 +1090,7 @@
                                                 >
                                                     <div
                                                         class="h-[360px] w-full"
+                                                        v-if="isReady"
                                                     >
                                                         <canvas
                                                             class="mt-16"
@@ -1137,7 +1164,7 @@
                                                 {{ db.count }}
                                             </div>
                                         </div>
-                                    </div>                                
+                                    </div>
                                     <div
                                         class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-slate-400 hover:border-emerald-600 dark:border-darkmode-300 text-slate-500 cursor-pointer"
                                         @click="modalShow()"
@@ -1169,15 +1196,17 @@
                                             รับฟังเสียงผู้ใช้ (VOC)
                                         </h2>
                                         <!-- <a
-                                            href=""
-                                            class="ml-auto text-primary truncate"
-                                            >Show More</a
-                                        > -->
+                                              href=""
+                                              class="ml-auto text-primary truncate"
+                                              >Show More</a
+                                          > -->
                                     </div>
                                     <div
                                         class="mt-5 relative before:block before:absolute before:w-px before:h-[85%] before:bg-slate-200 before:dark:bg-darkmode-400 before:ml-5 before:mt-5"
                                     >
                                         <div
+                                            v-for="(voc, index) in vocText"
+                                            :key="index"
                                             class="intro-x relative flex items-center mb-3"
                                         >
                                             <div
@@ -1196,32 +1225,29 @@
                                             </div>
                                             <div
                                                 class="box px-5 py-3 ml-4 flex-1 zoom-in"
-                                                v-for="
-                                                    (vocText, index) in vocText
-                                                "
-                                                :key="index"
                                             >
                                                 <div class="flex items-center">
                                                     <div
                                                         class="font-medium text-balance break-all"
                                                     >
-                                                        {{ voc.detail }}
-                                                    </div>
-                                                    <div
-                                                        class="text-xs text-slate-500 ml-auto"
-                                                    >
-                                                        {{ voc.detail.name }}
-                                                        ***
+                                                        {{ voc?.detail ?? "" }}
                                                     </div>
                                                 </div>
                                                 <div
-                                                    class="text-slate-500 mt-1 text-xs"
+                                                    class="flex text-slate-500 mt-1 text-xs"
                                                 >
-                                                    {{
-                                                        moment(
-                                                            voc.created_at
-                                                        ).format("L")
-                                                    }}
+                                                    <span
+                                                        >{{ voc?.name ?? "" }}
+                                                        *** :
+                                                    </span>
+                                                    <span class="pl-2">
+                                                        {{
+                                                            moment(
+                                                                voc?.created_at ??
+                                                                    ""
+                                                            ).format("L") ?? ""
+                                                        }}</span
+                                                    >
                                                 </div>
                                             </div>
                                         </div>
@@ -1247,10 +1273,13 @@
                                                 <div
                                                     class="flex justify-center"
                                                 >
-                                                    <div class="h-auto">
+                                                    <div
+                                                        class="h-auto"
+                                                        v-if="isReady"
+                                                    >
                                                         <canvas
                                                             class=""
-                                                            ref="reportVocOne"
+                                                            ref="reportVocBar"
                                                         ></canvas>
                                                     </div>
                                                 </div>
@@ -1278,7 +1307,10 @@
                                                 <div
                                                     class="flex justify-center"
                                                 >
-                                                    <div class="h-[208px]">
+                                                    <div
+                                                        class="h-[208px]"
+                                                        v-if="isReady"
+                                                    >
                                                         <canvas
                                                             class=""
                                                             ref="reportVocTwo"
@@ -1355,7 +1387,10 @@
                                                         <div
                                                             class="text-slate-500 text-xs whitespace-nowrap mt-0.5"
                                                         >
-                                                            {{ opac.BIBID }}
+                                                            {{
+                                                                opac?.BIBID ??
+                                                                ""
+                                                            }}
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -1371,6 +1406,11 @@
             </div>
             <!-- END: Content -->
         </div>
+
+        <div v-else class="flex justify-center items-center">
+            <box-icon name="loader-alt" size="lg" animation="spin"></box-icon>
+        </div>
+
         <!-- BEGIN: Dark Mode Switcher-->
         <div
             data-url="simple-menu-dark-dashboard-overview-2.html"
@@ -1417,11 +1457,13 @@
                             >
                                 <img
                                     alt="Midone - HTML Admin Template"
-                                    :src="db.pic"
+                                    :src="db.pic || ''"
                                 />
                             </div>
                             <div class="ml-4 mr-auto">
-                                <div class="font-medium">{{ db.name }}</div>
+                                <div class="font-medium">
+                                    {{ db.name || "" }}
+                                </div>
                                 <div
                                     class="text-slate-500 text-xs mt-0.5"
                                 ></div>
@@ -1429,7 +1471,7 @@
                             <div
                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
                             >
-                                {{ db.count }}
+                                {{ db.count || "" }}
                             </div>
                         </div>
                     </div>
@@ -1457,20 +1499,22 @@ import "moment/dist/locale/th";
 moment.locale("th");
 
 export default {
-    mounted() {
-        this.reportIncome();
-        this.reportBook();
-        this.reportMember();
-        this.reportMemberTwo();
-        this.reportVocText();
-        this.reportVocBar();
-        this.reportVocTwo();
-        this.reportStdDonut();
-        this.reportStdBar();
-        this.reportOpac();
+    async mounted() {
+        await this.loadAllData();
+        this.isReady = true;
+
+        this.$nextTick(() => {
+            setTimeout(() => {
+                // this.reportVocBar();
+                // this.reportVocTwo();
+                // this.reportStdDonut();
+                // this.reportStdBar();
+            }, 500);
+        });
     },
     data() {
         return {
+            isReady: false,
             logo: "/img/library.png",
             pic1: "/img/01.jpg",
             pic2: "/img/02.jpg",
@@ -1478,23 +1522,35 @@ export default {
             pic4: "/img/04.jpg",
             isDarkMode: true,
             showWelcome: true,
-            opacList: "",
+            opacList: [],
             modalMenu: false,
             showMemberOne: true,
             showMemberTwo: false,
             isModalShow: false,
             video: "/img/bg/01.mp4",
-            bookDetail: "",
-            memberDetail: "",
-            memberDetailTwo: "",
-            incomeDetail: "",
+            bookDetail: {},
+            memberDetail: {},
+            memberDetailTwo: {},
+            incomeDetail: {},
             moment: moment,
             vocText: "",
-            dbOnline: "",
-            dbOnlineTwo: "",
+            dbOnline: [],
+            dbOnlineTwo: [],
         };
     },
     methods: {
+        async loadAllData() {
+            await Promise.all([
+                this.reportIncome(),
+                this.reportBook(),
+                this.reportMember(),
+                this.reportMemberTwo(),
+                // this.reportVocText(),
+                // this.reportOnline(),
+                // this.reportOnlineTwo(),
+                // this.reportOpac()
+            ]);
+        },
         showMenu() {
             this.modalMenu = true;
         },
@@ -1532,751 +1588,840 @@ export default {
             //         return response;
             //     });
         },
-        reportIncome() {
-            fetch(
-                "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLiI5DgZzU7QqVrcm0uQB_2E34skz7GCIMBubEddg4-IaJ8XgfTlrwyPucLYaK60rJWJ9ytgG_dJtJlgV_PJS0SjQLe8W32yMO_j51khEa9RdVrUCOeG4-G3oC2RpwCWpKiU45MfGwnhFFjKiQ-rUfcqpu1LOpy3CFEmLRoAMP1AjXKTcXdcIeTpq11V6OPMpSqjaTmJ3Z6JK6ZdCW9_645Ug9PtoTSSjC97thLZPdKDo84cwMLcBdpACPd8pcazkan6GTCs6Iugq41AwPfbCZhq53yHkA&lib=MScLvDAZvp9hXKkQ7BwnIsLN54MR286vU"
-            )
-                .then((response) => response.json())
-                .then((dataIncome) => {
-                    const firstRow = dataIncome[0];
+        async reportIncome() {
+            try {
+                fetch(
+                    "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLiI5DgZzU7QqVrcm0uQB_2E34skz7GCIMBubEddg4-IaJ8XgfTlrwyPucLYaK60rJWJ9ytgG_dJtJlgV_PJS0SjQLe8W32yMO_j51khEa9RdVrUCOeG4-G3oC2RpwCWpKiU45MfGwnhFFjKiQ-rUfcqpu1LOpy3CFEmLRoAMP1AjXKTcXdcIeTpq11V6OPMpSqjaTmJ3Z6JK6ZdCW9_645Ug9PtoTSSjC97thLZPdKDo84cwMLcBdpACPd8pcazkan6GTCs6Iugq41AwPfbCZhq53yHkA&lib=MScLvDAZvp9hXKkQ7BwnIsLN54MR286vU"
+                )
+                    .then((response) => response.json())
+                    .then((dataIncome) => {
+                        const firstRow = dataIncome[0];
 
-                    this.incomeDetail = {
-                        income: firstRow.income || "",
-                        student: firstRow.student || "",
-                        nisit: firstRow.nisit || "",
-                        teacher: firstRow.teacher || "",
-                        staff: firstRow.staff || "",
-                    };
+                        this.incomeDetail = {
+                            income: firstRow.income || "",
+                            student: firstRow.student || "",
+                            nisit: firstRow.nisit || "",
+                            teacher: firstRow.teacher || "",
+                            staff: firstRow.staff || "",
+                        };
 
-                    // Fake visitor data
-                    let reportBarChartData = new Array(40)
-                        .fill(0)
-                        .map((data, key) => {
-                            if (key % 3 == 0 || key % 5 == 0) {
-                                return Math.ceil(Math.random() * (0 - 20) + 20);
-                            } else {
-                                return Math.ceil(Math.random() * (0 - 7) + 7);
-                            }
+                        // Fake visitor data
+                        let reportBarChartData = new Array(40)
+                            .fill(0)
+                            .map((data, key) => {
+                                if (key % 3 == 0 || key % 5 == 0) {
+                                    return Math.ceil(
+                                        Math.random() * (0 - 20) + 20
+                                    );
+                                } else {
+                                    return Math.ceil(
+                                        Math.random() * (0 - 7) + 7
+                                    );
+                                }
+                            });
+
+                        const ctx = this.$refs.reportIncome;
+
+                        // เก็บ chart instance ในตัวแปร
+                        const myBarChart = new Chart(ctx, {
+                            type: "bar",
+                            data: {
+                                labels: reportBarChartData,
+                                datasets: [
+                                    {
+                                        label: "",
+                                        barThickness: 6,
+                                        data: reportBarChartData,
+                                        backgroundColor: "#0d9488",
+                                    },
+                                ],
+                            },
+                            options: {
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        display: false,
+                                    },
+                                },
+                                scales: {
+                                    x: {
+                                        ticks: {
+                                            display: false,
+                                        },
+                                        grid: {
+                                            display: false,
+                                        },
+                                    },
+                                    y: {
+                                        ticks: {
+                                            display: false,
+                                        },
+                                        grid: {
+                                            display: false,
+                                            drawBorder: false,
+                                        },
+                                    },
+                                },
+                            },
                         });
 
-                    const ctx = this.$refs.reportIncome;
+                        setInterval(() => {
+                            // Swap visitor data
+                            let newData = reportBarChartData[0];
+                            reportBarChartData.shift();
+                            reportBarChartData.push(newData);
 
-                    // เก็บ chart instance ในตัวแปร
-                    const myBarChart = new Chart(ctx, {
-                        type: "bar",
-                        data: {
-                            labels: reportBarChartData,
-                            datasets: [
-                                {
-                                    label: "",
-                                    barThickness: 6,
-                                    data: reportBarChartData,
-                                    backgroundColor: "#0d9488",
+                            myBarChart.data.datasets[0].data =
+                                reportBarChartData;
+                            myBarChart.update();
+                        }, 1000);
+                    });
+            } catch (error) {
+                console.error("Error report Income data:", error);
+            }
+        },
+        async reportBook() {
+            try {
+                fetch(
+                    "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjgOX_J4Swg5lJXWe8mBO1Pe6jYHfB_qqDg3uOILSoyI6wOl2DS4GrQvL0N_E6udVzo7tNt2GJYamauj7sAo0MYd0hhwK_NZ-70aRrBS56v_kwTs4W-K0dQd7NNgHrQIr1GzvBqRL8POSaEpj1DBPMKS1R9Pnzan2XR81NZZ8eMv_geucbYWIBgipNklTQ0dmq5lR980EtIPzOxufTgJcTEBmjtgrsGos_6PxiIw2JJP-X2uzdB9wFzcBtaCqwI9oXpl-QTCsQd5opuO1vWUfODj4JT8rcMXcBA-i8V&lib=MfFKpDvkbxsVrVICzLEcZofhElnTbI1Nb"
+                ) // แก้เป็น URL ของคุณ
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // สมมติ data เป็น array ของ object (แบบ JSON ที่คุณส่งมา)
+                        const firstRow = data[0];
+
+                        // ดึงเฉพาะค่าเดือน 01-12
+                        const monthData = [
+                            firstRow.jan || 0,
+                            firstRow.feb || 0,
+                            firstRow.mar || 0,
+                            firstRow.apr || 0,
+                            firstRow.may || 0,
+                            firstRow.june || 0,
+                            firstRow.jul || 0,
+                            firstRow.aug || 0,
+                            firstRow.sep || 0,
+                            firstRow.oct || 0,
+                            firstRow.nov || 0,
+                            firstRow.dec || 0,
+                        ];
+
+                        // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
+                        this.bookDetail = {
+                            borrow: firstRow.borrow || "",
+                            satit: firstRow.satit || "",
+                            bachelor: firstRow.bachelor || "",
+                            graduate: firstRow.graduate || "",
+                            master: firstRow.master || "",
+                            academic: firstRow.academic || "",
+                            support: firstRow.support || "",
+                        };
+
+                        // สร้างกราฟ Chart.js
+                        Chart.defaults.font.family = "Anuphan";
+                        const ctx = this.$refs.reportBookOne;
+
+                        new Chart(ctx, {
+                            type: "bar",
+                            data: {
+                                labels: [
+                                    "01",
+                                    "02",
+                                    "03",
+                                    "04",
+                                    "05",
+                                    "06",
+                                    "07",
+                                    "08",
+                                    "09",
+                                    "10",
+                                    "11",
+                                    "12",
+                                ],
+                                datasets: [
+                                    {
+                                        label: "สถิติการยืม รายเดือน / 2568",
+                                        data: monthData, // ใช้ข้อมูลจาก API
+                                        backgroundColor: [
+                                            "#ff6384",
+                                            "#36a2eb",
+                                            "#ffcd56",
+                                            "#4bc0c0",
+                                            "#9966ff",
+                                            "#ff9f40",
+                                            "#ff6384",
+                                            "#36a2eb",
+                                            "#ffcd56",
+                                            "#4bc0c0",
+                                            "#9966ff",
+                                            "#ff9f40",
+                                        ],
+                                        borderWidth: 2,
+                                        borderColor: "#fff",
+                                        borderRadius: 10,
+                                        borderSkipped: false,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                animation: {
+                                    duration: 2000,
+                                    easing: "easeOutBounce",
                                 },
-                            ],
-                        },
-                        options: {
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    display: false,
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        labels: {
+                                            color: "white",
+                                        },
+                                    },
+                                    tooltip: {
+                                        backgroundColor: "#333",
+                                        titleColor: "#fff",
+                                        bodyColor: "#fff",
+                                    },
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: {
+                                            color: "white",
+                                        },
+                                    },
+                                    x: {
+                                        ticks: {
+                                            color: "white",
+                                        },
+                                    },
                                 },
                             },
-                            scales: {
-                                x: {
-                                    ticks: {
+                        });
+                    });
+            } catch (error) {
+                console.error("Error report Book data:", error);
+            }
+        },
+        async reportMember() {
+            try {
+                fetch(
+                    "https://script.google.com/macros/s/AKfycbxqadaYYCf3xkezxEt7ppnd3IjzsYrSsmmLeabaozh168w9XE6-4CmwepXO3omNKYE-/exec"
+                ) // แก้เป็น URL ของคุณ
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // สมมติ data เป็น array ของ object (แบบ JSON ที่คุณส่งมา)
+                        const firstRow = data[0];
+
+                        // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
+                        const memberData = [
+                            firstRow.satit || 0,
+                            firstRow.bachelor || 0,
+                            firstRow.graduate || 0,
+                            firstRow.master || 0,
+                            firstRow.academic || 0,
+                            firstRow.support || 0,
+                        ];
+
+                        this.memberDetail = {
+                            all: firstRow.all || "",
+                            satit: firstRow.satit || "",
+                            bachelor: firstRow.bachelor || "",
+                            graduate: firstRow.graduate || "",
+                            gmaster: firstRow.master || "",
+                            academic: firstRow.academic || "",
+                            support: firstRow.support || "",
+                        };
+
+                        const ctx = this.$refs.reportUserOne;
+                        new Chart(ctx, {
+                            type: "doughnut",
+                            data: {
+                                labels: "",
+                                datasets: [
+                                    {
+                                        label: "Data",
+                                        data: memberData,
+                                        backgroundColor: [
+                                            "#0ea5e9",
+                                            "#0d9488",
+                                            "#fb923c",
+                                            "#facc15",
+                                            "#64748b",
+                                            "#a3e635",
+                                        ],
+                                        hoverBackgroundColor: [
+                                            "#9BD0F5",
+                                            "#9BD0F5",
+                                        ],
+                                        borderWidth: 5,
+                                        borderColor: "#fff",
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                animation: {
+                                    duration: 2000,
+                                    easing: "easeOutBounce",
+                                },
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
                                         display: false,
                                     },
-                                    grid: {
+                                    tooltip: {
+                                        backgroundColor: "#333",
+                                        titleColor: "#fff",
+                                        bodyColor: "#fff",
+                                    },
+                                },
+                                cutout: "80%",
+                            },
+                        });
+                    });
+            } catch (error) {
+                console.error("Error report Member data:", error);
+            }
+        },
+        async reportMemberTwo() {
+            try {
+                fetch(
+                    "https://script.google.com/macros/s/AKfycbw6uXjJZb8xBIk-dHKkoWRppNHqTrXG5ctLVSDJt1Ert6LghRyOmzwm0ubFK8wd42v2/exec"
+                ) // แก้เป็น URL ของคุณ
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // สมมติ data เป็น array ของ object (แบบ JSON ที่คุณส่งมา)
+                        const firstRow = data[0];
+
+                        // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
+                        const memberDataTwo = [
+                            firstRow.nisit || 0,
+                            firstRow.staff || 0,
+                            firstRow.patron || 0,
+                        ];
+
+                        this.memberDetailTwo = {
+                            all: firstRow.all || "",
+                            nisit: firstRow.nisit || "",
+                            staff: firstRow.staff || "",
+                            patron: firstRow.patron || "",
+                        };
+
+                        const ctx = this.$refs.reportUserTwo;
+                        new Chart(ctx, {
+                            type: "doughnut",
+                            data: {
+                                labels: "",
+                                datasets: [
+                                    {
+                                        label: "Data",
+                                        data: memberDataTwo,
+                                        backgroundColor: [
+                                            "#0ea5e9",
+                                            "#0d9488",
+                                            "#fb923c",
+                                        ],
+                                        hoverBackgroundColor: [
+                                            "#9BD0F5",
+                                            "#9BD0F5",
+                                        ],
+                                        borderWidth: 5,
+                                        borderColor: "#fff",
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                animation: {
+                                    duration: 2000,
+                                    easing: "easeOutBounce",
+                                },
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
                                         display: false,
                                     },
-                                },
-                                y: {
-                                    ticks: {
-                                        display: false,
-                                    },
-                                    grid: {
-                                        display: false,
-                                        drawBorder: false,
+                                    tooltip: {
+                                        backgroundColor: "#333",
+                                        titleColor: "#fff",
+                                        bodyColor: "#fff",
                                     },
                                 },
+                                cutout: "80%",
                             },
-                        },
+                        });
                     });
-
-                    setInterval(() => {
-                        // Swap visitor data
-                        let newData = reportBarChartData[0];
-                        reportBarChartData.shift();
-                        reportBarChartData.push(newData);
-
-                        myBarChart.data.datasets[0].data = reportBarChartData;
-                        myBarChart.update();
-                    }, 1000);
-                });
+            } catch (error) {
+                console.error("Error report MemberTwo data:", error);
+            }
         },
-        reportBook() {
-            fetch(
-                "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjgOX_J4Swg5lJXWe8mBO1Pe6jYHfB_qqDg3uOILSoyI6wOl2DS4GrQvL0N_E6udVzo7tNt2GJYamauj7sAo0MYd0hhwK_NZ-70aRrBS56v_kwTs4W-K0dQd7NNgHrQIr1GzvBqRL8POSaEpj1DBPMKS1R9Pnzan2XR81NZZ8eMv_geucbYWIBgipNklTQ0dmq5lR980EtIPzOxufTgJcTEBmjtgrsGos_6PxiIw2JJP-X2uzdB9wFzcBtaCqwI9oXpl-QTCsQd5opuO1vWUfODj4JT8rcMXcBA-i8V&lib=MfFKpDvkbxsVrVICzLEcZofhElnTbI1Nb"
-            ) // แก้เป็น URL ของคุณ
-                .then((response) => response.json())
-                .then((data) => {
-                    // สมมติ data เป็น array ของ object (แบบ JSON ที่คุณส่งมา)
-                    const firstRow = data[0];
+        async reportVocText() {
+            try {
+                const token = import.meta.env.VITE_LIBVOC_API_TOKEN;
 
-                    // ดึงเฉพาะค่าเดือน 01-12
-                    const monthData = [
-                        firstRow.jan || 0,
-                        firstRow.feb || 0,
-                        firstRow.mar || 0,
-                        firstRow.apr || 0,
-                        firstRow.may || 0,
-                        firstRow.june || 0,
-                        firstRow.jul || 0,
-                        firstRow.aug || 0,
-                        firstRow.sep || 0,
-                        firstRow.oct || 0,
-                        firstRow.nov || 0,
-                        firstRow.dec || 0,
-                    ];
+                const config = {
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                };
 
-                    // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
-                    this.bookDetail = {
-                        borrow: firstRow.borrow || "",
-                        satit: firstRow.satit || "",
-                        bachelor: firstRow.bachelor || "",
-                        graduate: firstRow.graduate || "",
-                        master: firstRow.master || "",
-                        academic: firstRow.academic || "",
-                        support: firstRow.support || "",
-                    };
-
-                    // สร้างกราฟ Chart.js
-                    Chart.defaults.font.family = "Anuphan";
-                    const ctx = this.$refs.reportBookOne;
-
-                    new Chart(ctx, {
-                        type: "bar",
-                        data: {
-                            labels: [
-                                "01",
-                                "02",
-                                "03",
-                                "04",
-                                "05",
-                                "06",
-                                "07",
-                                "08",
-                                "09",
-                                "10",
-                                "11",
-                                "12",
-                            ],
-                            datasets: [
-                                {
-                                    label: "สถิติการยืม รายเดือน / 2568",
-                                    data: monthData, // ใช้ข้อมูลจาก API
-                                    backgroundColor: [
-                                        "#ff6384",
-                                        "#36a2eb",
-                                        "#ffcd56",
-                                        "#4bc0c0",
-                                        "#9966ff",
-                                        "#ff9f40",
-                                        "#ff6384",
-                                        "#36a2eb",
-                                        "#ffcd56",
-                                        "#4bc0c0",
-                                        "#9966ff",
-                                        "#ff9f40",
-                                    ],
-                                    borderWidth: 2,
-                                    borderColor: "#fff",
-                                    borderRadius: 10,
-                                    borderSkipped: false,
-                                },
-                            ],
-                        },
-                        options: {
-                            responsive: true,
-                            animation: {
-                                duration: 2000,
-                                easing: "easeOutBounce",
-                            },
-                            plugins: {
-                                legend: {
-                                    display: true,
-                                    labels: {
-                                        color: "white",
-                                    },
-                                },
-                                tooltip: {
-                                    backgroundColor: "#333",
-                                    titleColor: "#fff",
-                                    bodyColor: "#fff",
-                                },
-                            },
-                            scales: {
-                                y: {
-                                    beginAtZero: true,
-                                    ticks: {
-                                        color: "white",
-                                    },
-                                },
-                                x: {
-                                    ticks: {
-                                        color: "white",
-                                    },
-                                },
-                            },
-                        },
+                axios
+                    .get("https://libvoc.msu.ac.th/api/getPost", config)
+                    .then((response) => {
+                        this.vocText = response.data;
+                    })
+                    .catch((error) => {
+                        console.error("Error fetching data:", error);
                     });
-                });
+            } catch (error) {
+                console.error("Error report VocText data:", error);
+            }
         },
-        reportMember() {
-            fetch(
-                "https://script.google.com/macros/s/AKfycbxqadaYYCf3xkezxEt7ppnd3IjzsYrSsmmLeabaozh168w9XE6-4CmwepXO3omNKYE-/exec"
-            ) // แก้เป็น URL ของคุณ
-                .then((response) => response.json())
-                .then((data) => {
-                    // สมมติ data เป็น array ของ object (แบบ JSON ที่คุณส่งมา)
-                    const firstRow = data[0];
+        async reportVocBar() {
+            try {
+                const token = import.meta.env.VITE_LIBVOC_API_TOKEN;
 
-                    // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
-                    const memberData = [
-                        firstRow.satit || 0,
-                        firstRow.bachelor || 0,
-                        firstRow.graduate || 0,
-                        firstRow.master || 0,
-                        firstRow.academic || 0,
-                        firstRow.support || 0,
-                    ];
+                const config = {
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                };
 
-                    this.memberDetail = {
-                        all: firstRow.all || "",
-                        satit: firstRow.satit || "",
-                        bachelor: firstRow.bachelor || "",
-                        graduate: firstRow.graduate || "",
-                        gmaster: firstRow.master || "",
-                        academic: firstRow.academic || "",
-                        support: firstRow.support || "",
-                    };
+                const response = await axios.get(
+                    "https://libvoc.msu.ac.th/api/getConcern",
+                    config
+                );
+                const dataVoc = response.data;
+                const labels = dataVoc.map((item) => item.title);
+                const data = dataVoc.map((item) => item.count);
 
-                    const ctx = this.$refs.reportUserOne;
-                    new Chart(ctx, {
-                        type: "doughnut",
-                        data: {
-                            labels: "",
-                            datasets: [
-                                {
-                                    label: "Data",
-                                    data: memberData,
-                                    backgroundColor: [
-                                        "#0ea5e9",
-                                        "#0d9488",
-                                        "#fb923c",
-                                        "#facc15",
-                                        "#64748b",
-                                        "#a3e635",
-                                    ],
-                                    hoverBackgroundColor: [
-                                        "#9BD0F5",
-                                        "#9BD0F5",
-                                    ],
-                                    borderWidth: 5,
-                                    borderColor: "#fff",
-                                },
-                            ],
+                // console.log(dataVoc, labels, data);
+
+                if (!Array.isArray(dataVoc) || dataVoc.length === 0) {
+                    console.warn(
+                        "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
+                        dataVoc
+                    );
+                    return;
+                }
+
+                const ctx = this.$refs.reportVocBar;
+                if (!ctx || !ctx.getContext) {
+                    console.warn("⛔️ Canvas ยังไม่พร้อม");
+                    return;
+                }
+
+                Chart.defaults.font.family = "Anuphan";
+                new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: "ประเภทคำร้อง",
+                                data: data,
+                                backgroundColor: [
+                                    "#ffcd56",
+                                    "#4bc0c0",
+                                    "rgba(54, 162, 235, 0.6)",
+                                ],
+                                borderWidth: 3,
+                                borderColor: "#fff",
+                                borderRadius: 10,
+                                borderSkipped: false,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        animation: {
+                            duration: 2000,
+                            easing: "easeOutBounce",
                         },
-                        options: {
-                            responsive: true,
-                            animation: {
-                                duration: 2000,
-                                easing: "easeOutBounce",
-                            },
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    display: false,
-                                },
-                                tooltip: {
-                                    backgroundColor: "#333",
-                                    titleColor: "#fff",
-                                    bodyColor: "#fff",
-                                },
-                            },
-                            cutout: "80%",
-                        },
-                    });
-                });
-        },
-        reportMemberTwo() {
-            fetch(
-                "https://script.google.com/macros/s/AKfycbw6uXjJZb8xBIk-dHKkoWRppNHqTrXG5ctLVSDJt1Ert6LghRyOmzwm0ubFK8wd42v2/exec"
-            ) // แก้เป็น URL ของคุณ
-                .then((response) => response.json())
-                .then((data) => {
-                    // สมมติ data เป็น array ของ object (แบบ JSON ที่คุณส่งมา)
-                    const firstRow = data[0];
-
-                    // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
-                    const memberDataTwo = [
-                        firstRow.nisit || 0,
-                        firstRow.staff || 0,
-                        firstRow.patron || 0,
-                    ];
-
-                    this.memberDetailTwo = {
-                        all: firstRow.all || "",
-                        nisit: firstRow.nisit || "",
-                        staff: firstRow.staff || "",
-                        patron: firstRow.patron || "",
-                    };
-
-                    const ctx = this.$refs.reportUserTwo;
-                    new Chart(ctx, {
-                        type: "doughnut",
-                        data: {
-                            labels: "",
-                            datasets: [
-                                {
-                                    label: "Data",
-                                    data: memberDataTwo,
-                                    backgroundColor: [
-                                        "#0ea5e9",
-                                        "#0d9488",
-                                        "#fb923c",
-                                    ],
-                                    hoverBackgroundColor: [
-                                        "#9BD0F5",
-                                        "#9BD0F5",
-                                    ],
-                                    borderWidth: 5,
-                                    borderColor: "#fff",
-                                },
-                            ],
-                        },
-                        options: {
-                            responsive: true,
-                            animation: {
-                                duration: 2000,
-                                easing: "easeOutBounce",
-                            },
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    display: false,
-                                },
-                                tooltip: {
-                                    backgroundColor: "#333",
-                                    titleColor: "#fff",
-                                    bodyColor: "#fff",
-                                },
-                            },
-                            cutout: "80%",
-                        },
-                    });
-                });
-        },
-        reportVocText() {
-            const token = import.meta.env.LIBVOC_API_TOKEN;
-
-            const config = {
-                headers: {
-                    token: token,
-                },
-            };
-
-            axios
-                .get("https://libvoc.msu.ac.th/api/getPost", config)
-                .then((response) => {
-                    this.vocText = response.data;
-                })
-                .catch((error) => {
-                    console.error("Error fetching data:", error);
-                });
-        },
-        reportVocBar() {
-            const token = import.meta.env.LIBVOC_API_TOKEN;
-
-            const config = {
-                headers: {
-                    token: token
-                },
-            };
-
-            axios
-                .get("https://libvoc.msu.ac.th/api/getConcern", config)
-                .then((response) => {
-                    const dataVoc = response.data;
-
-                    Chart.defaults.font.family = "Anuphan";
-                    const ctx = this.$refs.reportVocOne;
-                    new Chart(ctx, {
-                        type: "bar",
-                        data: {
-                            labels: ["ข้อร้องเรียน", "ข้อเสนอแนะ", "คำชืนชม"],
-                            datasets: [
-                                {
-                                    label: "ประเภทคำร้อง",
-                                    data: dataVoc,
-                                    backgroundColor: [
-                                        "#ffcd56",
-                                        "#4bc0c0",
-                                        "rgba(54, 162, 235, 0.6)",
-                                    ],
-                                    borderWidth: 3,
-                                    borderColor: "#fff",
-                                    borderRadius: 10,
-                                    borderSkipped: false,
-                                },
-                            ],
-                        },
-                        options: {
-                            responsive: true,
-                            animation: {
-                                duration: 2000,
-                                easing: "easeOutBounce",
-                            },
-                            plugins: {
-                                legend: {
-                                    display: true,
-                                    labels: {
-                                        color: "white", // <- ใส่ตรงนี้!
-                                    },
-                                },
-                                tooltip: {
-                                    backgroundColor: "#333",
-                                    titleColor: "#fff",
-                                    bodyColor: "#fff",
-                                },
-                            },
-                            scales: {
-                                y: {
-                                    beginAtZero: true,
-                                    ticks: {
-                                        color: "white", // <- ใส่ตรงนี้!
-                                    },
-                                },
-                                x: {
-                                    ticks: {
-                                        color: "white", // <- ใส่ตรงนี้!
-                                    },
-                                },
-                            },
-                        },
-                    });
-                })
-                .catch((error) => {
-                    console.error("Error fetching data:", error);
-                });
-        },
-        reportVocTwo() {
-            const token = import.meta.env.LIBVOC_API_TOKEN;
-
-            const config = {
-                headers: {
-                    token: token
-                },
-            };
-
-            axios
-                .get("https://libvoc.msu.ac.th/api/getType", config)
-                .then((response) => {
-                    const dataVoc = response.data;
-
-                    Chart.defaults.font.family = "Anuphan";
-
-                    const ctx = this.$refs.reportVocTwo;
-                    new Chart(ctx, {
-                        type: "bar",
-                        data: {
-                            labels: ["นักศึกษา", "อาจารย์", "บุคลากร"],
-                            datasets: [
-                                {
-                                    label: "ประเภทผู้ใช้บริการ",
-                                    data: dataVoc,
-                                    backgroundColor: [
-                                        "#ff6384",
-                                        "rgba(255, 159, 64, 0.6)",
-                                        "rgba(255, 205, 86, 0.6)",
-                                    ],
-                                    borderColor: [
-                                        "rgb(255, 99, 132)",
-                                        "rgb(255, 159, 64)",
-                                        "rgb(255, 205, 86)",
-                                    ],
-                                    borderWidth: 3,
-                                    borderColor: "#fff",
-                                    borderRadius: 10,
-                                    borderSkipped: false,
-                                },
-                            ],
-                        },
-                        options: {
-                            responsive: true,
-                            animation: {
-                                duration: 2000,
-                                easing: "easeOutBounce",
-                            },
-                            plugins: {
-                                legend: {
-                                    display: true,
-                                    labels: {
-                                        color: "white", // <- ใส่ตรงนี้!
-                                    },
-                                },
-                                tooltip: {
-                                    backgroundColor: "#333",
-                                    titleColor: "#fff",
-                                    bodyColor: "#fff",
-                                },
-                            },
-                            scales: {
-                                y: {
-                                    beginAtZero: true,
-                                    ticks: {
-                                        color: "white", // <- ใส่ตรงนี้!
-                                    },
-                                },
-                                x: {
-                                    ticks: {
-                                        color: "white", // <- ใส่ตรงนี้!
-                                    },
-                                },
-                            },
-                        },
-                    });
-                })
-                .catch((error) => {
-                    console.error("Error fetching data:", error);
-                });
-        },
-        reportStdDonut() {
-            const token = import.meta.env.LIBROOM_API_TOKEN;
-
-            const config = {
-                headers: {
-                    token: token
-                },
-            };
-
-            axios
-                .get("https://libroom.msu.ac.th/api/getService", config)
-                .then((response) => {
-                    const dataStd = response.data;
-
-                    Chart.defaults.font.family = "Anuphan";
-
-                    const ctx = this.$refs.reportStdOne;
-                    new Chart(ctx, {
-                        type: "doughnut",
-                        data: {
-                            labels: ["AREC", "DLP", "MSU SPACE"],
-                            datasets: [
-                                {
-                                    label: "",
-                                    data: dataStd,
-                                    backgroundColor: [
-                                        "#ff6384",
-                                        "#36a2eb",
-                                        "#ffcd56",
-                                    ],
-                                    borderColor: [
-                                        "#ff6384",
-                                        "#36a2eb",
-                                        "#ffcd56",
-                                    ],
-                                    borderWidth: 3,
-                                    borderColor: "#fff",
-                                    borderWidth: 2,
-                                    hoverOffset: 15,
-                                },
-                            ],
-                        },
-                        options: {
-                            responsive: true,
-                            animation: {
-                                animateScale: true,
-                                animateRotate: true,
-                                duration: 2000,
-                                easing: "easeOutBack",
-                            },
-                            plugins: {
-                                legend: {
-                                    position: "top",
-                                    labels: {
-                                        color: "white", // <- ใส่ตรงนี้!
-                                    },
-                                },
-                                title: {
-                                    display: true,
-                                    text: "สถานที่",
-                                    font: { weight: "normal" },
+                        plugins: {
+                            legend: {
+                                display: true,
+                                labels: {
                                     color: "white",
                                 },
-                                tooltip: {
-                                    backgroundColor: "#333",
-                                    titleColor: "#fff",
-                                    bodyColor: "#fff",
+                            },
+                            tooltip: {
+                                backgroundColor: "#333",
+                                titleColor: "#fff",
+                                bodyColor: "#fff",
+                            },
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    color: "white",
+                                },
+                            },
+                            x: {
+                                ticks: {
+                                    color: "white",
                                 },
                             },
                         },
+                    },
+                });
+            } catch (error) {
+                console.error("⚠️ Error reportVocBar:", error);
+            }
+        },
+        async reportVocTwo() {
+            try {
+                const token = import.meta.env.VITE_LIBVOC_API_TOKEN;
+
+                const config = {
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                };
+
+                const response = await axios.get(
+                    "https://libvoc.msu.ac.th/api/getType",
+                    config
+                );
+                const dataVoc = response.data;
+                const labels = dataVoc.map((item) => item.title);
+                const data = dataVoc.map((item) => item.count);
+
+                if (!Array.isArray(dataVoc) || dataVoc.length === 0) {
+                    console.warn(
+                        "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
+                        dataVoc
+                    );
+                    return;
+                }
+
+                const ctx = this.$refs.reportVocTwo;
+                if (!ctx || !ctx.getContext) {
+                    console.warn("⛔️ Canvas ยังไม่พร้อม");
+                    return;
+                }
+
+                Chart.defaults.font.family = "Anuphan";
+                new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: "ประเภทผู้ใช้บริการ",
+                                data: data,
+                                backgroundColor: [
+                                    "#ff6384",
+                                    "rgba(255, 159, 64, 0.6)",
+                                    "rgba(255, 205, 86, 0.6)",
+                                ],
+                                borderColor: [
+                                    "rgb(255, 99, 132)",
+                                    "rgb(255, 159, 64)",
+                                    "rgb(255, 205, 86)",
+                                ],
+                                borderWidth: 3,
+                                borderColor: "#fff",
+                                borderRadius: 10,
+                                borderSkipped: false,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        animation: {
+                            duration: 2000,
+                            easing: "easeOutBounce",
+                        },
+                        plugins: {
+                            legend: {
+                                display: true,
+                                labels: {
+                                    color: "white", // <- ใส่ตรงนี้!
+                                },
+                            },
+                            tooltip: {
+                                backgroundColor: "#333",
+                                titleColor: "#fff",
+                                bodyColor: "#fff",
+                            },
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    color: "white", // <- ใส่ตรงนี้!
+                                },
+                            },
+                            x: {
+                                ticks: {
+                                    color: "white", // <- ใส่ตรงนี้!
+                                },
+                            },
+                        },
+                    },
+                });
+            } catch (error) {
+                console.error("Error report VocTwo data:", error);
+            }
+        },
+        async reportStdDonut() {
+            try {
+                const token = import.meta.env.VITE_LIBROOM_API_TOKEN;
+
+                const config = {
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                };
+
+                const response = await axios.get(
+                    "https://libroom.msu.ac.th/api/getService",
+                    config
+                );
+
+                const dataStd = response.data;
+                const labels = Object.keys(dataStd);
+                const data = Object.values(dataStd);
+
+                console.log(dataStd, labels, data);
+
+                if (!dataStd || typeof dataStd !== 'object' || Object.keys(dataStd).length === 0) {
+                    console.warn(
+                        "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
+                        dataStd
+                    );
+                    return;
+                }
+
+                const ctx = this.$refs.reportStdOne;
+                if (!ctx || !ctx.getContext) {
+                    console.warn("⛔️ Canvas ยังไม่พร้อม");
+                    return;
+                }
+
+                Chart.defaults.font.family = "Anuphan";
+                new Chart(ctx, {
+                    type: "doughnut",
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: "",
+                                data: data,
+                                backgroundColor: [
+                                    "#ff6384",
+                                    "#36a2eb",
+                                    "#ffcd56",
+                                ],
+                                borderColor: ["#ff6384", "#36a2eb", "#ffcd56"],
+                                borderWidth: 3,
+                                borderColor: "#fff",
+                                borderWidth: 2,
+                                hoverOffset: 15,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        animation: {
+                            animateScale: true,
+                            animateRotate: true,
+                            duration: 2000,
+                            easing: "easeOutBack",
+                        },
+                        plugins: {
+                            legend: {
+                                position: "top",
+                                labels: {
+                                    color: "white", // <- ใส่ตรงนี้!
+                                },
+                            },
+                            title: {
+                                display: true,
+                                text: "สถานที่",
+                                font: { weight: "normal" },
+                                color: "white",
+                            },
+                            tooltip: {
+                                backgroundColor: "#333",
+                                titleColor: "#fff",
+                                bodyColor: "#fff",
+                            },
+                        },
+                    },
+                });
+            } catch (error) {
+                console.error("Error report StudyRoomDonut data:", error);
+            }
+        },
+        async reportStdBar() {
+            try {
+                const token = import.meta.env.VITE_LIBROOM_API_TOKEN;
+
+                const config = {
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                };
+
+                const response = await axios.get(
+                    "https://libroom.msu.ac.th/api/getMost",
+                    config
+                );
+
+                const dataStd = response.data;
+                const labels = dataStd.map((item) => item.faculty);
+                const data = dataStd.map((item) => item.count);
+
+                if (!Array.isArray(dataStd) || dataStd.length === 0) {
+                    console.warn(
+                        "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
+                        dataStd
+                    );
+                    return;
+                }
+
+                const ctx = this.$refs.reportStdTwo;
+                if (!ctx || !ctx.getContext) {
+                    console.warn("⛔️ Canvas ยังไม่พร้อม");
+                    return;
+                }
+
+                Chart.defaults.font.family = "Anuphan";
+                new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: "คณะที่เป็นสมาชิกสูงสุด 5 อันดับแรก",
+                                data: data,
+                                backgroundColor: [
+                                    "#ff6384",
+                                    "#36a2eb",
+                                    "#ffcd56",
+                                    "#4bc0c0",
+                                    "#9966ff",
+                                ],
+                                borderColor: [
+                                    "rgb(255, 99, 132)",
+                                    "rgb(255, 159, 64)",
+                                    "rgb(255, 205, 86)",
+                                    "rgb(75, 192, 192)",
+                                    "rgb(54, 162, 235)",
+                                ],
+                                borderWidth: 3,
+                                borderColor: "#fff",
+                                borderRadius: 10,
+                                borderSkipped: false,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        animation: {
+                            duration: 2000,
+                            easing: "easeOutBounce",
+                        },
+                        plugins: {
+                            legend: {
+                                display: true,
+                                labels: {
+                                    color: "white", // <- ใส่ตรงนี้!
+                                },
+                            },
+                            tooltip: {
+                                backgroundColor: "#333",
+                                titleColor: "#fff",
+                                bodyColor: "#fff",
+                            },
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    color: "white", // <- ใส่ตรงนี้!
+                                },
+                            },
+                            x: {
+                                ticks: {
+                                    color: "white", // <- ใส่ตรงนี้!
+                                },
+                            },
+                        },
+                    },
+                });
+            } catch (error) {
+                console.error("Error report StudyRoomBar data:", error);
+            }
+        },
+        async reportOnline() {
+            try {
+                const token = import.meta.env.VITE_LIBRARY_API_TOKEN;
+
+                const config = {
+                    //ใส่ทุกครั้งที่รับ File เข้ามา
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                };
+                axios
+                    .get("http://202.28.32.28/countdb/api/getMonth", config)
+                    .then((response) => {
+                        this.dbOnline = response.data;
+                    })
+                    .catch((err) => {
+                        console.log(err);
                     });
-                })
-                .catch((error) => {
-                    console.error("Error fetching data:", error);
-                });
+            } catch (error) {
+                console.error("Error report DBOnline data:", error);
+            }
         },
-        reportStdBar() {
-            const token = import.meta.env.LIBROOM_API_TOKEN;
+        async reportOnlineTwo() {
+            try {
+                const token = import.meta.env.VITE_LIBRARY_API_TOKEN;
 
-            const config = {
-                headers: {
-                    token: token,
-                },
-            };
-
-            axios
-                .get("https://libroom.msu.ac.th/api/getMost", config)
-                .then((response) => {
-                    this.vocText = response.data;
-
-                    Chart.defaults.font.family = "Anuphan";
-                    const ctx = this.$refs.reportStdTwo;
-                    new Chart(ctx, {
-                        type: "bar",
-                        data: {
-                            labels: [
-                                "การบัญชีและการจัดการ",
-                                "มนุษยศาสตร์และสังคมศาสตร์",
-                                "วิทยาศาสตร์",
-                                "วิทยาการสารสนเทศ",
-                                "สาธารณสุขศาสตร์",
-                            ],
-                            datasets: [
-                                {
-                                    label: "คณะที่เป็นสมาชิกสูงสุด 5 อันดับแรก",
-                                    data: [7370, 6338, 3586, 3041, 2712],
-                                    backgroundColor: [
-                                        "#ff6384",
-                                        "#36a2eb",
-                                        "#ffcd56",
-                                        "#4bc0c0",
-                                        "#9966ff",
-                                    ],
-                                    borderColor: [
-                                        "rgb(255, 99, 132)",
-                                        "rgb(255, 159, 64)",
-                                        "rgb(255, 205, 86)",
-                                        "rgb(75, 192, 192)",
-                                        "rgb(54, 162, 235)",
-                                    ],
-                                    borderWidth: 3,
-                                    borderColor: "#fff",
-                                    borderRadius: 10,
-                                    borderSkipped: false,
-                                },
-                            ],
-                        },
-                        options: {
-                            responsive: true,
-                            animation: {
-                                duration: 2000,
-                                easing: "easeOutBounce",
-                            },
-                            plugins: {
-                                legend: {
-                                    display: true,
-                                    labels: {
-                                        color: "white", // <- ใส่ตรงนี้!
-                                    },
-                                },
-                                tooltip: {
-                                    backgroundColor: "#333",
-                                    titleColor: "#fff",
-                                    bodyColor: "#fff",
-                                },
-                            },
-                            scales: {
-                                y: {
-                                    beginAtZero: true,
-                                    ticks: {
-                                        color: "white", // <- ใส่ตรงนี้!
-                                    },
-                                },
-                                x: {
-                                    ticks: {
-                                        color: "white", // <- ใส่ตรงนี้!
-                                    },
-                                },
-                            },
-                        },
+                const config = {
+                    //ใส่ทุกครั้งที่รับ File เข้ามา
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                };
+                axios
+                    .get("http://202.28.32.28/countdb/api/getStat", config)
+                    .then((response) => {
+                        this.dbOnlineTwo = response.data;
+                    })
+                    .catch((err) => {
+                        console.log(err);
                     });
-                })
-                .catch((error) => {
-                    console.error("Error fetching data:", error);
-                });
+            } catch (error) {
+                console.error("Error report DBOnlineTwo data:", error);
+            }
         },
-        reportOnline() {
-            const token = import.meta.env.LIBRARY_API_TOKEN;
+        async reportOpac() {
+            try {
+                const token = import.meta.env.VITE_WALAI_API_TOKEN;
 
-            const config = {
-                //ใส่ทุกครั้งที่รับ File เข้ามา
-                headers: {
-                    token: token
-                },
-            };
-            axios
-                .get("http://202.28.32.28/countdb/api/getMonth", config)
-                .then((response) => {
-                    this.dbOnline = response.data;
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        },
-        reportOnlineTwo() {
-            const token = import.meta.env.LIBRARY_API_TOKEN;
-
-            const config = {
-                //ใส่ทุกครั้งที่รับ File เข้ามา
-                headers: {
-                    token: token,
-                },
-            };
-            axios
-                .get("http://202.28.32.28/countdb/api/getStat", config)
-                .then((response) => {
-                    this.dbOnlineTwo = response.data;
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        },
-        reportOpac() {
-            const token = import.meta.env.WALAI_API_TOKEN;
-            
-            const config = {
-                //ใส่ทุกครั้งที่รับ File เข้ามา
-                headers: {
-                    token: token
-                },
-            };
-            axios
-                .get("https://libapp.msu.ac.th/v1/api/GetTopView", config)
-                .then((response) => {
-                    this.opacList = response.data;
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-            // axios
-            //     .get("/api/GetTopView")
-            //     .then((response) => {
-            //         this.opacList = response.data;
-            //     })
-            //     .catch((err) => {});
+                const config = {
+                    //ใส่ทุกครั้งที่รับ File เข้ามา
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                };
+                axios
+                    .get("https://libapp.msu.ac.th/v1/api/GetTopView", config)
+                    .then((response) => {
+                        this.opacList = response.data;
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+            } catch (error) {
+                console.error("Error report TopViewOpac data:", error);
+            }
         },
         memberShow() {
             this.showMemberOne = !this.showMemberOne;
