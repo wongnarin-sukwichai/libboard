@@ -1133,7 +1133,9 @@
                                         <!-- <option value="yearly">รายปี</option> -->
                                     </select>
                                 </div>
-                                <div class="mt-5">
+                                <!-- <div class="mt-5"
+                                v-if="dbOnline.length > 0"
+                                >
                                     <div
                                         v-for="(db, index) in dbOnline"
                                         :key="index"
@@ -1147,12 +1149,12 @@
                                             >
                                                 <img
                                                     alt="Midone - HTML Admin Template"
-                                                    :src="db.pic"
+                                                    :src="db?.pic ?? ''"
                                                 />
                                             </div>
                                             <div class="ml-4 mr-auto">
                                                 <div class="font-medium">
-                                                    {{ db.name }}
+                                                    {{ db?.name ?? "" }}
                                                 </div>
                                                 <div
                                                     class="text-slate-500 text-xs mt-0.5"
@@ -1161,7 +1163,7 @@
                                             <div
                                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
                                             >
-                                                {{ db.count }}
+                                                {{ db?.count ?? "" }}
                                             </div>
                                         </div>
                                     </div>
@@ -1175,6 +1177,12 @@
                                             View More
                                         </p>
                                     </div>
+                                </div>
+                                <div v-else class="mt-32 text-center text-gray-300 text-md">
+                                    ไม่มีข้อมูลออนไลน์ในเดือนนี้
+                                </div> -->
+                                <div class="mt-32 text-center text-gray-300 text-md">
+                                    อยู่ระหว่างดำเนินการ
                                 </div>
                             </div>
                             <!-- END: Weekly Best Sellers -->
@@ -1378,7 +1386,7 @@
                                                             class="font-medium whitespace-nowrap"
                                                         >
                                                             {{
-                                                                opac.TITLE.substring(
+                                                                opac?.TITLE ?? "".substring(
                                                                     0,
                                                                     80
                                                                 )
@@ -1440,7 +1448,7 @@
             <!-- Content ของ modal -->
             <div class="bg-white p-6 rounded-lg lg:w-1/3 h-3/4 overflow-y-auto">
                 <p class="text-lg text-amber-400">
-                    ** สถิติเข้าเยี่ยมชมมากที่สุด 10 อันดับแรก **
+                    ** สถิติเข้าเยี่ยมชมมากที่สุด 5 อันดับแรก **
                 </p>
                 <hr class="border-dashed" />
                 <div class="mt-5">
@@ -1457,12 +1465,12 @@
                             >
                                 <img
                                     alt="Midone - HTML Admin Template"
-                                    :src="db.pic || ''"
+                                    :src="db?.pic ?? ''"
                                 />
                             </div>
                             <div class="ml-4 mr-auto">
                                 <div class="font-medium">
-                                    {{ db.name || "" }}
+                                    {{ db?.name ?? "" }}
                                 </div>
                                 <div
                                     class="text-slate-500 text-xs mt-0.5"
@@ -1471,7 +1479,7 @@
                             <div
                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
                             >
-                                {{ db.count || "" }}
+                                {{ db?.count ?? "" }}
                             </div>
                         </div>
                     </div>
@@ -1505,10 +1513,10 @@ export default {
 
         this.$nextTick(() => {
             setTimeout(() => {
-                // this.reportVocBar();
-                // this.reportVocTwo();
-                // this.reportStdDonut();
-                // this.reportStdBar();
+                this.reportVocBar();
+                this.reportVocTwo();
+                this.reportStdDonut();
+                this.reportStdBar();
             }, 500);
         });
     },
@@ -1545,10 +1553,10 @@ export default {
                 this.reportBook(),
                 this.reportMember(),
                 this.reportMemberTwo(),
-                // this.reportVocText(),
+                this.reportVocText(),
                 // this.reportOnline(),
                 // this.reportOnlineTwo(),
-                // this.reportOpac()
+                this.reportOpac()
             ]);
         },
         showMenu() {
@@ -2368,7 +2376,7 @@ export default {
                     },
                 };
                 axios
-                    .get("http://202.28.32.28/countdb/api/getMonth", config)
+                    .get("https://202.28.32.28/countdb/api/getMonth", config)
                     .then((response) => {
                         this.dbOnline = response.data;
                     })
@@ -2390,7 +2398,7 @@ export default {
                     },
                 };
                 axios
-                    .get("http://202.28.32.28/countdb/api/getStat", config)
+                    .get("https://202.28.32.28/countdb/api/getStat", config)
                     .then((response) => {
                         this.dbOnlineTwo = response.data;
                     })
@@ -2403,22 +2411,25 @@ export default {
         },
         async reportOpac() {
             try {
-                const token = import.meta.env.VITE_WALAI_API_TOKEN;
+                // const token = import.meta.env.VITE_WALAI_API_TOKEN;
 
-                const config = {
-                    //ใส่ทุกครั้งที่รับ File เข้ามา
-                    headers: {
-                        Authorization: "Bearer " + token,
-                    },
-                };
-                axios
-                    .get("https://libapp.msu.ac.th/v1/api/GetTopView", config)
-                    .then((response) => {
-                        this.opacList = response.data;
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    });
+                // const config = {
+                //     //ใส่ทุกครั้งที่รับ File เข้ามา
+                //     headers: {
+                //         Authorization: "Bearer " + token,
+                //         "Content-Type": "application/x-www-form-urlencoded",
+                //     },
+                // };
+                // axios
+                //     .get("https://libapp.msu.ac.th/v1/api/GetTopView", config)
+                //     .then((response) => {
+                //         this.opacList = response.data;
+                //     })
+
+                axios.get("/api/GetTopView").then((response) => {
+                    this.opacList = response.data
+                    // console.log(response, response.data);
+                });
             } catch (error) {
                 console.error("Error report TopViewOpac data:", error);
             }
