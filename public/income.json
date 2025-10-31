@@ -1,0 +1,19 @@
+{
+    "time": "08.00.10",            
+    "totalCount": 132,          
+    "items": [
+        { 
+            "title": "A", 
+            "total": 100 
+        },
+        { 
+            "title": "B", 
+            "total": 30 
+        },
+        { 
+            "title": "C", 
+            "total": 2
+        }
+    ]
+}
+
