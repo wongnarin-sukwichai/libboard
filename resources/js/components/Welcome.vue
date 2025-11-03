@@ -467,7 +467,7 @@
                                                             class="w-5 h-3 rounded-sm bg-sky-400"
                                                         ></span>
                                                         <span>{{
-                                                            dbList[0]?.shortName
+                                                            dbName[0]
                                                         }}</span>
                                                     </li>
                                                     <li
@@ -477,7 +477,7 @@
                                                             class="w-5 h-3 rounded-sm bg-emerald-400"
                                                         ></span>
                                                         <span>{{
-                                                            dbList[1]?.shortName
+                                                            dbName[1]
                                                         }}</span>
                                                     </li>
                                                     <li
@@ -487,7 +487,7 @@
                                                             class="w-5 h-3 rounded-sm bg-amber-400"
                                                         ></span>
                                                         <span>{{
-                                                            dbList[2]?.shortName
+                                                            dbName[2]
                                                         }}</span>
                                                     </li>
                                                     <li
@@ -497,7 +497,7 @@
                                                             class="w-5 h-3 rounded-sm bg-orange-400"
                                                         ></span>
                                                         <span>{{
-                                                            dbList[3]?.shortName
+                                                            dbName[3]
                                                         }}</span>
                                                     </li>
                                                     <li
@@ -507,7 +507,7 @@
                                                             class="w-5 h-3 rounded-sm bg-pink-400"
                                                         ></span>
                                                         <span>{{
-                                                            dbList[4]?.shortName
+                                                            dbName[4]
                                                         }}</span>
                                                     </li>
                                                 </ul>
@@ -928,6 +928,7 @@ export default {
             moment: moment,
             vocList: [],
             dbList: [],
+            dbName: [],
             chartWeb: null,
             borrowAll: "",
             returnAll: "",
@@ -1227,6 +1228,7 @@ export default {
                     .then((data) => {
                         this.dbList = data.items;
                         this.dbAll = data.totalCount;
+                        this.dbName = data.top5.map(item => item.shortName);
                         const labels = data.top5.map(item => item.shortName);
                         const dbData = data.top5.map(item => item.total);
                         Chart.defaults.font.family = "Anuphan";
