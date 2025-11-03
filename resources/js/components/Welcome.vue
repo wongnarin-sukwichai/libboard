@@ -1225,7 +1225,7 @@ export default {
                 )
                     .then((response) => response.json())
                     .then((data) => {
-                        this.dbList = data.top5;
+                        this.dbList = data.items;
                         this.dbAll = data.totalCount;
                         const labels = data.top5.map(item => item.shortName);
                         const dbData = data.top5.map(item => item.total);
