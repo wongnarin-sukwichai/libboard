@@ -468,9 +468,12 @@
                                                         <span
                                                             class="w-5 h-3 rounded-sm bg-sky-400"
                                                         ></span>
-                                                        <span class="text-slate-900 dark:text-white">{{
-                                                            dbList[0]?.shortName
-                                                        }}</span>
+                                                        <span
+                                                            class="text-slate-900 dark:text-white"
+                                                            >{{
+                                                                dbName[0]
+                                                            }}</span
+                                                        >
                                                     </li>
                                                     <li
                                                         class="flex items-center space-x-2"
@@ -478,9 +481,12 @@
                                                         <span
                                                             class="w-5 h-3 rounded-sm bg-emerald-400"
                                                         ></span>
-                                                        <span class="text-slate-900 dark:text-white">{{
-                                                            dbList[1]?.shortName
-                                                        }}</span>
+                                                        <span
+                                                            class="text-slate-900 dark:text-white"
+                                                            >{{
+                                                                dbName[1]
+                                                            }}</span
+                                                        >
                                                     </li>
                                                     <li
                                                         class="flex items-center space-x-2"
@@ -488,9 +494,12 @@
                                                         <span
                                                             class="w-5 h-3 rounded-sm bg-amber-400"
                                                         ></span>
-                                                        <span class="text-slate-900 dark:text-white">{{
-                                                            dbList[2]?.shortName
-                                                        }}</span>
+                                                        <span
+                                                            class="text-slate-900 dark:text-white"
+                                                            >{{
+                                                                dbName[2]
+                                                            }}</span
+                                                        >
                                                     </li>
                                                     <li
                                                         class="flex items-center space-x-2"
@@ -498,9 +507,12 @@
                                                         <span
                                                             class="w-5 h-3 rounded-sm bg-orange-400"
                                                         ></span>
-                                                        <span class="text-slate-900 dark:text-white">{{
-                                                            dbList[3]?.shortName
-                                                        }}</span>
+                                                        <span
+                                                            class="text-slate-900 dark:text-white"
+                                                            >{{
+                                                                dbName[3]
+                                                            }}</span
+                                                        >
                                                     </li>
                                                     <li
                                                         class="flex items-center space-x-2"
@@ -508,9 +520,12 @@
                                                         <span
                                                             class="w-5 h-3 rounded-sm bg-pink-400"
                                                         ></span>
-                                                        <span class="text-slate-900 dark:text-white">{{
-                                                            dbList[4]?.shortName
-                                                        }}</span>
+                                                        <span
+                                                            class="text-slate-900 dark:text-white"
+                                                            >{{
+                                                                dbName[4]
+                                                            }}</span
+                                                        >
                                                     </li>
                                                 </ul>
                                             </div>
@@ -813,9 +828,7 @@
             v-if="dbModal"
         >
             <!-- Content ของ modal -->
-            <div
-                class="bg-white p-6 rounded-lg lg:w-1/3 h-3/4 overflow-y-auto"
-            >
+            <div class="bg-white p-6 rounded-lg lg:w-1/3 h-3/4 overflow-y-auto">
                 <p class="text-lg text-gray-800">
                     ** สถิติฐานข้อมูลออนไลน์ทั้งหมด
                     <span class="text-amber-400 font-semibold"
@@ -935,6 +948,7 @@ export default {
             moment: moment,
             vocList: [],
             dbList: [],
+            dbName: [],
             chartWeb: null,
             borrowAll: "",
             returnAll: "",
@@ -1227,8 +1241,9 @@ export default {
                 )
                     .then((response) => response.json())
                     .then((data) => {
-                        this.dbList = data.top5;
+                        this.dbList = data.items;
                         this.dbAll = data.totalCount;
+                        this.dbName = data.top5.map((item) => item.shortName);
                         const labels = data.top5.map((item) => item.shortName);
                         const dbData = data.top5.map((item) => item.total);
                         Chart.defaults.font.family = "Anuphan";
@@ -1568,8 +1583,8 @@ export default {
             this.isModalShow = !this.isModalShow;
         },
         link() {
-            window.location.href = '/';
-        }
+            window.location.href = "/";
+        },
     },
 };
 </script>
