@@ -240,9 +240,10 @@
                                                     ></span>
                                                     A
                                                 </div>
-                                                <span class="text-end text-slate-900 dark:text-white">{{
-                                                    this.incomeA
-                                                }}</span>
+                                                <span
+                                                    class="text-end text-slate-900 dark:text-white"
+                                                    >{{ this.incomeA }}</span
+                                                >
                                             </li>
                                             <li
                                                 class="flex items-center justify-between"
@@ -255,9 +256,10 @@
                                                     ></span>
                                                     B
                                                 </div>
-                                                <span class="text-end text-slate-900 dark:text-white">{{
-                                                    this.incomeB
-                                                }}</span>
+                                                <span
+                                                    class="text-end text-slate-900 dark:text-white"
+                                                    >{{ this.incomeB }}</span
+                                                >
                                             </li>
                                             <li
                                                 class="flex items-center justify-between"
@@ -270,9 +272,10 @@
                                                     ></span>
                                                     MSU Space
                                                 </div>
-                                                <span class="text-end text-slate-900 dark:text-white">{{
-                                                    this.incomeC
-                                                }}</span>
+                                                <span
+                                                    class="text-end text-slate-900 dark:text-white"
+                                                    >{{ this.incomeC }}</span
+                                                >
                                             </li>
                                             <li
                                                 class="flex items-center justify-between"
@@ -282,9 +285,10 @@
                                                 >
                                                     #
                                                 </div>
-                                                <span class="text-end text-slate-900 dark:text-white">{{
-                                                    this.incomeAll
-                                                }}</span>
+                                                <span
+                                                    class="text-end text-slate-900 dark:text-white"
+                                                    >{{ this.incomeAll }}</span
+                                                >
                                             </li>
                                         </ul>
 
@@ -376,15 +380,13 @@
                                                     size="sm"
                                                     color="#22C55E"
                                                 ></box-icon>
-                                                <span
-                                                    class="text-sm pl-2 "
+                                                <span class="text-sm pl-2"
                                                     >จำนวน</span
                                                 >
                                                 <span class="text-md px-2">{{
                                                     borrowAll
                                                 }}</span>
-                                                <span
-                                                    class="text-sm"
+                                                <span class="text-sm"
                                                     >รายการยืม</span
                                                 >
                                             </div>
@@ -407,15 +409,13 @@
                                                     size="sm"
                                                     color="#36a2eb"
                                                 ></box-icon>
-                                                <span
-                                                    class="text-sm pl-2"
+                                                <span class="text-sm pl-2"
                                                     >จำนวน</span
                                                 >
                                                 <span class="text-md px-2">{{
                                                     returnAll
                                                 }}</span>
-                                                <span
-                                                    class="text-sm"
+                                                <span class="text-sm"
                                                     >รายการคืน</span
                                                 >
                                             </div>
@@ -454,7 +454,9 @@
                                             <div
                                                 class="w-full md:w-1/2 text-gray-200 text-sm"
                                             >
-                                                <p class="text-xs mb-4 text-slate-900 dark:text-white">
+                                                <p
+                                                    class="text-xs mb-4 text-slate-900 dark:text-white"
+                                                >
                                                     * ผู้เข้าใช้งานมากที่สุด 5
                                                     อันดับ
                                                 </p>
@@ -466,7 +468,7 @@
                                                         <span
                                                             class="w-5 h-3 rounded-sm bg-sky-400"
                                                         ></span>
-                                                        <span>{{
+                                                        <span class="text-slate-900 dark:text-white">{{
                                                             dbList[0]?.shortName
                                                         }}</span>
                                                     </li>
@@ -476,7 +478,7 @@
                                                         <span
                                                             class="w-5 h-3 rounded-sm bg-emerald-400"
                                                         ></span>
-                                                        <span>{{
+                                                        <span class="text-slate-900 dark:text-white">{{
                                                             dbList[1]?.shortName
                                                         }}</span>
                                                     </li>
@@ -486,7 +488,7 @@
                                                         <span
                                                             class="w-5 h-3 rounded-sm bg-amber-400"
                                                         ></span>
-                                                        <span>{{
+                                                        <span class="text-slate-900 dark:text-white">{{
                                                             dbList[2]?.shortName
                                                         }}</span>
                                                     </li>
@@ -496,7 +498,7 @@
                                                         <span
                                                             class="w-5 h-3 rounded-sm bg-orange-400"
                                                         ></span>
-                                                        <span>{{
+                                                        <span class="text-slate-900 dark:text-white">{{
                                                             dbList[3]?.shortName
                                                         }}</span>
                                                     </li>
@@ -506,7 +508,7 @@
                                                         <span
                                                             class="w-5 h-3 rounded-sm bg-pink-400"
                                                         ></span>
-                                                        <span>{{
+                                                        <span class="text-slate-900 dark:text-white">{{
                                                             dbList[4]?.shortName
                                                         }}</span>
                                                     </li>
@@ -635,12 +637,16 @@
                                                 <div
                                                     class="w-full md:w-1/2 text-gray-200 text-sm ml-12"
                                                 >
-                                                    <p class="text-xs mb-4 text-slate-900 dark:text-white">
+                                                    <p
+                                                        class="text-xs mb-4 text-slate-900 dark:text-white"
+                                                    >
                                                         *
                                                         ผู้เข้าใช้บริการแบ่งตามพื้นที่
                                                     </p>
 
-                                                    <ul class="space-y-2 text-slate-900 dark:text-white">
+                                                    <ul
+                                                        class="space-y-2 text-slate-900 dark:text-white"
+                                                    >
                                                         <li
                                                             class="flex items-center space-x-2"
                                                         >
@@ -728,7 +734,7 @@
                                                     <!-- color="#075985" -->
                                                     <box-icon
                                                         name="user-voice"
-                                                        color="white"
+                                                        color="gray"
                                                         size="md"
                                                     ></box-icon>
                                                 </div>
@@ -785,14 +791,14 @@
             <!-- <div
                 class="dark-mode-switcher__toggle border"
                 :class="
-                    isDarkMode === true
+                    isDarkMode === false
                         ? 'dark-mode-switcher__toggle--active'
                         : ''
                 "
                 @click="darkMode()"
             ></div> -->
             <div
-                class="dark-mode-switcher__toggle border dark-mode-switcher__toggle--active"
+                class="dark-mode-switcher__toggle border"
                 @click="link()"
             ></div>
         </div>
@@ -808,9 +814,9 @@
         >
             <!-- Content ของ modal -->
             <div
-                class="bg-gray-800 p-6 rounded-lg lg:w-1/3 h-3/4 overflow-y-auto"
+                class="bg-white p-6 rounded-lg lg:w-1/3 h-3/4 overflow-y-auto"
             >
-                <p class="text-lg text-white">
+                <p class="text-lg text-gray-800">
                     ** สถิติฐานข้อมูลออนไลน์ทั้งหมด
                     <span class="text-amber-400 font-semibold"
                         >{{ dbAll }}
@@ -821,7 +827,7 @@
                 <div class="mt-5">
                     <div class="intro-y">
                         <div
-                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
+                            class="px-4 py-4 mb-3 flex items-center zoom-in bg-gray-100 rounded-lg shadow-md"
                             v-for="(db, index) in dbList"
                             :key="index"
                         >
@@ -897,6 +903,7 @@ export default {
 
         this.$nextTick(() => {
             setTimeout(() => {
+                this.darkMode();
                 this.repIncome();
                 this.repBookReturn();
                 this.repDbOnline();
@@ -921,7 +928,7 @@ export default {
         return {
             isReady: false,
             logo: "/img/library.png",
-            isDarkMode: true,
+            isDarkMode: false,
             showWelcome: true,
             modalMenu: false,
             dbModal: false,
@@ -967,13 +974,7 @@ export default {
             this.modalMenu = true;
         },
         darkMode() {
-            if (this.isDarkMode == false) {
-                this.isDarkMode = true;
-                document.documentElement.classList.add("dark"); //add class ที่ <html> ใน welcome.blade.php
-            } else {
-                this.isDarkMode = false;
-                document.documentElement.classList.remove("dark");
-            }
+            document.documentElement.classList.remove("dark");
         },
         welcome() {
             // แสดง welcome ก่อน
@@ -1036,6 +1037,7 @@ export default {
                 this.incomeAll = data.totalCount;
 
                 Chart.defaults.font.family = "Anuphan";
+
                 const ctx = this.$refs.repPatron;
 
                 // ✅ ใช้ if/else ป้องกันสร้าง chart ซ้ำ
@@ -1052,7 +1054,7 @@ export default {
                                     fill: false,
                                     borderColor: "rgba(59,130,246,0.9)",
                                     backgroundColor: "rgba(59,130,246,0.7)",
-                                    pointBorderColor: "#fff",
+                                    // pointBorderColor: "#fff",
                                     tension: 0.3,
                                     borderWidth: 2,
                                     pointRadius: 4,
@@ -1088,19 +1090,19 @@ export default {
                             },
                             scales: {
                                 x: {
-                                    ticks: { color: "white" },
+                                    ticks: { color: "black" },
                                     grid: { display: false },
                                 },
                                 y: {
                                     beginAtZero: true,
-                                    ticks: { color: "white" },
+                                    ticks: { color: "black" },
                                     grid: {
                                         color: "rgba(255,255,255,0.1)",
                                     },
                                 },
                             },
                             plugins: {
-                                legend: { labels: { color: "white" } },
+                                legend: { labels: { color: "black" } },
                                 tooltip: {
                                     backgroundColor: "#333",
                                     titleColor: "#fff",
@@ -1188,7 +1190,7 @@ export default {
                                     legend: {
                                         display: true,
                                         labels: {
-                                            color: "white",
+                                            color: "black",
                                             font: { family: "Anuphan" },
                                         },
                                     },
@@ -1201,13 +1203,13 @@ export default {
                                 scales: {
                                     y: {
                                         beginAtZero: true,
-                                        ticks: { color: "white" },
+                                        ticks: { color: "black" },
                                         grid: {
                                             color: "rgba(255,255,255,0.1)",
                                         },
                                     },
                                     x: {
-                                        ticks: { color: "white" },
+                                        ticks: { color: "black" },
                                         grid: { display: false },
                                     },
                                 },
@@ -1227,8 +1229,8 @@ export default {
                     .then((data) => {
                         this.dbList = data.top5;
                         this.dbAll = data.totalCount;
-                        const labels = data.top5.map(item => item.shortName);
-                        const dbData = data.top5.map(item => item.total);
+                        const labels = data.top5.map((item) => item.shortName);
+                        const dbData = data.top5.map((item) => item.total);
                         Chart.defaults.font.family = "Anuphan";
                         const ctx = this.$refs.repDB;
                         new Chart(ctx, {
@@ -1273,7 +1275,7 @@ export default {
                                         display: false,
                                         position: "top",
                                         labels: {
-                                            color: "white", // <- ใส่ตรงนี้!
+                                            color: "black", // <- ใส่ตรงนี้!
                                         },
                                     },
                                     tooltip: {
@@ -1329,7 +1331,7 @@ export default {
                                         borderWidth: 2,
                                         pointBackgroundColor:
                                             "rgba(34,197,94,1)",
-                                        pointBorderColor: "#fff",
+                                        pointBorderColor: "black",
                                         pointRadius: 4,
                                         pointHoverRadius: 6,
                                     },
@@ -1343,12 +1345,12 @@ export default {
                                 },
                                 scales: {
                                     x: {
-                                        ticks: { color: "white" },
+                                        ticks: { color: "black" },
                                         grid: { display: false },
                                     },
                                     y: {
                                         beginAtZero: true,
-                                        ticks: { color: "white" },
+                                        ticks: { color: "black" },
                                         grid: {
                                             color: "rgba(255,255,255,0.1)",
                                         },
@@ -1357,7 +1359,7 @@ export default {
                                 plugins: {
                                     legend: {
                                         labels: {
-                                            color: "white",
+                                            color: "black",
                                             font: { family: "Anuphan" },
                                         },
                                     },
@@ -1390,7 +1392,11 @@ export default {
                 const labels = Object.keys(dataStd);
                 const data = Object.values(dataStd);
                 // console.log(dataStd, labels, data);
-                if (!dataStd || typeof dataStd !== 'object' || Object.keys(dataStd).length === 0) {
+                if (
+                    !dataStd ||
+                    typeof dataStd !== "object" ||
+                    Object.keys(dataStd).length === 0
+                ) {
                     console.warn(
                         "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
                         dataStd
@@ -1437,7 +1443,7 @@ export default {
                                 display: false,
                                 position: "top",
                                 labels: {
-                                    color: "white", // <- ใส่ตรงนี้!
+                                    color: "black", // <- ใส่ตรงนี้!
                                 },
                             },
                             tooltip: {
@@ -1510,11 +1516,11 @@ export default {
                         scales: {
                             x: {
                                 beginAtZero: true,
-                                ticks: { color: "white" },
+                                ticks: { color: "black" },
                                 grid: { color: "rgba(255,255,255,0.1)" },
                             },
                             y: {
-                                ticks: { color: "white" },
+                                ticks: { color: "black" },
                                 grid: { display: false },
                             },
                         },
@@ -1535,7 +1541,7 @@ export default {
             }
         },
         async repVoc() {
-             try {
+            try {
                 const token = import.meta.env.VITE_LIBVOC_API_TOKEN;
                 const config = {
                     headers: {
@@ -1561,8 +1567,8 @@ export default {
         modalShow() {
             this.isModalShow = !this.isModalShow;
         },
-           link() {
-            window.location.href = '/light';
+        link() {
+            window.location.href = '/';
         }
     },
 };

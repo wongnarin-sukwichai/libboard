@@ -3,6 +3,7 @@ import Welcome from "../components/Welcome.vue";
 import Home from "../components/Home.vue";
 import Dashboard from "../components/Dashboard.vue";
 import Original from "../components/Original.vue"
+import Light from "../components/Light.vue";
 
 import store from "../store";
 
@@ -11,6 +12,11 @@ const routes = [
         path: "/",
         name: "welcome",
         component: Welcome,
+    },
+    {
+        path: "/light",
+        name: "light",
+        component: Light,
     },
     {
         path: "/home",
