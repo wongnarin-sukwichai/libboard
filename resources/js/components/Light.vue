@@ -347,7 +347,7 @@
                                     <h2
                                         class="text-lg font-medium truncate mr-5 text-slate-900 dark:text-white"
                                     >
-                                        สถิติยืม-คืนหนังสือ
+                                        สถิติยืม-คืนทรัพยากรสารสนเทศ
                                     </h2>
                                     <select
                                         class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto form-select box cursor-pointer text-slate-900 dark:text-white"
