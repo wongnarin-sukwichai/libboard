@@ -242,7 +242,7 @@
                                                 </div>
                                                 <span
                                                     class="text-end text-slate-900 dark:text-white"
-                                                    >{{ this.incomeA }}</span
+                                                    >{{ formatShort(this.incomeA) }}</span
                                                 >
                                             </li>
                                             <li
@@ -258,7 +258,7 @@
                                                 </div>
                                                 <span
                                                     class="text-end text-slate-900 dark:text-white"
-                                                    >{{ this.incomeB }}</span
+                                                    >{{ formatShort(this.incomeB) }}</span
                                                 >
                                             </li>
                                             <li
@@ -274,7 +274,7 @@
                                                 </div>
                                                 <span
                                                     class="text-end text-slate-900 dark:text-white"
-                                                    >{{ this.incomeC }}</span
+                                                    >{{ formatShort(this.incomeC) }}</span
                                                 >
                                             </li>
                                             <li
@@ -287,7 +287,7 @@
                                                 </div>
                                                 <span
                                                     class="text-end text-slate-900 dark:text-white"
-                                                    >{{ this.incomeAll }}</span
+                                                    >{{ formatShort(this.incomeAll) }}</span
                                                 >
                                             </li>
                                         </ul>
@@ -873,7 +873,7 @@
                             <div
                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
                             >
-                                {{ db.total }}
+                                {{ formatShort(db.total) }}
                             </div>
                         </div>
                     </div>
