@@ -242,7 +242,11 @@
                                                 </div>
                                                 <span
                                                     class="text-end text-slate-900 dark:text-white"
-                                                    >{{ formatShort(this.incomeA) }}</span
+                                                    >{{
+                                                        formatShort(
+                                                            this.incomeA
+                                                        )
+                                                    }}</span
                                                 >
                                             </li>
                                             <li
@@ -258,7 +262,11 @@
                                                 </div>
                                                 <span
                                                     class="text-end text-slate-900 dark:text-white"
-                                                    >{{ formatShort(this.incomeB) }}</span
+                                                    >{{
+                                                        formatShort(
+                                                            this.incomeB
+                                                        )
+                                                    }}</span
                                                 >
                                             </li>
                                             <li
@@ -274,7 +282,11 @@
                                                 </div>
                                                 <span
                                                     class="text-end text-slate-900 dark:text-white"
-                                                    >{{ formatShort(this.incomeC) }}</span
+                                                    >{{
+                                                        formatShort(
+                                                            this.incomeC
+                                                        )
+                                                    }}</span
                                                 >
                                             </li>
                                             <li
@@ -287,7 +299,11 @@
                                                 </div>
                                                 <span
                                                     class="text-end text-slate-900 dark:text-white"
-                                                    >{{ formatShort(this.incomeAll) }}</span
+                                                    >{{
+                                                        formatShort(
+                                                            this.incomeAll
+                                                        )
+                                                    }}</span
                                                 >
                                             </li>
                                         </ul>
@@ -381,16 +397,13 @@
                                                     color="#22C55E"
                                                 ></box-icon>
                                                 <span class="text-sm pl-2"
-                                                    >จำนวน</span
+                                                    >รายการยืม</span
                                                 >
                                                 <span
-                                                    class="text-md px-2 text-amber-400"
+                                                    class="text-md pl-2 text-amber-400"
                                                     >{{
                                                         formatShort(borrowAll)
                                                     }}</span
-                                                >
-                                                <span class="text-sm"
-                                                    >รายการยืม</span
                                                 >
                                             </div>
 
@@ -413,25 +426,23 @@
                                                     color="#36a2eb"
                                                 ></box-icon>
                                                 <span class="text-sm pl-2"
-                                                    >จำนวน</span
+                                                    >รายการคืน</span
                                                 >
                                                 <span
-                                                    class="text-md px-2 text-amber-400"
+                                                    class="text-md pl-2 text-amber-400"
                                                     >{{
                                                         formatShort(returnAll)
                                                     }}</span
-                                                >
-                                                <span class="text-sm"
-                                                    >รายการคืน</span
                                                 >
                                             </div>
 
                                             <button
                                                 class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
+                                                @click="repOpenAI()"
                                             >
-                                                <!-- Request AI Analysis -->
-                                                # ข้อมูลประจำปี
-                                                {{ moment().format("YYYY") }}
+                                                Request AI Analysis
+                                                <!-- # ข้อมูลประจำปี
+                                                {{ moment().format("YYYY") }} -->
                                             </button>
                                         </div>
                                     </div>
@@ -875,6 +886,53 @@
             </div>
         </div>
     </transition>
+
+    <!-- Modal Show -->
+    <transition name="fade" mode="out-in">
+        <div
+            class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
+            v-if="openAIModal"
+        >
+            <!-- Content ของ modal -->
+            <div
+                class="bg-gray-800 p-6 rounded-lg lg:w-1/3 h-3/4 overflow-y-auto"
+            >
+                <p class="text-lg text-white">
+                    ** วิเคราะห์สถิติการยืม-คืนทรัพยากรสารสนเทศด้วย AI **
+                </p>
+                <hr class="border-dashed" />
+
+                <!-- ส่วน loading -->
+                <div
+                    v-if="isLoading"
+                    class="flex flex-col items-center justify-center py-10"
+                >
+                    <box-icon
+                        name="loader-alt"
+                        color="white"
+                        animation="spin"
+                    ></box-icon>
+                    <p class="text-sm text-gray-300">กำลังวิเคราะห์ข้อมูล...</p>
+                </div>
+
+                <!-- ส่วนข้อความพิมพ์ทีละตัว -->
+                <div v-else class="mt-5 whitespace-pre-line">
+                    {{ displayedText }}
+                    <span v-if="typingInterval" class="animate-pulse">▋</span>
+                </div>
+
+                <hr class="border-dashed border-gray-500 my-2" />
+                <div class="mt-2 flex justify-end">
+                    <button
+                        class="bg-red-500 text-white px-4 py-2 rounded"
+                        @click="openAIModalShow()"
+                    >
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -939,6 +997,7 @@ export default {
             showWelcome: true,
             modalMenu: false,
             dbModal: false,
+            openAIModal: false,
             moment: moment,
             vocList: [],
             dbList: [],
@@ -961,6 +1020,10 @@ export default {
             lastC: "",
             maxItems: 10,
             intervalFetch: null,
+            openAIText: "",
+            displayedText: "", // ข้อความที่แสดงแบบพิมพ์ทีละตัว
+            typingInterval: null,
+            isLoading: false,
         };
     },
     methods: {
@@ -976,6 +1039,9 @@ export default {
         },
         dbModalShow() {
             this.dbModal = !this.dbModal;
+        },
+        openAIModalShow() {
+            this.openAIModal = !this.openAIModal;
         },
         showMenu() {
             this.modalMenu = true;
@@ -1136,8 +1202,12 @@ export default {
         },
         async repBookReturn() {
             try {
+                // เอาปีปัจจุบัน
+                const year = new Date().getFullYear();
+
                 fetch(
-                    "https://script.google.com/macros/s/AKfycbxlcLYkFsZg22sIk1TdnEdt9gMSVxkuK_BUTl2jROFXCGqT9kJc_M7wQ2D7Ia5Y0TZD/exec"
+                    "https://script.google.com/macros/s/AKfycbw0IBwvvfysn5ryI16SWEcg6nU23pFNwj-81s8s6Hg-BFpvIXM5v7zaKkbk9arYbFpr/exec?year=" +
+                        year
                 )
                     .then((response) => response.json())
                     .then((data) => {
@@ -1589,6 +1659,72 @@ export default {
             if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
             if (num >= 1000) return (num / 1000).toFixed(1) + "k";
             return num.toLocaleString(); // ✅ สำหรับค่าน้อยกว่า 1,000
+        },
+        async repOpenAI() {
+            this.openAIModal = true;
+            this.isLoading = true; // ✅ เริ่มโหลด
+
+            try {
+                const res = await fetch(
+                    "https://script.google.com/macros/s/AKfycbw0IBwvvfysn5ryI16SWEcg6nU23pFNwj-81s8s6Hg-BFpvIXM5v7zaKkbk9arYbFpr/exec"
+                );
+                const data = await res.json();
+
+                const response = await fetch(
+                    "https://api.openai.com/v1/chat/completions",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: `Bearer ${
+                                import.meta.env.VITE_OPENAI_KEY
+                            }`, // เก็บ key ไว้ใน .env
+                        },
+                        body: JSON.stringify({
+                            model: "gpt-4o-mini", // หรือ gpt-4o, gpt-5 เมื่อพร้อม
+                            messages: [
+                                {
+                                    role: "system",
+                                    content:
+                                        "คุณคือผู้ช่วยวิเคราะห์ข้อมูล Dashboard",
+                                },
+                                {
+                                    role: "user",
+                                    content: `ช่วยวิเคราะห์ข้อมูลนี้หน่อย: ${JSON.stringify(
+                                        data
+                                    )}`,
+                                },
+                            ],
+                        }),
+                    }
+                );
+
+                const gptData = await response.json();
+                const message = gptData.choices[0].message.content;
+
+                // ปิด loading ก่อนเริ่มพิมพ์
+                this.isLoading = false;
+                this.showTypingEffect(message);
+            } catch (err) {
+                this.isLoading = false;
+                this.displayedText = "❌ เกิดข้อผิดพลาดในการวิเคราะห์ข้อมูล";
+                console.error(err);
+            }
+        },
+        async showTypingEffect(fullText) {
+            this.openAIText = fullText;
+            this.displayedText = "";
+            let i = 0;
+
+            clearInterval(this.typingInterval);
+            this.typingInterval = setInterval(() => {
+                if (i < this.openAIText.length) {
+                    this.displayedText += this.openAIText[i];
+                    i++;
+                } else {
+                    clearInterval(this.typingInterval);
+                }
+            }, 25); // ปรับความเร็วได้ (หน่วย: มิลลิวินาที)
         },
     },
 };
