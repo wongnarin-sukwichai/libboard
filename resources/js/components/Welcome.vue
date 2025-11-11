@@ -383,9 +383,12 @@
                                                 <span class="text-sm pl-2"
                                                     >จำนวน</span
                                                 >
-                                                <span class="text-md px-2 text-amber-400">{{
-                                                    formatShort(borrowAll)
-                                                }}</span>
+                                                <span
+                                                    class="text-md px-2 text-amber-400"
+                                                    >{{
+                                                        formatShort(borrowAll)
+                                                    }}</span
+                                                >
                                                 <span class="text-sm"
                                                     >รายการยืม</span
                                                 >
@@ -412,9 +415,12 @@
                                                 <span class="text-sm pl-2"
                                                     >จำนวน</span
                                                 >
-                                                <span class="text-md px-2 text-amber-400">{{
-                                                    formatShort(returnAll)
-                                                }}</span>
+                                                <span
+                                                    class="text-md px-2 text-amber-400"
+                                                    >{{
+                                                        formatShort(returnAll)
+                                                    }}</span
+                                                >
                                                 <span class="text-sm"
                                                     >รายการคืน</span
                                                 >
@@ -583,8 +589,10 @@
                                         <span
                                             class="flex text-center justify-center"
                                             >** ทั้งหมด
-                                            <span class="text-amber-400 px-2">{{ formatShort(this.wepOPACAll) }}</span> รายการสืบค้น
-                                            **</span
+                                            <span class="text-amber-400 px-2">{{
+                                                formatShort(this.wepOPACAll)
+                                            }}</span>
+                                            รายการสืบค้น **</span
                                         >
                                         <div
                                             class="flex mt-3 text-gray-400 text-xs font-light"
@@ -1576,9 +1584,8 @@ export default {
             window.location.href = "/light";
         },
         formatShort(num) {
-
             num = Number(num) || 0;
-            
+
             if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
             if (num >= 1000) return (num / 1000).toFixed(1) + "k";
             return num.toLocaleString(); // ✅ สำหรับค่าน้อยกว่า 1,000
