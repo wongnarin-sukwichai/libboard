@@ -240,9 +240,10 @@
                                                     ></span>
                                                     A
                                                 </div>
-                                                <span class="text-end text-slate-900 dark:text-white">{{
-                                                    this.incomeA
-                                                }}</span>
+                                                <span
+                                                    class="text-end text-slate-900 dark:text-white"
+                                                    >{{ this.incomeA }}</span
+                                                >
                                             </li>
                                             <li
                                                 class="flex items-center justify-between"
@@ -255,9 +256,10 @@
                                                     ></span>
                                                     B
                                                 </div>
-                                                <span class="text-end text-slate-900 dark:text-white">{{
-                                                    this.incomeB
-                                                }}</span>
+                                                <span
+                                                    class="text-end text-slate-900 dark:text-white"
+                                                    >{{ this.incomeB }}</span
+                                                >
                                             </li>
                                             <li
                                                 class="flex items-center justify-between"
@@ -270,9 +272,10 @@
                                                     ></span>
                                                     MSU Space
                                                 </div>
-                                                <span class="text-end text-slate-900 dark:text-white">{{
-                                                    this.incomeC
-                                                }}</span>
+                                                <span
+                                                    class="text-end text-slate-900 dark:text-white"
+                                                    >{{ this.incomeC }}</span
+                                                >
                                             </li>
                                             <li
                                                 class="flex items-center justify-between"
@@ -282,9 +285,10 @@
                                                 >
                                                     #
                                                 </div>
-                                                <span class="text-end text-slate-900 dark:text-white">{{
-                                                    this.incomeAll
-                                                }}</span>
+                                                <span
+                                                    class="text-end text-slate-900 dark:text-white"
+                                                    >{{ this.incomeAll }}</span
+                                                >
                                             </li>
                                         </ul>
 
@@ -376,15 +380,13 @@
                                                     size="sm"
                                                     color="#22C55E"
                                                 ></box-icon>
-                                                <span
-                                                    class="text-sm pl-2 "
+                                                <span class="text-sm pl-2"
                                                     >จำนวน</span
                                                 >
-                                                <span class="text-md px-2">{{
-                                                    borrowAll
+                                                <span class="text-md px-2 text-amber-400">{{
+                                                    formatShort(borrowAll)
                                                 }}</span>
-                                                <span
-                                                    class="text-sm"
+                                                <span class="text-sm"
                                                     >รายการยืม</span
                                                 >
                                             </div>
@@ -407,15 +409,13 @@
                                                     size="sm"
                                                     color="#36a2eb"
                                                 ></box-icon>
-                                                <span
-                                                    class="text-sm pl-2"
+                                                <span class="text-sm pl-2"
                                                     >จำนวน</span
                                                 >
-                                                <span class="text-md px-2">{{
-                                                    returnAll
+                                                <span class="text-md px-2 text-amber-400">{{
+                                                    formatShort(returnAll)
                                                 }}</span>
-                                                <span
-                                                    class="text-sm"
+                                                <span class="text-sm"
                                                     >รายการคืน</span
                                                 >
                                             </div>
@@ -454,7 +454,9 @@
                                             <div
                                                 class="w-full md:w-1/2 text-gray-200 text-sm"
                                             >
-                                                <p class="text-xs mb-4 text-slate-900 dark:text-white">
+                                                <p
+                                                    class="text-xs mb-4 text-slate-900 dark:text-white"
+                                                >
                                                     * ผู้เข้าใช้งานมากที่สุด 5
                                                     อันดับ
                                                 </p>
@@ -581,7 +583,7 @@
                                         <span
                                             class="flex text-center justify-center"
                                             >** ทั้งหมด
-                                            {{ this.wepOPACAll }} รายการสืบค้น
+                                            <span class="text-amber-400 px-2">{{ formatShort(this.wepOPACAll) }}</span> รายการสืบค้น
                                             **</span
                                         >
                                         <div
@@ -635,12 +637,16 @@
                                                 <div
                                                     class="w-full md:w-1/2 text-gray-200 text-sm ml-12"
                                                 >
-                                                    <p class="text-xs mb-4 text-slate-900 dark:text-white">
+                                                    <p
+                                                        class="text-xs mb-4 text-slate-900 dark:text-white"
+                                                    >
                                                         *
                                                         ผู้เข้าใช้บริการแบ่งตามพื้นที่
                                                     </p>
 
-                                                    <ul class="space-y-2 text-slate-900 dark:text-white">
+                                                    <ul
+                                                        class="space-y-2 text-slate-900 dark:text-white"
+                                                    >
                                                         <li
                                                             class="flex items-center space-x-2"
                                                         >
@@ -952,7 +958,6 @@ export default {
     methods: {
         async loadAllData() {
             await Promise.all([
-                // this.repIncome(),
                 this.repBookReturn(),
                 this.repDbOnline(),
                 this.repWebOPAC(),
@@ -1228,9 +1233,9 @@ export default {
                     .then((data) => {
                         this.dbList = data.items;
                         this.dbAll = data.totalCount;
-                        this.dbName = data.top5.map(item => item.shortName);
-                        const labels = data.top5.map(item => item.shortName);
-                        const dbData = data.top5.map(item => item.total);
+                        this.dbName = data.top5.map((item) => item.shortName);
+                        const labels = data.top5.map((item) => item.shortName);
+                        const dbData = data.top5.map((item) => item.total);
                         Chart.defaults.font.family = "Anuphan";
                         const ctx = this.$refs.repDB;
                         new Chart(ctx, {
@@ -1392,7 +1397,11 @@ export default {
                 const labels = Object.keys(dataStd);
                 const data = Object.values(dataStd);
                 // console.log(dataStd, labels, data);
-                if (!dataStd || typeof dataStd !== 'object' || Object.keys(dataStd).length === 0) {
+                if (
+                    !dataStd ||
+                    typeof dataStd !== "object" ||
+                    Object.keys(dataStd).length === 0
+                ) {
                     console.warn(
                         "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
                         dataStd
@@ -1537,7 +1546,7 @@ export default {
             }
         },
         async repVoc() {
-             try {
+            try {
                 const token = import.meta.env.VITE_LIBVOC_API_TOKEN;
                 const config = {
                     headers: {
@@ -1563,9 +1572,17 @@ export default {
         modalShow() {
             this.isModalShow = !this.isModalShow;
         },
-           link() {
-            window.location.href = '/light';
-        }
+        link() {
+            window.location.href = "/light";
+        },
+        formatShort(num) {
+
+            num = Number(num) || 0;
+            
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
+            if (num >= 1000) return (num / 1000).toFixed(1) + "k";
+            return num.toLocaleString(); // ✅ สำหรับค่าน้อยกว่า 1,000
+        },
     },
 };
 </script>

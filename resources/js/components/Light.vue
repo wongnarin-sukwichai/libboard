@@ -383,8 +383,8 @@
                                                 <span class="text-sm pl-2"
                                                     >จำนวน</span
                                                 >
-                                                <span class="text-md px-2">{{
-                                                    borrowAll
+                                                <span class="text-md px-2 text-amber-500">{{
+                                                    formatShort(borrowAll)
                                                 }}</span>
                                                 <span class="text-sm"
                                                     >รายการยืม</span
@@ -412,8 +412,8 @@
                                                 <span class="text-sm pl-2"
                                                     >จำนวน</span
                                                 >
-                                                <span class="text-md px-2">{{
-                                                    returnAll
+                                                <span class="text-md px-2 text-amber-500">{{
+                                                    formatShort(returnAll)
                                                 }}</span>
                                                 <span class="text-sm"
                                                     >รายการคืน</span
@@ -596,9 +596,9 @@
                                             </div>
                                         </div>
                                         <span
-                                            class="flex text-center justify-center"
+                                            class="flex text-center justify-center text-gray-900"
                                             >** ทั้งหมด
-                                            {{ this.wepOPACAll }} รายการสืบค้น
+                                            <span class="text-amber-500 px-2">{{ formatShort(this.wepOPACAll) }} </span> รายการสืบค้น
                                             **</span
                                         >
                                         <div
@@ -1584,6 +1584,14 @@ export default {
         },
         link() {
             window.location.href = "/";
+        },
+         formatShort(num) {
+
+            num = Number(num) || 0;
+            
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
+            if (num >= 1000) return (num / 1000).toFixed(1) + "k";
+            return num.toLocaleString(); // ✅ สำหรับค่าน้อยกว่า 1,000
         },
     },
 };
