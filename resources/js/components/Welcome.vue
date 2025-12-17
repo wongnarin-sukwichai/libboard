@@ -367,19 +367,27 @@
                                     </h2>
                                     <select
                                         class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto form-select box cursor-pointer text-slate-900 dark:text-white"
+                                        v-model="selectBook"
                                     >
                                         <!-- <option value="daily">รายวัน</option> -->
-                                        <option value="monthly">
-                                            รายเดือน
-                                        </option>
-                                        <!-- <option value="yearly">รายปี</option> -->
+                                        <option value="year">รายปี</option>
+                                        <option value="month">รายเดือน</option>
                                     </select>
                                 </div>
                                 <div class="flex justify-center">
                                     <div class="h-auto w-full">
+                                        <!-- รายปี -->
                                         <canvas
+                                            v-show="selectBook === 'year'"
                                             class="hover:cursor-pointer"
                                             ref="repBook"
+                                        ></canvas>
+
+                                        <!-- รายเดือน -->
+                                        <canvas
+                                            v-show="selectBook === 'month'"
+                                            class="hover:cursor-pointer"
+                                            ref="repBookMonth"
                                         ></canvas>
                                     </div>
                                 </div>
@@ -401,8 +409,19 @@
                                                 >
                                                 <span
                                                     class="text-md pl-2 text-amber-400"
+                                                    v-if="selectBook === 'year'"
                                                     >{{
                                                         formatShort(borrowAll)
+                                                    }}</span
+                                                >
+
+                                                <span
+                                                    class="text-md pl-2 text-amber-400"
+                                                    v-else
+                                                    >{{
+                                                        formatShort(
+                                                            borrowMonthAll
+                                                        )
                                                     }}</span
                                                 >
                                             </div>
@@ -416,6 +435,7 @@
                                         </div>
                                         <div
                                             class="px-8 py-4 flex flex-col justify-center flex-1 sm:border-t-0 sm:border-l border-slate-200 border-dashed"
+                                            v-if="selectBook === 'year'"
                                         >
                                             <div
                                                 class="relative text-3xl font-medium mt-4 text-slate-900 dark:text-white"
@@ -951,6 +971,7 @@ import {
     Tooltip,
     Legend,
 } from "chart.js";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 Chart.register(
     BarController,
@@ -963,7 +984,7 @@ Chart.register(
 
 export default {
     async mounted() {
-        await this.loadAllData();
+        //await this.loadAllData();
         this.isReady = true;
         this.welcome();
 
@@ -971,17 +992,18 @@ export default {
             setTimeout(() => {
                 this.repIncome();
                 this.repBookReturn();
+                this.repBookReturnMonth();
                 this.repDbOnline();
                 this.repWebOPAC();
                 this.repRoom();
                 this.repRoomSecond();
                 this.repVoc();
 
-                // ✅ ตั้ง interval เพื่ออัปเดตทุก 10 วินาที
+                //✅ ตั้ง interval เพื่ออัปเดตทุก 10 วินาที
                 if (!this.intervalFetch) {
                     this.intervalFetch = setInterval(() => {
                         this.repIncome();
-                    }, 10000);
+                    }, 100000);
                 }
             }, 500);
         });
@@ -1024,12 +1046,15 @@ export default {
             displayedText: "", // ข้อความที่แสดงแบบพิมพ์ทีละตัว
             typingInterval: null,
             isLoading: false,
+            selectBook: "year",
+            borrowMonthAll: "",
         };
     },
     methods: {
         async loadAllData() {
             await Promise.all([
                 this.repBookReturn(),
+                this.repBookReturnMonth(),
                 this.repDbOnline(),
                 this.repWebOPAC(),
                 this.repRoom(),
@@ -1206,7 +1231,7 @@ export default {
                 const year = new Date().getFullYear();
 
                 fetch(
-                    "https://script.google.com/macros/s/AKfycbw0IBwvvfysn5ryI16SWEcg6nU23pFNwj-81s8s6Hg-BFpvIXM5v7zaKkbk9arYbFpr/exec?year=" +
+                    "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=yearly&year=" +
                         year
                 )
                     .then((response) => response.json())
@@ -1293,6 +1318,101 @@ export default {
                                     x: {
                                         ticks: { color: "white" },
                                         grid: { display: false },
+                                    },
+                                },
+                            },
+                        });
+                    });
+            } catch (error) {
+                console.error("Error Report BookReturn:", error);
+            }
+        },
+        async repBookReturnMonth() {
+            try {
+                // เอาปีปัจจุบัน
+                const year = new Date().getFullYear();
+                const month = new Date().getMonth() + 1;
+                const monthName = moment({ year, month: month - 1 }).format(
+                    "MMMM"
+                );
+
+                fetch(
+                    "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=monthly&year=" +
+                        year +
+                        "&month=" +
+                        month
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // ดึงเฉพาะ data จาก datasets
+                        const labels = data.detail.map((item) => `${item.day}`);
+                        const values = data.detail.map((item) => item.value);
+                        this.borrowMonthAll = data.total;
+                        // ตั้งค่าฟอนต์
+                        Chart.defaults.font.family = "Anuphan";
+                        const ctx = this.$refs.repBookMonth; // ✅ ต้องมี .getContext('2d')
+                        // สร้างกราฟ
+                        new Chart(ctx, {
+                            type: "bar", // หรือ line ก็ได้
+                            data: {
+                                labels,
+                                datasets: [
+                                    {
+                                        label: `สถิติการคืนหนังสือ เดือน ${monthName} ${year}`,
+                                        data: values,
+                                        backgroundColor: "rgba(34,197,94,1)",
+                                        borderColor: "#fff",
+                                        borderWidth: 2,
+                                        borderRadius: 8,
+                                        borderSkipped: false,
+                                        maxBarThickness: 28,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                interaction: {
+                                    mode: "index",
+                                    intersect: false,
+                                }, // Hover แสดงทั้งคู่
+                                animation: {
+                                    duration: 2000,
+                                    easing: "easeOutBounce",
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        labels: {
+                                            color: "white",
+                                            font: { family: "Anuphan" },
+                                        },
+                                    },
+                                    tooltip: {
+                                        callbacks: {
+                                            label: (ctx) =>
+                                                ` ${ctx.parsed.y} ครั้ง`,
+                                        },
+                                        backgroundColor: "#333",
+                                        titleColor: "#fff",
+                                        bodyColor: "#fff",
+                                    },
+                                },
+                                scales: {
+                                    x: {
+                                        ticks: { color: "white" },
+                                        grid: { display: false },
+                                    },
+                                    y: {
+                                        beginAtZero: true,
+                                        title: {
+                                            display: true,
+                                            text: "จำนวนการยืม",
+                                            color: "#fff",
+                                        },
+                                        ticks: { color: "white" },
+                                        grid: {
+                                            color: "rgba(255,255,255,0.1)",
+                                        },
                                     },
                                 },
                             },
