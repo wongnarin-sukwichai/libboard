@@ -244,7 +244,7 @@
                                                     class="text-end text-slate-900 dark:text-white"
                                                     >{{
                                                         formatShort(
-                                                            this.incomeA
+                                                            this.incomeAA,
                                                         )
                                                     }}</span
                                                 >
@@ -264,7 +264,7 @@
                                                     class="text-end text-slate-900 dark:text-white"
                                                     >{{
                                                         formatShort(
-                                                            this.incomeB
+                                                            this.incomeBB,
                                                         )
                                                     }}</span
                                                 >
@@ -284,7 +284,7 @@
                                                     class="text-end text-slate-900 dark:text-white"
                                                     >{{
                                                         formatShort(
-                                                            this.incomeC
+                                                            this.incomeCC,
                                                         )
                                                     }}</span
                                                 >
@@ -301,7 +301,7 @@
                                                     class="text-end text-slate-900 dark:text-white"
                                                     >{{
                                                         formatShort(
-                                                            this.incomeAll
+                                                            this.incomeAllA,
                                                         )
                                                     }}</span
                                                 >
@@ -343,7 +343,7 @@
                                             <div class="ml-auto">
                                                 {{
                                                     moment().format(
-                                                        "DD MMMM YYYY"
+                                                        "DD MMMM YYYY",
                                                     )
                                                 }}
                                             </div>
@@ -372,6 +372,9 @@
                                         <!-- <option value="daily">รายวัน</option> -->
                                         <option value="year">รายปี</option>
                                         <option value="month">รายเดือน</option>
+                                        <option value="lastyear">
+                                            รายปีที่แล้ว
+                                        </option>
                                     </select>
                                 </div>
                                 <div class="flex justify-center">
@@ -388,6 +391,13 @@
                                             v-show="selectBook === 'month'"
                                             class="hover:cursor-pointer"
                                             ref="repBookMonth"
+                                        ></canvas>
+
+                                        <!-- รายปีที่แล้ว -->
+                                        <canvas
+                                            v-show="selectBook === 'lastyear'"
+                                            class="hover:cursor-pointer"
+                                            ref="repBookLastYear"
                                         ></canvas>
                                     </div>
                                 </div>
@@ -414,13 +424,12 @@
                                                         formatShort(borrowAll)
                                                     }}</span
                                                 >
-
                                                 <span
                                                     class="text-md pl-2 text-amber-400"
                                                     v-else
                                                     >{{
                                                         formatShort(
-                                                            borrowMonthAll
+                                                            borrowMonthAll,
                                                         )
                                                     }}</span
                                                 >
@@ -428,14 +437,30 @@
 
                                             <div
                                                 class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
+                                                v-if="selectBook !== 'lastyear'"
                                             >
                                                 # ข้อมูลประจำปี
                                                 {{ moment().format("YYYY") }}
                                             </div>
+
+                                            <div
+                                                class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
+                                                v-else
+                                            >
+                                                # ข้อมูลประจำปี
+                                                {{
+                                                    moment()
+                                                        .subtract(1, "year")
+                                                        .format("YYYY")
+                                                }}
+                                            </div>
                                         </div>
                                         <div
                                             class="px-8 py-4 flex flex-col justify-center flex-1 sm:border-t-0 sm:border-l border-slate-200 border-dashed"
-                                            v-if="selectBook === 'year'"
+                                            v-if="
+                                                selectBook === 'year' ||
+                                                selectBook === 'lastyear'
+                                            "
                                         >
                                             <div
                                                 class="relative text-3xl font-medium mt-4 text-slate-900 dark:text-white"
@@ -456,14 +481,54 @@
                                                 >
                                             </div>
 
-                                            <button
+                                            <div
                                                 class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
-                                                @click="repOpenAI()"
+                                                @click="repOpenAI(selectBook)"
                                             >
                                                 Request AI Analysis
-                                                <!-- # ข้อมูลประจำปี
-                                                {{ moment().format("YYYY") }} -->
-                                            </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="px-8 py-4 flex flex-col justify-center flex-1 sm:border-t-0 sm:border-l border-slate-200 border-dashed"
+                                            v-else
+                                        >
+                                            <div
+                                                class="relative text-3xl font-medium mt-4 text-slate-900 dark:text-white"
+                                            >
+                                                <box-icon
+                                                    name="analyse"
+                                                    size="sm"
+                                                    color="#36a2eb"
+                                                ></box-icon>
+                                                <span class="text-sm pl-2"
+                                                    >ChatGPT (OpenAI)</span
+                                                >
+                                            </div>
+
+                                            <div
+                                                class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
+                                                v-if="selectBook === 'year'"
+                                            >
+                                                # ข้อมูลประจำปี
+                                                {{ moment().format("YYYY") }}
+                                            </div>
+                                            <div
+                                                class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
+                                                v-if="selectBook === 'lastyear'"
+                                            >
+                                                # ข้อมูลประจำปี
+                                                {{
+                                                    moment()
+                                                        .subtract(1, "year")
+                                                        .format("YYYY")
+                                                }}
+                                            </div>
+                                            <div
+                                                class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
+                                                @click="repOpenAI(selectBook)"
+                                            >
+                                                Request AI Analysis
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -799,7 +864,7 @@
                                                         {{
                                                             moment(
                                                                 voc?.created_at ??
-                                                                    ""
+                                                                    "",
                                                             ).format("L") ?? ""
                                                         }}</span
                                                     >
@@ -979,7 +1044,7 @@ Chart.register(
     CategoryScale,
     LinearScale,
     Tooltip,
-    Legend
+    Legend,
 );
 
 export default {
@@ -993,6 +1058,7 @@ export default {
                 this.repIncome();
                 this.repBookReturn();
                 this.repBookReturnMonth();
+                this.repBookReturnLastYear();
                 this.repDbOnline();
                 this.repWebOPAC();
                 this.repRoom();
@@ -1033,6 +1099,10 @@ export default {
             incomeB: "",
             incomeC: "",
             incomeAll: "",
+            incomeAA: "",
+            incomeBB: "",
+            incomeCC: "",
+            incomeAllA: "",
             labels: [],
             diffA: [],
             diffB: [],
@@ -1055,6 +1125,7 @@ export default {
             await Promise.all([
                 this.repBookReturn(),
                 this.repBookReturnMonth(),
+                this.repBookReturnLastYear(),
                 this.repDbOnline(),
                 this.repWebOPAC(),
                 this.repRoom(),
@@ -1092,7 +1163,7 @@ export default {
         async repIncome() {
             try {
                 const response = await fetch(
-                    "https://script.google.com/macros/s/AKfycbw8n1USK22Kcq9QoF7SJjDnHk-uLPJ6GsC25fsZrsf1uo91glNwum633jTqnjw2RC8J/exec"
+                    "https://script.google.com/macros/s/AKfycbw8n1USK22Kcq9QoF7SJjDnHk-uLPJ6GsC25fsZrsf1uo91glNwum633jTqnjw2RC8J/exec",
                 );
                 const data = await response.json();
                 // console.log("API:", data);
@@ -1100,6 +1171,11 @@ export default {
                 this.incomeA = data.items[0].total || 0;
                 this.incomeB = data.items[1].total || 0;
                 this.incomeC = data.items[2].total || 0;
+
+                //ชั่วคราว
+                this.incomeAA = 5340;
+                this.incomeBB = 24690;
+                this.incomeCC = 19306;
 
                 // ✅ รอบแรก: ใส่ค่าลงกราฟเลย
                 if (
@@ -1138,7 +1214,10 @@ export default {
                     this.lastC = this.incomeC;
                 }
 
-                this.incomeAll = data.totalCount;
+                // this.incomeAll = data.totalCount;
+
+                //ชั่วคราว
+                this.incomeAllA = 49336;
 
                 Chart.defaults.font.family = "Anuphan";
                 const ctx = this.$refs.repPatron;
@@ -1232,7 +1311,7 @@ export default {
 
                 fetch(
                     "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=yearly&year=" +
-                        year
+                        year,
                 )
                     .then((response) => response.json())
                     .then((data) => {
@@ -1333,14 +1412,14 @@ export default {
                 const year = new Date().getFullYear();
                 const month = new Date().getMonth() + 1;
                 const monthName = moment({ year, month: month - 1 }).format(
-                    "MMMM"
+                    "MMMM",
                 );
 
                 fetch(
                     "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=monthly&year=" +
                         year +
                         "&month=" +
-                        month
+                        month,
                 )
                     .then((response) => response.json())
                     .then((data) => {
@@ -1422,10 +1501,112 @@ export default {
                 console.error("Error Report BookReturn:", error);
             }
         },
+        async repBookReturnLastYear() {
+            try {
+                // เอาปีปัจจุบัน
+                const year = new Date().getFullYear() - 1;
+
+                fetch(
+                    "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=yearly&year=" +
+                        year,
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // ดึงเฉพาะ data จาก datasets
+                        const borrowData = data.datasets[0].data;
+                        const returnData = data.datasets[1].data;
+                        this.borrowAll = data.summary.totalBorrow;
+                        this.returnAll = data.summary.totalReturn;
+                        // ตั้งค่าฟอนต์
+                        Chart.defaults.font.family = "Anuphan";
+                        const ctx = this.$refs.repBookLastYear; // ✅ ต้องมี .getContext('2d')
+                        // สร้างกราฟ
+                        new Chart(ctx, {
+                            type: "bar",
+                            data: {
+                                labels: [
+                                    "ม.ค.",
+                                    "ก.พ.",
+                                    "มี.ค.",
+                                    "เม.ย.",
+                                    "พ.ค.",
+                                    "มิ.ย.",
+                                    "ก.ค.",
+                                    "ส.ค.",
+                                    "ก.ย.",
+                                    "ต.ค.",
+                                    "พ.ย.",
+                                    "ธ.ค.",
+                                ],
+                                datasets: [
+                                    {
+                                        label: "ยืมหนังสือ",
+                                        data: borrowData,
+                                        backgroundColor: "rgba(34,197,94,1)", // 🟢 เขียว
+                                        borderColor: "#fff",
+                                        borderWidth: 2,
+                                        borderRadius: 8,
+                                        borderSkipped: false,
+                                    },
+                                    {
+                                        label: "คืนหนังสือ",
+                                        data: returnData,
+                                        backgroundColor: "#36a2eb", // 🔵 ฟ้า
+                                        borderColor: "#fff",
+                                        borderWidth: 2,
+                                        borderRadius: 8,
+                                        borderSkipped: false,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                interaction: {
+                                    mode: "index",
+                                    intersect: false,
+                                }, // Hover แสดงทั้งคู่
+                                animation: {
+                                    duration: 2000,
+                                    easing: "easeOutBounce",
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        labels: {
+                                            color: "white",
+                                            font: { family: "Anuphan" },
+                                        },
+                                    },
+                                    tooltip: {
+                                        backgroundColor: "#333",
+                                        titleColor: "#fff",
+                                        bodyColor: "#fff",
+                                    },
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: { color: "white" },
+                                        grid: {
+                                            color: "rgba(255,255,255,0.1)",
+                                        },
+                                    },
+                                    x: {
+                                        ticks: { color: "white" },
+                                        grid: { display: false },
+                                    },
+                                },
+                            },
+                        });
+                    });
+            } catch (error) {
+                console.error("Error Report BookReturn:", error);
+            }
+        },
         async repDbOnline() {
             try {
                 fetch(
-                    "https://script.google.com/macros/s/AKfycbyNrSp52PnDqptizq5uNAHwknVbx-BNdvTUqXOAEYa03dUgGAdl6E4Xzl5tfIGAoojI8A/exec"
+                    "https://script.google.com/macros/s/AKfycbyNrSp52PnDqptizq5uNAHwknVbx-BNdvTUqXOAEYa03dUgGAdl6E4Xzl5tfIGAoojI8A/exec",
                 )
                     .then((response) => response.json())
                     .then((data) => {
@@ -1497,7 +1678,7 @@ export default {
         async repWebOPAC() {
             try {
                 fetch(
-                    "https://script.google.com/macros/s/AKfycbx2YMeeAtUhMCbxyxUrjyWEKekM9bwojQiuP6umIF7kJSN6u7BaVeWbW-nwVVI_WNpO/exec"
+                    "https://script.google.com/macros/s/AKfycbx2YMeeAtUhMCbxyxUrjyWEKekM9bwojQiuP6umIF7kJSN6u7BaVeWbW-nwVVI_WNpO/exec",
                 )
                     .then((response) => response.json())
                     .then((data) => {
@@ -1589,7 +1770,7 @@ export default {
                 };
                 const response = await axios.get(
                     "https://libroom.msu.ac.th/api/getService",
-                    config
+                    config,
                 );
                 const dataStd = response.data;
                 const labels = Object.keys(dataStd);
@@ -1600,10 +1781,7 @@ export default {
                     typeof dataStd !== "object" ||
                     Object.keys(dataStd).length === 0
                 ) {
-                    console.warn(
-                        "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
-                        dataStd
-                    );
+                    console.warn("⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:", dataStd);
                     return;
                 }
                 const ctx = this.$refs.repRoomAll;
@@ -1671,16 +1849,13 @@ export default {
                 };
                 const response = await axios.get(
                     "https://libroom.msu.ac.th/api/getMost",
-                    config
+                    config,
                 );
                 const dataStd = response.data;
                 const labels = dataStd.map((item) => item.faculty);
                 const data = dataStd.map((item) => item.count);
                 if (!Array.isArray(dataStd) || dataStd.length === 0) {
-                    console.warn(
-                        "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
-                        dataStd
-                    );
+                    console.warn("⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:", dataStd);
                     return;
                 }
                 const ctx = this.$refs.repRoomBar;
@@ -1780,14 +1955,42 @@ export default {
             if (num >= 1000) return (num / 1000).toFixed(1) + "k";
             return num.toLocaleString(); // ✅ สำหรับค่าน้อยกว่า 1,000
         },
-        async repOpenAI() {
+        async repOpenAI(code) {
             this.openAIModal = true;
             this.isLoading = true; // ✅ เริ่มโหลด
 
+            let url = "";
+            const now = new Date();
+
+            if (code === "year") {
+                const year = now.getFullYear();
+                url =
+                    "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=yearly&year=" +
+                    year;
+            } else if (code === "lastyear") {
+                const year = now.getFullYear() - 1;
+                url =
+                    "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=yearly&year=" +
+                    year;
+            } else if (code === "month") {
+                const year = now.getFullYear();
+                const month = now.getMonth() + 1;
+                url =
+                    "https://script.google.com/macros/s/AKfycbwVjMO1bXqldJHKh4UkPv48uOzi8Ih6bN6nI_oNigvS5x0wFdaUO99yQwM__eqimVUt/exec?year=" +
+                    year +
+                    "&month=" +
+                    month;
+            } else {
+                console.log("OpenAI Error");
+            }
+
             try {
-                const res = await fetch(
-                    "https://script.google.com/macros/s/AKfycbw0IBwvvfysn5ryI16SWEcg6nU23pFNwj-81s8s6Hg-BFpvIXM5v7zaKkbk9arYbFpr/exec"
-                );
+                const res = await fetch(url);
+
+                if (!res.ok) {
+                    throw new Error(`Request failed: HTTP ${res.status}`);
+                }
+
                 const data = await res.json();
 
                 const response = await fetch(
@@ -1811,12 +2014,12 @@ export default {
                                 {
                                     role: "user",
                                     content: `ช่วยวิเคราะห์ข้อมูลนี้หน่อย: ${JSON.stringify(
-                                        data
+                                        data,
                                     )}`,
                                 },
                             ],
                         }),
-                    }
+                    },
                 );
 
                 const gptData = await response.json();
