@@ -306,6 +306,20 @@
                                                     }}</span
                                                 >
                                             </li>
+                                            <li>
+                                                <div
+                                                    class="flex mt-3 text-gray-400 text-xs font-light"
+                                                >
+                                                    <div># ข้อมูลวันที่</div>
+                                                    <div class="ml-auto">
+                                                        {{
+                                                            moment().format(
+                                                                "DD MMMM YYYY",
+                                                            )
+                                                        }}
+                                                    </div>
+                                                </div>
+                                            </li>
                                         </ul>
 
                                         <div
@@ -339,13 +353,9 @@
                                         <div
                                             class="flex mt-3 text-gray-400 text-xs font-light"
                                         >
-                                            <div># ข้อมูลวันที่</div>
-                                            <div class="ml-auto">
-                                                {{
-                                                    moment().format(
-                                                        "DD MMMM YYYY",
-                                                    )
-                                                }}
+                                            <div>
+                                                # ข้อมูลประจำปี :
+                                                {{ moment().format("YYYY") }}
                                             </div>
                                         </div>
                                     </div>
@@ -1163,61 +1173,37 @@ export default {
         async repIncome() {
             try {
                 const response = await fetch(
-                    "https://script.google.com/macros/s/AKfycbw8n1USK22Kcq9QoF7SJjDnHk-uLPJ6GsC25fsZrsf1uo91glNwum633jTqnjw2RC8J/exec",
+                    "https://script.google.com/macros/s/AKfycbx9qB8KVLBQMMc3IprE1rIMQ_-qlLC4QnQQiwwwmcdCe_zlULD2eO4BBTFv7cHswRU2/exec",
                 );
                 const data = await response.json();
                 // console.log("API:", data);
 
-                this.incomeA = data.items[0].total || 0;
-                this.incomeB = data.items[1].total || 0;
-                this.incomeC = data.items[2].total || 0;
+                //เฉพาะเดือน
+                this.incomeAA = data.current_month.a;
+                this.incomeBB = data.current_month.b;
+                this.incomeCC = data.current_month.space;
+                this.incomeAllA = data.current_month.sum;
 
-                //ชั่วคราว
-                this.incomeAA = 5340;
-                this.incomeBB = 24690;
-                this.incomeCC = 19306;
+                //กราฟ
+                const tempA = new Array(12).fill(0);
+                const tempB = new Array(12).fill(0);
+                const tempC = new Array(12).fill(0);
 
-                // ✅ รอบแรก: ใส่ค่าลงกราฟเลย
-                if (
-                    this.lastA === "" &&
-                    this.lastB === "" &&
-                    this.lastC === ""
-                ) {
-                    this.lastA = this.incomeA;
-                    this.lastB = this.incomeB;
-                    this.lastC = this.incomeC;
-
-                    this.labels.push(data.time || "");
-                    this.diffA.push(this.incomeA);
-                    this.diffB.push(this.incomeB);
-                    this.diffC.push(this.incomeC);
-                } else {
-                    // ✅ รอบต่อ ๆ ไป → คำนวณผลต่าง
-                    const deltaA = this.incomeA - this.lastA;
-                    const deltaB = this.incomeB - this.lastB;
-                    const deltaC = this.incomeC - this.lastC;
-
-                    this.diffA.push(deltaA);
-                    this.diffB.push(deltaB);
-                    this.diffC.push(deltaC);
-                    this.labels.push(data.time || "");
-
-                    // จำกัดไม่เกิน 10 จุด
-                    if (this.diffA.length > this.maxItems) this.diffA.shift();
-                    if (this.diffB.length > this.maxItems) this.diffB.shift();
-                    if (this.diffC.length > this.maxItems) this.diffC.shift();
-                    if (this.labels.length > this.maxItems) this.labels.shift();
-
-                    // อัปเดตค่าล่าสุด
-                    this.lastA = this.incomeA;
-                    this.lastB = this.incomeB;
-                    this.lastC = this.incomeC;
+                if (data.yearly_data) {
+                    data.yearly_data.forEach((item) => {
+                        const mIdx = item.month - 1;
+                        if (mIdx >= 0 && mIdx < 12) {
+                            tempA[mIdx] = item.a || 0;
+                            tempB[mIdx] = item.b || 0;
+                            tempC[mIdx] = item.space || 0;
+                        }
+                    });
                 }
 
-                // this.incomeAll = data.totalCount;
-
-                //ชั่วคราว
-                this.incomeAllA = 49336;
+                // อัปเดตเข้าสู่ State ของ Vue
+                this.incomeA = tempA;
+                this.incomeB = tempB;
+                this.incomeC = tempC;
 
                 Chart.defaults.font.family = "Anuphan";
                 const ctx = this.$refs.repPatron;
@@ -1228,11 +1214,24 @@ export default {
                     this.chart = new Chart(ctx, {
                         type: "line",
                         data: {
-                            labels: [...this.labels],
+                            labels: [
+                                "ม.ค.",
+                                "ก.พ.",
+                                "มี.ค.",
+                                "เม.ย.",
+                                "พ.ค.",
+                                "มิ.ย.",
+                                "ก.ค.",
+                                "ส.ค.",
+                                "ก.ย.",
+                                "ต.ค.",
+                                "พ.ย.",
+                                "ธ.ค.",
+                            ],
                             datasets: [
                                 {
                                     label: "A",
-                                    data: [...this.diffA],
+                                    data: this.incomeA,
                                     fill: false,
                                     borderColor: "rgba(59,130,246,0.9)",
                                     backgroundColor: "rgba(59,130,246,0.7)",
@@ -1244,7 +1243,7 @@ export default {
                                 },
                                 {
                                     label: "B",
-                                    data: [...this.diffB],
+                                    data: this.incomeB,
                                     borderColor: "rgba(234,179,8,0.9)",
                                     backgroundColor: "rgba(234,179,8,0.3)",
                                     tension: 0.3,
@@ -1254,7 +1253,7 @@ export default {
                                 },
                                 {
                                     label: "C",
-                                    data: [...this.diffC],
+                                    data: this.incomeC,
                                     borderColor: "rgba(236,72,153,0.9)", // 💖 ชมพูสด
                                     backgroundColor: "rgba(236,72,153,0.3)", // 💖 ชมพูใส
                                     tension: 0.3,
@@ -1293,12 +1292,6 @@ export default {
                             },
                         },
                     });
-                } else {
-                    this.chart.data.labels = [...this.labels];
-                    this.chart.data.datasets[0].data = [...this.diffA];
-                    this.chart.data.datasets[1].data = [...this.diffB];
-                    this.chart.data.datasets[2].data = [...this.diffC];
-                    this.chart.update();
                 }
             } catch (error) {
                 console.error("Error Report BookReturn:", error);

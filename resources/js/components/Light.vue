@@ -244,7 +244,7 @@
                                                     class="text-end text-slate-900 dark:text-white"
                                                     >{{
                                                         formatShort(
-                                                            this.incomeA
+                                                            this.incomeAA,
                                                         )
                                                     }}</span
                                                 >
@@ -264,7 +264,7 @@
                                                     class="text-end text-slate-900 dark:text-white"
                                                     >{{
                                                         formatShort(
-                                                            this.incomeB
+                                                            this.incomeBB,
                                                         )
                                                     }}</span
                                                 >
@@ -284,7 +284,7 @@
                                                     class="text-end text-slate-900 dark:text-white"
                                                     >{{
                                                         formatShort(
-                                                            this.incomeC
+                                                            this.incomeCC,
                                                         )
                                                     }}</span
                                                 >
@@ -301,10 +301,24 @@
                                                     class="text-end text-slate-900 dark:text-white"
                                                     >{{
                                                         formatShort(
-                                                            this.incomeAll
+                                                            this.incomeAllA,
                                                         )
                                                     }}</span
                                                 >
+                                            </li>
+                                            <li>
+                                                <div
+                                                    class="flex mt-3 text-gray-400 text-xs font-light"
+                                                >
+                                                    <div># ข้อมูลวันที่</div>
+                                                    <div class="ml-auto">
+                                                        {{
+                                                            moment().format(
+                                                                "DD MMMM YYYY",
+                                                            )
+                                                        }}
+                                                    </div>
+                                                </div>
                                             </li>
                                         </ul>
 
@@ -339,13 +353,9 @@
                                         <div
                                             class="flex mt-3 text-gray-400 text-xs font-light"
                                         >
-                                            <div># ข้อมูลวันที่</div>
-                                            <div class="ml-auto">
-                                                {{
-                                                    moment().format(
-                                                        "DD MMMM YYYY"
-                                                    )
-                                                }}
+                                            <div>
+                                                # ข้อมูลประจำปี :
+                                                {{ moment().format("YYYY") }}
                                             </div>
                                         </div>
                                     </div>
@@ -420,7 +430,7 @@
                                                     v-else
                                                     >{{
                                                         formatShort(
-                                                            borrowMonthAll
+                                                            borrowMonthAll,
                                                         )
                                                     }}</span
                                                 >
@@ -816,7 +826,7 @@
                                                         {{
                                                             moment(
                                                                 voc?.created_at ??
-                                                                    ""
+                                                                    "",
                                                             ).format("L") ?? ""
                                                         }}</span
                                                     >
@@ -991,7 +1001,7 @@ Chart.register(
     CategoryScale,
     LinearScale,
     Tooltip,
-    Legend
+    Legend,
 );
 
 export default {
@@ -1006,6 +1016,7 @@ export default {
                 this.repIncome();
                 this.repBookReturn();
                 this.repBookReturnMonth();
+                this.repBookReturnLastYear();
                 this.repDbOnline();
                 this.repWebOPAC();
                 this.repRoom();
@@ -1046,6 +1057,10 @@ export default {
             incomeB: "",
             incomeC: "",
             incomeAll: "",
+            incomeAA: "",
+            incomeBB: "",
+            incomeCC: "",
+            incomeAllA: "",
             labels: [],
             diffA: [],
             diffB: [],
@@ -1066,9 +1081,10 @@ export default {
     methods: {
         async loadAllData() {
             await Promise.all([
-                // this.repIncome(),
+                //this.repIncome(),
                 this.repBookReturn(),
                 this.repBookReturnMonth(),
+                this.repBookReturnLastYear(),
                 this.repDbOnline(),
                 this.repWebOPAC(),
                 this.repRoom(),
@@ -1100,56 +1116,39 @@ export default {
         async repIncome() {
             try {
                 const response = await fetch(
-                    "https://script.google.com/macros/s/AKfycbw8n1USK22Kcq9QoF7SJjDnHk-uLPJ6GsC25fsZrsf1uo91glNwum633jTqnjw2RC8J/exec"
+                    "https://script.google.com/macros/s/AKfycbx9qB8KVLBQMMc3IprE1rIMQ_-qlLC4QnQQiwwwmcdCe_zlULD2eO4BBTFv7cHswRU2/exec",
                 );
                 const data = await response.json();
-                // console.log("API:", data);
+                //console.log("API:", data);
 
-                this.incomeA = data.items[0].total || 0;
-                this.incomeB = data.items[1].total || 0;
-                this.incomeC = data.items[2].total || 0;
+                //เฉพาะเดือน
+                this.incomeAA = data.current_month.a;
+                this.incomeBB = data.current_month.b;
+                this.incomeCC = data.current_month.space;
+                this.incomeAllA = data.current_month.sum;
 
-                // ✅ รอบแรก: ใส่ค่าลงกราฟเลย
-                if (
-                    this.lastA === "" &&
-                    this.lastB === "" &&
-                    this.lastC === ""
-                ) {
-                    this.lastA = this.incomeA;
-                    this.lastB = this.incomeB;
-                    this.lastC = this.incomeC;
+                //กราฟ
+                const tempA = new Array(12).fill(0);
+                const tempB = new Array(12).fill(0);
+                const tempC = new Array(12).fill(0);
 
-                    this.labels.push(data.time || "");
-                    this.diffA.push(this.incomeA);
-                    this.diffB.push(this.incomeB);
-                    this.diffC.push(this.incomeC);
-                } else {
-                    // ✅ รอบต่อ ๆ ไป → คำนวณผลต่าง
-                    const deltaA = this.incomeA - this.lastA;
-                    const deltaB = this.incomeB - this.lastB;
-                    const deltaC = this.incomeC - this.lastC;
-
-                    this.diffA.push(deltaA);
-                    this.diffB.push(deltaB);
-                    this.diffC.push(deltaC);
-                    this.labels.push(data.time || "");
-
-                    // จำกัดไม่เกิน 10 จุด
-                    if (this.diffA.length > this.maxItems) this.diffA.shift();
-                    if (this.diffB.length > this.maxItems) this.diffB.shift();
-                    if (this.diffC.length > this.maxItems) this.diffC.shift();
-                    if (this.labels.length > this.maxItems) this.labels.shift();
-
-                    // อัปเดตค่าล่าสุด
-                    this.lastA = this.incomeA;
-                    this.lastB = this.incomeB;
-                    this.lastC = this.incomeC;
+                if (data.yearly_data) {
+                    data.yearly_data.forEach((item) => {
+                        const mIdx = item.month - 1;
+                        if (mIdx >= 0 && mIdx < 12) {
+                            tempA[mIdx] = item.a || 0;
+                            tempB[mIdx] = item.b || 0;
+                            tempC[mIdx] = item.space || 0;
+                        }
+                    });
                 }
 
-                this.incomeAll = data.totalCount;
+                // อัปเดตเข้าสู่ State ของ Vue
+                this.incomeA = tempA;
+                this.incomeB = tempB;
+                this.incomeC = tempC;
 
                 Chart.defaults.font.family = "Anuphan";
-
                 const ctx = this.$refs.repPatron;
 
                 // ✅ ใช้ if/else ป้องกันสร้าง chart ซ้ำ
@@ -1158,15 +1157,28 @@ export default {
                     this.chart = new Chart(ctx, {
                         type: "line",
                         data: {
-                            labels: [...this.labels],
+                            labels: [
+                                "ม.ค.",
+                                "ก.พ.",
+                                "มี.ค.",
+                                "เม.ย.",
+                                "พ.ค.",
+                                "มิ.ย.",
+                                "ก.ค.",
+                                "ส.ค.",
+                                "ก.ย.",
+                                "ต.ค.",
+                                "พ.ย.",
+                                "ธ.ค.",
+                            ],
                             datasets: [
                                 {
                                     label: "A",
-                                    data: [...this.diffA],
+                                    data: this.incomeA,
                                     fill: false,
                                     borderColor: "rgba(59,130,246,0.9)",
                                     backgroundColor: "rgba(59,130,246,0.7)",
-                                    // pointBorderColor: "#fff",
+                                    pointBorderColor: "#fff",
                                     tension: 0.3,
                                     borderWidth: 2,
                                     pointRadius: 4,
@@ -1174,7 +1186,7 @@ export default {
                                 },
                                 {
                                     label: "B",
-                                    data: [...this.diffB],
+                                    data: this.incomeB,
                                     borderColor: "rgba(234,179,8,0.9)",
                                     backgroundColor: "rgba(234,179,8,0.3)",
                                     tension: 0.3,
@@ -1184,7 +1196,7 @@ export default {
                                 },
                                 {
                                     label: "C",
-                                    data: [...this.diffC],
+                                    data: this.incomeC,
                                     borderColor: "rgba(236,72,153,0.9)", // 💖 ชมพูสด
                                     backgroundColor: "rgba(236,72,153,0.3)", // 💖 ชมพูใส
                                     tension: 0.3,
@@ -1223,12 +1235,6 @@ export default {
                             },
                         },
                     });
-                } else {
-                    this.chart.data.labels = [...this.labels];
-                    this.chart.data.datasets[0].data = [...this.diffA];
-                    this.chart.data.datasets[1].data = [...this.diffB];
-                    this.chart.data.datasets[2].data = [...this.diffC];
-                    this.chart.update();
                 }
             } catch (error) {
                 console.error("Error Report BookReturn:", error);
@@ -1241,7 +1247,7 @@ export default {
 
                 fetch(
                     "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=yearly&year=" +
-                        year
+                        year,
                 )
                     .then((response) => response.json())
                     .then((data) => {
@@ -1342,14 +1348,14 @@ export default {
                 const year = new Date().getFullYear();
                 const month = new Date().getMonth() + 1;
                 const monthName = moment({ year, month: month - 1 }).format(
-                    "MMMM"
+                    "MMMM",
                 );
 
                 fetch(
                     "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=monthly&year=" +
                         year +
                         "&month=" +
-                        month
+                        month,
                 )
                     .then((response) => response.json())
                     .then((data) => {
@@ -1431,10 +1437,112 @@ export default {
                 console.error("Error Report BookReturn:", error);
             }
         },
+        async repBookReturnLastYear() {
+            try {
+                // เอาปีปัจจุบัน
+                const year = new Date().getFullYear() - 1;
+
+                fetch(
+                    "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=yearly&year=" +
+                        year,
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // ดึงเฉพาะ data จาก datasets
+                        const borrowData = data.datasets[0].data;
+                        const returnData = data.datasets[1].data;
+                        this.borrowAll = data.summary.totalBorrow;
+                        this.returnAll = data.summary.totalReturn;
+                        // ตั้งค่าฟอนต์
+                        Chart.defaults.font.family = "Anuphan";
+                        const ctx = this.$refs.repBookLastYear; // ✅ ต้องมี .getContext('2d')
+                        // สร้างกราฟ
+                        new Chart(ctx, {
+                            type: "bar",
+                            data: {
+                                labels: [
+                                    "ม.ค.",
+                                    "ก.พ.",
+                                    "มี.ค.",
+                                    "เม.ย.",
+                                    "พ.ค.",
+                                    "มิ.ย.",
+                                    "ก.ค.",
+                                    "ส.ค.",
+                                    "ก.ย.",
+                                    "ต.ค.",
+                                    "พ.ย.",
+                                    "ธ.ค.",
+                                ],
+                                datasets: [
+                                    {
+                                        label: "ยืมหนังสือ",
+                                        data: borrowData,
+                                        backgroundColor: "rgba(34,197,94,1)", // 🟢 เขียว
+                                        borderColor: "#fff",
+                                        borderWidth: 2,
+                                        borderRadius: 8,
+                                        borderSkipped: false,
+                                    },
+                                    {
+                                        label: "คืนหนังสือ",
+                                        data: returnData,
+                                        backgroundColor: "#36a2eb", // 🔵 ฟ้า
+                                        borderColor: "#fff",
+                                        borderWidth: 2,
+                                        borderRadius: 8,
+                                        borderSkipped: false,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                interaction: {
+                                    mode: "index",
+                                    intersect: false,
+                                }, // Hover แสดงทั้งคู่
+                                animation: {
+                                    duration: 2000,
+                                    easing: "easeOutBounce",
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        labels: {
+                                            color: "white",
+                                            font: { family: "Anuphan" },
+                                        },
+                                    },
+                                    tooltip: {
+                                        backgroundColor: "#333",
+                                        titleColor: "#fff",
+                                        bodyColor: "#fff",
+                                    },
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: { color: "white" },
+                                        grid: {
+                                            color: "rgba(255,255,255,0.1)",
+                                        },
+                                    },
+                                    x: {
+                                        ticks: { color: "white" },
+                                        grid: { display: false },
+                                    },
+                                },
+                            },
+                        });
+                    });
+            } catch (error) {
+                console.error("Error Report BookReturn:", error);
+            }
+        },
         async repDbOnline() {
             try {
                 fetch(
-                    "https://script.google.com/macros/s/AKfycbyNrSp52PnDqptizq5uNAHwknVbx-BNdvTUqXOAEYa03dUgGAdl6E4Xzl5tfIGAoojI8A/exec"
+                    "https://script.google.com/macros/s/AKfycbyNrSp52PnDqptizq5uNAHwknVbx-BNdvTUqXOAEYa03dUgGAdl6E4Xzl5tfIGAoojI8A/exec",
                 )
                     .then((response) => response.json())
                     .then((data) => {
@@ -1506,7 +1614,7 @@ export default {
         async repWebOPAC() {
             try {
                 fetch(
-                    "https://script.google.com/macros/s/AKfycbx2YMeeAtUhMCbxyxUrjyWEKekM9bwojQiuP6umIF7kJSN6u7BaVeWbW-nwVVI_WNpO/exec"
+                    "https://script.google.com/macros/s/AKfycbx2YMeeAtUhMCbxyxUrjyWEKekM9bwojQiuP6umIF7kJSN6u7BaVeWbW-nwVVI_WNpO/exec",
                 )
                     .then((response) => response.json())
                     .then((data) => {
@@ -1598,7 +1706,7 @@ export default {
                 };
                 const response = await axios.get(
                     "https://libroom.msu.ac.th/api/getService",
-                    config
+                    config,
                 );
                 const dataStd = response.data;
                 const labels = Object.keys(dataStd);
@@ -1609,10 +1717,7 @@ export default {
                     typeof dataStd !== "object" ||
                     Object.keys(dataStd).length === 0
                 ) {
-                    console.warn(
-                        "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
-                        dataStd
-                    );
+                    console.warn("⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:", dataStd);
                     return;
                 }
                 const ctx = this.$refs.repRoomAll;
@@ -1680,16 +1785,13 @@ export default {
                 };
                 const response = await axios.get(
                     "https://libroom.msu.ac.th/api/getMost",
-                    config
+                    config,
                 );
                 const dataStd = response.data;
                 const labels = dataStd.map((item) => item.faculty);
                 const data = dataStd.map((item) => item.count);
                 if (!Array.isArray(dataStd) || dataStd.length === 0) {
-                    console.warn(
-                        "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
-                        dataStd
-                    );
+                    console.warn("⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:", dataStd);
                     return;
                 }
                 const ctx = this.$refs.repRoomBar;
@@ -1795,7 +1897,7 @@ export default {
 
             try {
                 const res = await fetch(
-                    "https://script.google.com/macros/s/AKfycbw0IBwvvfysn5ryI16SWEcg6nU23pFNwj-81s8s6Hg-BFpvIXM5v7zaKkbk9arYbFpr/exec"
+                    "https://script.google.com/macros/s/AKfycbw0IBwvvfysn5ryI16SWEcg6nU23pFNwj-81s8s6Hg-BFpvIXM5v7zaKkbk9arYbFpr/exec",
                 );
                 const data = await res.json();
 
@@ -1820,12 +1922,12 @@ export default {
                                 {
                                     role: "user",
                                     content: `ช่วยวิเคราะห์ข้อมูลนี้หน่อย: ${JSON.stringify(
-                                        data
+                                        data,
                                     )}`,
                                 },
                             ],
                         }),
-                    }
+                    },
                 );
 
                 const gptData = await response.json();
