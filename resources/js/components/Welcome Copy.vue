@@ -42,20 +42,6 @@
                             </div>
                         </a>
                     </li>
-                    <!-- <li>
-                          <a href="javascript:;" class="menu">
-                              <div class="menu__icon">
-                                  <i data-lucide="box"></i>
-                              </div>
-                              <div class="menu__title">
-                                  Menu Layout
-                                  <i
-                                      data-lucide="chevron-down"
-                                      class="menu__sub-icon"
-                                  ></i>
-                              </div>
-                          </a>                  
-                      </li> -->
 
                     <li class="menu__devider my-6"></li>
                     <li>
@@ -92,10 +78,7 @@
         >
             <div class="h-full flex items-center">
                 <!-- BEGIN: Logo -->
-                <a
-                    href=""
-                    class="logo -intro-x hidden md:flex xl:w-[180px] block"
-                >
+                <a href="" class="logo -intro-x hidden md:flex xl:w-[180px]">
                     <img
                         alt="Midone - HTML Admin Template"
                         class="logo__image w-20"
@@ -133,69 +116,13 @@
                     </div>
                 </div>
                 <!-- END: Search -->
-                <!-- BEGIN: Notifications -->
-                <!-- <div class="intro-x dropdown mr-4 sm:mr-6">
-                  <div
-                      class="dropdown-toggle notification notification--bullet"
-                      role="button"
-                      aria-expanded="false"
-                      data-tw-toggle="dropdown"
-                  >
-                      <box-icon
-                          name="bell"
-                          color="#cbd5e1"
-                          class="hover:scale-90"
-                          @click="alert()"
-                      ></box-icon>
-                  </div>
-              </div> -->
-                <!-- END: Notifications -->
-                <!-- BEGIN: Account Menu -->
-                <!-- <div class="intro-x dropdown w-8 h-8">
-                  <div
-                      class="dropdown-toggle w-8 h-8"
-                      role="button"
-                      aria-expanded="false"
-                      data-tw-toggle="dropdown"
-                      @click="showUser()"
-                  >
-                      <box-icon
-                          name="user"
-                          color="#cbd5e1"
-                          class="hover:scale-90"
-                      ></box-icon>
-                  </div>
-              </div> -->
-                <!-- <div
-                  class="absolute right-10 z-10 mt-32 w-48 rounded-lg bg-gray-700 py-1 shadow-lg border-2 border-white"
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="user-menu-button"
-                  tabindex="-1"
-                  v-if="showModal"
-              >
-                  <router-link
-                      to=""
-                      class="block px-4 py-2 text-sm text-white hover:text-gray-700 hover:bg-white"
-                      role="menuitem"
-                      tabindex="-1"
-                      id="user-menu-item-0"
-                      >ฐานข้อมูลออนไลน์</router-link
-                  >
-                  <div
-                      class="block px-4 py-2 text-sm text-white hover:text-gray-700 hover:bg-white"
-                      role="menuitem"
-                      tabindex="-1"
-                      id="user-menu-item-2"
-                      @click="logout()"
-                      >ออกจากระบบ</div>
-              </div> -->
+
                 <!-- END: Account Menu -->
             </div>
         </div>
         <!-- END: Top Bar -->
         <div class="flex overflow-hidden" v-if="isReady">
-            <!-- BEGIN: Simple Menu -->
+            <!-- BEGIN: Side Menu -->
             <nav class="side-nav side-nav--simple">
                 <ul>
                     <li>
@@ -216,52 +143,6 @@
                                 </div>
                             </div>
                         </a>
-                        <!-- <ul class="side-menu__sub-open">
-                          <li>
-                              <a
-                                  href="simple-menu-light-dashboard-overview-1.html"
-                                  class="side-menu"
-                              >
-                                  <div class="side-menu__icon">
-                                      <i data-lucide="activity"></i>
-                                  </div>
-                                  <div class="side-menu__title">Overview 1</div>
-                              </a>
-                          </li>
-                          <li>
-                              <a
-                                  href="simple-menu-light-dashboard-overview-2.html"
-                                  class="side-menu side-menu--active"
-                              >
-                                  <div class="side-menu__icon">
-                                      <i data-lucide="activity"></i>
-                                  </div>
-                                  <div class="side-menu__title">Overview 2</div>
-                              </a>
-                          </li>
-                          <li>
-                              <a
-                                  href="simple-menu-light-dashboard-overview-3.html"
-                                  class="side-menu"
-                              >
-                                  <div class="side-menu__icon">
-                                      <i data-lucide="activity"></i>
-                                  </div>
-                                  <div class="side-menu__title">Overview 3</div>
-                              </a>
-                          </li>
-                          <li>
-                              <a
-                                  href="simple-menu-light-dashboard-overview-4.html"
-                                  class="side-menu"
-                              >
-                                  <div class="side-menu__icon">
-                                      <i data-lucide="activity"></i>
-                                  </div>
-                                  <div class="side-menu__title">Overview 4</div>
-                              </a>
-                          </li>
-                      </ul> -->
                     </li>
                     <li>
                         <a
@@ -285,41 +166,16 @@
                             </div>
                         </a>
                     </li>
-                    <!-- <li class="side-nav__devider my-6"></li>
-                  <li>
-                      <div
-                          class="side-menu hover:cursor-pointer"
-                          @click="logout()"
-                      >
-                          <div class="side-menu__icon">
-                              <box-icon
-                                  name="log-out-circle"
-                                  color="#64748b"
-                              ></box-icon>
-                          </div>
-                          <div class="side-menu__title">
-                              Crud
-                              <div class="side-menu__sub-icon">
-                                  <i data-lucide="chevron-down"></i>
-                              </div>
-                          </div>
-                      </div>
-                  </li> -->
                 </ul>
             </nav>
-            <!-- END: Simple Menu -->
+            <!-- END: Side Menu -->
 
             <!-- BEGIN: Content -->
             <div class="content">
-                <!-- Video Backgound -->
-                <video autoplay muted loop playsinline class="background-video">
-                    <source :src="video" type="video/mp4" class="opacity-50" />
-                </video>
-
                 <div class="grid grid-cols-12 gap-6">
                     <div class="col-span-12 2xl:col-span-9">
                         <div class="grid grid-cols-12 gap-6">
-                            <!-- BEGIN: Notification -->
+                            <!-- BEGIN: Welcome Text -->
                             <div class="col-span-12 mt-6 -mb-6 intro-y">
                                 <transition name="fade" mode="out-in">
                                     <div
@@ -351,79 +207,121 @@
                                     </div>
                                 </transition>
                             </div>
-                            <!-- BEGIN: Notification -->
 
-                            <!-- BEGIN: Visitors -->
+                            <!-- BEGIN: Dashboard -->
                             <div
                                 class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3 mt-2"
                             >
                                 <div class="intro-y flex items-center h-10">
                                     <h2
-                                        class="text-lg font-medium truncate mr-5"
+                                        class="text-lg font-medium truncate mr-5 text-slate-900 dark:text-white"
                                     >
-                                        ผู้เข้าใช้บริการ
+                                        สถิติผู้เข้าใช้บริการ
                                     </h2>
                                     <select
-                                        class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto form-select box"
+                                        class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto form-select box cursor-pointer text-slate-900 dark:text-white"
                                     >
                                         <!-- <option value="daily">รายวัน</option> -->
-                                        <option value="monthly">
-                                            รายเดือน
-                                        </option>
+                                        <option value="monthly">รายวัน</option>
                                         <!-- <option value="yearly">รายปี</option> -->
                                     </select>
                                 </div>
                                 <div class="report-box-2 intro-y mt-5">
                                     <div class="box p-5">
-                                        <div class="flex items-center">
-                                            Realtime
-                                            <div class="dropdown ml-auto">
-                                                <a
-                                                    class="dropdown-toggle w-5 h-5 block -mr-2"
-                                                    href="javascript:;"
-                                                    aria-expanded="false"
-                                                    data-tw-toggle="dropdown"
+                                        <ul class="space-y-2">
+                                            <li
+                                                class="flex items-center justify-between"
+                                            >
+                                                <div
+                                                    class="flex items-center space-x-2 text-slate-900 dark:text-white"
                                                 >
-                                                    <i
-                                                        data-lucide="more-vertical"
-                                                        class="w-5 h-5 text-slate-500"
-                                                    ></i>
-                                                </a>
-                                                <div class="dropdown-menu w-40">
-                                                    <ul
-                                                        class="dropdown-content"
-                                                    >
-                                                        <li>
-                                                            <a
-                                                                href=""
-                                                                class="dropdown-item"
-                                                            >
-                                                                <i
-                                                                    data-lucide="file-text"
-                                                                    class="w-4 h-4 mr-2"
-                                                                ></i>
-                                                                Export
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href=""
-                                                                class="dropdown-item"
-                                                            >
-                                                                <i
-                                                                    data-lucide="settings"
-                                                                    class="w-4 h-4 mr-2"
-                                                                ></i>
-                                                                Settings
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                    <span
+                                                        class="w-5 h-3 rounded-sm bg-sky-400 mr-2"
+                                                    ></span>
+                                                    A
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-2xl font-medium mt-2">
-                                            {{ incomeDetail?.income ?? "" }}
-                                        </div>
+                                                <span
+                                                    class="text-end text-slate-900 dark:text-white"
+                                                    >{{
+                                                        formatShort(
+                                                            this.incomeAA,
+                                                        )
+                                                    }}</span
+                                                >
+                                            </li>
+                                            <li
+                                                class="flex items-center justify-between"
+                                            >
+                                                <div
+                                                    class="flex items-center space-x-2 text-slate-900 dark:text-white"
+                                                >
+                                                    <span
+                                                        class="w-5 h-3 rounded-sm bg-amber-400 mr-2"
+                                                    ></span>
+                                                    B
+                                                </div>
+                                                <span
+                                                    class="text-end text-slate-900 dark:text-white"
+                                                    >{{
+                                                        formatShort(
+                                                            this.incomeBB,
+                                                        )
+                                                    }}</span
+                                                >
+                                            </li>
+                                            <li
+                                                class="flex items-center justify-between"
+                                            >
+                                                <div
+                                                    class="flex items-center space-x-2 text-slate-900 dark:text-white"
+                                                >
+                                                    <span
+                                                        class="w-5 h-3 rounded-sm bg-pink-400 mr-2"
+                                                    ></span>
+                                                    MSU Space
+                                                </div>
+                                                <span
+                                                    class="text-end text-slate-900 dark:text-white"
+                                                    >{{
+                                                        formatShort(
+                                                            this.incomeCC,
+                                                        )
+                                                    }}</span
+                                                >
+                                            </li>
+                                            <li
+                                                class="flex items-center justify-between"
+                                            >
+                                                <div
+                                                    class="flex items-center space-x-2"
+                                                >
+                                                    #
+                                                </div>
+                                                <span
+                                                    class="text-end text-slate-900 dark:text-white"
+                                                    >{{
+                                                        formatShort(
+                                                            this.incomeAllA,
+                                                        )
+                                                    }}</span
+                                                >
+                                            </li>
+                                            <li>
+                                                <div
+                                                    class="flex mt-3 text-gray-400 text-xs font-light"
+                                                >
+                                                    <div># ข้อมูลวันที่</div>
+                                                    <div class="ml-auto">
+                                                        {{
+                                                            moment().format(
+                                                                "DD MMMM YYYY",
+                                                            )
+                                                        }}
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
                                         <div
                                             class="border-b border-slate-200 flex pb-2 mt-4"
                                         >
@@ -445,46 +343,460 @@
                                             class="mt-2 border-b broder-slate-200"
                                         >
                                             <div class="-mb-1.5 -ml-2.5">
-                                                <div class="h-[79px]">
+                                                <div class="h-[220px]">
                                                     <canvas
-                                                        id="report-bar-chart"
-                                                        ref="reportIncome"
+                                                        ref="repPatron"
                                                     ></canvas>
                                                 </div>
                                             </div>
                                         </div>
                                         <div
-                                            class="text-slate-500 text-xs border-b border-slate-200 flex mb-2 pb-2 mt-4"
+                                            class="flex mt-3 text-gray-400 text-xs font-light"
                                         >
-                                            <div>Type</div>
-                                            <div class="ml-auto">Users</div>
+                                            <div>
+                                                # ข้อมูลประจำปี :
+                                                {{ moment().format("YYYY") }}
+                                            </div>
                                         </div>
-                                        <div class="flex">
-                                            <div>นักเรียน</div>
-                                            <div class="ml-auto">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Visitors -->
+
+                            <!-- BEGIN: General Report -->
+                            <div
+                                class="col-span-12 lg:col-span-8 xl:col-span-5 mt-2"
+                            >
+                                <div
+                                    class="intro-y block sm:flex items-center h-10"
+                                >
+                                    <h2
+                                        class="text-lg font-medium truncate mr-5 text-slate-900 dark:text-white"
+                                    >
+                                        สถิติยืม-คืนทรัพยากรสารสนเทศ
+                                    </h2>
+                                    <select
+                                        class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto form-select box cursor-pointer text-slate-900 dark:text-white"
+                                        v-model="selectBook"
+                                    >
+                                        <!-- <option value="daily">รายวัน</option> -->
+                                        <option value="year">รายปี</option>
+                                        <option value="month">รายเดือน</option>
+                                        <option value="lastyear">
+                                            รายปีที่แล้ว
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="flex justify-center">
+                                    <div class="h-auto w-full">
+                                        <!-- รายปี -->
+                                        <canvas
+                                            v-show="selectBook === 'year'"
+                                            class="hover:cursor-pointer"
+                                            ref="repBook"
+                                        ></canvas>
+
+                                        <!-- รายเดือน -->
+                                        <canvas
+                                            v-show="selectBook === 'month'"
+                                            class="hover:cursor-pointer"
+                                            ref="repBookMonth"
+                                        ></canvas>
+
+                                        <!-- รายปีที่แล้ว -->
+                                        <canvas
+                                            v-show="selectBook === 'lastyear'"
+                                            class="hover:cursor-pointer"
+                                            ref="repBookLastYear"
+                                        ></canvas>
+                                    </div>
+                                </div>
+                                <div class="report-box-2 intro-y mt-12 sm:mt-5">
+                                    <div class="box sm:flex">
+                                        <div
+                                            class="px-8 py-4 flex flex-col justify-center flex-1"
+                                        >
+                                            <div
+                                                class="relative text-3xl font-medium mt-4 text-slate-900 dark:text-white"
+                                            >
+                                                <box-icon
+                                                    name="book"
+                                                    size="sm"
+                                                    color="#22C55E"
+                                                ></box-icon>
+                                                <span class="text-sm pl-2"
+                                                    >รายการยืม</span
+                                                >
+                                                <span
+                                                    class="text-md pl-2 text-amber-400"
+                                                    v-if="selectBook === 'year'"
+                                                    >{{
+                                                        formatShort(borrowAll)
+                                                    }}</span
+                                                >
+                                                <span
+                                                    class="text-md pl-2 text-amber-400"
+                                                    v-else
+                                                    >{{
+                                                        formatShort(
+                                                            borrowMonthAll,
+                                                        )
+                                                    }}</span
+                                                >
+                                            </div>
+
+                                            <div
+                                                class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
+                                                v-if="selectBook !== 'lastyear'"
+                                            >
+                                                # ข้อมูลประจำปี
+                                                {{ moment().format("YYYY") }}
+                                            </div>
+
+                                            <div
+                                                class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
+                                                v-else
+                                            >
+                                                # ข้อมูลประจำปี
                                                 {{
-                                                    incomeDetail?.student ?? ""
+                                                    moment()
+                                                        .subtract(1, "year")
+                                                        .format("YYYY")
                                                 }}
                                             </div>
                                         </div>
-                                        <div class="flex mt-1.5">
-                                            <div>นักศึกษา</div>
-                                            <div class="ml-auto">
-                                                {{ incomeDetail?.nisit ?? "" }}
+                                        <div
+                                            class="px-8 py-4 flex flex-col justify-center flex-1 sm:border-t-0 sm:border-l border-slate-200 border-dashed"
+                                            v-if="
+                                                selectBook === 'year' ||
+                                                selectBook === 'lastyear'
+                                            "
+                                        >
+                                            <div
+                                                class="relative text-3xl font-medium mt-4 text-slate-900 dark:text-white"
+                                            >
+                                                <box-icon
+                                                    name="book"
+                                                    size="sm"
+                                                    color="#36a2eb"
+                                                ></box-icon>
+                                                <span class="text-sm pl-2"
+                                                    >รายการคืน</span
+                                                >
+                                                <span
+                                                    class="text-md pl-2 text-amber-400"
+                                                    >{{
+                                                        formatShort(returnAll)
+                                                    }}</span
+                                                >
+                                            </div>
+
+                                            <div
+                                                class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
+                                                @click="repOpenAI(selectBook)"
+                                            >
+                                                Request AI Analysis
                                             </div>
                                         </div>
-                                        <div class="flex mt-1.5">
-                                            <div>อาจารย์</div>
+                                        <div
+                                            class="px-8 py-4 flex flex-col justify-center flex-1 sm:border-t-0 sm:border-l border-slate-200 border-dashed"
+                                            v-else
+                                        >
+                                            <div
+                                                class="relative text-3xl font-medium mt-4 text-slate-900 dark:text-white"
+                                            >
+                                                <box-icon
+                                                    name="analyse"
+                                                    size="sm"
+                                                    color="#36a2eb"
+                                                ></box-icon>
+                                                <span class="text-sm pl-2"
+                                                    >ChatGPT (OpenAI)</span
+                                                >
+                                            </div>
+
+                                            <div
+                                                class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
+                                                v-if="selectBook === 'year'"
+                                            >
+                                                # ข้อมูลประจำปี
+                                                {{ moment().format("YYYY") }}
+                                            </div>
+                                            <div
+                                                class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
+                                                v-if="selectBook === 'lastyear'"
+                                            >
+                                                # ข้อมูลประจำปี
+                                                {{
+                                                    moment()
+                                                        .subtract(1, "year")
+                                                        .format("YYYY")
+                                                }}
+                                            </div>
+                                            <div
+                                                class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4 text-slate-300 text-xs"
+                                                @click="repOpenAI(selectBook)"
+                                            >
+                                                Request AI Analysis
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: General Report -->
+
+                            <!-- BEGIN: Users By Age -->
+                            <div
+                                class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-4 mt-2 lg:mt-6 xl:mt-2"
+                            >
+                                <div class="intro-y flex items-center h-10">
+                                    <h2
+                                        class="text-lg font-medium truncate mr-5 text-slate-900 dark:text-white"
+                                    >
+                                        สถิติฐานข้อมูลออนไลน์
+                                    </h2>
+                                </div>
+                                <div class="report-box-2 intro-y mt-5">
+                                    <div class="box p-5">
+                                        <!-- ✅ ใช้ flex แยกซ้าย (ข้อความ) / ขวา (กราฟ) -->
+                                        <div
+                                            class="flex flex-col md:flex-row items-center md:items-start md:space-x-8"
+                                        >
+                                            <!-- 🔹 ส่วนข้อความอ้างอิง -->
+                                            <div
+                                                class="w-full md:w-1/2 text-gray-200 text-sm"
+                                            >
+                                                <p
+                                                    class="text-xs mb-4 text-slate-900 dark:text-white"
+                                                >
+                                                    * ผู้เข้าใช้งานมากที่สุด 5
+                                                    อันดับ
+                                                </p>
+
+                                                <ul class="space-y-2">
+                                                    <li
+                                                        class="flex items-center space-x-2"
+                                                    >
+                                                        <span
+                                                            class="w-5 h-3 rounded-sm bg-sky-400"
+                                                        ></span>
+                                                        <span>{{
+                                                            dbName[0]
+                                                        }}</span>
+                                                    </li>
+                                                    <li
+                                                        class="flex items-center space-x-2"
+                                                    >
+                                                        <span
+                                                            class="w-5 h-3 rounded-sm bg-emerald-400"
+                                                        ></span>
+                                                        <span>{{
+                                                            dbName[1]
+                                                        }}</span>
+                                                    </li>
+                                                    <li
+                                                        class="flex items-center space-x-2"
+                                                    >
+                                                        <span
+                                                            class="w-5 h-3 rounded-sm bg-amber-400"
+                                                        ></span>
+                                                        <span>{{
+                                                            dbName[2]
+                                                        }}</span>
+                                                    </li>
+                                                    <li
+                                                        class="flex items-center space-x-2"
+                                                    >
+                                                        <span
+                                                            class="w-5 h-3 rounded-sm bg-orange-400"
+                                                        ></span>
+                                                        <span>{{
+                                                            dbName[3]
+                                                        }}</span>
+                                                    </li>
+                                                    <li
+                                                        class="flex items-center space-x-2"
+                                                    >
+                                                        <span
+                                                            class="w-5 h-3 rounded-sm bg-pink-400"
+                                                        ></span>
+                                                        <span>{{
+                                                            dbName[4]
+                                                        }}</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- 🔹 ส่วนกราฟ -->
+                                            <div
+                                                class="w-full md:w-1/2 flex justify-center"
+                                            >
+                                                <canvas
+                                                    ref="repDB"
+                                                    class="max-w-[220px] mt-3"
+                                                ></canvas>
+                                            </div>
+                                        </div>
+
+                                        <!-- ปุ่มด้านล่าง -->
+                                        <button
+                                            class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-6"
+                                            @click="dbModalShow()"
+                                        >
+                                            แสดงรายการทั้งหมด
+                                        </button>
+                                        <div
+                                            class="flex mt-3 text-gray-400 text-xs font-light"
+                                        >
+                                            <div># ข้อมูลเดือน</div>
                                             <div class="ml-auto">
                                                 {{
-                                                    incomeDetail?.teacher ?? ""
+                                                    moment().format("MMMM YYYY")
                                                 }}
                                             </div>
                                         </div>
-                                        <div class="flex mt-1.5">
-                                            <div>บุคลากร</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Users By Age -->
+
+                            <!-- BEGIN: Weekly Top Products -->
+
+                            <!-- BEGIN: Users By Age -->
+                            <div
+                                class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-4 mt-2 lg:mt-6 xl:mt-2"
+                            >
+                                <div class="intro-y flex items-center h-10">
+                                    <h2
+                                        class="text-lg font-medium truncate mr-5 text-slate-900 dark:text-white"
+                                    >
+                                        สถิติสืบค้นผ่าน WebOPAC
+                                    </h2>
+                                </div>
+                                <div class="report-box-2 intro-y mt-5">
+                                    <div class="box p-5">
+                                        <div class="tab-content mt-6">
+                                            <div
+                                                class="tab-pane active"
+                                                id="active-users"
+                                                role="tabpanel"
+                                                aria-labelledby="active-users-tab"
+                                            >
+                                                <div class="relative">
+                                                    <div class="h-[208px]">
+                                                        <canvas
+                                                            class="mt-3"
+                                                            ref="repWeb"
+                                                        ></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="flex text-center justify-center"
+                                            >** ทั้งหมด
+                                            <span class="text-amber-400 px-2">{{
+                                                formatShort(this.wepOPACAll)
+                                            }}</span>
+                                            รายการสืบค้น **</span
+                                        >
+                                        <div
+                                            class="flex mt-3 text-gray-400 text-xs font-light"
+                                        >
+                                            <div># ข้อมูลเดือน</div>
                                             <div class="ml-auto">
-                                                {{ incomeDetail?.staff ?? "" }}
+                                                {{
+                                                    moment().format("MMMM YYYY")
+                                                }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: WebOpac -->
+
+                            <!-- BEGIN: Users By Age -->
+                            <div
+                                class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-8 mt-2 lg:mt-6 xl:mt-2"
+                            >
+                                <div class="intro-y flex items-center h-10">
+                                    <h2
+                                        class="text-lg font-medium truncate mr-5 text-slate-900 dark:text-white"
+                                    >
+                                        สถิติจองพื้นที่ออนไลน์
+                                    </h2>
+                                    <!-- <div
+                                        class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto p-3 box cursor-pointer hover:bg-gray-800 hover:shadow-lg text-slate-900 dark:text-white"
+                                    >
+                                        รายละเอียด
+                                    </div> -->
+                                </div>
+                                <div class="report-box-2 intro-y mt-5">
+                                    <div class="box p-5">
+                                        <div class="grid grid-cols-2 gap-6">
+                                            <div
+                                                class="flex flex-col md:flex-row items-center justify-between w-full border-r-2 border-dashed"
+                                            >
+                                                <!-- 🔹 ส่วนกราฟ -->
+                                                <div
+                                                    class="w-full md:w-1/2 flex justify-center"
+                                                >
+                                                    <canvas
+                                                        ref="repRoomAll"
+                                                        class="max-w-[200px] mt-3"
+                                                    ></canvas>
+                                                </div>
+
+                                                <!-- 🔹 ส่วนข้อความอ้างอิง -->
+                                                <div
+                                                    class="w-full md:w-1/2 text-gray-200 text-sm ml-12"
+                                                >
+                                                    <p
+                                                        class="text-xs mb-4 text-slate-900 dark:text-white"
+                                                    >
+                                                        *
+                                                        ผู้เข้าใช้บริการแบ่งตามพื้นที่
+                                                    </p>
+
+                                                    <ul
+                                                        class="space-y-2 text-slate-900 dark:text-white"
+                                                    >
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-sky-400"
+                                                            ></span>
+                                                            <span>A</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-amber-400"
+                                                            ></span>
+                                                            <span>B</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-pink-400"
+                                                            ></span>
+                                                            <span
+                                                                >MSU Space</span
+                                                            >
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="w-full flex justify-center items-center"
+                                            >
+                                                <canvas
+                                                    ref="repRoomBar"
+                                                    class="w-full h-[200px] mt-3"
+                                                ></canvas>
                                             </div>
                                         </div>
                                         <div
@@ -497,695 +809,10 @@
                                                 }}
                                             </div>
                                         </div>
-                                        <button
-                                            class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4"
-                                        >
-                                            Request AI Analysis
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END: Visitors -->
-
-                            <!-- BEGIN: General Report -->
-                            <div
-                                class="col-span-12 lg:col-span-8 xl:col-span-6 mt-2"
-                            >
-                                <div
-                                    class="intro-y block sm:flex items-center h-10"
-                                >
-                                    <h2
-                                        class="text-lg font-medium truncate mr-5"
-                                    >
-                                        ยืมหนังสือ
-                                    </h2>
-                                    <select
-                                        class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto form-select box"
-                                    >
-                                        <!-- <option value="daily">รายวัน</option> -->
-                                        <option value="monthly">
-                                            รายเดือน
-                                        </option>
-                                        <!-- <option value="yearly">รายปี</option> -->
-                                    </select>
-                                </div>
-                                <div class="flex justify-center">
-                                    <div class="h-auto w-full">
-                                        <canvas
-                                            class="hover:cursor-pointer"
-                                            ref="reportBookOne"
-                                        ></canvas>
-                                    </div>
-                                </div>
-                                <div class="report-box-2 intro-y mt-12 sm:mt-5">
-                                    <div class="box sm:flex">
-                                        <div
-                                            class="px-8 py-4 flex flex-col justify-center flex-1"
-                                        >
-                                            <div
-                                                class="relative text-3xl font-medium mt-4"
-                                            >
-                                                <box-icon
-                                                    name="book"
-                                                    size="sm"
-                                                    color="#f59e0b"
-                                                ></box-icon>
-                                                <span
-                                                    class="text-sm text-gray-400 pl-2"
-                                                    >จำนวน</span
-                                                >
-                                                <span class="text-md px-2">{{
-                                                    bookDetail?.borrow ?? ""
-                                                }}</span>
-                                                <span
-                                                    class="text-sm text-gray-400"
-                                                    >รายการยืม</span
-                                                >
-                                            </div>
-
-                                            <div
-                                                class="mt-4 text-slate-500 text-xs"
-                                            >
-                                                # ข้อมูลเดือน
-                                                {{
-                                                    moment().format("MMMM YYYY")
-                                                }}
-                                            </div>
-
-                                            <button
-                                                class="btn btn-outline-secondary border-dashed w-full py-1 px-2 mt-4"
-                                            >
-                                                Request AI Analysis
-                                            </button>
-                                        </div>
-                                        <div
-                                            class="px-8 py-4 flex flex-col justify-center flex-1 border-t sm:border-t-0 sm:border-l border-slate-200 dark:border-darkmode-300 border-dashed"
-                                        >
-                                            <div class="text-slate-500 text-md">
-                                                แยกตามประเภทสมาชิก
-                                            </div>
-                                            <div
-                                                class="mt-1.5 flex items-center"
-                                            >
-                                                {{ bookDetail?.satit ?? "" }}
-                                                <div class="text-base">
-                                                    <span
-                                                        class="text-xs text-gray-400"
-                                                        >รายการ :
-                                                    </span>
-                                                </div>
-                                                <div
-                                                    class="text-amber-400 flex text-xs font-medium tooltip cursor-pointer ml-2"
-                                                    title="2% Lower than last month"
-                                                >
-                                                    นักเรียนโรงเรียนสาธิต
-                                                    <i
-                                                        data-lucide="chevron-down"
-                                                        class="w-4 h-4 ml-0.5"
-                                                    ></i>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="mt-1.5 flex items-center"
-                                            >
-                                                <div
-                                                    class="text-base text-amber-400"
-                                                >
-                                                    {{
-                                                        bookDetail?.bachelor ??
-                                                        ""
-                                                    }}
-                                                    <span
-                                                        class="text-xs text-gray-400"
-                                                        >รายการ :
-                                                    </span>
-                                                </div>
-                                                <div
-                                                    class="text-amber-400 flex text-xs font-medium tooltip cursor-pointer ml-2"
-                                                    title="2% Lower than last month"
-                                                >
-                                                    นิสิตระดับปริญญาตรี
-                                                    <i
-                                                        data-lucide="chevron-down"
-                                                        class="w-4 h-4 ml-0.5"
-                                                    ></i>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="mt-1.5 flex items-center"
-                                            >
-                                                {{ bookDetail?.graduate ?? "" }}
-                                                <div class="text-base">
-                                                    <span
-                                                        class="text-xs text-gray-400"
-                                                        >รายการ :
-                                                    </span>
-                                                </div>
-                                                <div
-                                                    class="text-amber-400 flex text-xs font-medium tooltip cursor-pointer ml-2"
-                                                    title="2% Lower than last month"
-                                                >
-                                                    นิสิตระดับปริญญาโท
-                                                    <i
-                                                        data-lucide="chevron-down"
-                                                        class="w-4 h-4 ml-0.5"
-                                                    ></i>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="mt-1.5 flex items-center"
-                                            >
-                                                {{ bookDetail?.master ?? "" }}
-                                                <div class="text-base">
-                                                    <span
-                                                        class="text-xs text-gray-400"
-                                                        >รายการ :</span
-                                                    >
-                                                </div>
-                                                <div
-                                                    class="text-amber-400 flex text-xs font-medium tooltip cursor-pointer ml-2"
-                                                    title="2% Lower than last month"
-                                                >
-                                                    นิสิตระดับปริญญาเอก
-                                                    <i
-                                                        data-lucide="chevron-down"
-                                                        class="w-4 h-4 ml-0.5"
-                                                    ></i>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="mt-1.5 flex items-center"
-                                            >
-                                                <div
-                                                    class="text-base text-amber-400"
-                                                >
-                                                    {{
-                                                        bookDetail?.academic ??
-                                                        ""
-                                                    }}
-                                                    <span
-                                                        class="text-xs text-gray-400"
-                                                        >รายการ :
-                                                    </span>
-                                                </div>
-                                                <div
-                                                    class="text-amber-400 flex text-xs font-medium tooltip cursor-pointer ml-2"
-                                                    title="2% Lower than last month"
-                                                >
-                                                    บุคลากรสายวิชาการ
-                                                    <i
-                                                        data-lucide="chevron-down"
-                                                        class="w-4 h-4 ml-0.5"
-                                                    ></i>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="mt-1.5 flex items-center"
-                                            >
-                                                <div
-                                                    class="text-base text-amber-400"
-                                                >
-                                                    {{
-                                                        bookDetail?.support ??
-                                                        ""
-                                                    }}
-                                                    <span
-                                                        class="text-xs text-gray-400"
-                                                        >รายการ :
-                                                    </span>
-                                                </div>
-                                                <div
-                                                    class="text-amber-400 flex text-xs font-medium tooltip cursor-pointer ml-2"
-                                                    title="2% Lower than last month"
-                                                >
-                                                    บุคลากรสายสนับสนุน
-                                                    <i
-                                                        data-lucide="chevron-down"
-                                                        class="w-4 h-4 ml-0.5"
-                                                    ></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END: General Report -->
-
-                            <!-- BEGIN: Users By Age -->
-                            <div
-                                class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3 mt-2 lg:mt-6 xl:mt-2"
-                            >
-                                <div class="intro-y flex items-center h-10">
-                                    <h2
-                                        class="text-lg font-medium truncate mr-5"
-                                    >
-                                        ประเภทสมาชิก
-                                    </h2>
-                                    <!-- <a href="" class="ml-auto text-primary truncate"
-                                      >Show More</a
-                                  > -->
-                                </div>
-                                <div class="report-box-2 intro-y mt-5">
-                                    <div class="box p-5">
-                                        <ul
-                                            class="nav nav-pills w-4/5 bg-slate-100 dark:bg-black/20 rounded-md mx-auto"
-                                            role="tablist"
-                                        >
-                                            <li
-                                                id="active-users-tab"
-                                                class="nav-item flex-1"
-                                                role="presentation"
-                                            >
-                                                <button
-                                                    class="nav-link w-full py-1.5 px-2"
-                                                    :class="
-                                                        showMemberOne === true
-                                                            ? 'active'
-                                                            : ''
-                                                    "
-                                                    data-tw-toggle="pill"
-                                                    data-tw-target="#active-users"
-                                                    type="button"
-                                                    role="tab"
-                                                    @click="memberShow()"
-                                                >
-                                                    ประเภทผู้ใช้
-                                                </button>
-                                            </li>
-                                            <li
-                                                id="inactive-users-tab"
-                                                class="nav-item flex-1"
-                                                role="presentation"
-                                            >
-                                                <button
-                                                    class="nav-link w-full py-1.5 px-2"
-                                                    :class="
-                                                        showMemberTwo === true
-                                                            ? 'active'
-                                                            : ''
-                                                    "
-                                                    data-tw-toggle="pill"
-                                                    data-tw-target="#active-users"
-                                                    type="button"
-                                                    @click="memberShow()"
-                                                >
-                                                    กลุ่มผู้ใช้
-                                                </button>
-                                            </li>
-                                        </ul>
-
-                                        <div
-                                            v-show="showMemberOne"
-                                            class="tab-content mt-6"
-                                        >
-                                            <div
-                                                class="tab-pane active"
-                                                id="active-users"
-                                                role="tabpanel"
-                                                aria-labelledby="active-users-tab"
-                                            >
-                                                <div class="relative">
-                                                    <div class="h-[208px]">
-                                                        <canvas
-                                                            class="mt-3"
-                                                            ref="reportUserOne"
-                                                        ></canvas>
-                                                    </div>
-                                                    <div
-                                                        class="flex flex-col justify-center items-center absolute w-full h-full top-0 left-0"
-                                                    >
-                                                        <div
-                                                            class="text-xl font-medium"
-                                                        >
-                                                            {{
-                                                                memberDetail?.all ??
-                                                                ""
-                                                            }}
-                                                        </div>
-                                                        <div
-                                                            class="text-slate-500 mt-0.5"
-                                                        >
-                                                            คน
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="w-52 sm:w-auto mx-auto mt-5"
-                                                >
-                                                    <div
-                                                        class="flex items-center"
-                                                    >
-                                                        <div
-                                                            class="w-2 h-2 bg-sky-500 rounded-full mr-3"
-                                                        ></div>
-                                                        <span class="truncate"
-                                                            >นักเรียนโรงเรียนสาธิต</span
-                                                        >
-                                                        <span
-                                                            class="font-medium ml-auto"
-                                                            >{{
-                                                                memberDetail?.satit ??
-                                                                ""
-                                                            }}</span
-                                                        >
-                                                    </div>
-                                                    <div
-                                                        class="flex items-center mt-4"
-                                                    >
-                                                        <div
-                                                            class="w-2 h-2 bg-teal-600 rounded-full mr-3"
-                                                        ></div>
-                                                        <span class="truncate"
-                                                            >นิสิตระดับปริญญาตรี</span
-                                                        >
-                                                        <span
-                                                            class="font-medium ml-auto"
-                                                            >{{
-                                                                memberDetail?.bachelor ??
-                                                                ""
-                                                            }}</span
-                                                        >
-                                                    </div>
-                                                    <div
-                                                        class="flex items-center mt-4"
-                                                    >
-                                                        <div
-                                                            class="w-2 h-2 bg-orange-400 rounded-full mr-3"
-                                                        ></div>
-                                                        <span class="truncate"
-                                                            >นิสิตระดับปริญญาโท</span
-                                                        >
-                                                        <span
-                                                            class="font-medium ml-auto"
-                                                            >{{
-                                                                memberDetail?.graduate ??
-                                                                ""
-                                                            }}</span
-                                                        >
-                                                    </div>
-                                                    <div
-                                                        class="flex items-center mt-4"
-                                                    >
-                                                        <div
-                                                            class="w-2 h-2 bg-amber-400 rounded-full mr-3"
-                                                        ></div>
-                                                        <span class="truncate"
-                                                            >นิสิตระดับปริญญาเอก</span
-                                                        >
-                                                        <span
-                                                            class="font-medium ml-auto"
-                                                            >{{
-                                                                memberDetail?.master ??
-                                                                ""
-                                                            }}</span
-                                                        >
-                                                    </div>
-                                                    <div
-                                                        class="flex items-center mt-4"
-                                                    >
-                                                        <div
-                                                            class="w-2 h-2 bg-gray-500 rounded-full mr-3"
-                                                        ></div>
-                                                        <span class="truncate"
-                                                            >บุคลากรสายวิชาการ</span
-                                                        >
-                                                        <span
-                                                            class="font-medium ml-auto"
-                                                            >{{
-                                                                memberDetail?.academic ??
-                                                                ""
-                                                            }}</span
-                                                        >
-                                                    </div>
-                                                    <div
-                                                        class="flex items-center mt-4"
-                                                    >
-                                                        <div
-                                                            class="w-2 h-2 bg-lime-500 rounded-full mr-3"
-                                                        ></div>
-                                                        <span class="truncate"
-                                                            >บุคลากรสายสนับสนุน</span
-                                                        >
-                                                        <span
-                                                            class="font-medium ml-auto"
-                                                            >{{
-                                                                memberDetail?.support ??
-                                                                ""
-                                                            }}</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Two -->
-                                        <div
-                                            v-show="showMemberTwo"
-                                            class="tab-content mt-6"
-                                        >
-                                            <div
-                                                class="tab-pane active"
-                                                id="active-users"
-                                                role="tabpanel"
-                                                aria-labelledby="active-users-tab"
-                                            >
-                                                <div class="relative">
-                                                    <div class="h-[208px]">
-                                                        <canvas
-                                                            class="mt-3"
-                                                            ref="reportUserTwo"
-                                                        ></canvas>
-                                                    </div>
-                                                    <div
-                                                        class="flex flex-col justify-center items-center absolute w-full h-full top-0 left-0"
-                                                    >
-                                                        <div
-                                                            class="text-xl font-medium"
-                                                        >
-                                                            {{
-                                                                memberDetailTwo?.all ??
-                                                                ""
-                                                            }}
-                                                        </div>
-                                                        <div
-                                                            class="text-slate-500 mt-0.5"
-                                                        >
-                                                            คน
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="w-52 sm:w-auto mx-auto mt-5"
-                                                >
-                                                    <div
-                                                        class="flex items-center"
-                                                    >
-                                                        <div
-                                                            class="w-2 h-2 bg-sky-500 rounded-full mr-3"
-                                                        ></div>
-                                                        <span class="truncate"
-                                                            >นักศึกษา</span
-                                                        >
-                                                        <span
-                                                            class="font-medium ml-auto"
-                                                            >{{
-                                                                memberDetailTwo?.nisit ??
-                                                                ""
-                                                            }}</span
-                                                        >
-                                                    </div>
-                                                    <div
-                                                        class="flex items-center mt-4"
-                                                    >
-                                                        <div
-                                                            class="w-2 h-2 bg-teal-600 rounded-full mr-3"
-                                                        ></div>
-                                                        <span class="truncate"
-                                                            >บุคลากร</span
-                                                        >
-                                                        <span
-                                                            class="font-medium ml-auto"
-                                                            >{{
-                                                                memberDetailTwo?.staff ??
-                                                                ""
-                                                            }}</span
-                                                        >
-                                                    </div>
-                                                    <div
-                                                        class="flex items-center mt-4"
-                                                    >
-                                                        <div
-                                                            class="w-2 h-2 bg-orange-400 rounded-full mr-3"
-                                                        ></div>
-                                                        <span class="truncate"
-                                                            >บุคลากรภายนอก</span
-                                                        >
-                                                        <span
-                                                            class="font-medium ml-auto"
-                                                            >{{
-                                                                memberDetailTwo?.patron ??
-                                                                ""
-                                                            }}</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- END: Users By Age -->
-
-                            <!-- BEGIN: Weekly Top Products -->
-
-                            <div class="col-span-12 lg:col-span-8 mt-6">
-                                <div
-                                    class="intro-y block sm:flex items-center h-10"
-                                >
-                                    <h2
-                                        class="text-lg font-medium truncate mr-5"
-                                    >
-                                        จองห้องออนไลน์ (Study Room)
-                                    </h2>
-                                </div>
-
-                                <div class="mt-5 intro-x">
-                                    <div class="grid grid-cols-2 gap-4">
-                                        <div class="box zoom-in">
-                                            <div
-                                                class="tiny-slider"
-                                                id="important-notes"
-                                            >
-                                                <div class="p-2">
-                                                    <div
-                                                        class="flex justify-center overflow-auto"
-                                                    >
-                                                        <div class="h-[360px]"
-                                                        v-if="isReady"
-                                                        >
-                                                            <canvas
-                                                                class=""
-                                                                ref="reportStdOne"
-                                                            ></canvas>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="text-slate-500 text-xs"
-                                                    >
-                                                        # ข้อมูลเดือน
-                                                        {{
-                                                            moment().format(
-                                                                "MMMM YYYY"
-                                                            )
-                                                        }}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="box zoom-in">
-                                            <div class="p-2">
-                                                <div
-                                                    class="flex justify-center overflow-auto"
-                                                >
-                                                    <div
-                                                        class="h-[360px] w-full"
-                                                        v-if="isReady"
-                                                    >
-                                                        <canvas
-                                                            class="mt-16"
-                                                            ref="reportStdTwo"
-                                                        ></canvas>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="text-slate-500 text-xs"
-                                                >
-                                                    # ข้อมูลเดือน
-                                                    {{
-                                                        moment().format(
-                                                            "MMMM YYYY"
-                                                        )
-                                                    }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END: Weekly Top Products -->
-
-                            <!-- BEGIN: Weekly Best Sellers -->
-                            <div class="col-span-12 xl:col-span-4 mt-6">
-                                <div class="intro-y flex items-center h-10">
-                                    <h2
-                                        class="text-lg font-medium truncate mr-5"
-                                    >
-                                        ฐานข้อมูลออนไลน์
-                                    </h2>
-                                    <select
-                                        class="sm:ml-auto mt-3 sm:mt-0 sm:w-auto form-select box"
-                                    >
-                                        <!-- <option value="daily">รายวัน</option> -->
-                                        <option value="monthly">
-                                            รายเดือน
-                                        </option>
-                                        <!-- <option value="yearly">รายปี</option> -->
-                                    </select>
-                                </div>
-                                <!-- <div class="mt-5"
-                                v-if="dbOnline.length > 0"
-                                >
-                                    <div
-                                        v-for="(db, index) in dbOnline"
-                                        :key="index"
-                                        class="intro-y"
-                                    >
-                                        <div
-                                            class="box px-4 py-4 mb-3 flex items-center zoom-in"
-                                        >
-                                            <div
-                                                class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
-                                            >
-                                                <img
-                                                    alt="Midone - HTML Admin Template"
-                                                    :src="db?.pic ?? ''"
-                                                />
-                                            </div>
-                                            <div class="ml-4 mr-auto">
-                                                <div class="font-medium">
-                                                    {{ db?.name ?? "" }}
-                                                </div>
-                                                <div
-                                                    class="text-slate-500 text-xs mt-0.5"
-                                                ></div>
-                                            </div>
-                                            <div
-                                                class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
-                                            >
-                                                {{ db?.count ?? "" }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-slate-400 hover:border-emerald-600 dark:border-darkmode-300 text-slate-500 cursor-pointer"
-                                        @click="modalShow()"
-                                    >
-                                        <p
-                                            class="hover:scale-105 hover:text-emerald-700"
-                                        >
-                                            View More
-                                        </p>
-                                    </div>
-                                </div>
-                                <div v-else class="mt-32 text-center text-gray-300 text-md">
-                                    ไม่มีข้อมูลออนไลน์ในเดือนนี้
-                                </div> -->
-                                <div class="mt-32 text-center text-gray-300 text-md">
-                                    อยู่ระหว่างดำเนินการ
-                                </div>
-                            </div>
-                            <!-- END: Weekly Best Sellers -->
                         </div>
                     </div>
                     <div class="col-span-12 2xl:col-span-3">
@@ -1199,21 +826,16 @@
                                 >
                                     <div class="intro-x flex items-center h-10">
                                         <h2
-                                            class="text-lg font-medium truncate mr-5"
+                                            class="text-lg font-medium truncate mr-5 text-slate-900 dark:text-white"
                                         >
-                                            รับฟังเสียงผู้ใช้ (VOC)
+                                            สถิติรับฟังเสียงผู้ใช้ (VOC)
                                         </h2>
-                                        <!-- <a
-                                              href=""
-                                              class="ml-auto text-primary truncate"
-                                              >Show More</a
-                                          > -->
                                     </div>
                                     <div
                                         class="mt-5 relative before:block before:absolute before:w-px before:h-[85%] before:bg-slate-200 before:dark:bg-darkmode-400 before:ml-5 before:mt-5"
                                     >
                                         <div
-                                            v-for="(voc, index) in vocText"
+                                            v-for="(voc, index) in vocList"
                                             :key="index"
                                             class="intro-x relative flex items-center mb-3"
                                         >
@@ -1232,7 +854,7 @@
                                                 </div>
                                             </div>
                                             <div
-                                                class="box px-5 py-3 ml-4 flex-1 zoom-in"
+                                                class="box px-5 py-3 ml-4 flex-1 zoom-in text-slate-900 dark:text-white"
                                             >
                                                 <div class="flex items-center">
                                                     <div
@@ -1252,161 +874,16 @@
                                                         {{
                                                             moment(
                                                                 voc?.created_at ??
-                                                                    ""
+                                                                    "",
                                                             ).format("L") ?? ""
                                                         }}</span
                                                     >
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
-                                            class="intro-x relative flex items-center mb-3"
-                                        >
-                                            <div
-                                                class="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5"
-                                            >
-                                                <div
-                                                    class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden"
-                                                >
-                                                    <box-icon
-                                                        name="bar-chart"
-                                                        color="white"
-                                                        size="md"
-                                                    ></box-icon>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="box px-5 py-3 ml-4 flex-1 zoom-in overflow-auto"
-                                            >
-                                                <div
-                                                    class="flex justify-center"
-                                                >
-                                                    <div
-                                                        class="h-auto"
-                                                        v-if="isReady"
-                                                    >
-                                                        <canvas
-                                                            class=""
-                                                            ref="reportVocBar"
-                                                        ></canvas>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="intro-x relative flex items-center mb-3"
-                                        >
-                                            <div
-                                                class="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5"
-                                            >
-                                                <div
-                                                    class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden"
-                                                >
-                                                    <box-icon
-                                                        name="bar-chart"
-                                                        color="white"
-                                                        size="md"
-                                                    ></box-icon>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="box px-5 py-3 ml-4 flex-1 zoom-in overflow-auto"
-                                            >
-                                                <div
-                                                    class="flex justify-center"
-                                                >
-                                                    <div
-                                                        class="h-[208px]"
-                                                        v-if="isReady"
-                                                    >
-                                                        <canvas
-                                                            class=""
-                                                            ref="reportVocTwo"
-                                                        ></canvas>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <!-- END: Recent Activities -->
-
-                                <!-- BEGIN: Important Notes -->
-                                <div
-                                    class="col-span-12 md:col-span-6 xl:col-span-12 mt-3 2xl:mt-0"
-                                >
-                                    <div class="intro-x flex items-center h-10">
-                                        <h2
-                                            class="text-lg font-medium truncate mr-auto"
-                                        >
-                                            สืบค้นมากสุด (OPAC)
-                                        </h2>
-                                    </div>
-                                    <div
-                                        class="intro-y overflow-auto mt-8 sm:mt-0"
-                                    >
-                                        <table
-                                            class="table table-report sm:mt-2"
-                                        >
-                                            <thead
-                                                class="bg-gray-500 opacity-80 rounded-full shadow-md"
-                                            >
-                                                <tr>
-                                                    <th
-                                                        class="whitespace-nowrap"
-                                                    >
-                                                        IMAGES
-                                                    </th>
-                                                    <th
-                                                        class="whitespace-nowrap"
-                                                    >
-                                                        TITLE
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr
-                                                    class="px-4 py-4 zoom-in"
-                                                    v-for="(
-                                                        opac, index
-                                                    ) in opacList.slice(0, 5)"
-                                                    :key="index"
-                                                    @click="link(opac.BIBID)"
-                                                >
-                                                    <td
-                                                        class="w-40 text-center"
-                                                    >
-                                                        <box-icon
-                                                            name="book"
-                                                            color="#f59e0b"
-                                                        ></box-icon>
-                                                    </td>
-                                                    <td class="">
-                                                        <div
-                                                            class="font-medium whitespace-nowrap"
-                                                        >
-                                                            {{
-                                                                opac?.TITLE ?? "".substring(
-                                                                    0,
-                                                                    80
-                                                                )
-                                                            }}
-                                                        </div>
-                                                        <div
-                                                            class="text-slate-500 text-xs whitespace-nowrap mt-0.5"
-                                                        >
-                                                            {{
-                                                                opac?.BIBID ??
-                                                                ""
-                                                            }}
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <!-- END: Important Notes -->
                             </div>
                         </div>
                     </div>
@@ -1425,7 +902,7 @@
             class="dark-mode-switcher cursor-pointer shadow-md fixed bottom-0 right-0 box dark:bg-dark-2 border rounded-full w-40 h-12 flex items-center justify-center z-50 mb-10 mr-10"
         >
             <div class="mr-4 text-gray-700 dark:text-gray-300">Dark Mode</div>
-            <div
+            <!-- <div
                 class="dark-mode-switcher__toggle border"
                 :class="
                     isDarkMode === true
@@ -1433,6 +910,10 @@
                         : ''
                 "
                 @click="darkMode()"
+            ></div> -->
+            <div
+                class="dark-mode-switcher__toggle border dark-mode-switcher__toggle--active"
+                @click="link()"
             ></div>
         </div>
         <div></div>
@@ -1443,43 +924,47 @@
     <transition name="fade" mode="out-in">
         <div
             class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
-            v-if="isModalShow"
+            v-if="dbModal"
         >
             <!-- Content ของ modal -->
-            <div class="bg-white p-6 rounded-lg lg:w-1/3 h-3/4 overflow-y-auto">
-                <p class="text-lg text-amber-400">
-                    ** สถิติเข้าเยี่ยมชมมากที่สุด 5 อันดับแรก **
+            <div
+                class="bg-gray-800 p-6 rounded-lg lg:w-1/3 h-3/4 overflow-y-auto"
+            >
+                <p class="text-lg text-white">
+                    ** สถิติฐานข้อมูลออนไลน์ทั้งหมด
+                    <span class="text-amber-400 font-semibold"
+                        >{{ dbAll }}
+                    </span>
+                    รายการ **
                 </p>
                 <hr class="border-dashed" />
                 <div class="mt-5">
-                    <div
-                        v-for="(db, index) in dbOnlineTwo"
-                        :key="index"
-                        class="intro-y"
-                    >
+                    <div class="intro-y">
                         <div
                             class="box px-4 py-4 mb-3 flex items-center zoom-in"
+                            v-for="(db, index) in dbList"
+                            :key="index"
                         >
                             <div
                                 class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden"
                             >
                                 <img
+                                    :src="db.image"
                                     alt="Midone - HTML Admin Template"
-                                    :src="db?.pic ?? ''"
                                 />
                             </div>
                             <div class="ml-4 mr-auto">
                                 <div class="font-medium">
-                                    {{ db?.name ?? "" }}
+                                    {{ db.shortName }}
                                 </div>
-                                <div
-                                    class="text-slate-500 text-xs mt-0.5"
-                                ></div>
+                                <div class="text-slate-500 text-xs mt-0.5">
+                                    {{ db.fullName }}
+                                </div>
                             </div>
                             <div
                                 class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium"
                             >
-                                {{ db?.count ?? "" }}
+                                {{ formatShort(db.total) }}
                             </div>
                         </div>
                     </div>
@@ -1488,9 +973,56 @@
                 <div class="mt-2 flex justify-end">
                     <button
                         class="bg-red-500 text-white px-4 py-2 rounded"
-                        @click="modalShow()"
+                        @click="dbModalShow()"
                     >
                         close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </transition>
+
+    <!-- Modal Show -->
+    <transition name="fade" mode="out-in">
+        <div
+            class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
+            v-if="openAIModal"
+        >
+            <!-- Content ของ modal -->
+            <div
+                class="bg-gray-800 p-6 rounded-lg lg:w-1/3 h-3/4 overflow-y-auto"
+            >
+                <p class="text-lg text-white">
+                    ** วิเคราะห์สถิติการยืม-คืนทรัพยากรสารสนเทศด้วย AI **
+                </p>
+                <hr class="border-dashed" />
+
+                <!-- ส่วน loading -->
+                <div
+                    v-if="isLoading"
+                    class="flex flex-col items-center justify-center py-10"
+                >
+                    <box-icon
+                        name="loader-alt"
+                        color="white"
+                        animation="spin"
+                    ></box-icon>
+                    <p class="text-sm text-gray-300">กำลังวิเคราะห์ข้อมูล...</p>
+                </div>
+
+                <!-- ส่วนข้อความพิมพ์ทีละตัว -->
+                <div v-else class="mt-5 whitespace-pre-line">
+                    {{ displayedText }}
+                    <span v-if="typingInterval" class="animate-pulse">▋</span>
+                </div>
+
+                <hr class="border-dashed border-gray-500 my-2" />
+                <div class="mt-2 flex justify-end">
+                    <button
+                        class="bg-red-500 text-white px-4 py-2 rounded"
+                        @click="openAIModalShow()"
+                    >
+                        Close
                     </button>
                 </div>
             </div>
@@ -1501,69 +1033,124 @@
 <script>
 import axios from "axios";
 import "boxicons";
-import Chart from "chart.js/auto";
 import moment from "moment"; //format date thai
 import "moment/dist/locale/th";
 moment.locale("th");
 
+import {
+    Chart,
+    BarController,
+    BarElement,
+    CategoryScale,
+    LinearScale,
+    Tooltip,
+    Legend,
+} from "chart.js";
+import { faL } from "@fortawesome/free-solid-svg-icons";
+
+Chart.register(
+    BarController,
+    BarElement,
+    CategoryScale,
+    LinearScale,
+    Tooltip,
+    Legend,
+);
+
 export default {
     async mounted() {
-        await this.loadAllData();
+        //await this.loadAllData();
         this.isReady = true;
+        this.welcome();
 
         this.$nextTick(() => {
             setTimeout(() => {
-                this.reportVocBar();
-                this.reportVocTwo();
-                this.reportStdDonut();
-                this.reportStdBar();
+                this.repIncome();
+                this.repBookReturn();
+                this.repBookReturnMonth();
+                this.repBookReturnLastYear();
+                this.repDbOnline();
+                this.repWebOPAC();
+                this.repRoom();
+                this.repRoomSecond();
+                this.repVoc();
+
+                //✅ ตั้ง interval เพื่ออัปเดตทุก 10 วินาที
+                if (!this.intervalFetch) {
+                    this.intervalFetch = setInterval(() => {
+                        this.repIncome();
+                    }, 100000);
+                }
             }, 500);
         });
+    },
+    beforeUnmount() {
+        if (this.intervalFetch) clearInterval(this.intervalFetch);
     },
     data() {
         return {
             isReady: false,
             logo: "/img/library.png",
-            pic1: "/img/01.jpg",
-            pic2: "/img/02.jpg",
-            pic3: "/img/03.jpg",
-            pic4: "/img/04.jpg",
             isDarkMode: true,
             showWelcome: true,
-            opacList: [],
             modalMenu: false,
-            showMemberOne: true,
-            showMemberTwo: false,
-            isModalShow: false,
-            video: "/img/bg/01.mp4",
-            bookDetail: {},
-            memberDetail: {},
-            memberDetailTwo: {},
-            incomeDetail: {},
+            dbModal: false,
+            openAIModal: false,
             moment: moment,
-            vocText: "",
-            dbOnline: [],
-            dbOnlineTwo: [],
+            vocList: [],
+            dbList: [],
+            dbName: [],
+            chartWeb: null,
+            borrowAll: "",
+            returnAll: "",
+            wepOPACAll: "",
+            dbAll: "",
+            incomeA: "",
+            incomeB: "",
+            incomeC: "",
+            incomeAll: "",
+            incomeAA: "",
+            incomeBB: "",
+            incomeCC: "",
+            incomeAllA: "",
+            labels: [],
+            diffA: [],
+            diffB: [],
+            diffC: [],
+            lastA: "",
+            lastB: "",
+            lastC: "",
+            maxItems: 10,
+            intervalFetch: null,
+            openAIText: "",
+            displayedText: "", // ข้อความที่แสดงแบบพิมพ์ทีละตัว
+            typingInterval: null,
+            isLoading: false,
+            selectBook: "year",
+            borrowMonthAll: "",
         };
     },
     methods: {
         async loadAllData() {
             await Promise.all([
-                this.reportIncome(),
-                this.reportBook(),
-                this.reportMember(),
-                this.reportMemberTwo(),
-                this.reportVocText(),
-                // this.reportOnline(),
-                // this.reportOnlineTwo(),
-                this.reportOpac()
+                this.repBookReturn(),
+                this.repBookReturnMonth(),
+                this.repBookReturnLastYear(),
+                this.repDbOnline(),
+                this.repWebOPAC(),
+                this.repRoom(),
+                this.repRoomSecond(),
+                this.repVoc(),
             ]);
+        },
+        dbModalShow() {
+            this.dbModal = !this.dbModal;
+        },
+        openAIModalShow() {
+            this.openAIModal = !this.openAIModal;
         },
         showMenu() {
             this.modalMenu = true;
-        },
-        closeMenu() {
-            this.modalMenu = false;
         },
         darkMode() {
             if (this.isDarkMode == false) {
@@ -1575,204 +1162,205 @@ export default {
             }
         },
         welcome() {
-            this.showWelcome = false;
+            // แสดง welcome ก่อน
+            this.showWelcome = true;
+
+            // ผ่านไป 5 วินาที (5000 มิลลิวินาที) ให้ปิด
+            setTimeout(() => {
+                this.showWelcome = false;
+            }, 5000);
         },
-        link(id) {
-            window.open(
-                "https://opac.msu.ac.th/results?Ntk=KEYWORD&Ntt=" + id,
-                "_blank"
-            );
-        },
-        getImage(id) {
-            //  const config = {                                    //ใส่ทุกครั้งที่รับ File เข้ามา
-            //     headers: {
-            //         'token': ''
-            //     }
-            // }
-            // axios
-            //     .get("https://libapp.msu.ac.th/v1/api/GetBookCover/" + id, config)
-            //     .then((response) => {
-            //         console.log(response)
-            //         return response;
-            //     });
-        },
-        async reportIncome() {
+        async repIncome() {
             try {
-                fetch(
-                    "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLiI5DgZzU7QqVrcm0uQB_2E34skz7GCIMBubEddg4-IaJ8XgfTlrwyPucLYaK60rJWJ9ytgG_dJtJlgV_PJS0SjQLe8W32yMO_j51khEa9RdVrUCOeG4-G3oC2RpwCWpKiU45MfGwnhFFjKiQ-rUfcqpu1LOpy3CFEmLRoAMP1AjXKTcXdcIeTpq11V6OPMpSqjaTmJ3Z6JK6ZdCW9_645Ug9PtoTSSjC97thLZPdKDo84cwMLcBdpACPd8pcazkan6GTCs6Iugq41AwPfbCZhq53yHkA&lib=MScLvDAZvp9hXKkQ7BwnIsLN54MR286vU"
-                )
-                    .then((response) => response.json())
-                    .then((dataIncome) => {
-                        const firstRow = dataIncome[0];
+                const response = await fetch(
+                    "https://script.google.com/macros/s/AKfycbx9qB8KVLBQMMc3IprE1rIMQ_-qlLC4QnQQiwwwmcdCe_zlULD2eO4BBTFv7cHswRU2/exec",
+                );
+                const data = await response.json();
+                // console.log("API:", data);
 
-                        this.incomeDetail = {
-                            income: firstRow.income || "",
-                            student: firstRow.student || "",
-                            nisit: firstRow.nisit || "",
-                            teacher: firstRow.teacher || "",
-                            staff: firstRow.staff || "",
-                        };
+                //เฉพาะเดือน
+                this.incomeAA = data.current_month.a;
+                this.incomeBB = data.current_month.b;
+                this.incomeCC = data.current_month.space;
+                this.incomeAllA = data.current_month.sum;
 
-                        // Fake visitor data
-                        let reportBarChartData = new Array(40)
-                            .fill(0)
-                            .map((data, key) => {
-                                if (key % 3 == 0 || key % 5 == 0) {
-                                    return Math.ceil(
-                                        Math.random() * (0 - 20) + 20
-                                    );
-                                } else {
-                                    return Math.ceil(
-                                        Math.random() * (0 - 7) + 7
-                                    );
-                                }
-                            });
+                //กราฟ
+                const tempA = new Array(12).fill(0);
+                const tempB = new Array(12).fill(0);
+                const tempC = new Array(12).fill(0);
 
-                        const ctx = this.$refs.reportIncome;
-
-                        // เก็บ chart instance ในตัวแปร
-                        const myBarChart = new Chart(ctx, {
-                            type: "bar",
-                            data: {
-                                labels: reportBarChartData,
-                                datasets: [
-                                    {
-                                        label: "",
-                                        barThickness: 6,
-                                        data: reportBarChartData,
-                                        backgroundColor: "#0d9488",
-                                    },
-                                ],
-                            },
-                            options: {
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    legend: {
-                                        display: false,
-                                    },
-                                },
-                                scales: {
-                                    x: {
-                                        ticks: {
-                                            display: false,
-                                        },
-                                        grid: {
-                                            display: false,
-                                        },
-                                    },
-                                    y: {
-                                        ticks: {
-                                            display: false,
-                                        },
-                                        grid: {
-                                            display: false,
-                                            drawBorder: false,
-                                        },
-                                    },
-                                },
-                            },
-                        });
-
-                        setInterval(() => {
-                            // Swap visitor data
-                            let newData = reportBarChartData[0];
-                            reportBarChartData.shift();
-                            reportBarChartData.push(newData);
-
-                            myBarChart.data.datasets[0].data =
-                                reportBarChartData;
-                            myBarChart.update();
-                        }, 1000);
+                if (data.yearly_data) {
+                    data.yearly_data.forEach((item) => {
+                        const mIdx = item.month - 1;
+                        if (mIdx >= 0 && mIdx < 12) {
+                            tempA[mIdx] = item.a || 0;
+                            tempB[mIdx] = item.b || 0;
+                            tempC[mIdx] = item.space || 0;
+                        }
                     });
+                }
+
+                // อัปเดตเข้าสู่ State ของ Vue
+                this.incomeA = tempA;
+                this.incomeB = tempB;
+                this.incomeC = tempC;
+
+                Chart.defaults.font.family = "Anuphan";
+                const ctx = this.$refs.repPatron;
+
+                // ✅ ใช้ if/else ป้องกันสร้าง chart ซ้ำ
+                if (!this.chart) {
+                    // ✅ สร้างกราฟเริ่มต้น
+                    this.chart = new Chart(ctx, {
+                        type: "line",
+                        data: {
+                            labels: [
+                                "ม.ค.",
+                                "ก.พ.",
+                                "มี.ค.",
+                                "เม.ย.",
+                                "พ.ค.",
+                                "มิ.ย.",
+                                "ก.ค.",
+                                "ส.ค.",
+                                "ก.ย.",
+                                "ต.ค.",
+                                "พ.ย.",
+                                "ธ.ค.",
+                            ],
+                            datasets: [
+                                {
+                                    label: "A",
+                                    data: this.incomeA,
+                                    fill: false,
+                                    borderColor: "rgba(59,130,246,0.9)",
+                                    backgroundColor: "rgba(59,130,246,0.7)",
+                                    pointBorderColor: "#fff",
+                                    tension: 0.3,
+                                    borderWidth: 2,
+                                    pointRadius: 4,
+                                    pointHoverRadius: 6,
+                                },
+                                {
+                                    label: "B",
+                                    data: this.incomeB,
+                                    borderColor: "rgba(234,179,8,0.9)",
+                                    backgroundColor: "rgba(234,179,8,0.3)",
+                                    tension: 0.3,
+                                    borderWidth: 2,
+                                    pointRadius: 4,
+                                    fill: false,
+                                },
+                                {
+                                    label: "C",
+                                    data: this.incomeC,
+                                    borderColor: "rgba(236,72,153,0.9)", // 💖 ชมพูสด
+                                    backgroundColor: "rgba(236,72,153,0.3)", // 💖 ชมพูใส
+                                    tension: 0.3,
+                                    borderWidth: 2,
+                                    pointRadius: 4,
+                                    fill: false,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            animation: {
+                                duration: 800,
+                                easing: "easeOutQuart",
+                            },
+                            scales: {
+                                x: {
+                                    ticks: { color: "white" },
+                                    grid: { display: false },
+                                },
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: { color: "white" },
+                                    grid: {
+                                        color: "rgba(255,255,255,0.1)",
+                                    },
+                                },
+                            },
+                            plugins: {
+                                legend: { labels: { color: "white" } },
+                                tooltip: {
+                                    backgroundColor: "#333",
+                                    titleColor: "#fff",
+                                    bodyColor: "#fff",
+                                },
+                            },
+                        },
+                    });
+                }
             } catch (error) {
-                console.error("Error report Income data:", error);
+                console.error("Error Report BookReturn:", error);
             }
         },
-        async reportBook() {
+        async repBookReturn() {
             try {
+                // เอาปีปัจจุบัน
+                const year = new Date().getFullYear();
+
                 fetch(
-                    "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjgOX_J4Swg5lJXWe8mBO1Pe6jYHfB_qqDg3uOILSoyI6wOl2DS4GrQvL0N_E6udVzo7tNt2GJYamauj7sAo0MYd0hhwK_NZ-70aRrBS56v_kwTs4W-K0dQd7NNgHrQIr1GzvBqRL8POSaEpj1DBPMKS1R9Pnzan2XR81NZZ8eMv_geucbYWIBgipNklTQ0dmq5lR980EtIPzOxufTgJcTEBmjtgrsGos_6PxiIw2JJP-X2uzdB9wFzcBtaCqwI9oXpl-QTCsQd5opuO1vWUfODj4JT8rcMXcBA-i8V&lib=MfFKpDvkbxsVrVICzLEcZofhElnTbI1Nb"
-                ) // แก้เป็น URL ของคุณ
+                    "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=yearly&year=" +
+                        year,
+                )
                     .then((response) => response.json())
                     .then((data) => {
-                        // สมมติ data เป็น array ของ object (แบบ JSON ที่คุณส่งมา)
-                        const firstRow = data[0];
-
-                        // ดึงเฉพาะค่าเดือน 01-12
-                        const monthData = [
-                            firstRow.jan || 0,
-                            firstRow.feb || 0,
-                            firstRow.mar || 0,
-                            firstRow.apr || 0,
-                            firstRow.may || 0,
-                            firstRow.june || 0,
-                            firstRow.jul || 0,
-                            firstRow.aug || 0,
-                            firstRow.sep || 0,
-                            firstRow.oct || 0,
-                            firstRow.nov || 0,
-                            firstRow.dec || 0,
-                        ];
-
-                        // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
-                        this.bookDetail = {
-                            borrow: firstRow.borrow || "",
-                            satit: firstRow.satit || "",
-                            bachelor: firstRow.bachelor || "",
-                            graduate: firstRow.graduate || "",
-                            master: firstRow.master || "",
-                            academic: firstRow.academic || "",
-                            support: firstRow.support || "",
-                        };
-
-                        // สร้างกราฟ Chart.js
+                        // ดึงเฉพาะ data จาก datasets
+                        const borrowData = data.datasets[0].data;
+                        const returnData = data.datasets[1].data;
+                        this.borrowAll = data.summary.totalBorrow;
+                        this.returnAll = data.summary.totalReturn;
+                        // ตั้งค่าฟอนต์
                         Chart.defaults.font.family = "Anuphan";
-                        const ctx = this.$refs.reportBookOne;
-
+                        const ctx = this.$refs.repBook; // ✅ ต้องมี .getContext('2d')
+                        // สร้างกราฟ
                         new Chart(ctx, {
                             type: "bar",
                             data: {
                                 labels: [
-                                    "01",
-                                    "02",
-                                    "03",
-                                    "04",
-                                    "05",
-                                    "06",
-                                    "07",
-                                    "08",
-                                    "09",
-                                    "10",
-                                    "11",
-                                    "12",
+                                    "ม.ค.",
+                                    "ก.พ.",
+                                    "มี.ค.",
+                                    "เม.ย.",
+                                    "พ.ค.",
+                                    "มิ.ย.",
+                                    "ก.ค.",
+                                    "ส.ค.",
+                                    "ก.ย.",
+                                    "ต.ค.",
+                                    "พ.ย.",
+                                    "ธ.ค.",
                                 ],
                                 datasets: [
                                     {
-                                        label: "สถิติการยืม รายเดือน / 2568",
-                                        data: monthData, // ใช้ข้อมูลจาก API
-                                        backgroundColor: [
-                                            "#ff6384",
-                                            "#36a2eb",
-                                            "#ffcd56",
-                                            "#4bc0c0",
-                                            "#9966ff",
-                                            "#ff9f40",
-                                            "#ff6384",
-                                            "#36a2eb",
-                                            "#ffcd56",
-                                            "#4bc0c0",
-                                            "#9966ff",
-                                            "#ff9f40",
-                                        ],
-                                        borderWidth: 2,
+                                        label: "ยืมหนังสือ",
+                                        data: borrowData,
+                                        backgroundColor: "rgba(34,197,94,1)", // 🟢 เขียว
                                         borderColor: "#fff",
-                                        borderRadius: 10,
+                                        borderWidth: 2,
+                                        borderRadius: 8,
+                                        borderSkipped: false,
+                                    },
+                                    {
+                                        label: "คืนหนังสือ",
+                                        data: returnData,
+                                        backgroundColor: "#36a2eb", // 🔵 ฟ้า
+                                        borderColor: "#fff",
+                                        borderWidth: 2,
+                                        borderRadius: 8,
                                         borderSkipped: false,
                                     },
                                 ],
                             },
                             options: {
                                 responsive: true,
+                                interaction: {
+                                    mode: "index",
+                                    intersect: false,
+                                }, // Hover แสดงทั้งคู่
                                 animation: {
                                     duration: 2000,
                                     easing: "easeOutBounce",
@@ -1782,6 +1370,7 @@ export default {
                                         display: true,
                                         labels: {
                                             color: "white",
+                                            font: { family: "Anuphan" },
                                         },
                                     },
                                     tooltip: {
@@ -1793,13 +1382,108 @@ export default {
                                 scales: {
                                     y: {
                                         beginAtZero: true,
-                                        ticks: {
-                                            color: "white",
+                                        ticks: { color: "white" },
+                                        grid: {
+                                            color: "rgba(255,255,255,0.1)",
                                         },
                                     },
                                     x: {
-                                        ticks: {
+                                        ticks: { color: "white" },
+                                        grid: { display: false },
+                                    },
+                                },
+                            },
+                        });
+                    });
+            } catch (error) {
+                console.error("Error Report BookReturn:", error);
+            }
+        },
+        async repBookReturnMonth() {
+            try {
+                // เอาปีปัจจุบัน
+                const year = new Date().getFullYear();
+                const month = new Date().getMonth() + 1;
+                const monthName = moment({ year, month: month - 1 }).format(
+                    "MMMM",
+                );
+
+                fetch(
+                    "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=monthly&year=" +
+                        year +
+                        "&month=" +
+                        month,
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // ดึงเฉพาะ data จาก datasets
+                        const labels = data.detail.map((item) => `${item.day}`);
+                        const values = data.detail.map((item) => item.value);
+                        this.borrowMonthAll = data.total;
+                        // ตั้งค่าฟอนต์
+                        Chart.defaults.font.family = "Anuphan";
+                        const ctx = this.$refs.repBookMonth; // ✅ ต้องมี .getContext('2d')
+                        // สร้างกราฟ
+                        new Chart(ctx, {
+                            type: "bar", // หรือ line ก็ได้
+                            data: {
+                                labels,
+                                datasets: [
+                                    {
+                                        label: `สถิติการคืนหนังสือ เดือน ${monthName} ${year}`,
+                                        data: values,
+                                        backgroundColor: "rgba(34,197,94,1)",
+                                        borderColor: "#fff",
+                                        borderWidth: 2,
+                                        borderRadius: 8,
+                                        borderSkipped: false,
+                                        maxBarThickness: 28,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                interaction: {
+                                    mode: "index",
+                                    intersect: false,
+                                }, // Hover แสดงทั้งคู่
+                                animation: {
+                                    duration: 2000,
+                                    easing: "easeOutBounce",
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: true,
+                                        labels: {
                                             color: "white",
+                                            font: { family: "Anuphan" },
+                                        },
+                                    },
+                                    tooltip: {
+                                        callbacks: {
+                                            label: (ctx) =>
+                                                ` ${ctx.parsed.y} ครั้ง`,
+                                        },
+                                        backgroundColor: "#333",
+                                        titleColor: "#fff",
+                                        bodyColor: "#fff",
+                                    },
+                                },
+                                scales: {
+                                    x: {
+                                        ticks: { color: "white" },
+                                        grid: { display: false },
+                                    },
+                                    y: {
+                                        beginAtZero: true,
+                                        title: {
+                                            display: true,
+                                            text: "จำนวนการยืม",
+                                            color: "#fff",
+                                        },
+                                        ticks: { color: "white" },
+                                        grid: {
+                                            color: "rgba(255,255,255,0.1)",
                                         },
                                     },
                                 },
@@ -1807,75 +1491,84 @@ export default {
                         });
                     });
             } catch (error) {
-                console.error("Error report Book data:", error);
+                console.error("Error Report BookReturn:", error);
             }
         },
-        async reportMember() {
+        async repBookReturnLastYear() {
             try {
+                // เอาปีปัจจุบัน
+                const year = new Date().getFullYear() - 1;
+
                 fetch(
-                    "https://script.google.com/macros/s/AKfycbxqadaYYCf3xkezxEt7ppnd3IjzsYrSsmmLeabaozh168w9XE6-4CmwepXO3omNKYE-/exec"
-                ) // แก้เป็น URL ของคุณ
+                    "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=yearly&year=" +
+                        year,
+                )
                     .then((response) => response.json())
                     .then((data) => {
-                        // สมมติ data เป็น array ของ object (แบบ JSON ที่คุณส่งมา)
-                        const firstRow = data[0];
-
-                        // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
-                        const memberData = [
-                            firstRow.satit || 0,
-                            firstRow.bachelor || 0,
-                            firstRow.graduate || 0,
-                            firstRow.master || 0,
-                            firstRow.academic || 0,
-                            firstRow.support || 0,
-                        ];
-
-                        this.memberDetail = {
-                            all: firstRow.all || "",
-                            satit: firstRow.satit || "",
-                            bachelor: firstRow.bachelor || "",
-                            graduate: firstRow.graduate || "",
-                            gmaster: firstRow.master || "",
-                            academic: firstRow.academic || "",
-                            support: firstRow.support || "",
-                        };
-
-                        const ctx = this.$refs.reportUserOne;
+                        // ดึงเฉพาะ data จาก datasets
+                        const borrowData = data.datasets[0].data;
+                        const returnData = data.datasets[1].data;
+                        this.borrowAll = data.summary.totalBorrow;
+                        this.returnAll = data.summary.totalReturn;
+                        // ตั้งค่าฟอนต์
+                        Chart.defaults.font.family = "Anuphan";
+                        const ctx = this.$refs.repBookLastYear; // ✅ ต้องมี .getContext('2d')
+                        // สร้างกราฟ
                         new Chart(ctx, {
-                            type: "doughnut",
+                            type: "bar",
                             data: {
-                                labels: "",
+                                labels: [
+                                    "ม.ค.",
+                                    "ก.พ.",
+                                    "มี.ค.",
+                                    "เม.ย.",
+                                    "พ.ค.",
+                                    "มิ.ย.",
+                                    "ก.ค.",
+                                    "ส.ค.",
+                                    "ก.ย.",
+                                    "ต.ค.",
+                                    "พ.ย.",
+                                    "ธ.ค.",
+                                ],
                                 datasets: [
                                     {
-                                        label: "Data",
-                                        data: memberData,
-                                        backgroundColor: [
-                                            "#0ea5e9",
-                                            "#0d9488",
-                                            "#fb923c",
-                                            "#facc15",
-                                            "#64748b",
-                                            "#a3e635",
-                                        ],
-                                        hoverBackgroundColor: [
-                                            "#9BD0F5",
-                                            "#9BD0F5",
-                                        ],
-                                        borderWidth: 5,
+                                        label: "ยืมหนังสือ",
+                                        data: borrowData,
+                                        backgroundColor: "rgba(34,197,94,1)", // 🟢 เขียว
                                         borderColor: "#fff",
+                                        borderWidth: 2,
+                                        borderRadius: 8,
+                                        borderSkipped: false,
+                                    },
+                                    {
+                                        label: "คืนหนังสือ",
+                                        data: returnData,
+                                        backgroundColor: "#36a2eb", // 🔵 ฟ้า
+                                        borderColor: "#fff",
+                                        borderWidth: 2,
+                                        borderRadius: 8,
+                                        borderSkipped: false,
                                     },
                                 ],
                             },
                             options: {
                                 responsive: true,
+                                interaction: {
+                                    mode: "index",
+                                    intersect: false,
+                                }, // Hover แสดงทั้งคู่
                                 animation: {
                                     duration: 2000,
                                     easing: "easeOutBounce",
                                 },
-                                maintainAspectRatio: false,
                                 plugins: {
                                     legend: {
-                                        display: false,
+                                        display: true,
+                                        labels: {
+                                            color: "white",
+                                            font: { family: "Anuphan" },
+                                        },
                                     },
                                     tooltip: {
                                         backgroundColor: "#333",
@@ -1883,71 +1576,84 @@ export default {
                                         bodyColor: "#fff",
                                     },
                                 },
-                                cutout: "80%",
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: { color: "white" },
+                                        grid: {
+                                            color: "rgba(255,255,255,0.1)",
+                                        },
+                                    },
+                                    x: {
+                                        ticks: { color: "white" },
+                                        grid: { display: false },
+                                    },
+                                },
                             },
                         });
                     });
             } catch (error) {
-                console.error("Error report Member data:", error);
+                console.error("Error Report BookReturn:", error);
             }
         },
-        async reportMemberTwo() {
+        async repDbOnline() {
             try {
                 fetch(
-                    "https://script.google.com/macros/s/AKfycbw6uXjJZb8xBIk-dHKkoWRppNHqTrXG5ctLVSDJt1Ert6LghRyOmzwm0ubFK8wd42v2/exec"
-                ) // แก้เป็น URL ของคุณ
+                    "https://script.google.com/macros/s/AKfycbyNrSp52PnDqptizq5uNAHwknVbx-BNdvTUqXOAEYa03dUgGAdl6E4Xzl5tfIGAoojI8A/exec",
+                )
                     .then((response) => response.json())
                     .then((data) => {
-                        // สมมติ data เป็น array ของ object (แบบ JSON ที่คุณส่งมา)
-                        const firstRow = data[0];
-
-                        // เก็บข้อมูลอื่นๆ ไว้ในตัวแปร
-                        const memberDataTwo = [
-                            firstRow.nisit || 0,
-                            firstRow.staff || 0,
-                            firstRow.patron || 0,
-                        ];
-
-                        this.memberDetailTwo = {
-                            all: firstRow.all || "",
-                            nisit: firstRow.nisit || "",
-                            staff: firstRow.staff || "",
-                            patron: firstRow.patron || "",
-                        };
-
-                        const ctx = this.$refs.reportUserTwo;
+                        this.dbList = data.items;
+                        this.dbAll = data.totalCount;
+                        this.dbName = data.top5.map((item) => item.shortName);
+                        const labels = data.top5.map((item) => item.shortName);
+                        const dbData = data.top5.map((item) => item.total);
+                        Chart.defaults.font.family = "Anuphan";
+                        const ctx = this.$refs.repDB;
                         new Chart(ctx, {
                             type: "doughnut",
                             data: {
-                                labels: "",
+                                labels: labels,
                                 datasets: [
                                     {
-                                        label: "Data",
-                                        data: memberDataTwo,
+                                        label: "",
+                                        data: dbData,
                                         backgroundColor: [
-                                            "#0ea5e9",
-                                            "#0d9488",
-                                            "#fb923c",
+                                            "#36a2eb",
+                                            "#4bc0c0",
+                                            "#ff9f40",
+                                            "#ffcd56",
+                                            "#ff6384",
                                         ],
-                                        hoverBackgroundColor: [
-                                            "#9BD0F5",
-                                            "#9BD0F5",
+                                        borderColor: [
+                                            "#36a2eb",
+                                            "#4bc0c0",
+                                            "#ff9f40",
+                                            "#ffcd56",
+                                            "#ff6384",
                                         ],
-                                        borderWidth: 5,
+                                        borderWidth: 3,
                                         borderColor: "#fff",
+                                        borderWidth: 2,
+                                        hoverOffset: 15,
                                     },
                                 ],
                             },
                             options: {
                                 responsive: true,
                                 animation: {
+                                    animateScale: true,
+                                    animateRotate: true,
                                     duration: 2000,
-                                    easing: "easeOutBounce",
+                                    easing: "easeOutBack",
                                 },
-                                maintainAspectRatio: false,
                                 plugins: {
                                     legend: {
                                         display: false,
+                                        position: "top",
+                                        labels: {
+                                            color: "white", // <- ใส่ตรงนี้!
+                                        },
                                     },
                                     tooltip: {
                                         backgroundColor: "#333",
@@ -1955,263 +1661,130 @@ export default {
                                         bodyColor: "#fff",
                                     },
                                 },
-                                cutout: "80%",
                             },
                         });
                     });
             } catch (error) {
-                console.error("Error report MemberTwo data:", error);
+                console.error("Error Report BookReturn:", error);
             }
         },
-        async reportVocText() {
+        async repWebOPAC() {
             try {
-                const token = import.meta.env.VITE_LIBVOC_API_TOKEN;
-
-                const config = {
-                    headers: {
-                        Authorization: "Bearer " + token,
-                    },
-                };
-
-                axios
-                    .get("https://libvoc.msu.ac.th/api/getPost", config)
-                    .then((response) => {
-                        this.vocText = response.data;
-                    })
-                    .catch((error) => {
-                        console.error("Error fetching data:", error);
+                fetch(
+                    "https://script.google.com/macros/s/AKfycbx2YMeeAtUhMCbxyxUrjyWEKekM9bwojQiuP6umIF7kJSN6u7BaVeWbW-nwVVI_WNpO/exec",
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const web = data.datasets[0].data;
+                        this.wepOPACAll = data.summary.totalSearch;
+                        const labels = [
+                            "ม.ค.",
+                            "ก.พ.",
+                            "มี.ค.",
+                            "เม.ย.",
+                            "พ.ค.",
+                            "มิ.ย.",
+                            "ก.ค.",
+                            "ส.ค.",
+                            "ก.ย.",
+                            "ต.ค.",
+                            "พ.ย.",
+                            "ธ.ค.",
+                        ];
+                        Chart.defaults.font.family = "Anuphan";
+                        const ctx = this.$refs.repWeb;
+                        this.chartWeb = new Chart(ctx, {
+                            type: "line",
+                            data: {
+                                labels,
+                                datasets: [
+                                    {
+                                        label: "จำนวนผู้เข้าใช้บริการ",
+                                        data: web,
+                                        fill: true,
+                                        borderColor: "rgba(34,197,94,1)", // 🟢 เส้นเขียวหลัก
+                                        backgroundColor: "rgba(34,197,94,0.2)", // พื้นหลังเขียวอ่อน
+                                        tension: 0.4, // ความโค้งของเส้น
+                                        borderWidth: 2,
+                                        pointBackgroundColor:
+                                            "rgba(34,197,94,1)",
+                                        pointBorderColor: "#fff",
+                                        pointRadius: 4,
+                                        pointHoverRadius: 6,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                animation: {
+                                    duration: 1500,
+                                    easing: "easeOutQuart",
+                                },
+                                scales: {
+                                    x: {
+                                        ticks: { color: "white" },
+                                        grid: { display: false },
+                                    },
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: { color: "white" },
+                                        grid: {
+                                            color: "rgba(255,255,255,0.1)",
+                                        },
+                                    },
+                                },
+                                plugins: {
+                                    legend: {
+                                        labels: {
+                                            color: "white",
+                                            font: { family: "Anuphan" },
+                                        },
+                                    },
+                                    tooltip: {
+                                        backgroundColor: "#333",
+                                        titleColor: "#fff",
+                                        bodyColor: "#fff",
+                                    },
+                                },
+                            },
+                        });
                     });
             } catch (error) {
-                console.error("Error report VocText data:", error);
+                console.error("Error Report WebOPAC:", error);
             }
         },
-        async reportVocBar() {
-            try {
-                const token = import.meta.env.VITE_LIBVOC_API_TOKEN;
-
-                const config = {
-                    headers: {
-                        Authorization: "Bearer " + token,
-                    },
-                };
-
-                const response = await axios.get(
-                    "https://libvoc.msu.ac.th/api/getConcern",
-                    config
-                );
-                const dataVoc = response.data;
-                const labels = dataVoc.map((item) => item.title);
-                const data = dataVoc.map((item) => item.count);
-
-                // console.log(dataVoc, labels, data);
-
-                if (!Array.isArray(dataVoc) || dataVoc.length === 0) {
-                    console.warn(
-                        "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
-                        dataVoc
-                    );
-                    return;
-                }
-
-                const ctx = this.$refs.reportVocBar;
-                if (!ctx || !ctx.getContext) {
-                    console.warn("⛔️ Canvas ยังไม่พร้อม");
-                    return;
-                }
-
-                Chart.defaults.font.family = "Anuphan";
-                new Chart(ctx, {
-                    type: "bar",
-                    data: {
-                        labels: labels,
-                        datasets: [
-                            {
-                                label: "ประเภทคำร้อง",
-                                data: data,
-                                backgroundColor: [
-                                    "#ffcd56",
-                                    "#4bc0c0",
-                                    "rgba(54, 162, 235, 0.6)",
-                                ],
-                                borderWidth: 3,
-                                borderColor: "#fff",
-                                borderRadius: 10,
-                                borderSkipped: false,
-                            },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        animation: {
-                            duration: 2000,
-                            easing: "easeOutBounce",
-                        },
-                        plugins: {
-                            legend: {
-                                display: true,
-                                labels: {
-                                    color: "white",
-                                },
-                            },
-                            tooltip: {
-                                backgroundColor: "#333",
-                                titleColor: "#fff",
-                                bodyColor: "#fff",
-                            },
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    color: "white",
-                                },
-                            },
-                            x: {
-                                ticks: {
-                                    color: "white",
-                                },
-                            },
-                        },
-                    },
-                });
-            } catch (error) {
-                console.error("⚠️ Error reportVocBar:", error);
-            }
-        },
-        async reportVocTwo() {
-            try {
-                const token = import.meta.env.VITE_LIBVOC_API_TOKEN;
-
-                const config = {
-                    headers: {
-                        Authorization: "Bearer " + token,
-                    },
-                };
-
-                const response = await axios.get(
-                    "https://libvoc.msu.ac.th/api/getType",
-                    config
-                );
-                const dataVoc = response.data;
-                const labels = dataVoc.map((item) => item.title);
-                const data = dataVoc.map((item) => item.count);
-
-                if (!Array.isArray(dataVoc) || dataVoc.length === 0) {
-                    console.warn(
-                        "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
-                        dataVoc
-                    );
-                    return;
-                }
-
-                const ctx = this.$refs.reportVocTwo;
-                if (!ctx || !ctx.getContext) {
-                    console.warn("⛔️ Canvas ยังไม่พร้อม");
-                    return;
-                }
-
-                Chart.defaults.font.family = "Anuphan";
-                new Chart(ctx, {
-                    type: "bar",
-                    data: {
-                        labels: labels,
-                        datasets: [
-                            {
-                                label: "ประเภทผู้ใช้บริการ",
-                                data: data,
-                                backgroundColor: [
-                                    "#ff6384",
-                                    "rgba(255, 159, 64, 0.6)",
-                                    "rgba(255, 205, 86, 0.6)",
-                                ],
-                                borderColor: [
-                                    "rgb(255, 99, 132)",
-                                    "rgb(255, 159, 64)",
-                                    "rgb(255, 205, 86)",
-                                ],
-                                borderWidth: 3,
-                                borderColor: "#fff",
-                                borderRadius: 10,
-                                borderSkipped: false,
-                            },
-                        ],
-                    },
-                    options: {
-                        responsive: true,
-                        animation: {
-                            duration: 2000,
-                            easing: "easeOutBounce",
-                        },
-                        plugins: {
-                            legend: {
-                                display: true,
-                                labels: {
-                                    color: "white", // <- ใส่ตรงนี้!
-                                },
-                            },
-                            tooltip: {
-                                backgroundColor: "#333",
-                                titleColor: "#fff",
-                                bodyColor: "#fff",
-                            },
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    color: "white", // <- ใส่ตรงนี้!
-                                },
-                            },
-                            x: {
-                                ticks: {
-                                    color: "white", // <- ใส่ตรงนี้!
-                                },
-                            },
-                        },
-                    },
-                });
-            } catch (error) {
-                console.error("Error report VocTwo data:", error);
-            }
-        },
-        async reportStdDonut() {
+        async repRoom() {
             try {
                 const token = import.meta.env.VITE_LIBROOM_API_TOKEN;
-
                 const config = {
                     headers: {
                         Authorization: "Bearer " + token,
                     },
                 };
-
                 const response = await axios.get(
                     "https://libroom.msu.ac.th/api/getService",
-                    config
+                    config,
                 );
-
                 const dataStd = response.data;
                 const labels = Object.keys(dataStd);
                 const data = Object.values(dataStd);
-
-                console.log(dataStd, labels, data);
-
-                if (!dataStd || typeof dataStd !== 'object' || Object.keys(dataStd).length === 0) {
-                    console.warn(
-                        "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
-                        dataStd
-                    );
+                // console.log(dataStd, labels, data);
+                if (
+                    !dataStd ||
+                    typeof dataStd !== "object" ||
+                    Object.keys(dataStd).length === 0
+                ) {
+                    console.warn("⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:", dataStd);
                     return;
                 }
-
-                const ctx = this.$refs.reportStdOne;
+                const ctx = this.$refs.repRoomAll;
                 if (!ctx || !ctx.getContext) {
                     console.warn("⛔️ Canvas ยังไม่พร้อม");
                     return;
                 }
-
                 Chart.defaults.font.family = "Anuphan";
                 new Chart(ctx, {
-                    type: "doughnut",
+                    type: "pie",
                     data: {
                         labels: labels,
                         datasets: [
@@ -2219,11 +1792,11 @@ export default {
                                 label: "",
                                 data: data,
                                 backgroundColor: [
-                                    "#ff6384",
                                     "#36a2eb",
-                                    "#ffcd56",
+                                    "#ff9f40",
+                                    "#ff6384",
                                 ],
-                                borderColor: ["#ff6384", "#36a2eb", "#ffcd56"],
+                                borderColor: ["#36a2eb", "#ff9f40", "#ff6384"],
                                 borderWidth: 3,
                                 borderColor: "#fff",
                                 borderWidth: 2,
@@ -2241,17 +1814,12 @@ export default {
                         },
                         plugins: {
                             legend: {
+                                display: false,
                                 position: "top",
                                 labels: {
                                     color: "white", // <- ใส่ตรงนี้!
                                 },
                             },
-                            title: {
-                                display: true,
-                                text: "สถานที่",
-                                font: { weight: "normal" },
-                                color: "white",
-                            },
                             tooltip: {
                                 backgroundColor: "#333",
                                 titleColor: "#fff",
@@ -2261,84 +1829,75 @@ export default {
                     },
                 });
             } catch (error) {
-                console.error("Error report StudyRoomDonut data:", error);
+                console.error("Error Report libRoomDonut:", error);
             }
         },
-        async reportStdBar() {
+        async repRoomSecond() {
             try {
                 const token = import.meta.env.VITE_LIBROOM_API_TOKEN;
-
                 const config = {
                     headers: {
                         Authorization: "Bearer " + token,
                     },
                 };
-
                 const response = await axios.get(
                     "https://libroom.msu.ac.th/api/getMost",
-                    config
+                    config,
                 );
-
                 const dataStd = response.data;
                 const labels = dataStd.map((item) => item.faculty);
                 const data = dataStd.map((item) => item.count);
-
                 if (!Array.isArray(dataStd) || dataStd.length === 0) {
-                    console.warn(
-                        "⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:",
-                        dataStd
-                    );
+                    console.warn("⛔️ ไม่พบข้อมูลหรือข้อมูลผิดรูปแบบ:", dataStd);
                     return;
                 }
-
-                const ctx = this.$refs.reportStdTwo;
+                const ctx = this.$refs.repRoomBar;
                 if (!ctx || !ctx.getContext) {
                     console.warn("⛔️ Canvas ยังไม่พร้อม");
                     return;
                 }
-
                 Chart.defaults.font.family = "Anuphan";
+                // ✅ สร้างกราฟแนวนอน
                 new Chart(ctx, {
                     type: "bar",
                     data: {
-                        labels: labels,
+                        labels,
                         datasets: [
                             {
-                                label: "คณะที่เป็นสมาชิกสูงสุด 5 อันดับแรก",
-                                data: data,
+                                label: "จำนวนผู้เข้าใช้งาน",
+                                data,
                                 backgroundColor: [
-                                    "#ff6384",
-                                    "#36a2eb",
-                                    "#ffcd56",
-                                    "#4bc0c0",
-                                    "#9966ff",
+                                    "rgba(59,130,246,0.8)", // ฟ้า (ACM)
+                                    "rgba(34,197,94,0.8)", // เขียว (IEL)
+                                    "rgba(249,115,22,0.8)", // ส้ม (ACS)
+                                    "rgba(139,92,246,0.8)", // ม่วง (Emerald)
+                                    "rgba(236,72,153,0.8)", // ชมพู (SpringerLink)
                                 ],
-                                borderColor: [
-                                    "rgb(255, 99, 132)",
-                                    "rgb(255, 159, 64)",
-                                    "rgb(255, 205, 86)",
-                                    "rgb(75, 192, 192)",
-                                    "rgb(54, 162, 235)",
-                                ],
-                                borderWidth: 3,
                                 borderColor: "#fff",
-                                borderRadius: 10,
-                                borderSkipped: false,
+                                borderWidth: 2,
+                                borderRadius: 8,
                             },
                         ],
                     },
                     options: {
+                        indexAxis: "y", // ✅ หมุนแกนให้แท่งอยู่แนวนอน (Y-axis)
                         responsive: true,
-                        animation: {
-                            duration: 2000,
-                            easing: "easeOutBounce",
+                        maintainAspectRatio: false,
+                        animation: { duration: 1500, easing: "easeOutQuart" },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                ticks: { color: "white" },
+                                grid: { color: "rgba(255,255,255,0.1)" },
+                            },
+                            y: {
+                                ticks: { color: "white" },
+                                grid: { display: false },
+                            },
                         },
                         plugins: {
                             legend: {
-                                display: true,
-                                labels: {
-                                    color: "white", // <- ใส่ตรงนี้!
-                                },
+                                display: false, // ✅ ซ่อน legend
                             },
                             tooltip: {
                                 backgroundColor: "#333",
@@ -2346,92 +1905,30 @@ export default {
                                 bodyColor: "#fff",
                             },
                         },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    color: "white", // <- ใส่ตรงนี้!
-                                },
-                            },
-                            x: {
-                                ticks: {
-                                    color: "white", // <- ใส่ตรงนี้!
-                                },
-                            },
-                        },
                     },
                 });
             } catch (error) {
-                console.error("Error report StudyRoomBar data:", error);
+                console.error("Error Report libRoomBar:", error);
             }
         },
-        async reportOnline() {
+        async repVoc() {
             try {
-                const token = import.meta.env.VITE_LIBRARY_API_TOKEN;
-
+                const token = import.meta.env.VITE_LIBVOC_API_TOKEN;
                 const config = {
-                    //ใส่ทุกครั้งที่รับ File เข้ามา
                     headers: {
                         Authorization: "Bearer " + token,
                     },
                 };
                 axios
-                    .get("https://202.28.32.28/countdb/api/getMonth", config)
+                    .get("https://libvoc.msu.ac.th/api/getPost", config)
                     .then((response) => {
-                        this.dbOnline = response.data;
+                        this.vocList = response.data;
                     })
-                    .catch((err) => {
-                        console.log(err);
+                    .catch((error) => {
+                        console.error("Error fetching data:", error);
                     });
             } catch (error) {
-                console.error("Error report DBOnline data:", error);
-            }
-        },
-        async reportOnlineTwo() {
-            try {
-                const token = import.meta.env.VITE_LIBRARY_API_TOKEN;
-
-                const config = {
-                    //ใส่ทุกครั้งที่รับ File เข้ามา
-                    headers: {
-                        Authorization: "Bearer " + token,
-                    },
-                };
-                axios
-                    .get("https://202.28.32.28/countdb/api/getStat", config)
-                    .then((response) => {
-                        this.dbOnlineTwo = response.data;
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    });
-            } catch (error) {
-                console.error("Error report DBOnlineTwo data:", error);
-            }
-        },
-        async reportOpac() {
-            try {
-                // const token = import.meta.env.VITE_WALAI_API_TOKEN;
-
-                // const config = {
-                //     //ใส่ทุกครั้งที่รับ File เข้ามา
-                //     headers: {
-                //         Authorization: "Bearer " + token,
-                //         "Content-Type": "application/x-www-form-urlencoded",
-                //     },
-                // };
-                // axios
-                //     .get("https://libapp.msu.ac.th/v1/api/GetTopView", config)
-                //     .then((response) => {
-                //         this.opacList = response.data;
-                //     })
-
-                axios.get("/api/GetTopView").then((response) => {
-                    this.opacList = response.data
-                    // console.log(response, response.data);
-                });
-            } catch (error) {
-                console.error("Error report TopViewOpac data:", error);
+                console.error("Error Report libVoc data:", error);
             }
         },
         memberShow() {
@@ -2440,6 +1937,110 @@ export default {
         },
         modalShow() {
             this.isModalShow = !this.isModalShow;
+        },
+        link() {
+            window.location.href = "/light";
+        },
+        formatShort(num) {
+            num = Number(num) || 0;
+
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
+            if (num >= 1000) return (num / 1000).toFixed(1) + "k";
+            return num.toLocaleString(); // ✅ สำหรับค่าน้อยกว่า 1,000
+        },
+        async repOpenAI(code) {
+            this.openAIModal = true;
+            this.isLoading = true; // ✅ เริ่มโหลด
+
+            let url = "";
+            const now = new Date();
+
+            if (code === "year") {
+                const year = now.getFullYear();
+                url =
+                    "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=yearly&year=" +
+                    year;
+            } else if (code === "lastyear") {
+                const year = now.getFullYear() - 1;
+                url =
+                    "https://script.google.com/macros/s/AKfycbyFo_SWI2htvExLduoz0IAztQrCN-AH2awbtDDrWtUfXXV2ie5ZNDawwmaBRf-TRmE/exec?type=yearly&year=" +
+                    year;
+            } else if (code === "month") {
+                const year = now.getFullYear();
+                const month = now.getMonth() + 1;
+                url =
+                    "https://script.google.com/macros/s/AKfycbwVjMO1bXqldJHKh4UkPv48uOzi8Ih6bN6nI_oNigvS5x0wFdaUO99yQwM__eqimVUt/exec?year=" +
+                    year +
+                    "&month=" +
+                    month;
+            } else {
+                console.log("OpenAI Error");
+            }
+
+            try {
+                const res = await fetch(url);
+
+                if (!res.ok) {
+                    throw new Error(`Request failed: HTTP ${res.status}`);
+                }
+
+                const data = await res.json();
+
+                const response = await fetch(
+                    "https://api.openai.com/v1/chat/completions",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: `Bearer ${
+                                import.meta.env.VITE_OPENAI_KEY
+                            }`, // เก็บ key ไว้ใน .env
+                        },
+                        body: JSON.stringify({
+                            model: "gpt-4o-mini", // หรือ gpt-4o, gpt-5 เมื่อพร้อม
+                            messages: [
+                                {
+                                    role: "system",
+                                    content:
+                                        "คุณคือผู้ช่วยวิเคราะห์ข้อมูล Dashboard",
+                                },
+                                {
+                                    role: "user",
+                                    content: `ช่วยวิเคราะห์ข้อมูลนี้หน่อย: ${JSON.stringify(
+                                        data,
+                                    )}`,
+                                },
+                            ],
+                        }),
+                    },
+                );
+
+                const gptData = await response.json();
+                const message = gptData.choices[0].message.content;
+
+                // ปิด loading ก่อนเริ่มพิมพ์
+                this.isLoading = false;
+                this.showTypingEffect(message);
+            } catch (err) {
+                this.isLoading = false;
+                this.displayedText = "❌ เกิดข้อผิดพลาดในการวิเคราะห์ข้อมูล";
+                console.error(err);
+            }
+        },
+        async showTypingEffect(fullText) {
+            this.openAIText = fullText;
+            this.displayedText = "";
+            let i = 0;
+
+            clearInterval(this.typingInterval);
+            this.typingInterval = setInterval(() => {
+                if (i < this.openAIText.length) {
+                    this.displayedText += this.openAIText[i];
+                    i++;
+                } else {
+                    clearInterval(this.typingInterval);
+                }
+            }, 25); // ปรับความเร็วได้ (หน่วย: มิลลิวินาที)
         },
     },
 };

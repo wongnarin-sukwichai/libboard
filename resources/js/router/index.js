@@ -4,6 +4,7 @@ import Home from "../components/Home.vue";
 import Dashboard from "../components/Dashboard.vue";
 import Original from "../components/Original.vue"
 import Light from "../components/Light.vue";
+import Test from "../components/Test.vue";
 
 import store from "../store";
 
@@ -17,6 +18,11 @@ const routes = [
         path: "/light",
         name: "light",
         component: Light,
+    },
+        {
+        path: "/test",
+        name: "test",
+        component: Test,
     },
     {
         path: "/home",
