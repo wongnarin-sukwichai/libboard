@@ -273,7 +273,7 @@
                                             <div>
                                                 <small>LIVE MONITORING</small>
                                                 <strong>{{
-                                                    moment().format("HH:mm")
+                                                    currentTime
                                                 }}</strong>
                                             </div>
                                         </div>
@@ -943,10 +943,234 @@
                                     </div>
                                 </div>
                                 <!-- END: Users By Age -->
+
+                                <!-- BEGIN: E-Learning -->
                             </div>
                         </div>
                         <div class="col-span-12 2xl:col-span-3">
                             <div class="pb-10 -mb-10 2xl:border-l">
+                                <div
+                                    class="col-span-12 mt-2 sm:col-span-6 xl:col-span-6 lg:mt-6 xl:mt-2"
+                                >
+                                    <div class="flex items-center h-10 intro-y">
+                                        <h2
+                                            class="mr-5 text-lg font-medium truncate text-slate-900 dark:text-white"
+                                        >
+                                            สถิติ E-Learning
+                                        </h2>
+                                    </div>
+                                    <div class="mt-5 report-box-2 intro-y">
+                                        <div
+                                            class="p-5 box glass-panel dashboard-panel"
+                                        >
+                                            <div
+                                                class="flex flex-col items-center md:flex-row md:items-start md:space-x-8"
+                                            >
+                                                <div
+                                                    class="flex justify-center w-full md:w-1/2"
+                                                >
+                                                    <canvas
+                                                        ref="repELearning"
+                                                        class="max-w-[220px] mt-3"
+                                                    ></canvas>
+                                                </div>
+                                                <div
+                                                    class="w-full text-sm text-gray-200 md:w-1/2"
+                                                >
+                                                    <p
+                                                        class="mb-4 text-xs text-slate-900 dark:text-white"
+                                                    >
+                                                        * ผู้เข้าใช้งานมากที่สุด
+                                                        5 อันดับ
+                                                    </p>
+                                                    <ul class="space-y-2">
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-red-400"
+                                                            ></span>
+                                                            <span>{{
+                                                                eLearningName[0]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-orange-400"
+                                                            ></span>
+                                                            <span>{{
+                                                                eLearningName[1]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-yellow-400"
+                                                            ></span>
+                                                            <span>{{
+                                                                eLearningName[2]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 bg-lime-400 rounded-sm"
+                                                            ></span>
+                                                            <span>{{
+                                                                eLearningName[3]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 bg-cyan-400 rounded-sm"
+                                                            ></span>
+                                                            <span>{{
+                                                                eLearningName[4]
+                                                            }}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <button
+                                                class="w-full px-2 py-1 mt-6 border-dashed btn btn-outline-secondary"
+                                                @click="eLearningModalShow()"
+                                            >
+                                                แสดงรายการทั้งหมด
+                                            </button>
+                                            <div
+                                                class="flex mt-3 text-xs font-light text-gray-400"
+                                            >
+                                                <div># ข้อมูลเดือน</div>
+                                                <div class="ml-auto">
+                                                    {{
+                                                        moment().format(
+                                                            "MMMM YYYY",
+                                                        )
+                                                    }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END: E-Learning -->
+
+                                <!-- BEGIN: E-Traning -->
+                                <div
+                                    class="col-span-12 mt-2 sm:col-span-6 xl:col-span-6 lg:mt-6 xl:mt-2"
+                                >
+                                    <div class="flex items-center h-10 intro-y">
+                                        <h2
+                                            class="mr-5 text-lg font-medium truncate text-slate-900 dark:text-white"
+                                        >
+                                            สถิติ E-Traning
+                                        </h2>
+                                    </div>
+                                    <div class="mt-5 report-box-2 intro-y">
+                                        <div
+                                            class="p-5 box glass-panel dashboard-panel"
+                                        >
+                                            <div
+                                                class="flex flex-col items-center md:flex-row md:items-start md:space-x-8"
+                                            >
+                                                <div
+                                                    class="flex justify-center w-full md:w-1/2"
+                                                >
+                                                    <canvas
+                                                        ref="repETraning"
+                                                        class="max-w-[220px] mt-3"
+                                                    ></canvas>
+                                                </div>
+                                                <div
+                                                    class="w-full text-sm text-gray-200 md:w-1/2"
+                                                >
+                                                    <p
+                                                        class="mb-4 text-xs text-slate-900 dark:text-white"
+                                                    >
+                                                        * ผู้เข้าใช้งานมากที่สุด
+                                                        5 อันดับ
+                                                    </p>
+                                                    <ul class="space-y-2">
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-red-400"
+                                                            ></span>
+                                                            <span>{{
+                                                                eTraningName[0]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-orange-400"
+                                                            ></span>
+                                                            <span>{{
+                                                                eTraningName[1]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-yellow-400"
+                                                            ></span>
+                                                            <span>{{
+                                                                eTraningName[2]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 bg-lime-400 rounded-sm"
+                                                            ></span>
+                                                            <span>{{
+                                                                eTraningName[3]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 bg-cyan-400 rounded-sm"
+                                                            ></span>
+                                                            <span>{{
+                                                                eTraningName[4]
+                                                            }}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <button
+                                                class="w-full px-2 py-1 mt-6 border-dashed btn btn-outline-secondary"
+                                                @click="eTraningModalShow()"
+                                            >
+                                                แสดงรายการทั้งหมด
+                                            </button>
+                                            <div
+                                                class="flex mt-3 text-xs font-light text-gray-400"
+                                            >
+                                                <div># ข้อมูลเดือน</div>
+                                                <div class="ml-auto">
+                                                    {{
+                                                        moment().format(
+                                                            "MMMM YYYY",
+                                                        )
+                                                    }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END: E-Traning -->
                                 <div
                                     class="grid grid-cols-12 2xl:pl-6 gap-x-6 2xl:gap-x-0 gap-y-6"
                                 >
@@ -1163,6 +1387,126 @@
             </div>
         </div>
     </transition>
+
+    <!-- Modal E-Learning -->
+    <transition name="fade" mode="out-in">
+        <div
+            class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            v-if="eLearningModal"
+        >
+            <div
+                class="p-6 overflow-y-auto bg-gray-800 rounded-lg lg:w-1/3 h-3/4"
+            >
+                <p class="text-lg text-white">
+                    ** สถิติ E-Learning ทั้งหมด
+                    <span class="font-semibold text-amber-400"
+                        >{{ eLearningAll }}
+                    </span>
+                    รายการ **
+                </p>
+                <hr class="border-dashed" />
+                <div class="mt-5">
+                    <div class="p-5 mt-5 intro-y box-glass">
+                        <div
+                            class="flex items-center px-4 py-4 mb-3 box zoom-in"
+                            v-for="(item, index) in eLearningList"
+                            :key="index"
+                        >
+                            <div
+                                class="flex items-center justify-center flex-none w-10 h-10 text-sm font-bold text-white rounded-md bg-sky-600"
+                            >
+                                {{ index + 1 }}
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">
+                                    {{ item["คณะ_หน่วยงาน"] }}
+                                </div>
+                                <div class="text-slate-500 text-xs mt-0.5">
+                                    ป.ตรี: {{ item["ปริญญาตรี"] }} | ป.โท:
+                                    {{ item["ปริญญาโท"] }} | ป.เอก:
+                                    {{ item["ปริญญาเอก"] }}
+                                </div>
+                            </div>
+                            <div
+                                class="px-2 py-1 text-xs font-medium text-white rounded-full cursor-pointer bg-success"
+                            >
+                                {{ formatShort(item["รวม"]) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border-dashed" />
+                <div class="flex justify-end mt-2">
+                    <button
+                        class="px-4 py-2 text-white bg-red-500 rounded"
+                        @click="eLearningModalShow()"
+                    >
+                        close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </transition>
+
+    <!-- Modal E-Traning -->
+    <transition name="fade" mode="out-in">
+        <div
+            class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            v-if="eTraningModal"
+        >
+            <div
+                class="p-6 overflow-y-auto bg-gray-800 rounded-lg lg:w-1/3 h-3/4"
+            >
+                <p class="text-lg text-white">
+                    ** สถิติ E-Traning ทั้งหมด
+                    <span class="font-semibold text-amber-400"
+                        >{{ eTraningAll }}
+                    </span>
+                    รายการ **
+                </p>
+                <hr class="border-dashed" />
+                <div class="mt-5">
+                    <div class="p-5 mt-5 intro-y box-glass">
+                        <div
+                            class="flex items-center px-4 py-4 mb-3 box zoom-in"
+                            v-for="(item, index) in eTraningList"
+                            :key="index"
+                        >
+                            <div
+                                class="flex items-center justify-center flex-none w-10 h-10 text-sm font-bold text-white rounded-md bg-emerald-600"
+                            >
+                                {{ index + 1 }}
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">
+                                    {{ item["คณะ_หน่วยงาน"] }}
+                                </div>
+                                <div class="text-slate-500 text-xs mt-0.5">
+                                    ป.ตรี: {{ item["ปริญญาตรี"] }} | ป.โท:
+                                    {{ item["ปริญญาโท"] }} | ป.เอก:
+                                    {{ item["ปริญญาเอก"] }}
+                                </div>
+                            </div>
+                            <div
+                                class="px-2 py-1 text-xs font-medium text-white rounded-full cursor-pointer bg-success"
+                            >
+                                {{ formatShort(item["รวม"]) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border-dashed" />
+                <div class="flex justify-end mt-2">
+                    <button
+                        class="px-4 py-2 text-white bg-red-500 rounded"
+                        @click="eTraningModalShow()"
+                    >
+                        close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -1197,6 +1541,7 @@ export default {
         //await this.loadAllData();
         this.isReady = true;
         this.welcome();
+        this.startClock();
 
         this.$nextTick(() => {
             setTimeout(() => {
@@ -1209,6 +1554,8 @@ export default {
                 this.repRoom();
                 this.repRoomSecond();
                 this.repVoc();
+                this.repELearning();
+                this.repETraning();
                 this.initAllCharts(); // เรียกฟังก์ชันรวมกราฟ
                 this.startLiveAnimation();
 
@@ -1216,13 +1563,14 @@ export default {
                 if (!this.intervalFetch) {
                     this.intervalFetch = setInterval(() => {
                         this.repIncome();
-                    }, 100000);
+                    }, 60000);
                 }
             }, 500);
         });
     },
     beforeUnmount() {
         if (this.liveChartInterval) clearInterval(this.liveChartInterval);
+        if (this.clockInterval) clearInterval(this.clockInterval);
     },
     data() {
         return {
@@ -1230,6 +1578,8 @@ export default {
             logo: "/img/library.png",
             isDarkMode: false,
             showWelcome: true,
+            currentTime: "",
+            clockInterval: null,
             modalMenu: false,
             dbModal: false,
             openAIModal: false,
@@ -1267,6 +1617,14 @@ export default {
             borrowMonthAll: "",
             liveChartInterval: null,
             charts: {},
+            eLearningList: [],
+            eLearningName: [],
+            eLearningAll: "",
+            eLearningModal: false,
+            eTraningList: [],
+            eTraningName: [],
+            eTraningAll: "",
+            eTraningModal: false,
         };
     },
     methods: {
@@ -1362,6 +1720,27 @@ export default {
             }, 3000); // ขยับทุกๆ 3 วินาที
         },
 
+        startClock() {
+            const tick = () => {
+                this.currentTime = moment().format("HH:mm:ss");
+            };
+            tick();
+            this.clockInterval = setInterval(tick, 1000);
+        },
+
+        countUp(prop, target, duration = 1200) {
+            const from = Number(this[prop]) || 0;
+            const start = Date.now();
+            const step = () => {
+                const elapsed = Date.now() - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                this[prop] = Math.round(from + eased * (target - from));
+                if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        },
+
         toggleTheme() {
             this.isDarkMode = !this.isDarkMode;
         },
@@ -1383,10 +1762,10 @@ export default {
                 // console.log("API:", data);
 
                 //เฉพาะเดือน
-                this.incomeAA = data.current_month.a;
-                this.incomeBB = data.current_month.b;
-                this.incomeCC = data.current_month.space;
-                this.incomeAllA = data.current_month.sum;
+                this.countUp("incomeAA", data.current_month.a);
+                this.countUp("incomeBB", data.current_month.b);
+                this.countUp("incomeCC", data.current_month.space);
+                this.countUp("incomeAllA", data.current_month.sum);
 
                 //กราฟ
                 const tempA = new Array(12).fill(0);
@@ -1515,8 +1894,8 @@ export default {
                         // ดึงเฉพาะ data จาก datasets
                         const borrowData = data.datasets[0].data;
                         const returnData = data.datasets[1].data;
-                        this.borrowAll = data.summary.totalBorrow;
-                        this.returnAll = data.summary.totalReturn;
+                        this.countUp("borrowAll", data.summary.totalBorrow);
+                        this.countUp("returnAll", data.summary.totalReturn);
                         // ตั้งค่าฟอนต์
                         Chart.defaults.font.family = "Anuphan";
                         const ctx = this.$refs.repBook; // ✅ ต้องมี .getContext('2d')
@@ -1623,7 +2002,7 @@ export default {
                         // ดึงเฉพาะ data จาก datasets
                         const labels = data.detail.map((item) => `${item.day}`);
                         const values = data.detail.map((item) => item.value);
-                        this.borrowMonthAll = data.total;
+                        this.countUp("borrowMonthAll", data.total);
                         // ตั้งค่าฟอนต์
                         Chart.defaults.font.family = "Anuphan";
                         const ctx = this.$refs.repBookMonth; // ✅ ต้องมี .getContext('2d')
@@ -1880,7 +2259,7 @@ export default {
                     .then((response) => response.json())
                     .then((data) => {
                         const web = data.datasets[0].data;
-                        this.wepOPACAll = data.summary.totalSearch;
+                        this.countUp("wepOPACAll", data.summary.totalSearch);
                         const labels = [
                             "ม.ค.",
                             "ก.พ.",
@@ -2133,6 +2512,162 @@ export default {
                     });
             } catch (error) {
                 console.error("Error Report libVoc data:", error);
+            }
+        },
+        eLearningModalShow() {
+            this.eLearningModal = !this.eLearningModal;
+        },
+        eTraningModalShow() {
+            this.eTraningModal = !this.eTraningModal;
+        },
+        async repELearning() {
+            try {
+                fetch(
+                    "https://script.google.com/macros/s/AKfycbz_oRhvH1t0fkWa8rW2hntJAiwMZO_dDUprIXvUmedQdES0mq0zzrxMK-sAcczUcq8Y/exec",
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const sorted = [...data.data].sort(
+                            (a, b) => b["รวม"] - a["รวม"],
+                        );
+                        const top5 = sorted.slice(0, 5);
+                        this.eLearningAll = data.summary.grand_total;
+                        this.eLearningList = sorted;
+                        this.eLearningName = top5.map(
+                            (item) => item["คณะ_หน่วยงาน"],
+                        );
+                        const labels = top5.map((item) => item["คณะ_หน่วยงาน"]);
+                        const dbData = top5.map((item) => item["รวม"]);
+                        Chart.defaults.font.family = "Anuphan";
+                        const ctx = this.$refs.repELearning;
+                        this.charts.eLearning = new Chart(ctx, {
+                            type: "polarArea",
+                            data: {
+                                labels: labels,
+                                datasets: [
+                                    {
+                                        label: "",
+                                        data: dbData,
+                                        backgroundColor: [
+                                            "rgba(248,113,113,0.75)",
+                                            "rgba(251,146,60,0.75)",
+                                            "rgba(250,204,21,0.75)",
+                                            "rgba(163,230,53,0.75)",
+                                            "rgba(34,211,238,0.75)",
+                                        ],
+                                        borderColor: "#fff",
+                                        borderWidth: 2,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                animation: {
+                                    animateScale: true,
+                                    animateRotate: true,
+                                    duration: 2000,
+                                    easing: "easeOutBack",
+                                },
+                                scales: {
+                                    r: {
+                                        ticks: { display: false },
+                                        grid: {
+                                            color: "rgba(255,255,255,0.15)",
+                                        },
+                                    },
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: false,
+                                        position: "top",
+                                        labels: { color: "white" },
+                                    },
+                                    tooltip: {
+                                        backgroundColor: "#333",
+                                        titleColor: "#fff",
+                                        bodyColor: "#fff",
+                                    },
+                                },
+                            },
+                        });
+                    });
+            } catch (error) {
+                console.error("Error Report ELearning:", error);
+            }
+        },
+        async repETraning() {
+            try {
+                fetch(
+                    "https://script.google.com/macros/s/AKfycby3NCwTxP9IQL2WqJfqHSFiNHyJQlZ7sjUdiOl9xYngvTEvqZ_i2DwJqowfYsSwpoYw_g/exec",
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const sorted = [...data.data].sort(
+                            (a, b) => b["รวม"] - a["รวม"],
+                        );
+                        const top5 = sorted.slice(0, 5);
+                        this.eTraningAll = data.summary.grand_total;
+                        this.eTraningList = sorted;
+                        this.eTraningName = top5.map(
+                            (item) => item["คณะ_หน่วยงาน"],
+                        );
+                        const labels = top5.map((item) => item["คณะ_หน่วยงาน"]);
+                        const dbData = top5.map((item) => item["รวม"]);
+                        Chart.defaults.font.family = "Anuphan";
+                        const ctx = this.$refs.repETraning;
+                        this.charts.eTraning = new Chart(ctx, {
+                            type: "polarArea",
+                            data: {
+                                labels: labels,
+                                datasets: [
+                                    {
+                                        label: "",
+                                        data: dbData,
+                                        backgroundColor: [
+                                            "rgba(248,113,113,0.75)",
+                                            "rgba(251,146,60,0.75)",
+                                            "rgba(250,204,21,0.75)",
+                                            "rgba(163,230,53,0.75)",
+                                            "rgba(34,211,238,0.75)",
+                                        ],
+                                        borderColor: "#fff",
+                                        borderWidth: 2,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                animation: {
+                                    animateScale: true,
+                                    animateRotate: true,
+                                    duration: 2000,
+                                    easing: "easeOutBack",
+                                },
+                                scales: {
+                                    r: {
+                                        ticks: { display: false },
+                                        grid: {
+                                            color: "rgba(255,255,255,0.15)",
+                                        },
+                                    },
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: false,
+                                        position: "top",
+                                        labels: { color: "white" },
+                                    },
+                                    tooltip: {
+                                        backgroundColor: "#333",
+                                        titleColor: "#fff",
+                                        bodyColor: "#fff",
+                                    },
+                                },
+                            },
+                        });
+                    });
+            } catch (error) {
+                console.error("Error Report ETraning:", error);
             }
         },
         memberShow() {

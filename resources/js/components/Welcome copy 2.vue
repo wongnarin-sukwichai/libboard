@@ -2,7 +2,7 @@
     <div
         :class="[
             isDarkMode ? 'dark' : '',
-            'min-h-screen relative overflow-hidden font-anuphan',
+            'min-h-screen relative overflow-hidden font-anuphan libboard-skin',
         ]"
     >
         <div class="fixed inset-0 z-0 pointer-events-none">
@@ -12,13 +12,18 @@
                 :class="
                     isDarkMode
                         ? 'opacity-20 saturate-50'
-                        : 'opacity-40 saturate-150'
+                        : 'opacity-80 saturate-150'
                 "
                 @error="(e) => (e.target.style.display = 'none')"
             />
             <div
-                class="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-slate-200/40 dark:from-slate-900/80 dark:to-slate-900/90"
+                class="absolute inset-0 bg-gradient-to-br from-slate-950/80 via-slate-900/55 to-slate-950/85 dark:from-slate-950/90 dark:via-slate-900/70 dark:to-slate-950/95"
             ></div>
+        </div>
+        <div class="fixed inset-0 z-[1] pointer-events-none dashboard-ambient">
+            <div class="ambient-orb ambient-orb--blue"></div>
+            <div class="ambient-orb ambient-orb--purple"></div>
+            <div class="ambient-particles"></div>
         </div>
 
         <div class="relative z-10 py-5 md:py-0">
@@ -67,7 +72,7 @@
                             </a>
                         </li>
 
-                        <li class="my-6 menu__devider"></li>
+                        <!-- <li class="my-6 menu__devider"></li>
                         <li>
                             <a
                                 href="https://lookerstudio.google.com/reporting/2a02ed26-a199-42b1-bc6c-ce8b1dd6874e"
@@ -90,7 +95,7 @@
                                     ></i>
                                 </div>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -98,7 +103,7 @@
 
             <!-- BEGIN: Top Bar -->
             <div
-                class="top-bar-boxed top-bar-boxed--simple-menu h-[70px] md:h-[65px] z-[51] border-b border-white/[0.08] mt-12 md:mt-0 -mx-3 sm:-mx-8 md:-mx-0 px-3 md:border-b-0 relative md:fixed md:inset-x-0 md:top-0 sm:px-8 md:px-10 md:pt-10 md:bg-gradient-to-b md:from-slate-100 md:to-transparent dark:md:from-darkmode-700"
+                class="top-bar-boxed top-bar-boxed--simple-menu glass-topbar h-[70px] md:h-[65px] z-[51] border-b border-white/[0.08] mt-12 md:mt-0 -mx-3 sm:-mx-8 md:-mx-0 px-3 md:border-b-0 relative md:fixed md:inset-x-0 md:top-0 sm:px-8 md:px-10 md:pt-10 md:bg-gradient-to-b md:from-slate-100 md:to-transparent dark:md:from-darkmode-700"
             >
                 <div class="flex items-center h-full">
                     <!-- BEGIN: Logo -->
@@ -177,7 +182,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a
                                 href="https://lookerstudio.google.com/reporting/2a02ed26-a199-42b1-bc6c-ce8b1dd6874e"
                                 target="_blank"
@@ -198,14 +203,14 @@
                                     </div>
                                 </div>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
                 <!-- END: Side Menu -->
 
                 <!-- BEGIN: Content -->
                 <div
-                    class="content p-6 transition-all duration-500 !bg-transparent"
+                    class="content command-content p-6 transition-all duration-500 !bg-transparent"
                 >
                     <div class="grid grid-cols-12 gap-6">
                         <div class="col-span-12 2xl:col-span-9">
@@ -214,7 +219,7 @@
                                 <div class="col-span-12 mt-6 -mb-6 intro-y">
                                     <transition name="fade" mode="out-in">
                                         <div
-                                            class="flex items-center mb-6 text-gray-200 alert alert-dismissible show box bg-primary"
+                                            class="flex items-center mb-6 text-gray-200 alert alert-dismissible show box bg-primary welcome-alert"
                                             role="alert"
                                             v-show="showWelcome"
                                         >
@@ -244,6 +249,38 @@
                                     </transition>
                                 </div>
 
+                                <!-- BEGIN: LibBoard Style Hero -->
+                                <div class="col-span-12 mt-2 intro-y">
+                                    <div class="libboard-hero glass-panel">
+                                        <div>
+                                            <div class="hero-kicker">
+                                                MSU LIBRARY INTELLIGENCE
+                                                DASHBOARD
+                                            </div>
+                                            <h1>
+                                                ระบบติดตามสถิติการให้บริการห้องสมุด
+                                            </h1>
+                                            <p>
+                                                ภาพรวมการเข้าใช้บริการ ยืม-คืน
+                                                ทรัพยากร ฐานข้อมูลออนไลน์
+                                                พื้นที่เรียนรู้
+                                                และเสียงสะท้อนจากผู้ใช้บริการแบบ
+                                                Command Center
+                                            </p>
+                                        </div>
+                                        <div class="hero-live">
+                                            <span class="live-dot"></span>
+                                            <div>
+                                                <small>LIVE MONITORING</small>
+                                                <strong>{{
+                                                    currentTime
+                                                }}</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END: LibBoard Style Hero -->
+
                                 <!-- BEGIN: Dashboard -->
                                 <div
                                     class="col-span-12 mt-2 sm:col-span-6 lg:col-span-4 xl:col-span-3"
@@ -265,7 +302,9 @@
                                         </select>
                                     </div>
                                     <div class="mt-5 report-box-2 intro-y">
-                                        <div class="p-5 box">
+                                        <div
+                                            class="p-5 box glass-panel dashboard-panel"
+                                        >
                                             <ul class="space-y-2">
                                                 <li
                                                     class="flex items-center justify-between"
@@ -462,7 +501,9 @@
                                     <div
                                         class="mt-12 report-box-2 intro-y sm:mt-5"
                                     >
-                                        <div class="box sm:flex">
+                                        <div
+                                            class="box sm:flex glass-panel dashboard-panel"
+                                        >
                                             <div
                                                 class="flex flex-col justify-center flex-1 px-8 py-4"
                                             >
@@ -628,7 +669,9 @@
                                         </h2>
                                     </div>
                                     <div class="mt-5 report-box-2 intro-y">
-                                        <div class="p-5 box">
+                                        <div
+                                            class="p-5 box glass-panel dashboard-panel"
+                                        >
                                             <!-- ✅ ใช้ flex แยกซ้าย (ข้อความ) / ขวา (กราฟ) -->
                                             <div
                                                 class="flex flex-col items-center md:flex-row md:items-start md:space-x-8"
@@ -747,7 +790,9 @@
                                         </h2>
                                     </div>
                                     <div class="mt-5 report-box-2 intro-y">
-                                        <div class="p-5 box">
+                                        <div
+                                            class="p-5 box glass-panel dashboard-panel"
+                                        >
                                             <div class="mt-6 tab-content">
                                                 <div
                                                     class="tab-pane active"
@@ -812,7 +857,9 @@
                                     </div> -->
                                     </div>
                                     <div class="mt-5 report-box-2 intro-y">
-                                        <div class="p-5 box">
+                                        <div
+                                            class="p-5 box glass-panel dashboard-panel"
+                                        >
                                             <div class="grid grid-cols-2 gap-6">
                                                 <div
                                                     class="flex flex-col items-center justify-between w-full border-r-2 border-dashed md:flex-row"
@@ -896,10 +943,234 @@
                                     </div>
                                 </div>
                                 <!-- END: Users By Age -->
+
+                                <!-- BEGIN: E-Learning -->
                             </div>
                         </div>
                         <div class="col-span-12 2xl:col-span-3">
                             <div class="pb-10 -mb-10 2xl:border-l">
+                                <div
+                                    class="col-span-12 mt-2 sm:col-span-6 xl:col-span-6 lg:mt-6 xl:mt-2"
+                                >
+                                    <div class="flex items-center h-10 intro-y">
+                                        <h2
+                                            class="mr-5 text-lg font-medium truncate text-slate-900 dark:text-white"
+                                        >
+                                            สถิติ E-Learning
+                                        </h2>
+                                    </div>
+                                    <div class="mt-5 report-box-2 intro-y">
+                                        <div
+                                            class="p-5 box glass-panel dashboard-panel"
+                                        >
+                                            <div
+                                                class="flex flex-col items-center md:flex-row md:items-start md:space-x-8"
+                                            >
+                                                <div
+                                                    class="flex justify-center w-full md:w-1/2"
+                                                >
+                                                    <canvas
+                                                        ref="repELearning"
+                                                        class="max-w-[220px] mt-3"
+                                                    ></canvas>
+                                                </div>
+                                                <div
+                                                    class="w-full text-sm text-gray-200 md:w-1/2"
+                                                >
+                                                    <p
+                                                        class="mb-4 text-xs text-slate-900 dark:text-white"
+                                                    >
+                                                        * ผู้เข้าใช้งานมากที่สุด
+                                                        5 อันดับ
+                                                    </p>
+                                                    <ul class="space-y-2">
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-sky-400"
+                                                            ></span>
+                                                            <span>{{
+                                                                eLearningName[0]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-emerald-400"
+                                                            ></span>
+                                                            <span>{{
+                                                                eLearningName[1]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-amber-400"
+                                                            ></span>
+                                                            <span>{{
+                                                                eLearningName[2]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 bg-orange-400 rounded-sm"
+                                                            ></span>
+                                                            <span>{{
+                                                                eLearningName[3]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 bg-pink-400 rounded-sm"
+                                                            ></span>
+                                                            <span>{{
+                                                                eLearningName[4]
+                                                            }}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <button
+                                                class="w-full px-2 py-1 mt-6 border-dashed btn btn-outline-secondary"
+                                                @click="eLearningModalShow()"
+                                            >
+                                                แสดงรายการทั้งหมด
+                                            </button>
+                                            <div
+                                                class="flex mt-3 text-xs font-light text-gray-400"
+                                            >
+                                                <div># ข้อมูลเดือน</div>
+                                                <div class="ml-auto">
+                                                    {{
+                                                        moment().format(
+                                                            "MMMM YYYY",
+                                                        )
+                                                    }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END: E-Learning -->
+
+                                <!-- BEGIN: E-Traning -->
+                                <div
+                                    class="col-span-12 mt-2 sm:col-span-6 xl:col-span-6 lg:mt-6 xl:mt-2"
+                                >
+                                    <div class="flex items-center h-10 intro-y">
+                                        <h2
+                                            class="mr-5 text-lg font-medium truncate text-slate-900 dark:text-white"
+                                        >
+                                            สถิติ E-Traning
+                                        </h2>
+                                    </div>
+                                    <div class="mt-5 report-box-2 intro-y">
+                                        <div
+                                            class="p-5 box glass-panel dashboard-panel"
+                                        >
+                                            <div
+                                                class="flex flex-col items-center md:flex-row md:items-start md:space-x-8"
+                                            >
+                                                <div
+                                                    class="flex justify-center w-full md:w-1/2"
+                                                >
+                                                    <canvas
+                                                        ref="repETraning"
+                                                        class="max-w-[220px] mt-3"
+                                                    ></canvas>
+                                                </div>
+                                                <div
+                                                    class="w-full text-sm text-gray-200 md:w-1/2"
+                                                >
+                                                    <p
+                                                        class="mb-4 text-xs text-slate-900 dark:text-white"
+                                                    >
+                                                        * ผู้เข้าใช้งานมากที่สุด
+                                                        5 อันดับ
+                                                    </p>
+                                                    <ul class="space-y-2">
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-sky-400"
+                                                            ></span>
+                                                            <span>{{
+                                                                eTraningName[0]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-emerald-400"
+                                                            ></span>
+                                                            <span>{{
+                                                                eTraningName[1]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 rounded-sm bg-amber-400"
+                                                            ></span>
+                                                            <span>{{
+                                                                eTraningName[2]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 bg-orange-400 rounded-sm"
+                                                            ></span>
+                                                            <span>{{
+                                                                eTraningName[3]
+                                                            }}</span>
+                                                        </li>
+                                                        <li
+                                                            class="flex items-center space-x-2"
+                                                        >
+                                                            <span
+                                                                class="w-5 h-3 bg-pink-400 rounded-sm"
+                                                            ></span>
+                                                            <span>{{
+                                                                eTraningName[4]
+                                                            }}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <button
+                                                class="w-full px-2 py-1 mt-6 border-dashed btn btn-outline-secondary"
+                                                @click="eTraningModalShow()"
+                                            >
+                                                แสดงรายการทั้งหมด
+                                            </button>
+                                            <div
+                                                class="flex mt-3 text-xs font-light text-gray-400"
+                                            >
+                                                <div># ข้อมูลเดือน</div>
+                                                <div class="ml-auto">
+                                                    {{
+                                                        moment().format(
+                                                            "MMMM YYYY",
+                                                        )
+                                                    }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END: E-Traning -->
                                 <div
                                     class="grid grid-cols-12 2xl:pl-6 gap-x-6 2xl:gap-x-0 gap-y-6"
                                 >
@@ -1116,6 +1387,126 @@
             </div>
         </div>
     </transition>
+
+    <!-- Modal E-Learning -->
+    <transition name="fade" mode="out-in">
+        <div
+            class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            v-if="eLearningModal"
+        >
+            <div
+                class="p-6 overflow-y-auto bg-gray-800 rounded-lg lg:w-1/3 h-3/4"
+            >
+                <p class="text-lg text-white">
+                    ** สถิติ E-Learning ทั้งหมด
+                    <span class="font-semibold text-amber-400"
+                        >{{ eLearningAll }}
+                    </span>
+                    รายการ **
+                </p>
+                <hr class="border-dashed" />
+                <div class="mt-5">
+                    <div class="p-5 mt-5 intro-y box-glass">
+                        <div
+                            class="flex items-center px-4 py-4 mb-3 box zoom-in"
+                            v-for="(item, index) in eLearningList"
+                            :key="index"
+                        >
+                            <div
+                                class="flex items-center justify-center flex-none w-10 h-10 text-sm font-bold text-white rounded-md bg-sky-600"
+                            >
+                                {{ index + 1 }}
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">
+                                    {{ item["คณะ_หน่วยงาน"] }}
+                                </div>
+                                <div class="text-slate-500 text-xs mt-0.5">
+                                    ป.ตรี: {{ item["ปริญญาตรี"] }} | ป.โท:
+                                    {{ item["ปริญญาโท"] }} | ป.เอก:
+                                    {{ item["ปริญญาเอก"] }}
+                                </div>
+                            </div>
+                            <div
+                                class="px-2 py-1 text-xs font-medium text-white rounded-full cursor-pointer bg-success"
+                            >
+                                {{ formatShort(item["รวม"]) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border-dashed" />
+                <div class="flex justify-end mt-2">
+                    <button
+                        class="px-4 py-2 text-white bg-red-500 rounded"
+                        @click="eLearningModalShow()"
+                    >
+                        close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </transition>
+
+    <!-- Modal E-Traning -->
+    <transition name="fade" mode="out-in">
+        <div
+            class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            v-if="eTraningModal"
+        >
+            <div
+                class="p-6 overflow-y-auto bg-gray-800 rounded-lg lg:w-1/3 h-3/4"
+            >
+                <p class="text-lg text-white">
+                    ** สถิติ E-Traning ทั้งหมด
+                    <span class="font-semibold text-amber-400"
+                        >{{ eTraningAll }}
+                    </span>
+                    รายการ **
+                </p>
+                <hr class="border-dashed" />
+                <div class="mt-5">
+                    <div class="p-5 mt-5 intro-y box-glass">
+                        <div
+                            class="flex items-center px-4 py-4 mb-3 box zoom-in"
+                            v-for="(item, index) in eTraningList"
+                            :key="index"
+                        >
+                            <div
+                                class="flex items-center justify-center flex-none w-10 h-10 text-sm font-bold text-white rounded-md bg-emerald-600"
+                            >
+                                {{ index + 1 }}
+                            </div>
+                            <div class="ml-4 mr-auto">
+                                <div class="font-medium">
+                                    {{ item["คณะ_หน่วยงาน"] }}
+                                </div>
+                                <div class="text-slate-500 text-xs mt-0.5">
+                                    ป.ตรี: {{ item["ปริญญาตรี"] }} | ป.โท:
+                                    {{ item["ปริญญาโท"] }} | ป.เอก:
+                                    {{ item["ปริญญาเอก"] }}
+                                </div>
+                            </div>
+                            <div
+                                class="px-2 py-1 text-xs font-medium text-white rounded-full cursor-pointer bg-success"
+                            >
+                                {{ formatShort(item["รวม"]) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border-dashed" />
+                <div class="flex justify-end mt-2">
+                    <button
+                        class="px-4 py-2 text-white bg-red-500 rounded"
+                        @click="eTraningModalShow()"
+                    >
+                        close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -1150,6 +1541,7 @@ export default {
         //await this.loadAllData();
         this.isReady = true;
         this.welcome();
+        this.startClock();
 
         this.$nextTick(() => {
             setTimeout(() => {
@@ -1162,6 +1554,8 @@ export default {
                 this.repRoom();
                 this.repRoomSecond();
                 this.repVoc();
+                this.repELearning();
+                this.repETraning();
                 this.initAllCharts(); // เรียกฟังก์ชันรวมกราฟ
                 this.startLiveAnimation();
 
@@ -1169,20 +1563,23 @@ export default {
                 if (!this.intervalFetch) {
                     this.intervalFetch = setInterval(() => {
                         this.repIncome();
-                    }, 100000);
+                    }, 60000);
                 }
             }, 500);
         });
     },
     beforeUnmount() {
         if (this.liveChartInterval) clearInterval(this.liveChartInterval);
+        if (this.clockInterval) clearInterval(this.clockInterval);
     },
     data() {
         return {
             isReady: false,
             logo: "/img/library.png",
-            isDarkMode: true,
+            isDarkMode: false,
             showWelcome: true,
+            currentTime: "",
+            clockInterval: null,
             modalMenu: false,
             dbModal: false,
             openAIModal: false,
@@ -1220,6 +1617,14 @@ export default {
             borrowMonthAll: "",
             liveChartInterval: null,
             charts: {},
+            eLearningList: [],
+            eLearningName: [],
+            eLearningAll: "",
+            eLearningModal: false,
+            eTraningList: [],
+            eTraningName: [],
+            eTraningAll: "",
+            eTraningModal: false,
         };
     },
     methods: {
@@ -1315,6 +1720,27 @@ export default {
             }, 3000); // ขยับทุกๆ 3 วินาที
         },
 
+        startClock() {
+            const tick = () => {
+                this.currentTime = moment().format("HH:mm:ss");
+            };
+            tick();
+            this.clockInterval = setInterval(tick, 1000);
+        },
+
+        countUp(prop, target, duration = 1200) {
+            const from = Number(this[prop]) || 0;
+            const start = Date.now();
+            const step = () => {
+                const elapsed = Date.now() - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                this[prop] = Math.round(from + eased * (target - from));
+                if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        },
+
         toggleTheme() {
             this.isDarkMode = !this.isDarkMode;
         },
@@ -1336,10 +1762,10 @@ export default {
                 // console.log("API:", data);
 
                 //เฉพาะเดือน
-                this.incomeAA = data.current_month.a;
-                this.incomeBB = data.current_month.b;
-                this.incomeCC = data.current_month.space;
-                this.incomeAllA = data.current_month.sum;
+                this.countUp("incomeAA", data.current_month.a);
+                this.countUp("incomeBB", data.current_month.b);
+                this.countUp("incomeCC", data.current_month.space);
+                this.countUp("incomeAllA", data.current_month.sum);
 
                 //กราฟ
                 const tempA = new Array(12).fill(0);
@@ -1428,20 +1854,12 @@ export default {
                             },
                             scales: {
                                 x: {
-                                    ticks: {
-                                        color: this.isDarkMode
-                                            ? "white"
-                                            : "#1e293b",
-                                    },
+                                    ticks: { color: "white" },
                                     grid: { display: false },
                                 },
                                 y: {
                                     beginAtZero: true,
-                                    ticks: {
-                                        color: this.isDarkMode
-                                            ? "white"
-                                            : "#1e293b",
-                                    },
+                                    ticks: { color: "white" },
                                     grid: {
                                         color: "rgba(255,255,255,0.1)",
                                     },
@@ -1476,8 +1894,8 @@ export default {
                         // ดึงเฉพาะ data จาก datasets
                         const borrowData = data.datasets[0].data;
                         const returnData = data.datasets[1].data;
-                        this.borrowAll = data.summary.totalBorrow;
-                        this.returnAll = data.summary.totalReturn;
+                        this.countUp("borrowAll", data.summary.totalBorrow);
+                        this.countUp("returnAll", data.summary.totalReturn);
                         // ตั้งค่าฟอนต์
                         Chart.defaults.font.family = "Anuphan";
                         const ctx = this.$refs.repBook; // ✅ ต้องมี .getContext('2d')
@@ -1547,21 +1965,13 @@ export default {
                                 scales: {
                                     y: {
                                         beginAtZero: true,
-                                        ticks: {
-                                            color: this.isDarkMode
-                                                ? "white"
-                                                : "#1e293b",
-                                        },
+                                        ticks: { color: "white" },
                                         grid: {
                                             color: "rgba(255,255,255,0.1)",
                                         },
                                     },
                                     x: {
-                                        ticks: {
-                                            color: this.isDarkMode
-                                                ? "white"
-                                                : "#1e293b",
-                                        },
+                                        ticks: { color: "white" },
                                         grid: { display: false },
                                     },
                                 },
@@ -1592,7 +2002,7 @@ export default {
                         // ดึงเฉพาะ data จาก datasets
                         const labels = data.detail.map((item) => `${item.day}`);
                         const values = data.detail.map((item) => item.value);
-                        this.borrowMonthAll = data.total;
+                        this.countUp("borrowMonthAll", data.total);
                         // ตั้งค่าฟอนต์
                         Chart.defaults.font.family = "Anuphan";
                         const ctx = this.$refs.repBookMonth; // ✅ ต้องมี .getContext('2d')
@@ -1644,11 +2054,7 @@ export default {
                                 },
                                 scales: {
                                     x: {
-                                        ticks: {
-                                            color: this.isDarkMode
-                                                ? "white"
-                                                : "#1e293b",
-                                        },
+                                        ticks: { color: "white" },
                                         grid: { display: false },
                                     },
                                     y: {
@@ -1658,11 +2064,7 @@ export default {
                                             text: "จำนวนการยืม",
                                             color: "#fff",
                                         },
-                                        ticks: {
-                                            color: this.isDarkMode
-                                                ? "white"
-                                                : "#1e293b",
-                                        },
+                                        ticks: { color: "white" },
                                         grid: {
                                             color: "rgba(255,255,255,0.1)",
                                         },
@@ -1760,21 +2162,13 @@ export default {
                                 scales: {
                                     y: {
                                         beginAtZero: true,
-                                        ticks: {
-                                            color: this.isDarkMode
-                                                ? "white"
-                                                : "#1e293b",
-                                        },
+                                        ticks: { color: "white" },
                                         grid: {
                                             color: "rgba(255,255,255,0.1)",
                                         },
                                     },
                                     x: {
-                                        ticks: {
-                                            color: this.isDarkMode
-                                                ? "white"
-                                                : "#1e293b",
-                                        },
+                                        ticks: { color: "white" },
                                         grid: { display: false },
                                     },
                                 },
@@ -1865,7 +2259,7 @@ export default {
                     .then((response) => response.json())
                     .then((data) => {
                         const web = data.datasets[0].data;
-                        this.wepOPACAll = data.summary.totalSearch;
+                        this.countUp("wepOPACAll", data.summary.totalSearch);
                         const labels = [
                             "ม.ค.",
                             "ก.พ.",
@@ -1911,20 +2305,12 @@ export default {
                                 },
                                 scales: {
                                     x: {
-                                        ticks: {
-                                            color: this.isDarkMode
-                                                ? "white"
-                                                : "#1e293b",
-                                        },
+                                        ticks: { color: "white" },
                                         grid: { display: false },
                                     },
                                     y: {
                                         beginAtZero: true,
-                                        ticks: {
-                                            color: this.isDarkMode
-                                                ? "white"
-                                                : "#1e293b",
-                                        },
+                                        ticks: { color: "white" },
                                         grid: {
                                             color: "rgba(255,255,255,0.1)",
                                         },
@@ -2084,19 +2470,11 @@ export default {
                         scales: {
                             x: {
                                 beginAtZero: true,
-                                ticks: {
-                                    color: this.isDarkMode
-                                        ? "white"
-                                        : "#1e293b",
-                                },
+                                ticks: { color: "white" },
                                 grid: { color: "rgba(255,255,255,0.1)" },
                             },
                             y: {
-                                ticks: {
-                                    color: this.isDarkMode
-                                        ? "white"
-                                        : "#1e293b",
-                                },
+                                ticks: { color: "white" },
                                 grid: { display: false },
                             },
                         },
@@ -2134,6 +2512,148 @@ export default {
                     });
             } catch (error) {
                 console.error("Error Report libVoc data:", error);
+            }
+        },
+        eLearningModalShow() {
+            this.eLearningModal = !this.eLearningModal;
+        },
+        eTraningModalShow() {
+            this.eTraningModal = !this.eTraningModal;
+        },
+        async repELearning() {
+            try {
+                fetch(
+                    "https://script.google.com/macros/s/AKfycbz_oRhvH1t0fkWa8rW2hntJAiwMZO_dDUprIXvUmedQdES0mq0zzrxMK-sAcczUcq8Y/exec",
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const sorted = [...data.data].sort(
+                            (a, b) => b["รวม"] - a["รวม"],
+                        );
+                        const top5 = sorted.slice(0, 5);
+                        this.eLearningAll = data.summary.grand_total;
+                        this.eLearningList = sorted;
+                        this.eLearningName = top5.map(
+                            (item) => item["คณะ_หน่วยงาน"],
+                        );
+                        const labels = top5.map((item) => item["คณะ_หน่วยงาน"]);
+                        const dbData = top5.map((item) => item["รวม"]);
+                        Chart.defaults.font.family = "Anuphan";
+                        const ctx = this.$refs.repELearning;
+                        this.charts.eLearning = new Chart(ctx, {
+                            type: "doughnut",
+                            data: {
+                                labels: labels,
+                                datasets: [
+                                    {
+                                        label: "",
+                                        data: dbData,
+                                        backgroundColor: [
+                                            "#36a2eb",
+                                            "#4bc0c0",
+                                            "#ff9f40",
+                                            "#ffcd56",
+                                            "#ff6384",
+                                        ],
+                                        borderColor: "#fff",
+                                        borderWidth: 2,
+                                        hoverOffset: 15,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                animation: {
+                                    animateScale: true,
+                                    animateRotate: true,
+                                    duration: 2000,
+                                    easing: "easeOutBack",
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: false,
+                                        position: "top",
+                                        labels: { color: "white" },
+                                    },
+                                    tooltip: {
+                                        backgroundColor: "#333",
+                                        titleColor: "#fff",
+                                        bodyColor: "#fff",
+                                    },
+                                },
+                            },
+                        });
+                    });
+            } catch (error) {
+                console.error("Error Report ELearning:", error);
+            }
+        },
+        async repETraning() {
+            try {
+                fetch(
+                    "https://script.google.com/macros/s/AKfycby3NCwTxP9IQL2WqJfqHSFiNHyJQlZ7sjUdiOl9xYngvTEvqZ_i2DwJqowfYsSwpoYw_g/exec",
+                )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const sorted = [...data.data].sort(
+                            (a, b) => b["รวม"] - a["รวม"],
+                        );
+                        const top5 = sorted.slice(0, 5);
+                        this.eTraningAll = data.summary.grand_total;
+                        this.eTraningList = sorted;
+                        this.eTraningName = top5.map(
+                            (item) => item["คณะ_หน่วยงาน"],
+                        );
+                        const labels = top5.map((item) => item["คณะ_หน่วยงาน"]);
+                        const dbData = top5.map((item) => item["รวม"]);
+                        Chart.defaults.font.family = "Anuphan";
+                        const ctx = this.$refs.repETraning;
+                        this.charts.eTraning = new Chart(ctx, {
+                            type: "doughnut",
+                            data: {
+                                labels: labels,
+                                datasets: [
+                                    {
+                                        label: "",
+                                        data: dbData,
+                                        backgroundColor: [
+                                            "#36a2eb",
+                                            "#4bc0c0",
+                                            "#ff9f40",
+                                            "#ffcd56",
+                                            "#ff6384",
+                                        ],
+                                        borderColor: "#fff",
+                                        borderWidth: 2,
+                                        hoverOffset: 15,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                animation: {
+                                    animateScale: true,
+                                    animateRotate: true,
+                                    duration: 2000,
+                                    easing: "easeOutBack",
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: false,
+                                        position: "top",
+                                        labels: { color: "white" },
+                                    },
+                                    tooltip: {
+                                        backgroundColor: "#333",
+                                        titleColor: "#fff",
+                                        bodyColor: "#fff",
+                                    },
+                                },
+                            },
+                        });
+                    });
+            } catch (error) {
+                console.error("Error Report ETraning:", error);
             }
         },
         memberShow() {
@@ -2322,6 +2842,317 @@ export default {
     }
     50% {
         transform: scale(1.08);
+    }
+}
+
+/* ===== LibBoard-inspired executive dashboard skin ===== */
+.libboard-skin {
+    background: #020617;
+}
+
+.dashboard-ambient {
+    overflow: hidden;
+}
+
+.ambient-orb {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 9999px;
+    filter: blur(95px);
+    opacity: 0.46;
+    animation: orbDrift 16s ease-in-out infinite alternate;
+}
+
+.ambient-orb--blue {
+    top: -130px;
+    right: 8%;
+    background: #38bdf8;
+}
+
+.ambient-orb--purple {
+    left: 6%;
+    bottom: -150px;
+    background: #a855f7;
+    animation-delay: -5s;
+}
+
+.ambient-particles {
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    background-image: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.85) 1px,
+        transparent 1px
+    );
+    background-size: 42px 42px;
+    animation: particleFlow 28s linear infinite;
+}
+
+.glass-topbar {
+    backdrop-filter: blur(22px) saturate(150%);
+}
+
+.command-content {
+    border-radius: 34px;
+}
+
+.libboard-hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px 32px;
+    border-radius: 30px;
+    animation: floatPanel 8s ease-in-out infinite;
+}
+
+.libboard-hero::after,
+.glass-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.14),
+        transparent
+    );
+    transform: translateX(-120%);
+    animation: lightSweep 7s ease-in-out infinite;
+}
+
+.hero-kicker {
+    margin-bottom: 8px;
+    color: #bae6fd;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+.libboard-hero h1 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(28px, 3.5vw, 52px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+    text-shadow: 0 16px 42px rgba(0, 0, 0, 0.35);
+}
+
+.libboard-hero p {
+    max-width: 900px;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.hero-live {
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    border-radius: 24px;
+    color: #fff;
+    background: rgba(2, 6, 23, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hero-live small {
+    display: block;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.hero-live strong {
+    display: block;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.live-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: #22c55e;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.72);
+    animation: livePulse 1.45s infinite;
+}
+
+.glass-panel {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.16),
+        rgba(255, 255, 255, 0.065)
+    ) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 28px !important;
+    box-shadow:
+        0 20px 70px rgba(2, 6, 23, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+    backdrop-filter: blur(24px) saturate(150%);
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+}
+
+.glass-panel::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    background: linear-gradient(
+        135deg,
+        rgba(56, 189, 248, 0.42),
+        rgba(168, 85, 247, 0.34),
+        rgba(236, 72, 153, 0.28)
+    );
+    filter: blur(34px);
+    opacity: 0.26;
+}
+
+.glass-panel:hover {
+    transform: translateY(-7px) scale(1.006);
+    border-color: rgba(255, 255, 255, 0.32) !important;
+    box-shadow: 0 28px 90px rgba(2, 6, 23, 0.52) !important;
+}
+
+.dashboard-panel {
+    animation: floatPanel 8s ease-in-out infinite;
+}
+
+.dashboard-panel:nth-child(2n) {
+    animation-delay: -1.6s;
+}
+
+.dashboard-panel:nth-child(3n) {
+    animation-delay: -3.2s;
+}
+
+.welcome-alert {
+    border-radius: 24px !important;
+    background: linear-gradient(
+        135deg,
+        rgba(14, 165, 233, 0.55),
+        rgba(168, 85, 247, 0.42)
+    ) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 18px 55px rgba(2, 6, 23, 0.35);
+}
+
+:deep(.box),
+:deep(.report-box-2 .box) {
+    background-color: transparent;
+}
+
+:deep(canvas) {
+    filter: drop-shadow(0 14px 28px rgba(56, 189, 248, 0.14));
+}
+
+:deep(.form-select),
+:deep(.form-control) {
+    background-color: rgba(15, 23, 42, 0.45) !important;
+    border-color: rgba(255, 255, 255, 0.16) !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    backdrop-filter: blur(14px);
+}
+
+:deep(.btn-outline-secondary) {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+    color: rgba(255, 255, 255, 0.78) !important;
+}
+
+:deep(.side-nav),
+:deep(.mobile-menu-bar) {
+    backdrop-filter: blur(18px);
+}
+
+:deep(.side-menu--active),
+:deep(.menu--active) {
+    background: linear-gradient(
+        135deg,
+        rgba(56, 189, 248, 0.28),
+        rgba(168, 85, 247, 0.22)
+    ) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 14px 36px rgba(2, 6, 23, 0.28);
+}
+
+:deep(.text-slate-900) {
+    color: rgba(255, 255, 255, 0.92) !important;
+}
+
+:deep(.border-slate-200),
+:deep(.border-slate-300) {
+    border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+@keyframes floatPanel {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes livePulse {
+    70% {
+        box-shadow: 0 0 0 18px rgba(34, 197, 94, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+@keyframes lightSweep {
+    0%,
+    60% {
+        transform: translateX(-120%);
+    }
+    100% {
+        transform: translateX(120%);
+    }
+}
+
+@keyframes orbDrift {
+    to {
+        transform: translate(90px, 48px) scale(1.14);
+    }
+}
+
+@keyframes particleFlow {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-160px);
+    }
+}
+
+@media (max-width: 768px) {
+    .libboard-hero {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 22px;
+    }
+
+    .hero-live {
+        min-width: 0;
+        width: 100%;
+        justify-content: center;
     }
 }
 </style>
