@@ -948,9 +948,9 @@
                             </div>
                         </div>
                         <div class="col-span-12 2xl:col-span-3">
-                            <div class="pb-10 -mb-10 2xl:border-l">
+                            <div class="grid gap-3 pb-10 -mb-10 sm:grid-cols-12 md:grid-cols-2 2xl:grid-cols-1 2xl:border-l">
                                 <div
-                                    class="col-span-12 mt-2 sm:col-span-6 xl:col-span-6 lg:mt-6 xl:mt-2"
+                                    class="mt-2"
                                 >
                                     <div class="flex items-center h-10 intro-y">
                                         <h2
@@ -988,7 +988,7 @@
                                                             class="flex items-center space-x-2"
                                                         >
                                                             <span
-                                                                class="w-5 h-3 rounded-sm bg-red-400"
+                                                                class="w-5 h-3 bg-red-400 rounded-sm"
                                                             ></span>
                                                             <span>{{
                                                                 eLearningName[0]
@@ -998,7 +998,7 @@
                                                             class="flex items-center space-x-2"
                                                         >
                                                             <span
-                                                                class="w-5 h-3 rounded-sm bg-orange-400"
+                                                                class="w-5 h-3 bg-orange-400 rounded-sm"
                                                             ></span>
                                                             <span>{{
                                                                 eLearningName[1]
@@ -1008,7 +1008,7 @@
                                                             class="flex items-center space-x-2"
                                                         >
                                                             <span
-                                                                class="w-5 h-3 rounded-sm bg-yellow-400"
+                                                                class="w-5 h-3 bg-yellow-400 rounded-sm"
                                                             ></span>
                                                             <span>{{
                                                                 eLearningName[2]
@@ -1018,7 +1018,7 @@
                                                             class="flex items-center space-x-2"
                                                         >
                                                             <span
-                                                                class="w-5 h-3 bg-lime-400 rounded-sm"
+                                                                class="w-5 h-3 rounded-sm bg-lime-400"
                                                             ></span>
                                                             <span>{{
                                                                 eLearningName[3]
@@ -1028,7 +1028,7 @@
                                                             class="flex items-center space-x-2"
                                                         >
                                                             <span
-                                                                class="w-5 h-3 bg-cyan-400 rounded-sm"
+                                                                class="w-5 h-3 rounded-sm bg-cyan-400"
                                                             ></span>
                                                             <span>{{
                                                                 eLearningName[4]
@@ -1062,7 +1062,7 @@
 
                                 <!-- BEGIN: E-Traning -->
                                 <div
-                                    class="col-span-12 mt-2 sm:col-span-6 xl:col-span-6 lg:mt-6 xl:mt-2"
+                                    class="mt-2"
                                 >
                                     <div class="flex items-center h-10 intro-y">
                                         <h2
@@ -1100,7 +1100,7 @@
                                                             class="flex items-center space-x-2"
                                                         >
                                                             <span
-                                                                class="w-5 h-3 rounded-sm bg-red-400"
+                                                                class="w-5 h-3 bg-red-400 rounded-sm"
                                                             ></span>
                                                             <span>{{
                                                                 eTraningName[0]
@@ -1110,7 +1110,7 @@
                                                             class="flex items-center space-x-2"
                                                         >
                                                             <span
-                                                                class="w-5 h-3 rounded-sm bg-orange-400"
+                                                                class="w-5 h-3 bg-orange-400 rounded-sm"
                                                             ></span>
                                                             <span>{{
                                                                 eTraningName[1]
@@ -1120,7 +1120,7 @@
                                                             class="flex items-center space-x-2"
                                                         >
                                                             <span
-                                                                class="w-5 h-3 rounded-sm bg-yellow-400"
+                                                                class="w-5 h-3 bg-yellow-400 rounded-sm"
                                                             ></span>
                                                             <span>{{
                                                                 eTraningName[2]
@@ -1130,7 +1130,7 @@
                                                             class="flex items-center space-x-2"
                                                         >
                                                             <span
-                                                                class="w-5 h-3 bg-lime-400 rounded-sm"
+                                                                class="w-5 h-3 rounded-sm bg-lime-400"
                                                             ></span>
                                                             <span>{{
                                                                 eTraningName[3]
@@ -1140,7 +1140,7 @@
                                                             class="flex items-center space-x-2"
                                                         >
                                                             <span
-                                                                class="w-5 h-3 bg-cyan-400 rounded-sm"
+                                                                class="w-5 h-3 rounded-sm bg-cyan-400"
                                                             ></span>
                                                             <span>{{
                                                                 eTraningName[4]
@@ -1172,11 +1172,11 @@
                                 </div>
                                 <!-- END: E-Traning -->
                                 <div
-                                    class="grid grid-cols-12 2xl:pl-6 gap-x-6 2xl:gap-x-0 gap-y-6"
+                                    class="grid grid-cols-12 2xl:pl-6 gap-x-6 2xl:gap-x-0 gap-y-6 md:col-span-3 2xl:col-span-1"
                                 >
                                     <!-- BEGIN: Recent Activities -->
                                     <div
-                                        class="col-span-12 mt-3 md:col-span-6 xl:col-span-4 2xl:col-span-12"
+                                        class="col-span-12 mt-3 md:col-span-12 xl:col-span-4 2xl:col-span-12"
                                     >
                                         <div
                                             class="flex items-center h-10 intro-x"
@@ -1188,12 +1188,12 @@
                                             </h2>
                                         </div>
                                         <div
-                                            class="mt-5 relative before:block before:absolute before:w-px before:h-[85%] before:bg-slate-200 before:dark:bg-darkmode-400 before:ml-5 before:mt-5"
+                                            class="mt-5 relative before:block before:absolute before:w-px before:h-[85%] before:bg-slate-200 before:dark:bg-darkmode-400 before:ml-5 before:mt-5 md:flex md:flex-row md:overflow-x-auto md:gap-3 md:pb-2 md:before:hidden xl:block xl:overflow-x-visible xl:before:block"
                                         >
                                             <div
                                                 v-for="(voc, index) in vocList"
                                                 :key="index"
-                                                class="relative flex items-center mb-3 intro-x"
+                                                class="relative flex items-center mb-3 intro-x md:flex-shrink-0 md:w-60 xl:w-auto"
                                             >
                                                 <div
                                                     class="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5"
