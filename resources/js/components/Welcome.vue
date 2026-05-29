@@ -1068,7 +1068,7 @@
                                         <h2
                                             class="mr-5 text-lg font-medium truncate text-slate-900 dark:text-white"
                                         >
-                                            สถิติ E-Traning
+                                            สถิติ AI-Traning
                                         </h2>
                                     </div>
                                     <div class="mt-5 report-box-2 intro-y">
